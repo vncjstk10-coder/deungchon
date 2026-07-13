@@ -1,0 +1,13 @@
+serve.js
+*.pdf
+*.jpg
+*.png
+*.xlsx
+*.pptx
+*.docx
+image/
+pdf_pages/
+계약서/
+대출/
+자금조달계획/
+기타/
