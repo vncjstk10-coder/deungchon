@@ -18,7 +18,8 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-system,sans-serif;
-  background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6}
+  background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;
+  word-break:keep-all;overflow-wrap:break-word}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--lite);border-radius:3px}
 
@@ -243,11 +244,21 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* remodel 분담금 시나리오 kpi 폰트 축소 (inline 1.5rem) */
   #panel-remodel .kpi-val{font-size:1.1rem!important}
   .kpi-bar{grid-template-columns:1fr 1fr!important}
-  .kpi-bar-card .num{font-size:1.1rem}
+  /* kpi 숫자: 줄바꿈 방지 + 폰트 축소 */
+  .kpi-bar-card .num{font-size:0.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* 물품정리 KPI 3열 유지 (전체/완료/미정) */
+  #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
+  #item-kpi-bar .kpi-bar-card{padding:10px 8px!important}
+  #item-kpi-bar .kpi-bar-card .num{font-size:1.3rem!important;white-space:nowrap;text-overflow:clip}
+  #item-kpi-bar .kpi-bar-card .lbl{font-size:9px}
   .kpi-val{font-size:1.1rem}
   .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.5rem}
+  /* 테이블: 가로 스크롤 + 세로 글자 방지 */
   .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table{min-width:380px}
+  #itemTable{min-width:580px!important}
+  #itemTable td{white-space:nowrap}
+  #itemTable td:nth-child(4){white-space:normal;min-width:60px;word-break:break-all}
   .fund-label{width:auto!important;font-size:11px;white-space:nowrap}
   .fund-amt{width:56px;font-size:11px}
   .fund-pct{width:30px;font-size:10px}
