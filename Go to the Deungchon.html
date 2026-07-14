@@ -197,82 +197,143 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 /* 모바일 전용 하단 탭바 — 데스크톱에서 숨김 */
 .mob-nav{display:none}
 
-/* MOBILE */
+/* MOBILE — 앱 스타일 전면 재설계 */
 @media(max-width:768px){
+  /* ─── 레이아웃 ─── */
   .layout{flex-direction:column}
-  /* 기존 사이드바는 모바일에서 완전히 숨김 — mob-nav로 대체 */
   .sidebar{display:none!important}
-  /* 모바일 전용 하단 탭바 */
-  .mob-nav{display:flex!important;position:fixed;bottom:0;left:0;right:0;
-    background:#16153A;border-top:1px solid rgba(255,255,255,0.1);
+
+  /* ─── 하단 탭 네비게이션 (앱 스타일) ─── */
+  .mob-nav{
+    display:flex!important;position:fixed;bottom:0;left:0;right:0;
+    background:#16153A;border-top:1px solid rgba(255,255,255,0.07);
     flex-direction:row;overflow-x:auto;overflow-y:hidden;
-    z-index:200;height:62px;align-items:stretch;
-    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    z-index:200;height:68px;align-items:center;
+    padding:4px 4px env(safe-area-inset-bottom,4px);
+    scrollbar-width:none;-webkit-overflow-scrolling:touch
+  }
   .mob-nav::-webkit-scrollbar{display:none}
-  .mob-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:2px;flex:0 0 auto;min-width:58px;padding:4px 6px;
-    border:none;background:transparent;color:rgba(255,255,255,0.5);
-    font-size:9px;font-weight:600;cursor:pointer;font-family:inherit;
-    transition:background .15s,color .15s;white-space:nowrap;border-radius:10px}
-  .mob-btn .mi{font-size:20px;line-height:1}
-  .mob-btn .ml{font-size:8px;line-height:1.3;max-width:56px;
-    text-align:center;overflow:hidden;text-overflow:ellipsis}
-  .mob-btn.active{background:rgba(123,110,246,0.28);color:#fff}
+  .mob-btn{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;flex:0 0 auto;min-width:62px;min-height:52px;padding:6px 8px;
+    border:none;background:transparent;color:rgba(255,255,255,0.42);
+    font-size:10px;font-weight:600;cursor:pointer;font-family:inherit;
+    transition:background .18s,color .18s;white-space:nowrap;
+    border-radius:12px;-webkit-tap-highlight-color:transparent
+  }
+  .mob-btn .mi{font-size:24px;line-height:1}
+  .mob-btn .ml{
+    font-size:10px;line-height:1.2;max-width:60px;
+    text-align:center;overflow:hidden;text-overflow:ellipsis
+  }
+  .mob-btn.active{
+    background:rgba(123,110,246,0.32);color:#fff;
+    box-shadow:inset 0 0 0 1px rgba(123,110,246,0.28)
+  }
   .mob-btn:hover{background:rgba(255,255,255,0.08);color:#fff}
-  .mob-sep{width:1px;background:rgba(255,255,255,0.1);flex-shrink:0;margin:10px 2px}
-  /* 컨텐츠 영역 */
-  .con{padding:14px 12px 80px}
+  .mob-sep{width:1px;background:rgba(255,255,255,0.08);flex-shrink:0;margin:10px 3px}
+
+  /* ─── 콘텐츠 영역 ─── */
+  .con{padding:16px 16px 90px}
+
+  /* ─── 페이지 헤더 (.ph) — Dynamic Island 여백 포함 ─── */
+  .ph{padding-top:8px;margin-bottom:16px!important}
+  .ph h1{font-size:20px!important;font-weight:800;letter-spacing:-0.02em}
+  .ph p,.ph .subtitle{font-size:13px;color:var(--muted)}
+
+  /* ─── 카드 패딩/반경 ─── */
+  .card{padding:16px!important;border-radius:16px!important}
+  .card-sm{padding:14px!important;border-radius:14px!important}
+
+  /* ─── 그리드 ─── */
   .g4{grid-template-columns:1fr 1fr!important}
   .g3{grid-template-columns:repeat(3,1fr)!important}
   .g2{grid-template-columns:1fr 1fr!important}
   .g21{grid-template-columns:1fr 1fr!important}
-  /* g3 카드 내부 패딩 압축 — 114px 셀에서 여백 확보 */
+  /* g3 좁은 셀 패딩 압축 */
   .g3>.card,.g3>.card-sm{padding:12px 8px!important}
-  /* D-Day 숫자(inline 3rem) 축소 + 카드 최소 높이 축소 */
-  #dday-mid,#dday-cheongna,#dday-deungchon{font-size:1.8rem!important}
+
+  /* ─── D-Day 숫자 ─── */
+  #dday-mid,#dday-cheongna,#dday-deungchon{font-size:2.2rem!important}
   #panel-summary .g3 .card{min-height:80px!important}
-  /* 종합현황 요약카드 — 진행률 숫자 압축 */
   #cheongna-progress{font-size:15px!important}
-  /* panel-cheongna-loan: hero kpi·도넛 SVG 모두 1열로 처리 */
+
+  /* ─── 섹션 제목 ─── */
+  .stitle{font-size:13px!important;font-weight:700!important;margin-top:20px!important}
+  .stitle:first-child{margin-top:0!important}
+
+  /* ─── panel-cheongna-loan: 1열 ─── */
   #panel-cheongna-loan .g3,
   #panel-cheongna-loan .g2{grid-template-columns:1fr!important}
-  /* loan-status 헤더: person-btn 3개 줄바꿈 허용 */
-  #panel-loan-status .ph{flex-wrap:wrap!important}
-  /* loan-balance 납부구조 kpi 폰트 축소 (inline 1.5rem) */
+
+  /* ─── 대출현황: person-btn 3개 줄바꿈 ─── */
+  #panel-loan-status .ph{flex-wrap:wrap!important;gap:8px}
+
+  /* ─── KPI 값 폰트 계층 ─── */
+  .kpi-val{font-size:1.3rem!important}
+  .card-purple .kpi-val,
+  .card-orange .kpi-val,
+  .card-red .kpi-val,
+  .card-green .kpi-val{font-size:1.6rem!important}
   #panel-loan-balance .kpi-val{font-size:1.1rem!important}
   #panel-loan-balance .kpi-sub{font-size:10px}
-  /* remodel 분담금 시나리오 kpi 폰트 축소 (inline 1.5rem) */
   #panel-remodel .kpi-val{font-size:1.1rem!important}
-  .kpi-bar{grid-template-columns:1fr 1fr!important}
-  /* kpi 숫자: 줄바꿈 방지 + 폰트 축소 */
-  .kpi-bar-card .num{font-size:0.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  /* 물품정리 KPI 3열 유지 (전체/완료/미정) */
+
+  /* ─── KPI 바 그리드 ─── */
+  .kpi-bar{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .kpi-bar-card{padding:14px 12px!important}
+  .kpi-bar-card .num{font-size:1.1rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .kpi-bar-card .lbl{font-size:11px}
+
+  /* ─── 물품정리 KPI 3열 유지 ─── */
   #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
   #item-kpi-bar .kpi-bar-card{padding:10px 8px!important}
   #item-kpi-bar .kpi-bar-card .num{font-size:1.3rem!important;white-space:nowrap;text-overflow:clip}
   #item-kpi-bar .kpi-bar-card .lbl{font-size:9px}
-  .kpi-val{font-size:1.1rem}
-  .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.5rem}
-  /* 테이블: 가로 스크롤 + 세로 글자 방지 */
+
+  /* ─── 테이블: 가로 스크롤 ─── */
   .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table{min-width:380px}
   #itemTable{min-width:580px!important}
   #itemTable td{white-space:nowrap}
   #itemTable td:nth-child(4){white-space:normal;min-width:60px;word-break:break-all}
-  .fund-label{width:auto!important;font-size:11px;white-space:nowrap}
-  .fund-amt{width:56px;font-size:11px}
+
+  /* ─── 자금 행 ─── */
+  .fund-row{font-size:13px}
+  .fund-label{width:auto!important;font-size:13px!important;white-space:nowrap}
+  .fund-amt{width:56px;font-size:13px!important}
   .fund-pct{width:30px;font-size:10px}
-  .risk-card{padding:12px 14px}
-  .ph h1{font-size:1.2rem}
-  .stitle{font-size:12px}
-  .person-btn{padding:5px 12px;font-size:11px}
-  .timeline-steps{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}
+
+  /* ─── 리스크 카드 ─── */
+  .risk-card{padding:12px 14px!important}
+
+  /* ─── 정보박스 ─── */
+  .ibox{font-size:13px!important;padding:12px 14px!important}
+
+  /* ─── 타임라인 ─── */
+  .timeline-steps{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;gap:0}
   .tl-step{min-width:80px}
+  .tl-label{font-size:11px}
+  .tl-date{font-size:9px}
+
+  /* ─── 필터 / 사람 선택 버튼 (터치 타깃 44px 이상) ─── */
+  .filter-btn{font-size:12px!important;padding:6px 12px!important;min-height:36px}
+  .person-btn{padding:0 14px!important;font-size:12px!important;height:36px!important;min-height:36px}
+
+  /* ─── 시나리오 카드 ─── */
+  .scen-card{padding:16px!important}
+
+  /* ─── 대출 정보 행 ─── */
+  .ln-info-row{font-size:12px}
+  .ln-info-nm{min-width:90px}
 }
 @media(max-width:400px){
+  .con{padding:12px 12px 90px}
   .kpi-bar{grid-template-columns:1fr 1fr!important}
-  .kpi-val{font-size:1.2rem}
-  .sb-tab,.sb-subtab{min-width:48px;font-size:8px}
+  .kpi-val{font-size:1.2rem!important}
+  /* 물품정리 3열은 400px 이하에서도 유지 */
+  #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
+  .g3{grid-template-columns:repeat(3,1fr)!important}
 }
 @media print{
   .sidebar,.add-btn,.del-btn{display:none!important}
