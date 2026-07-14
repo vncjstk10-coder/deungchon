@@ -221,11 +221,31 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .mob-sep{width:1px;background:rgba(255,255,255,0.1);flex-shrink:0;margin:10px 2px}
   /* 컨텐츠 영역 */
   .con{padding:14px 12px 80px}
-  .g4,.g3,.g2,.g21{grid-template-columns:1fr!important}
+  .g4{grid-template-columns:1fr 1fr!important}
+  .g3{grid-template-columns:repeat(3,1fr)!important}
+  .g2{grid-template-columns:1fr 1fr!important}
+  .g21{grid-template-columns:1fr 1fr!important}
+  /* g3 카드 내부 패딩 압축 — 114px 셀에서 여백 확보 */
+  .g3>.card,.g3>.card-sm{padding:12px 8px!important}
+  /* D-Day 숫자(inline 3rem) 축소 + 카드 최소 높이 축소 */
+  #dday-mid,#dday-cheongna,#dday-deungchon{font-size:1.8rem!important}
+  #panel-summary .g3 .card{min-height:80px!important}
+  /* 종합현황 요약카드 — 진행률 숫자 압축 */
+  #cheongna-progress{font-size:15px!important}
+  /* panel-cheongna-loan: hero kpi·도넛 SVG 모두 1열로 처리 */
+  #panel-cheongna-loan .g3,
+  #panel-cheongna-loan .g2{grid-template-columns:1fr!important}
+  /* loan-status 헤더: person-btn 3개 줄바꿈 허용 */
+  #panel-loan-status .ph{flex-wrap:wrap!important}
+  /* loan-balance 납부구조 kpi 폰트 축소 (inline 1.5rem) */
+  #panel-loan-balance .kpi-val{font-size:1.1rem!important}
+  #panel-loan-balance .kpi-sub{font-size:10px}
+  /* remodel 분담금 시나리오 kpi 폰트 축소 (inline 1.5rem) */
+  #panel-remodel .kpi-val{font-size:1.1rem!important}
   .kpi-bar{grid-template-columns:1fr 1fr!important}
-  .kpi-bar-card .num{font-size:1.3rem}
-  .kpi-val{font-size:1.3rem}
-  .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.7rem}
+  .kpi-bar-card .num{font-size:1.1rem}
+  .kpi-val{font-size:1.1rem}
+  .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.5rem}
   .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table{min-width:380px}
   .fund-label{width:auto!important;font-size:11px;white-space:nowrap}
