@@ -1125,13 +1125,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="kpi-bar-card" style="border-top:3px solid var(--orange)">
       <div class="lbl">추가 비용 (취득세 제외)</div>
-      <div class="num or">899.5만+</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">중개비 599.5만 + 이사비 300만 + 인테리어 미정</div>
+      <div class="num or">1,549.5만</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">중개비 599.5만 + 이사비 300만 + 에어컨 50만 + 인테리어 600만</div>
     </div>
     <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
       <div class="lbl">실질 총 필요액</div>
-      <div class="num pu">9억 8,900만+</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">인테리어·취득세 미포함</div>
+      <div class="num pu">9억 9,550만</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">취득세 3,597만 별도 할부</div>
     </div>
   </div>
 
@@ -1193,9 +1193,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
     <div class="fund-row">
+      <div class="fund-label">에어컨 해체·설치</div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:12px;color:var(--orange);font-weight:700">별도</span>
+        <span style="font-weight:800">50만</span>
+      </div>
+    </div>
+    <div class="fund-row">
       <div class="fund-label">인테리어 비용</div>
       <div style="flex:1"></div>
-      <div style="font-weight:800;color:var(--muted)">미정</div>
+      <div style="font-weight:800">600만</div>
     </div>
 
     <!-- 소계 -->
@@ -1206,16 +1214,16 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;color:var(--green);font-weight:700">계약금 + 중도금</div>
       </div>
       <div style="border-left:1px solid var(--border);padding-left:10px">
-        <div style="font-size:10px;color:var(--muted)">앞으로 필요 (취득세·인테리어 제외)</div>
-        <div style="font-size:1.1rem;font-weight:900;color:var(--red)">7억 8,900만+</div>
-        <div style="font-size:10px;color:var(--orange);font-weight:700">잔금 + 중개비 + 이사비</div>
+        <div style="font-size:10px;color:var(--muted)">앞으로 필요 (취득세 제외)</div>
+        <div style="font-size:1.1rem;font-weight:900;color:var(--red)">7억 9,550만</div>
+        <div style="font-size:10px;color:var(--orange);font-weight:700">잔금 + 중개비 + 이사비 + 에어컨 + 인테리어</div>
       </div>
     </div>
   </div>
 
   <!-- ── 플랜별 최종 잔액 비교 ── -->
   <div class="stitle">🔄 조달 플랜별 최종 잔액 비교</div>
-  <div style="font-size:12px;color:var(--muted);margin:-10px 0 14px;line-height:1.6">기준: 중도금+잔금 9억 8,000만 + 중개비 599.5만 + 이사비 300만 = <strong style="color:var(--text)">9억 8,900만</strong> (인테리어·취득세 제외)</div>
+  <div style="font-size:12px;color:var(--muted);margin:-10px 0 14px;line-height:1.6">기준: 중도금+잔금 9억 8,000만 + 중개비 599.5만 + 이사비 300만 + 에어컨 50만 + 인테리어 600만 = <strong style="color:var(--text)">9억 9,550만</strong> (취득세 별도)</div>
 
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
 
@@ -1229,7 +1237,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">조달 가능</div>
           <div style="font-size:1.1rem;font-weight:900;color:var(--text)">8억 6,690만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 1억 2,210만 부족</div>
+          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 1억 2,860만 부족</div>
         </div>
       </div>
     </div>
@@ -1244,7 +1252,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">조달 가능</div>
           <div style="font-size:1.1rem;font-weight:900;color:var(--text)">8억 9,690만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 9,210만 부족</div>
+          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 9,860만 부족</div>
         </div>
       </div>
     </div>
@@ -1259,7 +1267,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">조달 가능</div>
           <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 2,190만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 6,710만 부족</div>
+          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 7,360만 부족</div>
         </div>
       </div>
     </div>
@@ -1274,7 +1282,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">조달 가능</div>
           <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 3,107만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 5,793만 부족</div>
+          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 6,443만 부족</div>
         </div>
       </div>
     </div>
@@ -1289,11 +1297,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">조달 가능</div>
           <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 8,607만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--green)">− 293만 부족 ✅</div>
+          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 943만 부족</div>
         </div>
       </div>
-      <div style="margin-top:8px;padding:6px 10px;background:rgba(16,185,129,0.12);border-radius:8px;font-size:11px;color:var(--green);font-weight:700">
-        추가 비용(중개비+이사비 899.5만) 포함해도 거의 완전 해소 — 293만만 추가 조달 필요
+      <div style="margin-top:8px;padding:6px 10px;background:rgba(251,146,60,0.12);border-radius:8px;font-size:11px;color:var(--orange);font-weight:700">
+        추가 비용(중개비+이사비+인테리어 1,549.5만) 포함 시 943만 추가 조달 필요
       </div>
     </div>
 
@@ -2712,9 +2720,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div class="fund-row" style="border-bottom:none">
         <div class="fund-label">에어컨 해체·설치</div>
-        <div class="fund-bar-wrap"><div class="fund-bar" style="width:0%;background:var(--orange)"></div></div>
-        <div class="fund-amt">별도</div>
-        <div class="fund-pct" style="color:var(--orange);font-weight:700">미확정</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:17%;background:var(--orange)"></div></div>
+        <div class="fund-amt">50만원</div>
+        <div class="fund-pct" style="color:var(--orange);font-weight:700">별도</div>
       </div>
     </div>
 
@@ -2740,14 +2748,19 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-weight:800">599.5만원</div>
       </div>
       <div class="fund-row">
+        <div class="fund-label">에어컨 해체·설치</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:800">50만원</div>
+      </div>
+      <div class="fund-row">
         <div class="fund-label">인테리어 비용</div>
         <div style="flex:1"></div>
-        <div style="font-weight:800;color:var(--muted)">미정</div>
+        <div style="font-weight:800">600만원</div>
       </div>
       <div class="fund-row" style="border-bottom:none;margin-top:8px;padding-top:12px">
-        <div class="fund-label" style="font-weight:900;color:var(--text);font-size:14px">소계 (확정 항목)</div>
+        <div class="fund-label" style="font-weight:900;color:var(--text);font-size:14px">소계 (취득세 제외)</div>
         <div style="flex:1"></div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--purple)">약 1,169.5만원</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--purple)">약 1,549.5만원</div>
       </div>
     </div>
     <div class="card" style="background:var(--r2);border:1.5px solid var(--red)">
