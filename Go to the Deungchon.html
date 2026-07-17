@@ -1077,115 +1077,91 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ── 황서림 섹션 ── -->
   <div id="sec-hwang">
-    <!-- 소득 KPI -->
+    <!-- 소득 KPI — 소득 합산 DSR 전략 -->
     <div class="kpi-bar" style="margin-top:0">
       <div class="kpi-bar-card">
-        <div class="lbl">과세 소득 (2025년, 아시아나항공)</div>
+        <div class="lbl">황서림 과세 소득 (2025년)</div>
         <div class="num pu">5,338만</div>
       </div>
       <div class="kpi-bar-card">
-        <div class="lbl">비과세 소득 (국외근로 수련보조)</div>
-        <div class="num or">1,200만</div>
+        <div class="lbl">안영준 소득 합산 (2025년)</div>
+        <div class="num or">1억 739만</div>
       </div>
       <div class="kpi-bar-card">
-        <div class="lbl">합산 총소득 (비과세 포함)</div>
-        <div class="num g">6,538만</div>
+        <div class="lbl">합산 총소득 (DSR 산정 기준)</div>
+        <div class="num g">1억 6,077만</div>
       </div>
     </div>
-    <div class="ibox p" style="margin-bottom:16px;font-size:12px">
-      💡 <strong>핵심:</strong> 은행이 비과세 소득 1,200만을 인정하느냐에 따라 DSR 한도가 달라짐.<br>
-      과세분만 인정 시 5,338만 기준 / 비과세 포함 인정 시 6,538만 기준으로 대출 한도 결정.
+    <div class="ibox g" style="margin-bottom:16px;font-size:12px">
+      ✅ <strong>소득 합산 DSR 전략:</strong> 차주 황서림 + 안영준 소득 합산으로 DSR 산정<br>
+      비과세 1,200만 미인정 확정 — 합산 소득으로 충분 커버<br>
+      DSR 40% 월 한도 <strong>536만/월</strong> → 주담대 193만 사용 (DSR <strong>14.4%</strong>)
     </div>
 
     <!-- DSR 한도 분석 -->
-    <div class="stitle">DSR 한도 분석 — 황서림 단독 기준</div>
+    <div class="stitle">DSR 한도 분석 — 소득 합산 기준 (황서림 + 안영준)</div>
     <div class="card" style="margin-bottom:16px">
       <div class="fund-row">
-        <div class="fund-label" style="width:185px">🏦 1금융 40% · 과세분만</div>
-        <div class="fund-bar-wrap"><div class="fund-bar" style="width:80%;background:#5B6EF6"></div></div>
-        <div class="fund-amt">178만/월</div>
-        <div class="fund-pct" style="color:#5B6EF6;font-weight:700">DSR 40%</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label" style="width:185px">🏦 1금융 40% · 비과세 포함<br><span style="color:var(--orange);font-size:10px">*인정 시</span></div>
-        <div class="fund-bar-wrap"><div class="fund-bar" style="width:98%;background:var(--purple)"></div></div>
-        <div class="fund-amt">218만/월</div>
-        <div class="fund-pct" style="color:var(--purple);font-weight:700">DSR 40%</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label" style="width:185px">🏢 2금융 50% · 과세분만</div>
-        <div class="fund-bar-wrap"><div class="fund-bar" style="width:100%;background:var(--orange)"></div></div>
-        <div class="fund-amt">222만/월</div>
-        <div class="fund-pct" style="color:var(--orange);font-weight:700">DSR 50%</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label" style="width:185px">🏢 2금융 50% · 비과세 포함<br><span style="color:var(--orange);font-size:10px">*인정 시</span></div>
+        <div class="fund-label" style="width:185px">💑 합산 DSR 40% 한도</div>
         <div class="fund-bar-wrap"><div class="fund-bar" style="width:100%;background:var(--green)"></div></div>
-        <div class="fund-amt">272만/월</div>
-        <div class="fund-pct" style="color:var(--green);font-weight:700">DSR 50%</div>
+        <div class="fund-amt">536만/월</div>
+        <div class="fund-pct" style="color:var(--green);font-weight:700">DSR 40%</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label" style="width:185px">🏦 주담대 3억 7,400만 (4.65%)</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:36%;background:var(--purple)"></div></div>
+        <div class="fund-amt">193만/월</div>
+        <div class="fund-pct" style="color:var(--purple);font-weight:700">14.4%</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label" style="width:185px">🏦 주담대 3억 7,400만 (5.93%)</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:41%;background:var(--orange)"></div></div>
+        <div class="fund-amt">222만/월</div>
+        <div class="fund-pct" style="color:var(--orange);font-weight:700">16.6%</div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label" style="width:185px">📊 잔여 여력 (4.65% 기준)</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:64%;background:var(--green);opacity:.4"></div></div>
+        <div class="fund-amt">343만/월</div>
+        <div class="fund-pct" style="color:var(--green);font-weight:700">여유</div>
       </div>
       <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
-        * 비과세 포함 기준은 은행이 국외근로 비과세 소득을 인정해야 적용 가능 (은행마다 상이)
+        * 차주: 황서림 / 소득 합산: 안영준 공동채무자 방식 · 비과세 1,200만 미인정 확정 · 두 금리 모두 DSR 통과
       </div>
     </div>
 
-    <!-- 주담대 4억 금리별 가능 여부 -->
-    <div class="stitle">💡 주담대 4억 금리별 가능 여부 (30년 원리금균등)</div>
-    <div class="tbl-wrap" style="margin-bottom:14px">
-      <table>
-        <thead>
-          <tr>
-            <th>금리</th><th>월 납부</th>
-            <th style="background:rgba(91,110,246,.08)">1금융<br><span style="font-size:10px;font-weight:400;color:var(--muted)">과세분 178만</span></th>
-            <th style="background:rgba(123,110,246,.08)">1금융<br><span style="font-size:10px;font-weight:400;color:var(--orange)">비과세포함* 218만</span></th>
-            <th style="background:rgba(249,115,22,.08)">2금융<br><span style="font-size:10px;font-weight:400;color:var(--muted)">과세분 222만</span></th>
-            <th style="background:rgba(16,185,129,.08)">2금융<br><span style="font-size:10px;font-weight:400;color:var(--orange)">비과세포함* 272만</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="font-weight:700">4.5%</td><td style="font-weight:700;color:var(--t2)">약 203만</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">5.0%</td><td style="font-weight:700;color:var(--t2)">약 215만</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">5.5%</td><td style="font-weight:700;color:var(--t2)">약 227만</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">6.0%</td><td style="font-weight:700;color:var(--t2)">약 240만</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">6.5%</td><td style="font-weight:700;color:var(--t2)">약 253만</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--red);font-weight:800;font-size:15px;text-align:center">✕</td>
-            <td style="color:var(--green);font-weight:800;font-size:15px;text-align:center">✓</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- 우리은행 주담대 확정 금리 -->
+    <div class="stitle">💡 우리은행 주담대 3억 7,400만 · 확정 금리 분석 (30년 원리금균등)</div>
+    <div class="card" style="margin-bottom:8px">
+      <div style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.7;padding:10px 12px;background:var(--bg);border-radius:10px">
+        KB부동산 시세 <strong>10억 7,250만</strong> × 40% = 4억 2,900만<br>
+        → 방 공제 5,500만 차감 → <strong style="color:var(--purple)">대출 한도 3억 7,400만 확정</strong><br>
+        <span style="color:var(--red);font-size:11px">⚠ MCI · MGI 현재 가입불가 상황 (시세 기반 한도 적용)</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:var(--p3);border-radius:12px;padding:16px;border-top:3px solid var(--purple)">
+          <div style="font-size:11px;color:var(--purple);font-weight:700;margin-bottom:8px">1년 변동금리 (우대 충족시)</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--purple);line-height:1">4.65%</div>
+          <div style="font-size:13px;color:var(--text);margin-top:10px;font-weight:700">월 납부 약 193만원</div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(123,110,246,0.15)">
+            <span style="font-size:11px;color:var(--green);font-weight:700">✓ 소득 합산 DSR 14.4% 통과</span><br>
+            <span style="font-size:11px;color:var(--t2)">(193만 / 한도 536만)</span>
+          </div>
+        </div>
+        <div style="background:var(--r2);border-radius:12px;padding:16px;border-top:3px solid var(--orange)">
+          <div style="font-size:11px;color:var(--orange);font-weight:700;margin-bottom:8px">5년 변동금리 (우대 충족시)</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--orange);line-height:1">5.93%</div>
+          <div style="font-size:13px;color:var(--text);margin-top:10px;font-weight:700">월 납부 약 222만원</div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(239,68,68,0.15)">
+            <span style="font-size:11px;color:var(--green);font-weight:700">✓ 소득 합산 DSR 16.6% 통과</span><br>
+            <span style="font-size:11px;color:var(--t2)">(222만 / 한도 536만)</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="ibox r" style="margin-bottom:20px;font-size:12px">
-      ⚠️ <strong>1금융 과세분(178만):</strong> 4.5%~6.5% 전 금리 불가<br>
-      → <strong>1금융 비과세포함(218만):</strong> 4.5% · 5.0%만 가능 (5.5% 이상 불가)<br>
-      → <strong>2금융 과세분(222만):</strong> 4.5% · 5.0%만 가능 (5.5% 이상 불가)<br>
-      → <strong>2금융 비과세포함(272만):</strong> 전 금리 모두 가능 — 비과세 인정 + 2금융이 핵심
+    <div class="ibox g" style="margin-bottom:20px;font-size:12px">
+      ✅ <strong>결론 — 두 금리 모두 DSR 통과:</strong> 소득 합산(황서림+안영준) 기준 한도 536만/월<br>
+      → 4.65% 월 193만(DSR 14.4%) · 5.93% 월 222만(DSR 16.6%) — <strong>비과세 인정 여부 무관하게 모두 가능</strong>
     </div>
 
     <!-- 대출 현황 -->
@@ -1194,31 +1170,38 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <table>
         <thead><tr><th>대출 항목</th><th>금액</th><th>조건</th><th>상태</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td>주담대 (보험사)</td><td style="font-weight:700">4억</td><td>5년+ 고정금리</td><td><span class="chip r">미확정 ⚠</span></td><td style="color:var(--orange);font-size:12px">변동금리 불가 · 은행 선정 필요</td></tr>
+          <tr>
+            <td><strong>주담대 (우리은행)</strong><br><span class="sub-note">황서림 명의 · 30년</span></td>
+            <td style="font-weight:800;color:var(--purple)">3억 7,400만</td>
+            <td style="font-size:12px">1년변동 <strong>4.65%</strong><br><span class="sub-note">5년변동 5.93% / 우대금리 충족시</span></td>
+            <td><span class="chip p">진행중</span></td>
+            <td style="font-size:11px;color:var(--t2)">MCI·MGI 가입불가<br><span style="color:var(--muted)">시세 10억 7,250만 × 40% - 방공제 5,500만</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
 
     <!-- 위험 요소 -->
     <div class="stitle">⚠️ 핵심 위험 요소</div>
-    <div class="risk-card">
-      <div class="risk-title">🔴 위험 ① — 국민은행 대출 규제 영향</div>
+    <div class="risk-card" style="border-color:var(--yellow);background:var(--y2)">
+      <div class="risk-title" style="color:var(--yellow)">🟡 주의 ① — MCI · MGI 가입불가 상황</div>
       <div class="risk-body">
-        국민은행이 대출금액을 <strong>3억으로 통제</strong>하면서 나머지 은행들도 대출을 막으려는 움직임<br>
-        → 황서림 주담대(4억) 및 보증보험(2억) 실행에 <strong>직접적 영향 가능성</strong>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(239,68,68,.2)">
-          <strong>대응 방향:</strong> 규제 영향 없는 보험사/저축은행 우선 확인 · 한도 내 분산 대출 검토
+        현재 은행권 MCI(모기지신용보험) · MGI(모기지보증보험) <strong>가입이 불가</strong>한 상황<br>
+        → 보험 미가입으로 인해 담보 인정 한도가 <strong>KB시세 기반 LTV</strong>로만 산정됨<br>
+        → 10억 7,250만 × 40% = 4억 2,900만에서 방공제 5,500만 차감 → <strong>3억 7,400만 확정</strong>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,158,11,.2)">
+          <strong>현황:</strong> 우리은행 3억 7,400만 진행중 · MCI/MGI 상황 변화 시 한도 재검토 가능
         </div>
       </div>
     </div>
     <div class="risk-card" style="border-color:var(--yellow);background:var(--y2)">
-      <div class="risk-title" style="color:var(--yellow)">🟡 진행중 ② — 비과세 소득 인정 여부가 핵심</div>
+      <div class="risk-title" style="color:var(--yellow)">🟡 주의 ② — 1년 변동금리 금리 상승 리스크</div>
       <div class="risk-body">
-        과세 소득 5,338만 + 비과세 소득 1,200만 = <strong>합산 총소득 6,538만</strong><br>
-        → 은행이 비과세 1,200만을 인정하면 DSR 한도 178만→218만(1금융), 222만→272만(2금융)으로 확대<br>
-        → <strong>비과세 인정 시</strong>: 4.5% 고정금리까지 4억 모두 가능 / <strong>미인정 시</strong>: 1금융 3.5% 이상 불가
+        현재 4.65% 적용 예정이나 <strong>1년 변동금리</strong>로 매년 금리 재산정<br>
+        → 금리 상승 시 월 납부액 증가 — 5.93%까지 오를 경우 월 222만 (현재 193만 대비 +29만)<br>
+        → 합산 DSR 한도 536만 내에서는 5.93%도 통과하나, 추후 소득 변동 시 영향 가능
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,158,11,.2)">
-          <strong>해야 할 일:</strong> 갑종근로소득 원천징수확인서 + 국외근로 비과세 소득 증빙 → 은행별 개별 확인 필수
+          <strong>모니터링:</strong> 연간 금리 변동 확인 · 금리 급등 시 5년 변동 or 고정금리 전환 검토
         </div>
       </div>
     </div>
@@ -1247,17 +1230,24 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <thead><tr><th>대출 항목</th><th>잔액</th><th>조건</th><th>상환방식</th><th>실 납입/월</th><th>상태</th></tr></thead>
         <tbody>
           <tr><td>우리은행 신용대출</td><td style="font-weight:700">9,500만</td><td>4.02% / 5년</td><td style="font-size:12px;color:var(--muted)">이자납입</td><td style="font-weight:700;color:var(--orange)">약 32만</td><td><span class="chip g">실행중</span></td></tr>
-          <tr style="background:rgba(239,68,68,0.04)"><td>새마을금고 보증보험대출 <span style="font-size:11px;color:var(--red)">⚠</span></td><td style="font-weight:700">1억 2,000만</td><td>4.76% / ~2028.06.30</td><td style="font-size:12px;color:var(--muted)">만기일시상환</td><td style="font-weight:700;color:var(--orange)">약 48만</td><td><span class="chip y">실행중</span></td></tr>
+          <tr style="background:rgba(239,68,68,0.04)">
+            <td>회사 보증보험대출<br><span style="font-size:11px;color:var(--purple);font-weight:700">+ 3,000만 추가 예정 (8/31 이후)</span></td>
+            <td style="font-weight:700">1억 2,000만<br><span style="font-size:11px;color:var(--purple);font-weight:700">→ 한도 1억 5,000만</span></td>
+            <td>4.76% / ~2028.06.30</td>
+            <td style="font-size:12px;color:var(--muted)">만기일시상환</td>
+            <td style="font-weight:700;color:var(--orange)">약 48만<br><span style="font-size:11px;color:var(--purple)">→ 추가 후 60만</span></td>
+            <td><span class="chip y">실행중</span><br><span class="chip p" style="margin-top:3px;display:inline-flex">추가예정</span></td>
+          </tr>
           <tr style="background:rgba(239,68,68,0.04)"><td>보금자리론 (청라 담보)</td><td style="font-weight:700">2억 4,772만</td><td>3.78% 고정 / 잔여 313개월</td><td style="font-size:12px;color:var(--muted)">원리금체증식</td><td style="font-weight:700;color:var(--red)">약 125만 <span style="font-size:10px">(DSR환산)</span></td><td><span class="chip r">8/31 상환</span></td></tr>
           <tr style="background:var(--lite)"><td colspan="4" style="font-weight:700;text-align:right;color:var(--t2)">DSR 산입 월 합계</td><td style="font-weight:900;color:var(--orange);font-size:1rem">205만원</td><td></td></tr>
         </tbody>
       </table>
     </div>
     <div class="ibox r" style="margin-bottom:20px;font-size:12px">
-      ⚠ <strong>새마을금고 보증보험대출 주의:</strong> 부채증명서에 청라 129동 802호 주소 기재 — 청라 매도 시 이 대출(1억 2,000만)도 함께 상환해야 할 수 있음. 은행에 담보 여부 반드시 확인 필요.
+      ⚠ <strong>회사 보증보험대출 주의:</strong> 부채증명서에 청라 129동 802호 주소 기재 — 청라 매도 시 이 대출(1억 2,000만)도 함께 상환해야 할 수 있음. 은행에 담보 여부 반드시 확인 필요.
     </div>
 
-    <div class="stitle">DSR 분석 — 소득 1억 739만원 기준 <span style="font-size:11px;color:var(--orange);font-weight:400">(새마을금고 = 2금융권 · DSR 50% 적용)</span></div>
+    <div class="stitle">DSR 분석 — 소득 1억 739만원 기준 <span style="font-size:11px;color:var(--orange);font-weight:400">(회사 보증보험 = 2금융권 · DSR 50% 적용)</span></div>
     <div class="card" style="margin-bottom:20px">
       <div class="fund-row">
         <div class="fund-label" style="width:150px">현재 (보금자리론 포함)</div>
@@ -1284,159 +1274,165 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <div class="stitle">🏦 8/31 이후 — 회사 보증보험대출 계획</div>
+    <div class="stitle">🏦 8/31 이후 — 회사 보증보험대출 3,000만 추가 계획</div>
     <div class="ibox p" style="margin-bottom:14px">
-      청라 잔금 4억 9,570만 수령 → <strong>보금자리론 2억 4,772만 즉시 전액 상환 + 근저당 말소</strong><br>
-      → 신용대출(32만) + 새마을금고 보증보험(48만) = 월 80만만 남음<br>
-      → 남은 DSR 여력(41.1%, 월 368만)으로 <strong>회사 보증보험대출 추가 가능</strong> <span style="color:var(--orange);font-size:12px">(새마을금고 2금융 DSR 50% 기준)</span>
+      청라 잔금 수령 → <strong>보금자리론 2억 4,772만 즉시 전액 상환 + 근저당 말소</strong><br>
+      → 보금자리론 상환 후 <strong>소득 합산</strong>으로 회사 보증보험 한도 <strong>1억 5,000만 확보</strong><br>
+      → 기 실행 1억 2,000만 + <strong>나머지 한도 3,000만 추가 실행 예정</strong>
     </div>
     <div class="g2" style="margin-bottom:14px">
       <div class="card card-sm">
-        <div class="kpi-lbl">추가 가능 월 상환</div>
-        <div class="kpi-val pu" style="font-size:1.4rem">약 368만/월</div>
-        <div class="kpi-sub">DSR 50% 한도 내 잔여 여력</div>
+        <div class="kpi-lbl">보증보험 총 한도</div>
+        <div class="kpi-val pu" style="font-size:1.4rem">1억 5,000만</div>
+        <div class="kpi-sub">기 실행 1.2억 + 추가 예정 3,000만</div>
       </div>
       <div class="card card-sm">
-        <div class="kpi-lbl">회사 보증보험대출 추정 한도</div>
-        <div class="kpi-val g" style="font-size:1.4rem">약 1억 9,600만</div>
-        <div class="kpi-sub">5년 원리금균등 / 4.76% 기준 추정</div>
+        <div class="kpi-lbl">추가 후 월 이자 납입</div>
+        <div class="kpi-val g" style="font-size:1.4rem">약 60만/월</div>
+        <div class="kpi-sub">4.76% 만기일시상환 기준 (기존 48만)</div>
       </div>
     </div>
-    <div class="ibox r" style="font-size:12px">
-      ⚠ 새마을금고 보증보험대출(1억 2,000만)이 청라 담보라면 8/31 상환 후 해당 한도(월 48만)도 추가 확보됨 — 총 여력 더 늘어날 수 있음
+    <div class="ibox y" style="font-size:12px">
+      ⚠ <strong>조건:</strong> 8/31 보금자리론 완전 상환 후 소득 합산 기준 적용 → 한도 3,000만 추가 확보<br>
+      → 잔금일(9/16) 전 실행 완료 목표
     </div>
   </div>
 
   <!-- ── 합산 섹션 ── -->
   <div id="sec-combined" style="display:none">
     <div class="ibox p" style="margin-bottom:18px;font-size:13px">
-      공통 전제 — 새마을금고 2억 중 <strong>1.2억 중도금 사용</strong> / 8/31 청라 정리 후 <strong>0.8억 잔금 실행</strong> · 신용대출 0.95억 · 청라 순수령 약 2.48억 · <strong>등촌 잔금 7.8억</strong>
+      공통 전제 — 황서림 주담대 <strong>3억 7,400만 (우리은행 · 4.65%)</strong> · 새마을금고 2억 중 1.2억 중도금 사용 / 0.8억 잔금 실행 · 신용대출 0.95억 · 청라 순수령 약 2.48억 · <strong>등촌 잔금 7.8억</strong>
     </div>
 
-    <!-- 시나리오 A: MAX -->
-    <div class="card" style="margin-bottom:14px;border-left:4px solid var(--orange)">
+    <!-- 시나리오 A: 확정 계획 -->
+    <div class="card" style="margin-bottom:14px;border-left:4px solid var(--green)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:var(--orange);background:rgba(249,115,22,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 A · MAX</div>
-          <div style="font-size:15px;font-weight:800;color:var(--text)">황서림 주담대 <span style="color:var(--orange)">4억</span> 실행</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:3px">비과세 1,200만 인정 + 금리 5% 이하 필요</div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);background:rgba(16,185,129,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 A · 확정 계획</div>
+          <div style="font-size:15px;font-weight:800;color:var(--text)">황서림 주담대 <span style="color:var(--purple)">3억 7,400만</span> + 보증보험 추가 <span style="color:var(--green)">3,000만</span></div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">우리은행 4.65% (1년변동) · 비과세 소득 인정 필요</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">잔금 여유</div>
-          <div style="font-size:1.5rem;font-weight:900;color:var(--orange)">+0.43억</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--green)">+0.47억</div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px">
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">황서림 주담대</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:100%;height:100%;background:var(--purple);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">4억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:45%;height:100%;background:var(--purple);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">3.74억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
-          <div style="width:90px;color:var(--muted);flex-shrink:0">새마을금고</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:20%;height:100%;background:var(--orange);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.8억</div>
+          <div style="width:90px;color:var(--muted);flex-shrink:0">회사 보증보험</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:10%;height:100%;background:var(--orange);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.8억</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px">
+          <div style="width:90px;color:var(--muted);flex-shrink:0">보증보험 추가</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:4%;height:100%;background:var(--green);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.3억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">신용대출</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:23.75%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.95억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:12%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.95억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">청라 순수령</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:62%;height:100%;background:var(--green);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">2.48억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:30%;height:100%;background:var(--green);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">2.48억</div>
         </div>
       </div>
       <div style="border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">8.23억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--orange)">+0.43억</strong></div>
-        <div style="font-size:11px;color:var(--muted)">월 납입 약 <strong>215만</strong></div>
+        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">8.27억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--green)">+0.47억</strong></div>
+        <div style="font-size:11px;color:var(--muted)">월 납입 약 <strong>285만</strong></div>
       </div>
-      <div class="ibox y" style="margin-top:10px;font-size:12px">⚠ 잔금 조달 가능 — 그러나 여유 4,300만으로 인테리어·이사비는 별도 자금 또는 절약 필요</div>
+      <div class="ibox g" style="margin-top:10px;font-size:12px">✓ 잔금 조달 가능 — 여유 4,700만으로 인테리어·이사비 일부 충당 가능 (추가 절약 권장)</div>
     </div>
 
-    <!-- 시나리오 B: 표준 -->
-    <div class="card" style="margin-bottom:14px;border-left:4px solid var(--red)">
+    <!-- 시나리오 B: 보수 계획 -->
+    <div class="card" style="margin-bottom:14px;border-left:4px solid var(--yellow)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:var(--red);background:rgba(239,68,68,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 B · 표준</div>
-          <div style="font-size:15px;font-weight:800;color:var(--text)">황서림 주담대 <span style="color:var(--red)">3억</span> 실행</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:3px">과세 소득만으로 DSR 40% 기준 실행 가능 구간</div>
+          <div style="font-size:11px;font-weight:700;color:var(--yellow);background:rgba(245,158,11,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 B · 보수 계획</div>
+          <div style="font-size:15px;font-weight:800;color:var(--text)">황서림 주담대 <span style="color:var(--purple)">3억 7,400만</span> · 보증보험 추가 없음</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">보증보험 3,000만 추가 미실행 시 (8/31 조건 불충족 등)</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">잔금 부족</div>
-          <div style="font-size:1.5rem;font-weight:900;color:var(--red)">-0.57억</div>
+          <div style="font-size:11px;color:var(--muted)">잔금 여유</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--yellow)">+0.17억</div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px">
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">황서림 주담대</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:75%;height:100%;background:var(--purple);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">3억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:47%;height:100%;background:var(--purple);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">3.74억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
-          <div style="width:90px;color:var(--muted);flex-shrink:0">새마을금고</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:20%;height:100%;background:var(--orange);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.8억</div>
+          <div style="width:90px;color:var(--muted);flex-shrink:0">회사 보증보험</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:10%;height:100%;background:var(--orange);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.8억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">신용대출</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:23.75%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.95억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:12%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.95억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">청라 순수령</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:62%;height:100%;background:var(--green);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">2.48억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:31%;height:100%;background:var(--green);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">2.48억</div>
         </div>
       </div>
       <div style="border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">7.23억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--red)">-0.57억</strong></div>
-        <div style="font-size:11px;color:var(--muted)">월 납입 약 <strong>161만</strong></div>
+        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">7.97억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--yellow)">+0.17억</strong></div>
+        <div style="font-size:11px;color:var(--muted)">월 납입 약 <strong>273만</strong></div>
       </div>
-      <div class="ibox r" style="margin-top:10px;font-size:12px">⛔ 잔금 5,700만 부족 — 황서림 주담대 4억 증액 또는 추가 자금 확보 필요</div>
+      <div class="ibox y" style="margin-top:10px;font-size:12px">⚠ 잔금 조달은 가능하나 여유 1,700만 — 인테리어·이사비는 별도 자금 필요. 시나리오 A 진행 권장</div>
     </div>
 
-    <!-- 시나리오 C: 최소 -->
+    <!-- 시나리오 C: 위험 — KB 시세 급락 시 -->
     <div class="card" style="margin-bottom:20px;border-left:4px solid var(--red)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:var(--red);background:rgba(239,68,68,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 C · 최소</div>
-          <div style="font-size:15px;font-weight:800;color:var(--text)">황서림 주담대 <span style="color:var(--red)">2.5억</span> 실행</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:3px">KB 3억 규제 등 대출 한도 미달 시 최소 시나리오</div>
+          <div style="font-size:11px;font-weight:700;color:var(--red);background:rgba(239,68,68,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 C · 위험</div>
+          <div style="font-size:15px;font-weight:800;color:var(--text)">KB 시세 <span style="color:var(--red)">8.5억 이하 하락</span> 시 — 대출 한도 감소</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">심사 기준 시세 하락 → 주담대 한도 2.85억으로 축소 · 잔금 미달</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">잔금 부족</div>
-          <div style="font-size:1.5rem;font-weight:900;color:var(--red)">-1.07억</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--red)">-0.02억</div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:12px">
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">황서림 주담대</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:62.5%;height:100%;background:var(--purple);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">2.5억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:38%;height:100%;background:var(--red);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700;color:var(--red)">2.85억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
-          <div style="width:90px;color:var(--muted);flex-shrink:0">새마을금고</div>
+          <div style="width:90px;color:var(--muted);flex-shrink:0">회사 보증보험</div>
           <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:20%;height:100%;background:var(--orange);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.8억</div>
+          <div style="width:44px;text-align:right;font-weight:700">1.5억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">신용대출</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:23.75%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">0.95억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:12%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">0.95억</div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;font-size:12px">
           <div style="width:90px;color:var(--muted);flex-shrink:0">청라 순수령</div>
-          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:62%;height:100%;background:var(--green);border-radius:4px"></div></div>
-          <div style="width:36px;text-align:right;font-weight:700">2.48억</div>
+          <div style="flex:1;background:rgba(0,0,0,0.07);border-radius:4px;height:8px"><div style="width:32%;height:100%;background:var(--green);border-radius:4px"></div></div>
+          <div style="width:44px;text-align:right;font-weight:700">2.48억</div>
         </div>
       </div>
       <div style="border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">6.73억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--red)">-1.07억</strong></div>
-        <div style="font-size:11px;color:var(--muted)">월 납입 약 <strong>134만</strong></div>
+        <div style="font-size:12px;color:var(--muted)">총 가용 <strong style="color:var(--text)">7.78억</strong> &nbsp;—&nbsp; 잔금 7.8억 = <strong style="color:var(--red)">-0.02억</strong></div>
+        <div style="font-size:11px;color:var(--muted)">KB 시세 8.5억 × 40% - 방공제</div>
       </div>
-      <div class="ibox r" style="margin-top:10px;font-size:12px">⛔ 잔금 1.07억 부족 — 반드시 주담대 증액 또는 추가 자금 확보 필요</div>
+      <div class="ibox r" style="margin-top:10px;font-size:12px">⚠ <strong>현재 KB시세 10억 7,250만 유지 중 — 시세 안정이 핵심 조건</strong><br>→ 시세 하락 전 대출 심사 신속 완료 필요 · 8.5억 이상 유지 시 시나리오 A/B 모두 안전</div>
     </div>
   </div>
 
@@ -1485,7 +1481,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="fund-pct" style="color:var(--green);font-weight:700">26%</div>
     </div>
     <div class="fund-row">
-      <div class="fund-label">새마을금고 보증보험</div>
+      <div class="fund-label">회사 보증보험 (새마을금고)</div>
       <div class="fund-bar-wrap"><div class="fund-bar" style="width:21.2%;background:var(--orange)"></div></div>
       <div class="fund-amt">2억</div>
       <div class="fund-pct" style="color:var(--orange);font-weight:700">21%</div>
