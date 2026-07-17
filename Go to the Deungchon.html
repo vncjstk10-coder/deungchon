@@ -1185,71 +1185,65 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ── 플랜 비교 ── -->
   <div class="stitle">📊 조달 플랜 비교 <span style="font-size:11px;font-weight:400;color:var(--muted);margin-left:4px">목표 9억 9,550만 기준</span></div>
-  <div class="card" style="padding:0!important;overflow:hidden;margin-bottom:20px">
 
-    <!-- 1위 · 4안 -->
-    <div style="display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(16,185,129,.07);border-bottom:1px solid var(--border)">
-      <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">1</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:2px">🌲💼 4안 · 산림금융 + IRP 해지 <span style="font-size:10px;background:var(--green);color:#fff;padding:1px 7px;border-radius:99px;vertical-align:middle">최선</span></div>
-        <div style="font-size:11px;color:var(--muted)">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
+  <!-- 4안 추천 카드 (풀 width) -->
+  <div style="border-radius:16px;border:2px solid var(--green);background:rgba(16,185,129,.08);padding:18px;margin-bottom:12px">
+    <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:.06em;margin-bottom:6px">🏆 현재 최선의 방안</div>
+    <div style="font-size:15px;font-weight:900;color:var(--green);margin-bottom:3px">🌲💼 4안 · 산림금융 + IRP 해지</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:14px">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="background:rgba(16,185,129,.13);border-radius:12px;padding:12px;text-align:center">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:4px">조달 가능</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--green)">9억 8,607만</div>
       </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:13px;font-weight:900;color:var(--text)">9억 8,607만</div>
-        <div style="font-size:12px;font-weight:900;color:var(--orange)">−943만 부족</div>
+      <div style="background:rgba(251,146,60,.13);border-radius:12px;padding:12px;text-align:center">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:4px">아직 부족</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--orange)">943만</div>
       </div>
     </div>
+  </div>
 
-    <!-- 2위 · 3안 -->
-    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">💼 3안 · 우리은행 + IRP 해지</div>
-        <div style="font-size:11px;color:var(--muted)">우리은행 3.74억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:12px;font-weight:800;color:var(--text)">9억 3,107만</div>
-        <div style="font-size:12px;font-weight:900;color:var(--orange)">−6,443만 부족</div>
-      </div>
+  <!-- 나머지 4개 · 2×2 그리드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+
+    <!-- 3안 -->
+    <div style="border-radius:12px;border:1.5px solid var(--border);padding:14px">
+      <div style="font-size:11px;font-weight:800;color:var(--text);margin-bottom:4px">💼 3안</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">우리은행 + IRP 해지</div>
+      <div style="font-size:10px;color:var(--muted)">조달 가능</div>
+      <div style="font-size:1rem;font-weight:900;color:var(--text);margin-bottom:6px">9억 3,107만</div>
+      <div style="font-size:10px;color:var(--muted)">부족</div>
+      <div style="font-size:1.1rem;font-weight:900;color:var(--orange)">−6,443만</div>
     </div>
 
-    <!-- 3위 · 2안 -->
-    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🌲 2안 · 산림금융조합 (2금융권)</div>
-        <div style="font-size:11px;color:var(--muted)">산림금융 4.29억 + 청라잔금 + 영준·서림 현금</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:12px;font-weight:800;color:var(--text)">9억 2,190만</div>
-        <div style="font-size:12px;font-weight:900;color:var(--orange)">−7,360만 부족</div>
-      </div>
+    <!-- 2안 -->
+    <div style="border-radius:12px;border:1.5px solid var(--border);padding:14px">
+      <div style="font-size:11px;font-weight:800;color:var(--text);margin-bottom:4px">🌲 2안</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">산림금융조합 (2금융권)</div>
+      <div style="font-size:10px;color:var(--muted)">조달 가능</div>
+      <div style="font-size:1rem;font-weight:900;color:var(--text);margin-bottom:6px">9억 2,190만</div>
+      <div style="font-size:10px;color:var(--muted)">부족</div>
+      <div style="font-size:1.1rem;font-weight:900;color:var(--orange)">−7,360만</div>
     </div>
 
-    <!-- 4위 · 5안 -->
-    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🏦📋 5안 · 우리은행 + 보증보험 3천만</div>
-        <div style="font-size:11px;color:var(--muted)">1안 + 안영준 명의 보증보험 대출 3,000만 추가</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:12px;font-weight:800;color:var(--text)">8억 9,690만</div>
-        <div style="font-size:12px;font-weight:900;color:var(--red)">−9,860만 부족</div>
-      </div>
+    <!-- 5안 -->
+    <div style="border-radius:12px;border:1.5px solid var(--border);padding:14px">
+      <div style="font-size:11px;font-weight:800;color:var(--text);margin-bottom:4px">🏦📋 5안</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">우리은행 + 보증보험</div>
+      <div style="font-size:10px;color:var(--muted)">조달 가능</div>
+      <div style="font-size:1rem;font-weight:900;color:var(--text);margin-bottom:6px">8억 9,690만</div>
+      <div style="font-size:10px;color:var(--muted)">부족</div>
+      <div style="font-size:1.1rem;font-weight:900;color:var(--red)">−9,860만</div>
     </div>
 
-    <!-- 5위 · 1안 -->
-    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px">
-      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🏦 1안 · 우리은행 (1금융권)</div>
-        <div style="font-size:11px;color:var(--muted)">우리은행 3.74억 + 청라잔금 + 영준·서림 현금</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:12px;font-weight:800;color:var(--text)">8억 6,690만</div>
-        <div style="font-size:12px;font-weight:900;color:var(--red)">−1억 2,860만 부족</div>
-      </div>
+    <!-- 1안 -->
+    <div style="border-radius:12px;border:1.5px solid var(--border);padding:14px">
+      <div style="font-size:11px;font-weight:800;color:var(--text);margin-bottom:4px">🏦 1안</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">우리은행 (1금융권)</div>
+      <div style="font-size:10px;color:var(--muted)">조달 가능</div>
+      <div style="font-size:1rem;font-weight:900;color:var(--text);margin-bottom:6px">8억 6,690만</div>
+      <div style="font-size:10px;color:var(--muted)">부족</div>
+      <div style="font-size:1.1rem;font-weight:900;color:var(--red)">−1억 2,860만</div>
     </div>
 
   </div>
