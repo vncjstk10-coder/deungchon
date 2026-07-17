@@ -1185,74 +1185,71 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ── 플랜 비교 ── -->
   <div class="stitle">📊 조달 플랜 비교 <span style="font-size:11px;font-weight:400;color:var(--muted);margin-left:4px">목표 9억 9,550만 기준</span></div>
-  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+  <div class="card" style="padding:0!important;overflow:hidden;margin-bottom:20px">
 
-    <!-- 4안 BEST -->
-    <div style="border-radius:14px;border:2px solid var(--green);background:rgba(16,185,129,.06);padding:14px 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <span style="font-size:12px;font-weight:800;color:var(--green)">🌲💼 4안 · 산림금융 + IRP 해지</span>
-        <span style="font-size:11px;font-weight:900;color:var(--orange)">−943만 부족</span>
+    <!-- 1위 · 4안 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(16,185,129,.07);border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center">1</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:2px">🌲💼 4안 · 산림금융 + IRP 해지 <span style="font-size:10px;background:var(--green);color:#fff;padding:1px 7px;border-radius:99px;vertical-align:middle">최선</span></div>
+        <div style="font-size:11px;color:var(--muted)">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
-      <div style="height:7px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:99.1%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:99px"></div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;font-size:10px">
-        <span style="color:var(--green);font-weight:700">99.1% 달성 · 조달 9억 8,607만</span>
-        <span style="background:var(--green);color:#fff;padding:2px 8px;border-radius:99px;font-weight:700">최선</span>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:13px;font-weight:900;color:var(--text)">9억 8,607만</div>
+        <div style="font-size:12px;font-weight:900;color:var(--orange)">−943만 부족</div>
       </div>
     </div>
 
-    <!-- 3안 -->
-    <div style="border-radius:14px;border:1.5px solid var(--border);padding:14px 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <span style="font-size:12px;font-weight:800;color:var(--text)">💼 3안 · 우리은행 + IRP 해지</span>
-        <span style="font-size:11px;font-weight:900;color:var(--orange)">−6,443만 부족</span>
+    <!-- 2위 · 3안 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">💼 3안 · 우리은행 + IRP 해지</div>
+        <div style="font-size:11px;color:var(--muted)">우리은행 3.74억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">우리은행 3.74억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
-      <div style="height:7px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:93.5%;background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:99px"></div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:12px;font-weight:800;color:var(--text)">9억 3,107만</div>
+        <div style="font-size:12px;font-weight:900;color:var(--orange)">−6,443만 부족</div>
       </div>
-      <div style="font-size:10px;color:var(--muted)">93.5% 달성 · 조달 9억 3,107만</div>
     </div>
 
-    <!-- 2안 -->
-    <div style="border-radius:14px;border:1.5px solid var(--border);padding:14px 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <span style="font-size:12px;font-weight:800;color:var(--text)">🌲 2안 · 산림금융조합 (2금융권)</span>
-        <span style="font-size:11px;font-weight:900;color:var(--orange)">−7,360만 부족</span>
+    <!-- 3위 · 2안 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🌲 2안 · 산림금융조합 (2금융권)</div>
+        <div style="font-size:11px;color:var(--muted)">산림금융 4.29억 + 청라잔금 + 영준·서림 현금</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">산림금융 4.29억 + 청라잔금 + 영준·서림 현금</div>
-      <div style="height:7px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:92.6%;background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:99px"></div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:12px;font-weight:800;color:var(--text)">9억 2,190만</div>
+        <div style="font-size:12px;font-weight:900;color:var(--orange)">−7,360만 부족</div>
       </div>
-      <div style="font-size:10px;color:var(--muted)">92.6% 달성 · 조달 9억 2,190만</div>
     </div>
 
-    <!-- 5안 -->
-    <div style="border-radius:14px;border:1.5px solid var(--border);padding:14px 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <span style="font-size:12px;font-weight:800;color:var(--text)">🏦📋 5안 · 우리은행 + 보증보험 3천만</span>
-        <span style="font-size:11px;font-weight:900;color:var(--red)">−9,860만 부족</span>
+    <!-- 4위 · 5안 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🏦📋 5안 · 우리은행 + 보증보험 3천만</div>
+        <div style="font-size:11px;color:var(--muted)">1안 + 안영준 명의 보증보험 대출 3,000만 추가</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">1안 + 안영준 명의 보증보험 대출 3,000만 추가</div>
-      <div style="height:7px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:90.1%;background:linear-gradient(90deg,#ef4444,#f87171);border-radius:99px"></div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:12px;font-weight:800;color:var(--text)">8억 9,690만</div>
+        <div style="font-size:12px;font-weight:900;color:var(--red)">−9,860만 부족</div>
       </div>
-      <div style="font-size:10px;color:var(--muted)">90.1% 달성 · 조달 8억 9,690만</div>
     </div>
 
-    <!-- 1안 -->
-    <div style="border-radius:14px;border:1.5px solid var(--border);padding:14px 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <span style="font-size:12px;font-weight:800;color:var(--text)">🏦 1안 · 우리은행 (1금융권)</span>
-        <span style="font-size:11px;font-weight:900;color:var(--red)">−1억 2,860만 부족</span>
+    <!-- 5위 · 1안 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:13px 16px">
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">🏦 1안 · 우리은행 (1금융권)</div>
+        <div style="font-size:11px;color:var(--muted)">우리은행 3.74억 + 청라잔금 + 영준·서림 현금</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">우리은행 3.74억 + 청라잔금 + 영준·서림 현금</div>
-      <div style="height:7px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:87.1%;background:linear-gradient(90deg,#ef4444,#f87171);border-radius:99px"></div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:12px;font-weight:800;color:var(--text)">8억 6,690만</div>
+        <div style="font-size:12px;font-weight:900;color:var(--red)">−1억 2,860만 부족</div>
       </div>
-      <div style="font-size:10px;color:var(--muted)">87.1% 달성 · 조달 8억 6,690만</div>
     </div>
 
   </div>
