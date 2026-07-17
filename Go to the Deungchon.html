@@ -1116,214 +1116,195 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <p>모든 비용 · 모든 자산 · 플랜별 최종 잔액 한눈에 비교</p>
   </div>
 
-  <!-- ── 상단 KPI ── -->
-  <div class="kpi-bar" style="margin-bottom:20px">
-    <div class="kpi-bar-card" style="border-top:3px solid var(--red)">
-      <div class="lbl">주택 매수 대금</div>
-      <div class="num re">9억 8,000만</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">중도금 2억 + 잔금 7억 8,000만</div>
-    </div>
-    <div class="kpi-bar-card" style="border-top:3px solid var(--orange)">
-      <div class="lbl">추가 비용 (취득세 제외)</div>
-      <div class="num or">1,549.5만</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">중개비 599.5만 + 이사비 300만 + 에어컨 50만 + 인테리어 600만</div>
-    </div>
-    <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
-      <div class="lbl">실질 총 필요액</div>
-      <div class="num pu">9억 9,550만</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">취득세 3,597만 별도 할부</div>
+  <!-- ── HERO ── -->
+  <div style="text-align:center;padding:22px 0 20px;margin-bottom:20px;border-bottom:1px solid var(--border)">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:10px">총 필요 자금 (취득세 제외)</div>
+    <div style="font-size:2.8rem;font-weight:900;color:var(--purple);line-height:1;margin-bottom:12px">9억 9,550만</div>
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--muted)">
+      <span>잔금·중도금 <strong style="color:var(--text)">9.8억</strong></span>
+      <span style="opacity:.35">|</span>
+      <span>중개비 <strong style="color:var(--text)">599.5만</strong></span>
+      <span style="opacity:.35">|</span>
+      <span>이사비 <strong style="color:var(--text)">300만</strong></span>
+      <span style="opacity:.35">|</span>
+      <span>에어컨 <strong style="color:var(--text)">50만</strong></span>
+      <span style="opacity:.35">|</span>
+      <span>인테리어 <strong style="color:var(--text)">600만</strong></span>
     </div>
   </div>
 
-  <!-- ── 비용 전체 내역 ── -->
+  <!-- ── 납부 현황 2박스 ── -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div style="border-radius:14px;border:2px solid var(--green);background:rgba(16,185,129,.08);padding:18px 16px">
+      <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:.04em;margin-bottom:6px">✅ 이미 납부</div>
+      <div style="font-size:1.9rem;font-weight:900;color:var(--green);line-height:1">3억 1,000만</div>
+      <div style="margin-top:6px;font-size:11px;color:var(--muted)">계약금 1.1억 · 중도금 2억</div>
+    </div>
+    <div style="border-radius:14px;border:2px solid var(--red);background:rgba(239,68,68,.07);padding:18px 16px">
+      <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.04em;margin-bottom:6px">⏳ 앞으로 필요</div>
+      <div style="font-size:1.9rem;font-weight:900;color:var(--red);line-height:1">7억 9,550만</div>
+      <div style="margin-top:6px;font-size:11px;color:var(--muted)">9/16 잔금일 기준</div>
+    </div>
+  </div>
+
+  <!-- ── 전체 진행률 바 ── -->
+  <div style="margin-bottom:24px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px">
+      <span style="color:var(--green);font-weight:700">납부 완료 31.1%</span>
+      <span style="color:var(--muted)">잔여 68.9%</span>
+    </div>
+    <div style="height:10px;background:var(--border);border-radius:99px;overflow:hidden">
+      <div style="height:100%;width:31.1%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:99px"></div>
+    </div>
+  </div>
+
+  <!-- ── 비용 내역 ── -->
   <div class="stitle">💳 비용 전체 내역</div>
-  <div class="card" style="margin-bottom:16px">
-
-    <!-- 이미 납부 완료 -->
-    <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">✓ 이미 납부 완료</div>
-    <div class="fund-row">
-      <div class="fund-label">계약금</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--green);font-weight:700">✓ 완료 · 06/01</span>
-        <span style="font-weight:800;color:var(--muted)">1억 1,000만</span>
-      </div>
+  <div class="card" style="padding:0!important;overflow:hidden;margin-bottom:16px">
+    <div style="padding:9px 16px;background:rgba(16,185,129,.09);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:11px;font-weight:700;color:var(--green)">✓ 납부 완료</span>
+      <span style="font-size:11px;font-weight:800;color:var(--muted)">3억 1,000만</span>
     </div>
-    <div class="fund-row" style="margin-bottom:16px">
-      <div class="fund-label">중도금</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--green);font-weight:700">✓ 완료 · 07/30</span>
-        <span style="font-weight:800;color:var(--muted)">2억</span>
-      </div>
+    <div style="padding:8px 16px 4px">
+      <div class="fund-row"><div class="fund-label">계약금</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">✓ 06/01</span><span style="font-weight:800;color:var(--muted)">1억 1,000만</span></div>
+      <div class="fund-row" style="border-bottom:none;margin-bottom:4px"><div class="fund-label">중도금</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">✓ 07/30</span><span style="font-weight:800;color:var(--muted)">2억</span></div>
     </div>
-
-    <!-- 앞으로 납부 예정 -->
-    <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">📅 앞으로 납부 예정</div>
-    <div class="fund-row">
-      <div class="fund-label">잔금</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--orange);font-weight:700">9/16</span>
-        <span style="font-weight:800;color:var(--red)">7억 8,000만</span>
-      </div>
+    <div style="padding:9px 16px;background:rgba(239,68,68,.06);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:11px;font-weight:700;color:var(--red)">📅 납부 예정</span>
+      <span style="font-size:11px;font-weight:800;color:var(--red)">7억 9,550만</span>
     </div>
-    <div class="fund-row">
-      <div class="fund-label">등촌 부동산 중개비 (VAT포함)</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--orange);font-weight:700">9/16</span>
-        <span style="font-weight:800">599.5만</span>
-      </div>
-    </div>
-    <div class="fund-row">
-      <div class="fund-label">청라 부동산 중개비</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--green);font-weight:700">청라 잔금에서 차감</span>
-        <span style="font-weight:800;color:var(--muted)">270만</span>
-      </div>
-    </div>
-    <div class="fund-row">
-      <div class="fund-label">이사비 (1차 8/28 + 2차 9/21~23)</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--green);font-weight:700">확정</span>
-        <span style="font-weight:800">300만</span>
-      </div>
-    </div>
-    <div class="fund-row">
-      <div class="fund-label">에어컨 해체·설치</div>
-      <div style="flex:1"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;color:var(--orange);font-weight:700">별도</span>
-        <span style="font-weight:800">50만</span>
-      </div>
-    </div>
-    <div class="fund-row">
-      <div class="fund-label">인테리어 비용</div>
-      <div style="flex:1"></div>
-      <div style="font-weight:800">600만</div>
-    </div>
-
-    <!-- 소계 -->
-    <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <div>
-        <div style="font-size:10px;color:var(--muted)">이미 납부</div>
-        <div style="font-size:1.1rem;font-weight:900;color:var(--muted)">3억 1,000만</div>
-        <div style="font-size:10px;color:var(--green);font-weight:700">계약금 + 중도금</div>
-      </div>
-      <div style="border-left:1px solid var(--border);padding-left:10px">
-        <div style="font-size:10px;color:var(--muted)">앞으로 필요 (취득세 제외)</div>
-        <div style="font-size:1.1rem;font-weight:900;color:var(--red)">7억 9,550만</div>
-        <div style="font-size:10px;color:var(--orange);font-weight:700">잔금 + 중개비 + 이사비 + 에어컨 + 인테리어</div>
-      </div>
+    <div style="padding:8px 16px 4px">
+      <div class="fund-row"><div class="fund-label">잔금</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">9/16</span><span style="font-weight:800;color:var(--red)">7억 8,000만</span></div>
+      <div class="fund-row"><div class="fund-label">등촌 중개비 (VAT포함)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">9/16</span><span style="font-weight:800">599.5만</span></div>
+      <div class="fund-row"><div class="fund-label">청라 중개비</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">청라 잔금 차감</span><span style="font-weight:800;color:var(--muted)">270만</span></div>
+      <div class="fund-row"><div class="fund-label">이사비 (8/28 · 9/21~23)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">확정</span><span style="font-weight:800">300만</span></div>
+      <div class="fund-row"><div class="fund-label">에어컨 해체·설치</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">별도</span><span style="font-weight:800">50만</span></div>
+      <div class="fund-row" style="border-bottom:none;margin-bottom:4px"><div class="fund-label">인테리어</div><div style="flex:1"></div><span style="font-weight:800">600만</span></div>
     </div>
   </div>
 
-  <!-- ── 플랜별 최종 잔액 비교 ── -->
-  <div class="stitle">🔄 조달 플랜별 최종 잔액 비교</div>
-  <div style="font-size:12px;color:var(--muted);margin:-10px 0 14px;line-height:1.6">기준: 중도금+잔금 9억 8,000만 + 중개비 599.5만 + 이사비 300만 + 에어컨 50만 + 인테리어 600만 = <strong style="color:var(--text)">9억 9,550만</strong> (취득세 별도)</div>
-
+  <!-- ── 플랜 비교 (프로그레스 바) ── -->
+  <div class="stitle">📊 조달 플랜 비교 <span style="font-size:11px;font-weight:400;color:var(--muted);margin-left:4px">목표 9억 9,550만 기준</span></div>
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
 
-    <!-- 1안 -->
-    <div class="card" style="padding:14px 16px!important;border-left:4px solid var(--red)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:2px">🏦 1안 · 우리은행 (1금융권)</div>
-          <div style="font-size:11px;color:var(--muted)">우리은행 3억 7,400만 + 청라잔금 + 영준·서림 현금</div>
+    <!-- 4안 BEST -->
+    <div style="border-radius:14px;border:2px solid var(--green);background:rgba(16,185,129,.06);padding:15px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--green)">🌲💼 4안 · 산림금융 + IRP 해지&nbsp;<span style="font-size:10px;background:var(--green);color:#fff;padding:2px 7px;border-radius:99px;vertical-align:middle">최선</span></div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
         </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">조달 가능</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--text)">8억 6,690만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 1억 2,860만 부족</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5안 -->
-    <div class="card" style="padding:14px 16px!important;border-left:4px solid var(--red)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:2px">🏦📋 5안 · 우리은행 + 보증보험 3천만</div>
-          <div style="font-size:11px;color:var(--muted)">1안 + 안영준 명의 보증보험 대출 3,000만 추가</div>
-        </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">조달 가능</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--text)">8억 9,690만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--red)">− 9,860만 부족</div>
+        <div style="text-align:right;flex-shrink:0;margin-left:8px">
+          <div style="font-size:1rem;font-weight:900;color:var(--text)">9억 8,607만</div>
+          <div style="font-size:.9rem;font-weight:900;color:var(--orange)">−943만 부족</div>
         </div>
       </div>
-    </div>
-
-    <!-- 2안 -->
-    <div class="card" style="padding:14px 16px!important;border-left:4px solid var(--orange)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:2px">🌲 2안 · 산림금융조합 (2금융권)</div>
-          <div style="font-size:11px;color:var(--muted)">산림금융 4억 2,900만 + 청라잔금 + 영준·서림 현금</div>
-        </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">조달 가능</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 2,190만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 7,360만 부족</div>
-        </div>
+      <div style="height:8px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:99.1%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:99px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px">
+        <span style="color:var(--green);font-weight:700">99.1% 달성</span>
+        <span style="color:var(--muted)">943만 추가 조달 필요</span>
       </div>
     </div>
 
     <!-- 3안 -->
-    <div class="card" style="padding:14px 16px!important;border-left:4px solid var(--orange)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:2px">💼 3안 · 우리은행 + IRP/퇴직연금 해지</div>
-          <div style="font-size:11px;color:var(--muted)">우리은행 3억 7,400만 + IRP 해지 세후 6,417만 추가</div>
+    <div style="border-radius:14px;border:1.5px solid var(--border);padding:15px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--text)">💼 3안 · 우리은행 + IRP 해지</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">우리은행 3.74억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
         </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">조달 가능</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 3,107만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 6,443만 부족</div>
+        <div style="text-align:right;flex-shrink:0;margin-left:8px">
+          <div style="font-size:1rem;font-weight:900;color:var(--text)">9억 3,107만</div>
+          <div style="font-size:.9rem;font-weight:900;color:var(--orange)">−6,443만 부족</div>
         </div>
+      </div>
+      <div style="height:8px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:93.5%;background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:99px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted)">
+        <span>93.5% 달성</span><span>6,443만 추가 필요</span>
       </div>
     </div>
 
-    <!-- 4안 (best) -->
-    <div class="card" style="padding:14px 16px!important;border-left:4px solid var(--green);background:rgba(16,185,129,0.05)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:2px">🌲💼 4안 · 산림금융 + IRP 해지 ✅ 최선</div>
-          <div style="font-size:11px;color:var(--muted)">산림금융 4억 2,900만 + IRP 해지 세후 6,417만 추가</div>
+    <!-- 2안 -->
+    <div style="border-radius:14px;border:1.5px solid var(--border);padding:15px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--text)">🌲 2안 · 산림금융조합 (2금융권)</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">산림금융 4.29억 + 청라잔금 + 영준·서림 현금</div>
         </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:11px;color:var(--muted)">조달 가능</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--text)">9억 8,607만</div>
-          <div style="font-size:1rem;font-weight:900;color:var(--orange)">− 943만 부족</div>
+        <div style="text-align:right;flex-shrink:0;margin-left:8px">
+          <div style="font-size:1rem;font-weight:900;color:var(--text)">9억 2,190만</div>
+          <div style="font-size:.9rem;font-weight:900;color:var(--orange)">−7,360만 부족</div>
         </div>
       </div>
-      <div style="margin-top:8px;padding:6px 10px;background:rgba(251,146,60,0.12);border-radius:8px;font-size:11px;color:var(--orange);font-weight:700">
-        추가 비용(중개비+이사비+인테리어 1,549.5만) 포함 시 943만 추가 조달 필요
+      <div style="height:8px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:92.6%;background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:99px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted)">
+        <span>92.6% 달성</span><span>7,360만 추가 필요</span>
+      </div>
+    </div>
+
+    <!-- 5안 -->
+    <div style="border-radius:14px;border:1.5px solid var(--border);padding:15px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--text)">🏦📋 5안 · 우리은행 + 보증보험 3천만</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">1안 + 안영준 명의 보증보험 대출 3,000만 추가</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:8px">
+          <div style="font-size:1rem;font-weight:900;color:var(--text)">8억 9,690만</div>
+          <div style="font-size:.9rem;font-weight:900;color:var(--red)">−9,860만 부족</div>
+        </div>
+      </div>
+      <div style="height:8px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:90.1%;background:linear-gradient(90deg,#ef4444,#f87171);border-radius:99px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted)">
+        <span>90.1% 달성</span><span>9,860만 추가 필요</span>
+      </div>
+    </div>
+
+    <!-- 1안 -->
+    <div style="border-radius:14px;border:1.5px solid var(--border);padding:15px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--text)">🏦 1안 · 우리은행 (1금융권)</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">우리은행 3.74억 + 청라잔금 + 영준·서림 현금</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:8px">
+          <div style="font-size:1rem;font-weight:900;color:var(--text)">8억 6,690만</div>
+          <div style="font-size:.9rem;font-weight:900;color:var(--red)">−1억 2,860만 부족</div>
+        </div>
+      </div>
+      <div style="height:8px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:87.1%;background:linear-gradient(90deg,#ef4444,#f87171);border-radius:99px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted)">
+        <span>87.1% 달성</span><span>1억 2,860만 추가 필요</span>
       </div>
     </div>
 
   </div>
 
-  <!-- ── 취득세 별도 안내 ── -->
+  <!-- ── 취득세 ── -->
   <div class="stitle">🧾 취득세 — 별도 할부 납부</div>
-  <div class="card" style="background:var(--r2);border:1.5px solid var(--red);margin-bottom:16px">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-      <div>
-        <div style="font-size:13px;font-weight:800;color:var(--red);margin-bottom:4px">취득세 + 지방교육세</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.7">
-          10억 9,000만 × 3.3% (농특세 면제) · 1주택자 기준<br>
-          납부기한: 잔금일(9/16)로부터 60일 이내<br>
-          <strong style="color:var(--red)">자금 조달 계획 금액에 미포함 — 별도 할부 준비 필요</strong>
-        </div>
+  <div style="border-radius:14px;border:2px solid var(--red);background:rgba(239,68,68,.07);padding:18px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:13px;font-weight:800;color:var(--red);margin-bottom:6px">취득세 + 지방교육세</div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.8">
+        10억 9,000만 × 3.3% · 1주택자 기준<br>
+        납부기한: 잔금일(9/16)로부터 60일 이내<br>
+        <strong style="color:var(--red)">조달 계획 금액에 미포함 — 별도 할부 준비</strong>
       </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:10px;color:var(--muted)">총액</div>
-        <div style="font-size:1.4rem;font-weight:900;color:var(--red)">3,597만</div>
-        <div style="font-size:12px;font-weight:700;color:var(--orange)">6개월 할부 시 월 약 600만</div>
-      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0">
+      <div style="font-size:10px;color:var(--muted)">총액</div>
+      <div style="font-size:2rem;font-weight:900;color:var(--red)">3,597만</div>
+      <div style="font-size:12px;font-weight:700;color:var(--orange)">6개월 할부 시 월 약 600만</div>
     </div>
   </div>
 
