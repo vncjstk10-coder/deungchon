@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet">
 <title>등촌부영 이사 프로젝트</title>
 <style>
 :root{
@@ -198,8 +199,27 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 /* 모바일 전용 하단 탭바 — 데스크톱에서 숨김 */
 .mob-nav{display:none}
 
-/* MOBILE — 앱 스타일 전면 재설계 */
+/* MOBILE — 토스 앱 스타일 */
 @media(max-width:768px){
+  /* ── 토스 다크 팔레트 강제 적용 ── */
+  body{
+    --bg:#0F1116;--white:#1C1F2A;--card:#1C1F2A;
+    --border:rgba(255,255,255,.06);--lite:#252638;
+    --sh:0 4px 24px rgba(0,0,0,.5);
+    --text:#F0F0F5;--t2:#B8BCC8;--muted:#6C737D;
+    --p3:rgba(49,130,246,.15);--p4:rgba(49,130,246,.1);
+    --purple:#3182F6;--p2:#2563EB;
+    --green:#23C75E;--g2:rgba(35,199,94,.1);
+    --red:#F04452;--r2:rgba(240,68,82,.1);
+    --orange:#FF8A00;--o2:rgba(255,138,0,.1);
+    background:#0F1116!important;
+    font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif!important;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:-.01em;
+  }
+  .layout,.main,.tab-panel,.tab-panel.active,.con{background:#0F1116!important}
+  .card{box-shadow:0 2px 16px rgba(0,0,0,.4)!important}
+
   /* ─── 레이아웃 ─── */
   .layout{flex-direction:column}
   .sidebar{display:none!important}
@@ -207,7 +227,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* ─── 하단 탭 네비게이션 (앱 스타일) ─── */
   .mob-nav{
     display:flex!important;position:fixed;bottom:0;left:0;right:0;
-    background:#16153A;border-top:1px solid rgba(255,255,255,0.07);
+    background:#0A0C14;border-top:1px solid rgba(255,255,255,.04);
     flex-direction:row;overflow-x:auto;overflow-y:hidden;
     z-index:200;height:68px;align-items:center;
     padding:4px 4px env(safe-area-inset-bottom,4px);
@@ -217,7 +237,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .mob-btn{
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     gap:3px;flex:0 0 auto;min-width:62px;min-height:52px;padding:6px 8px;
-    border:none;background:transparent;color:rgba(255,255,255,0.42);
+    border:none;background:transparent;color:rgba(255,255,255,.30);
     font-size:10px;font-weight:600;cursor:pointer;font-family:inherit;
     transition:background .18s,color .18s;white-space:nowrap;
     border-radius:12px;-webkit-tap-highlight-color:transparent
@@ -228,14 +248,14 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
     text-align:center;overflow:hidden;text-overflow:ellipsis
   }
   .mob-btn.active{
-    background:rgba(123,110,246,0.32);color:#fff;
-    box-shadow:inset 0 0 0 1px rgba(123,110,246,0.28)
+    background:rgba(49,130,246,.1);color:#3182F6;
+    box-shadow:none
   }
-  .mob-btn:hover{background:rgba(255,255,255,0.08);color:#fff}
+  .mob-btn:hover{background:rgba(255,255,255,.05);color:rgba(255,255,255,.7)}
   .mob-sep{width:1px;background:rgba(255,255,255,0.08);flex-shrink:0;margin:10px 3px}
 
   /* ─── 콘텐츠 영역 ─── */
-  .con{padding:16px 16px 90px}
+  .con{padding:16px 20px 96px}
 
   /* ─── 페이지 헤더 (.ph) — Dynamic Island 여백 포함 ─── */
   .ph{padding-top:8px;margin-bottom:16px!important}
