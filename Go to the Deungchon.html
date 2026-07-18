@@ -484,7 +484,90 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 .person-btn:hover:not(.active){border-color:var(--purple);color:var(--purple)}
 #fp-btn-4{border-color:var(--green);color:var(--green)}
 #fp-btn-4.active{background:var(--green);border-color:var(--green);color:#fff}
-#fp-btn-4:hover:not(.active){border-color:var(--green);color:var(--green)}</style>
+#fp-btn-4:hover:not(.active){border-color:var(--green);color:var(--green)}
+
+/* ══════════════════════════════════════════
+   DESIGN ENHANCEMENTS v2  (2026-07-19)
+   PC + MOBILE 시각 품질 개선
+══════════════════════════════════════════ */
+
+/* ── PC 전용: 카드 / KPI 호버 ── */
+@media(min-width:769px){
+  .card{transition:box-shadow .22s ease,transform .18s ease}
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green):hover{
+    box-shadow:0 8px 32px rgba(99,91,255,.14)!important;transform:translateY(-2px)
+  }
+  .kpi-bar-card{transition:transform .15s ease,box-shadow .15s ease}
+  .kpi-bar-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(123,110,246,.18)!important}
+  /* 페이지 헤더 왼쪽 보라 강조선 */
+  .ph{padding-left:14px;border-left:3px solid var(--purple);border-radius:0}
+  /* 섹션 타이틀 왼쪽 강조선 */
+  .stitle{padding-left:12px;border-left:3px solid var(--purple)}
+  .stitle:first-child{margin-top:0}
+  /* 사이드바 활성 버튼 왼쪽 인디케이터 */
+  .sb-tab.active{box-shadow:inset 3px 0 0 var(--purple)}
+  /* ibox 호버 슬라이드 */
+  .ibox{transition:transform .15s ease}
+  .ibox:hover{transform:translateX(3px)}
+  /* 스크롤바 세련화 */
+  ::-webkit-scrollbar-thumb{background:var(--lite);border-radius:3px}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(123,110,246,.35)}
+}
+
+/* ── 공통: 타임라인 활성 노드 펄스 ── */
+@keyframes nd-pulse{0%,100%{box-shadow:0 0 0 0 rgba(249,115,22,.35)}60%{box-shadow:0 0 0 11px transparent}}
+.tl-step.active .tl-node{animation:nd-pulse 2s ease-in-out infinite}
+
+/* ── 공통: 탭 패널 페이드인 ── */
+.tab-panel.active{animation:panel-fade .22s ease both}
+@keyframes panel-fade{from{opacity:.45;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+/* ── 공통: 프로그레스 바 채움 애니메이션 ── */
+@keyframes bar-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.pbar,.fund-bar,.prog-bar{transform-origin:left;animation:bar-grow .9s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ── 모바일 전용 개선 ── */
+@media(max-width:768px){
+  /* 그래디언트 카드에 장식 오브 */
+  .card-orange,.card-red,.card-purple,.card-green{overflow:hidden;position:relative}
+  .card-orange::after,.card-red::after,.card-purple::after,.card-green::after{
+    content:'';position:absolute;bottom:-28px;right:-22px;
+    width:120px;height:120px;border-radius:50%;
+    background:rgba(255,255,255,.07);pointer-events:none;z-index:0
+  }
+  /* 페이지 헤더 하단 구분선 */
+  .ph{border-bottom:1px solid rgba(255,255,255,.07)!important;padding-bottom:14px!important}
+  /* KPI 바 카드 상단 액센트 */
+  .kpi-bar-card{border-top:2px solid rgba(49,130,246,.4)!important}
+  /* 현금흐름 거래 행 — 필 스타일 */
+  .cf-tx{
+    background:rgba(255,255,255,.03)!important;
+    border-radius:10px!important;
+    padding:10px 12px!important;
+    margin-bottom:5px!important;
+    border-bottom:none!important
+  }
+  /* 현금흐름 순지출 박스 강조 */
+  .cf-net{background:rgba(49,130,246,.1)!important;border:1px solid rgba(49,130,246,.14)!important}
+  /* 하단 탭 활성 점 인디케이터 */
+  .mob-btn{position:relative}
+  .mob-btn.active::after{
+    content:'';position:absolute;top:5px;left:50%;
+    transform:translateX(-50%);
+    width:4px;height:4px;border-radius:50%;
+    background:#3182F6
+  }
+  /* 리스크 카드 다크 모드 적응 */
+  .risk-card{background:rgba(240,68,82,.08)!important;border-color:rgba(240,68,82,.22)!important}
+  /* 타임라인 라인 다크 적응 */
+  .tl-item:not(:last-child) .tl-line{background:rgba(255,255,255,.1)!important}
+  /* 체크리스트 항목 다크 적응 */
+  .checklist-item,.chk-item{border-color:rgba(255,255,255,.06)!important}
+  /* 테이블 헤더 다크 적응 */
+  th{background:rgba(255,255,255,.04)!important;color:rgba(255,255,255,.4)!important}
+  tbody tr:hover td{background:rgba(49,130,246,.08)!important}
+}
+</style>
 </head>
 <body>
 
