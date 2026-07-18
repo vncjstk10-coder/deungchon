@@ -305,8 +305,8 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   #panel-loan-balance .kpi-val{font-size:1.1rem!important}
   #panel-loan-balance .kpi-sub{font-size:12px}
   /* KPI bar 숫자·라벨 크기 */
-  #panel-loan-balance .kpi-bar-card .num{font-size:1.5rem!important}
-  #panel-loan-balance .kpi-bar-card .lbl{font-size:11px!important;font-weight:700!important}
+  #panel-loan-balance .kpi-bar-card .num{font-size:1.1rem!important}
+  #panel-loan-balance .kpi-bar-card .lbl{font-size:9px!important;font-weight:700!important}
   /* 플랜 버튼 2×2 그리드 */
   #fp-btn-1,#fp-btn-2,#fp-btn-3,#fp-btn-4{flex:0 0 calc(50% - 3px)!important;text-align:center}
   #panel-remodel .kpi-val{font-size:1.1rem!important}
@@ -318,11 +318,11 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .cf-amt{font-size:13px!important}
   .cf-net-amt{font-size:15px!important}
 
-  /* ─── KPI 바 그리드 ─── */
-  .kpi-bar{grid-template-columns:1fr 1fr!important;gap:8px!important}
-  .kpi-bar-card{padding:14px 12px!important}
-  .kpi-bar-card .num{font-size:1.1rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .kpi-bar-card .lbl{font-size:11px}
+  /* ─── KPI 바 그리드 (3열 1행) ─── */
+  .kpi-bar{grid-template-columns:repeat(3,1fr)!important;gap:6px!important}
+  .kpi-bar-card{padding:11px 7px!important}
+  .kpi-bar-card .num{font-size:1.05rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .kpi-bar-card .lbl{font-size:9px!important;letter-spacing:.01em}
 
   /* ─── 물품정리 KPI 3열 유지 ─── */
   #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
@@ -371,15 +371,16 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .dc-3box{grid-template-columns:1fr!important}
 
   /* ══ 토스 스타일 모바일 전면 재설계 ══ */
-  .card{border-width:0!important;border-radius:20px!important;box-shadow:0 1px 10px rgba(0,0,0,.09)!important}
+  .card{border-width:0!important;border-radius:20px!important;box-shadow:0 2px 16px rgba(0,0,0,.32)!important}
   .card-sm{border-width:0!important}
   .stitle{font-size:11px!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--muted)!important;margin:24px 0 10px!important}
   .ph h1{font-size:18px!important;font-weight:900!important;letter-spacing:-.03em!important}
   .ph p,.ph .subtitle{font-size:12px!important}
-  .kpi-bar-card{border-width:0!important;border-radius:18px!important;padding:16px 14px!important}
-  .kpi-bar-card .num{font-size:1.4rem!important}
+  /* kpi-bar-card: 3열에 맞춰 압축 — padding/font은 위 KPI 바 그리드 섹션이 권위 */
+  .kpi-bar-card{border-width:0!important;border-radius:14px!important;padding:11px 7px!important}
+  .kpi-bar-card .num{font-size:1.05rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .kpi-val{font-size:1.5rem!important}
-  .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.8rem!important}
+  .card-purple .kpi-val,.card-orange .kpi-val,.card-red .kpi-val,.card-green .kpi-val{font-size:1.7rem!important}
   .ibox{border-width:0!important;border-radius:16px!important}
   .risk-card{border-radius:16px!important;border-width:0!important}
   .fund-row{padding:13px 0!important}
@@ -400,7 +401,10 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 }
 @media(max-width:400px){
   .con{padding:12px 12px 90px}
-  .kpi-bar{grid-template-columns:1fr 1fr!important}
+  .kpi-bar{grid-template-columns:repeat(3,1fr)!important;gap:4px!important}
+  .kpi-bar-card{padding:9px 5px!important}
+  .kpi-bar-card .num{font-size:0.95rem!important}
+  .kpi-bar-card .lbl{font-size:8px!important}
   .kpi-val{font-size:1.2rem!important}
   /* 물품정리 3열은 400px 이하에서도 유지 */
   #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
