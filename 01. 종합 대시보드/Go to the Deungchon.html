@@ -146,6 +146,8 @@ body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-sy
 .ibox.y{background:var(--y2);border-left:3px solid var(--yellow);color:var(--t2)}
 .ibox h4{font-size:13px;font-weight:800;color:var(--text);margin-bottom:3px}
 .ibox:last-child{margin-bottom:0}
+.ibox.y h4{color:#92400E;margin-bottom:6px}
+.ibox strong{color:var(--text)}
 
 /* RISK CARD */
 .risk-card{border-radius:var(--rad);padding:18px 20px;border:2px solid var(--red);background:var(--r2);margin-bottom:12px}
@@ -268,6 +270,8 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .mob-menu-arrow{font-size:22px;color:rgba(255,255,255,.25);flex-shrink:0;margin-left:auto;line-height:1}
   .mob-quick{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#1A1D28;border-radius:14px;padding:14px 8px;cursor:pointer;font-size:11px;font-weight:600;color:rgba(255,255,255,.65);text-align:center;-webkit-tap-highlight-color:transparent}
   .mob-quick:active{background:#252839}
+  .mob-quick:hover{background:#202330;transform:scale(1.03);transition:all .15s}
+  .mob-section-lbl:first-of-type{padding-top:4px}
 
   /* ─── 콘텐츠 영역 ─── */
   .con{padding:16px 20px 96px}
@@ -983,7 +987,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot warn">⚠</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">황서림 주담대 확정 필요</div><div class="tl-desc">7/20 방문 후 산림금융 or 우리은행 결정 · 차주 황서림 소득합산 · DSR 50% 이내</div></div>
+      <div class="tl-body"><div class="tl-title">황서림 주담대 확정 필요</div><div class="tl-desc">7/20 방문 후 산림금융 or 우리은행 결정 · 차주 황서림 소득합산 · DSR 50% 이내 (소득 대비 상환 비율)</div></div>
       <div class="tl-right"><div class="tl-amt re">미확정</div><div class="tl-date">잔금 전</div></div>
     </div>
     <div class="tl-item">
@@ -1121,7 +1125,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="position:absolute;top:14px;right:14px">
           <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:700;background:rgba(255,255,255,0.22);color:#fff;letter-spacing:.04em">상환</span>
         </div>
-        <div class="kpi-lbl">보금자리론 상환</div>
+        <div class="kpi-lbl">보금자리론(정부 지원 주택담보대출) 상환</div>
         <div class="kpi-val" style="font-size:2.1rem;margin:8px 0 4px">−2억 4,772만</div>
         <div class="kpi-sub">247,724,684원 (6월 기준)</div>
         <div style="margin-top:16px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px">
@@ -1717,6 +1721,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     💡 <strong>이 탭은요:</strong> 집을 살 때 전부 우리 돈만으로는 부족해서 은행에서 빌려요. 이 탭은 황서림 / 안영준 각각 얼마나 빌릴 수 있는지, 매달 이자는 얼마인지 분석한 페이지예요. 위 버튼으로 이름을 눌러 각자 대출 현황을 확인하세요.
   </div>
 
+  <div class="ibox y" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">    <h4>📖 처음 보면 어려운 단어 설명</h4>    <strong>DSR (총부채원리금상환비율)</strong> — 월급의 몇 %를 빚 갚는 데 쓰냐예요. 은행은 이 비율이 40~50% 이하인 사람에게만 주담대를 빌려줘요.<br>    <strong>LTV (담보인정비율)</strong> — 집값의 몇 %까지 빌려주냐예요. 1금융권(우리은행)은 집값의 40%, 2금융권(산림조합)은 최대 80%까지 가능해요.<br>    <strong>MCI (주택담보대출 보험)</strong> — 가입하면 LTV 한도를 높여 더 빌릴 수 있어요. 대출 신청 시 보험료 1회 납부예요.<br>    <strong>IRP/퇴직연금 해지</strong> — 회사에 적립된 퇴직금을 미리 받는 것. 세금(약 16.5%)을 내고 현금화해요. 4안에서는 두 사람 합산 6,417만원 활용해요.  </div>
   <!-- 대출 상담 일정 -->
   <div class="ibox o" style="margin-bottom:16px">
     📅 <strong>7/20(월) 대출 상담 방문 예정</strong> · 산림금융조합 서인천 지점 + 우리은행 역촌동 지점 비교
@@ -2331,13 +2336,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
         <div class="lbl">우리가 모을 수 있는 돈</div>
-        <div class="num pu" id="kpi-loan-total">8억 6,690만</div>
-        <div style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px" id="kpi-loan-label">주담대+청라+안영준+황서림</div>
+        <div class="num gr" id="kpi-loan-total">9억 8,607만</div>
+        <div style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px" id="kpi-loan-label">산림금융+IRP해지+청라+안영준+황서림</div>
       </div>
-      <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--red)">
-        <div class="lbl" id="kpi-short-lbl">아직 부족한 금액</div>
-        <div class="num re" id="kpi-loan-short">1억 1,310만</div>
-        <div id="kpi-short-sub" style="font-size:10px;color:var(--orange);font-weight:700;margin-top:2px">⚠ 방안 검토 필요</div>
+      <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--green)">
+        <div class="lbl" id="kpi-short-lbl">여유 (목표 초과)</div>
+        <div class="num gr" id="kpi-loan-short">완전 해소 ✅</div>
+        <div id="kpi-short-sub" style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px">✅ 완전 해소 — 607만 여유</div>
       </div>
     </div>
 
@@ -2365,17 +2370,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">💰 돈을 어디서 마련할까?</div>
     <div class="card" style="margin-bottom:16px">
 
+      <div class="ibox g" style="margin-bottom:14px;font-size:13px;line-height:1.7;border-radius:14px">        ✅ <strong>현재 확정 방향: 4안 (산림금융 + IRP해지)</strong><br>        <span style="font-size:12px">5개 방안 중 유일하게 자금이 완전 충족되는 안. 부족분 없이 <strong style="color:var(--green)">+607만 여유</strong>가 생겨요.</span>      </div>
       <!-- 플랜 토글 -->
       <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
-        <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🏦 1안 · 우리은행</button>
+        <button id="fp-btn-1" class="person-btn" onclick="switchFundPlan('1')">🏦 1안 · 우리은행</button>
         <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🌲 2안 · 산림조합</button>
         <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">💼 3안 · 우리은행+IRP해지</button>
-        <button id="fp-btn-4" class="person-btn" onclick="switchFundPlan('4')">🌲💼 4안 · 산림+IRP해지 ✅</button>
+        <button id="fp-btn-4" class="person-btn active" onclick="switchFundPlan('4')">🌲💼 4안 · 산림+IRP해지 ✅</button>
         <button id="fp-btn-5" class="person-btn" onclick="switchFundPlan('5')">🏦📋 5안 · 우리은행+보증보험</button>
       </div>
 
       <!-- ── 플랜 1: 우리은행 ── -->
-      <div id="fund-plan-1">
+      <div id="fund-plan-1" style="display:none">
         <div style="margin-bottom:18px">
           <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,000만 구성 비율</div>
           <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
@@ -2570,7 +2576,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
 
       <!-- ── 플랜 4: 산림금융 + IRP/퇴직연금 해지 ── -->
-      <div id="fund-plan-4" style="display:none">
+      <div id="fund-plan-4">
         <div style="margin-bottom:18px">
           <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,607만 구성 비율 (목표 초과 ✅)</div>
           <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
