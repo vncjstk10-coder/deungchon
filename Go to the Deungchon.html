@@ -7,8 +7,8 @@
 <title>등촌부영 이사 프로젝트</title>
 <style>
 :root{
-  --bg:#F4F6FB;--white:#FFF;--border:rgba(0,0,0,0.07);
-  --sh:0 2px 16px rgba(99,91,255,0.08);--sh2:0 6px 28px rgba(99,91,255,0.15);
+  --bg:#EEF1FA;--white:#FDFCFF;--border:rgba(99,91,255,0.09);
+  --sh:0 2px 20px rgba(99,91,255,0.09);--sh2:0 8px 36px rgba(99,91,255,0.18);
   --purple:#7B6EF6;--p2:#5B4EDA;--p3:#EEEEFF;--p4:rgba(123,110,246,0.13);
   --orange:#F97316;--o2:#FFF3EC;
   --green:#10B981;--g2:#ECFDF5;
@@ -19,7 +19,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-system,sans-serif;
-  background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;
+  background:linear-gradient(160deg,#E8ECFF 0%,#EEF1FA 35%,#F2F0FF 100%);
+  background-attachment:fixed;
+  color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;
   word-break:keep-all;overflow-wrap:break-word}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--lite);border-radius:3px}
@@ -28,10 +30,11 @@ body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-sy
 .layout{display:flex;min-height:100vh}
 
 /* SIDEBAR */
-.sidebar{width:240px;flex-shrink:0;background:#16153A;
+.sidebar{width:260px;flex-shrink:0;
+  background:linear-gradient(175deg,#1B1A45 0%,#16153A 50%,#0F0E2E 100%);
   border-right:none;display:flex;flex-direction:column;
   position:sticky;top:0;height:100vh;overflow-y:auto;
-  box-shadow:4px 0 24px rgba(0,0,0,0.18)}
+  box-shadow:4px 0 32px rgba(0,0,0,0.25)}
 .sb-logo{display:flex;flex-direction:row;align-items:center;gap:10px;padding:14px 16px 12px;
   border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;gap:10px}
 .logo-icon{width:42px;height:42px;border-radius:10px;
@@ -72,15 +75,15 @@ body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-sy
 /* MAIN */
 .main{flex:1;overflow:hidden;min-width:0}
 .tab-panel{display:none}.tab-panel.active{display:block}
-.con{max-width:100%;padding:20px 20px 40px}
+.con{max-width:100%;padding:28px 32px 64px}
 
 /* PAGE HEADER */
-.ph{margin-bottom:24px}
+.ph{margin-bottom:32px}
 .ph h1{font-size:20px;font-weight:800;color:var(--text)}
 .ph p{font-size:13px;color:var(--muted);margin-top:3px}
 
 /* CARD */
-.card{background:var(--white);border-radius:var(--rad);padding:22px;
+.card{background:var(--white);border-radius:var(--rad);padding:26px;
   box-shadow:var(--sh);border:1px solid var(--border)}
 .card-sm{padding:16px 18px}
 .card-purple{background:linear-gradient(135deg,#7B6EF6,#5B4EDA);border:none;box-shadow:0 8px 32px rgba(91,78,218,.28)}
@@ -89,10 +92,10 @@ body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-sy
 .card-green{background:linear-gradient(135deg,#10B981,#059669);border:none;box-shadow:0 8px 28px rgba(16,185,129,.26)}
 
 /* GRIDS */
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.g21{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g21{display:grid;grid-template-columns:2fr 1fr;gap:20px}
 
 /* KPI */
 .kpi-lbl{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
@@ -471,7 +474,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 .cf-net-lbl{font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap}
 .cf-net-amt{font-size:17px;font-weight:900}
 #panel-cashflow .kpi-bar{grid-template-columns:repeat(4,1fr)}
-.kpi-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.kpi-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
 .kpi-bar-card{background:var(--white);border-radius:var(--rads);padding:12px 16px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:3px}
 .kpi-bar-card .num{font-size:1.6rem;font-weight:900;letter-spacing:-.03em;line-height:1}
 .kpi-bar-card .lbl{font-size:11px;color:var(--muted);font-weight:600}.filter-btn{padding:6px 14px;border:1.5px solid var(--border);background:var(--white);color:var(--t2);
@@ -566,6 +569,34 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* 테이블 헤더 다크 적응 */
   th{background:rgba(255,255,255,.04)!important;color:rgba(255,255,255,.4)!important}
   tbody tr:hover td{background:rgba(49,130,246,.08)!important}
+
+  /* ── 자주 쓰는 탭: 대출현황 / 중도금·잔금 강화 ── */
+  /* 핵심 KPI 숫자 더 크고 선명하게 */
+  #panel-loan-status .kpi-val{font-size:1.55rem!important;letter-spacing:-.03em!important}
+  #panel-loan-status .card-purple .kpi-val,
+  #panel-loan-status .card-green .kpi-val{font-size:1.75rem!important}
+  #panel-loan-balance .kpi-val{font-size:1.35rem!important;letter-spacing:-.03em!important}
+  #panel-loan-balance .card-red .kpi-val{font-size:1.65rem!important}
+  /* 핵심 금액 행 강조 */
+  #panel-loan-status .ln-info-vl,
+  #panel-loan-balance .ln-info-vl{font-size:13px!important;font-weight:800!important;color:var(--text)!important}
+  /* 시나리오 카드 강화 */
+  #panel-loan-balance .scen-card{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important}
+  #panel-loan-balance .scen-title{font-size:14px!important}
+  /* 카드-보라/빨강 내 라벨 가독성 */
+  #panel-loan-status .card-purple .kpi-lbl,
+  #panel-loan-status .card-green .kpi-lbl{font-size:10.5px!important;letter-spacing:.04em!important}
+  /* kpi-bar-card 자금흐름·잔금 탭: top accent 색상 분리 */
+  #panel-loan-balance .kpi-bar-card{border-top-color:rgba(239,68,82,.5)!important}
+  #panel-cashflow .kpi-bar-card{border-top-color:rgba(245,166,35,.5)!important}
+}
+
+/* PC: stitle 간격 더 여유 있게 */
+@media(min-width:769px){
+  .stitle{margin:36px 0 18px}
+  .stitle:first-child{margin-top:0}
+  /* card-sm 패딩도 여유 */
+  .card-sm{padding:20px 24px}
 }
 </style>
 </head>
