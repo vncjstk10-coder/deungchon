@@ -619,6 +619,87 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* +/= 기호 숨김 (그리드에서 불필요) */
   #money-flow-row > div[style*="font-size:18px"]{display:none!important}
 }
+
+/* ══════════════════════════════════════════
+   모바일 시인성 강화 (Visibility Upgrade)
+   2026-07-19
+══════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* 1. 카드 배경 대비 강화 — 배경과 카드 구분 명확히 */
+  .card{background:#20233B!important;border:1px solid rgba(255,255,255,.10)!important}
+  .card-sm{background:#20233B!important}
+
+  /* 2. 페이지 헤더 가시성 */
+  .ph h1{color:#FFFFFF!important;font-size:19px!important}
+  #ph-subtitle{color:rgba(255,255,255,.48)!important;font-size:12px!important}
+
+  /* 3. D-day 숫자 — 더 크고 선명하게 */
+  #dday-mid,#dday-cheongna,#dday-deungchon{font-size:2.6rem!important;letter-spacing:-.04em!important}
+
+  /* 4. KPI 숫자 전반 상향 */
+  .kpi-val{font-size:1.65rem!important;letter-spacing:-.03em!important}
+  .card-purple .kpi-val,.card-orange .kpi-val,
+  .card-red .kpi-val,.card-green .kpi-val{font-size:1.85rem!important}
+  .kpi-lbl{font-size:10.5px!important;letter-spacing:.04em!important;color:rgba(255,255,255,.5)!important}
+
+  /* 5. KPI 바 카드 숫자·라벨 */
+  .kpi-bar-card{background:#272B44!important}
+  .kpi-bar-card .num{color:#FFFFFF!important;font-size:1.1rem!important}
+  .kpi-bar-card .lbl{color:rgba(255,255,255,.48)!important}
+
+  /* 6. 섹션 타이틀 — 살짝 밝게 */
+  .stitle{color:rgba(255,255,255,.52)!important}
+
+  /* 7. 타임라인 가시성 */
+  .tl-title{font-size:13.5px!important;font-weight:800!important;color:#F0F0F8!important}
+  .tl-desc{font-size:12px!important;color:rgba(255,255,255,.48)!important;line-height:1.55!important}
+  .tl-amt{font-size:14px!important}
+
+  /* 8. 정보박스(ibox) — 배경 더 뚜렷하게 */
+  .ibox{border-radius:14px!important;padding:13px 15px!important}
+  .ibox.p{background:rgba(49,130,246,.15)!important;border-left-color:#3182F6!important}
+  .ibox.g{background:rgba(35,199,94,.13)!important;border-left-color:#23C75E!important}
+  .ibox.o{background:rgba(255,138,0,.13)!important;border-left-color:#FF8A00!important}
+  .ibox.r{background:rgba(240,68,82,.13)!important;border-left-color:#F04452!important}
+  .ibox.y{background:rgba(245,166,35,.13)!important;border-left-color:#F5A623!important}
+  .ibox h4{color:#F0F0F8!important;font-size:13px!important}
+  .ibox{color:rgba(255,255,255,.7)!important;font-size:12.5px!important}
+
+  /* 9. 자금 현황 바 */
+  .fund-bar-wrap{background:rgba(255,255,255,.09)!important}
+  .fund-label{color:rgba(255,255,255,.62)!important;font-size:12.5px!important}
+  .fund-amt{color:#FFFFFF!important;font-size:12.5px!important}
+  .fund-pct{color:rgba(255,255,255,.45)!important}
+
+  /* 10. 테이블 가시성 */
+  td{color:rgba(255,255,255,.72)!important;border-color:rgba(255,255,255,.06)!important;font-size:12.5px!important}
+  td.tot{background:rgba(49,130,246,.1)!important;color:#fff!important;font-size:13px!important}
+  .ln-info-nm{color:rgba(255,255,255,.48)!important}
+  .ln-info-vl{color:rgba(255,255,255,.85)!important;font-weight:700!important}
+
+  /* 11. 하단 탭 활성 상태 강화 */
+  .mob-nav{background:#090C15!important;border-top:1px solid rgba(255,255,255,.07)!important}
+  .mob-btn .ml{color:rgba(255,255,255,.38)!important}
+  .mob-btn.active{background:rgba(49,130,246,.14)!important}
+  .mob-btn.active .ml{color:#4B9EFF!important;font-weight:700!important}
+  .mob-btn.active .mi{filter:brightness(1.2)}
+
+  /* 12. 현금흐름 거래 설명 텍스트 */
+  .cf-desc .nm{color:#F0F0F8!important;font-size:13.5px!important;font-weight:800!important}
+  .cf-desc .sb{color:rgba(255,255,255,.5)!important}
+  .cf-amt{color:#FFFFFF!important}
+  .cf-net-lbl{color:rgba(255,255,255,.5)!important}
+
+  /* 13. 리스크 카드 */
+  .risk-title{font-size:14px!important;color:#F04452!important}
+  .risk-body{color:rgba(255,255,255,.68)!important;font-size:12.5px!important}
+
+  /* 14. 프로그레스 바 가시성 */
+  .prog-track,.prog-wrap{background:rgba(255,255,255,.09)!important}
+  .prog-nm{color:rgba(255,255,255,.62)!important}
+  .prog-vl{color:#FFFFFF!important;font-weight:800!important}
+}
 </style>
 </head>
 <body>
