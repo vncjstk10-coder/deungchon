@@ -231,20 +231,19 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* ─── 하단 탭 네비게이션 (앱 스타일) ─── */
   .mob-nav{
     display:flex!important;position:fixed;bottom:0;left:0;right:0;
-    background:#0A0C14;border-top:1px solid rgba(255,255,255,.04);
-    flex-direction:row;overflow-x:auto;overflow-y:hidden;
-    z-index:200;height:68px;align-items:center;
-    padding:4px 4px env(safe-area-inset-bottom,4px);
-    scrollbar-width:none;-webkit-overflow-scrolling:touch
+    background:#0A0C14;border-top:1px solid rgba(255,255,255,.07);
+    flex-direction:row;overflow:hidden;
+    z-index:200;height:60px;align-items:stretch;justify-content:space-around;
+    padding:0 0 env(safe-area-inset-bottom,0)
   }
   .mob-nav::-webkit-scrollbar{display:none}
   .mob-btn{
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:3px;flex:0 0 auto;min-width:62px;min-height:52px;padding:6px 8px;
+    gap:3px;flex:1;min-width:0;padding:6px 4px;
     border:none;background:transparent;color:rgba(255,255,255,.30);
     font-size:10px;font-weight:600;cursor:pointer;font-family:inherit;
     transition:background .18s,color .18s;white-space:nowrap;
-    border-radius:12px;-webkit-tap-highlight-color:transparent
+    -webkit-tap-highlight-color:transparent
   }
   .mob-btn .mi{font-size:24px;line-height:1}
   .mob-btn .ml{
@@ -257,6 +256,18 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   }
   .mob-btn:hover{background:rgba(255,255,255,.05);color:rgba(255,255,255,.7)}
   .mob-sep{width:1px;background:rgba(255,255,255,0.08);flex-shrink:0;margin:10px 3px}
+  /* ─── 전체 메뉴 패널 (Toss 스타일) ─── */
+  .mob-section-lbl{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;padding:20px 0 8px}
+  .mob-card-group{background:#1A1D28;border-radius:18px;overflow:hidden;margin-bottom:12px}
+  .mob-menu-item{display:flex;align-items:center;gap:14px;padding:15px 16px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);-webkit-tap-highlight-color:transparent;transition:background .15s}
+  .mob-menu-item:last-child{border-bottom:none}
+  .mob-menu-item:active{background:rgba(255,255,255,.05)}
+  .mob-menu-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .mob-menu-title{font-size:15px;font-weight:600;color:#F0F0F8;margin-bottom:2px}
+  .mob-menu-sub{font-size:12px;color:rgba(255,255,255,.4);line-height:1.4;white-space:normal}
+  .mob-menu-arrow{font-size:22px;color:rgba(255,255,255,.25);flex-shrink:0;margin-left:auto;line-height:1}
+  .mob-quick{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#1A1D28;border-radius:14px;padding:14px 8px;cursor:pointer;font-size:11px;font-weight:600;color:rgba(255,255,255,.65);text-align:center;-webkit-tap-highlight-color:transparent}
+  .mob-quick:active{background:#252839}
 
   /* ─── 콘텐츠 영역 ─── */
   .con{padding:16px 20px 96px}
@@ -3973,45 +3984,113 @@ document.addEventListener("keydown",e=>{
 </script>
 
 <!-- ══ 모바일 전용 하단 탭바 ══ -->
+<!-- ══ 전체 메뉴 패널 (모바일 전용 Toss 스타일) ══ -->
+<div class="tab-panel" id="panel-mob-all">
+<div class="con" style="padding-top:16px;padding-bottom:90px">
+
+  <!-- 핵심 6칸 바로가기 그리드 -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px">
+    <div class="mob-quick" onclick="go('loan-balance',null)"><span style="font-size:22px">💸</span><span>중도금/잔금</span></div>
+    <div class="mob-quick" onclick="go('cashflow',null)"><span style="font-size:22px">📅</span><span>자금 흐름</span></div>
+    <div class="mob-quick" onclick="go('loan-status',null)"><span style="font-size:22px">🏦</span><span>대출 현황</span></div>
+    <div class="mob-quick" onclick="go('cheongna-loan',null)"><span style="font-size:22px">💰</span><span>청라 정산</span></div>
+    <div class="mob-quick" onclick="go('deungchon',null)"><span style="font-size:22px">🏢</span><span>등촌 재정</span></div>
+    <div class="mob-quick" onclick="go('interior',null)"><span style="font-size:22px">🎨</span><span>인테리어</span></div>
+  </div>
+
+  <!-- 등촌 부영 이사 프로젝트 -->
+  <div class="mob-section-lbl">등촌 부영 이사 프로젝트</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('deungchon',null)">
+      <div class="mob-menu-icon" style="background:rgba(123,110,246,.18)">🏢</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">등촌 부영 전체 재정</div><div class="mob-menu-sub">10.9억 매매 · 단계별 납부 현황</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('loan-balance',null)">
+      <div class="mob-menu-icon" style="background:rgba(239,68,68,.15)">💸</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">중도금 / 잔금</div><div class="mob-menu-sub">7/30 중도금 2억 · 9/16 잔금 7.8억</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('loan-status',null)">
+      <div class="mob-menu-icon" style="background:rgba(49,130,246,.18)">🏦</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 현황</div><div class="mob-menu-sub">명의별 한도 · 매달 이자 분석</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cashflow',null)">
+      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">📅</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">월별 자금 흐름</div><div class="mob-menu-sub">7→8→9월 돈의 흐름 한눈에</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('post-cost',null)">
+      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💳</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">잔금 후 비용</div><div class="mob-menu-sub">취득세 3,597만 · 중개수수료</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('interior',null)">
+      <div class="mob-menu-icon" style="background:rgba(236,72,153,.15)">🎨</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/16~22 공사 · 9/23 첫 입주</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+  <!-- 청라 힐데스하임 -->
+  <div class="mob-section-lbl">청라 힐데스하임</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('cheongna',null)">
+      <div class="mob-menu-icon" style="background:rgba(249,115,22,.15)">📦</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">짐 정리</div><div class="mob-menu-sub">가져갈 것 · 두고 갈 것 · 처분</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cheongna-loan',null)">
+      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">💰</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 / 부동산중개료</div><div class="mob-menu-sub">4.9억 수령 → 보금자리론 상환 → 2.48억</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cheongna-move',null)">
+      <div class="mob-menu-icon" style="background:rgba(99,91,255,.18)">🚚</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">이사업체</div><div class="mob-menu-sub">2단계 이사 · 8/31 창고 → 9/23 등촌</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('deungchon-temp',null)">
+      <div class="mob-menu-icon" style="background:rgba(139,92,246,.15)">🛏️</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">공백기 임시 거주</div><div class="mob-menu-sub">8/31~9/23 · 여행 + 김포 임시거주</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+  <!-- 마곡 더샵 -->
+  <div class="mob-section-lbl">마곡 더샵</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('remodel',null)">
+      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💰</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">리모델링 분담금</div><div class="mob-menu-sub">30→42평 확장 · 9월 총회 분담금 확정</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('magok-temp',null)">
+      <div class="mob-menu-icon" style="background:rgba(255,255,255,.08)">🛏️</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">마곡 임시 거주</div><div class="mob-menu-sub">리모델링 기간 임시 거주 계획</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
 <nav class="mob-nav" id="mobNav">
   <button class="mob-btn active" data-p="summary" onclick="go('summary',this)">
-    <span class="mi">📋</span><span class="ml">종합현황</span>
-  </button>
-  <button class="mob-btn" data-p="cashflow" onclick="go('cashflow',this)">
-    <span class="mi">📅</span><span class="ml">자금흐름</span>
-  </button>
-  <div class="mob-sep"></div>
-  <button class="mob-btn" data-p="cheongna" onclick="go('cheongna',this)">
-    <span class="mi">📦</span><span class="ml">물품정리</span>
-  </button>
-  <button class="mob-btn" data-p="cheongna-loan" onclick="go('cheongna-loan',this)">
-    <span class="mi">💳</span><span class="ml">대출/중개료</span>
-  </button>
-  <button class="mob-btn" data-p="cheongna-move" onclick="go('cheongna-move',this)">
-    <span class="mi">🚚</span><span class="ml">이사업체</span>
-  </button>
-  <div class="mob-sep"></div>
-  <button class="mob-btn" data-p="deungchon-temp" onclick="go('deungchon-temp',this)">
-    <span class="mi">🛏️</span><span class="ml">임시거주지</span>
-  </button>
-  <button class="mob-btn" data-p="loan-status" onclick="go('loan-status',this)">
-    <span class="mi">🏦</span><span class="ml">대출현황</span>
+    <span class="mi">🏠</span><span class="ml">홈</span>
   </button>
   <button class="mob-btn" data-p="loan-balance" onclick="go('loan-balance',this)">
-    <span class="mi">💸</span><span class="ml">중도금/잔금</span>
+    <span class="mi">💸</span><span class="ml">자금</span>
   </button>
-  <button class="mob-btn" data-p="interior" onclick="go('interior',this)">
-    <span class="mi">🎨</span><span class="ml">인테리어</span>
+  <button class="mob-btn" data-p="cashflow" onclick="go('cashflow',this)">
+    <span class="mi">📅</span><span class="ml">일정</span>
   </button>
-  <button class="mob-btn" data-p="post-cost" onclick="go('post-cost',this)">
-    <span class="mi">💳</span><span class="ml">잔금후비용</span>
+  <button class="mob-btn" data-p="loan-status" onclick="go('loan-status',this)">
+    <span class="mi">🏦</span><span class="ml">대출</span>
   </button>
-  <div class="mob-sep"></div>
-  <button class="mob-btn" data-p="remodel" onclick="go('remodel',this)">
-    <span class="mi">💰</span><span class="ml">분담금</span>
-  </button>
-  <button class="mob-btn" data-p="magok-temp" onclick="go('magok-temp',this)">
-    <span class="mi">🏗️</span><span class="ml">마곡임시거주</span>
+  <button class="mob-btn" data-p="mob-all" onclick="go('mob-all',this)">
+    <span class="mi" style="font-size:20px;line-height:1">≡</span><span class="ml">전체</span>
   </button>
 </nav>
 </body>
