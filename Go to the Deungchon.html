@@ -598,6 +598,27 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   /* card-sm 패딩도 여유 */
   .card-sm{padding:20px 24px}
 }
+
+/* ── 긴급 배너 & 머니플로우 모바일 최적화 ── */
+@media(max-width:768px){
+  /* 긴급 배너: 모바일에서 크고 선명하게 */
+  #urgency-banner{
+    padding:16px 16px!important;
+    border-radius:16px!important;
+    margin-bottom:16px!important;
+  }
+  #urgency-msg{font-size:13px!important;line-height:1.45!important}
+  #urgency-dday{font-size:2.8rem!important}
+
+  /* 돈 흐름 카드: 모바일 2열 그리드 */
+  #money-flow-row{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+  /* +/= 기호 숨김 (그리드에서 불필요) */
+  #money-flow-row > div[style*="font-size:18px"]{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -702,7 +723,20 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <div class="con">
   <div class="ph">
     <h1>이사 프로젝트 종합 현황</h1>
-    <p>청라힐데스하임 → 등촌 부영아파트 · 잔금일 2026년 9월 16일</p>
+    <p id="ph-subtitle">청라힐데스하임 매도 → 등촌부영 매수 · 지금 진행 중</p>
+  </div>
+
+  <!-- 긴급 현황 배너 (동적) -->
+  <div id="urgency-banner" style="border-radius:18px;padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#D97706,#F97316);box-shadow:0 8px 28px rgba(249,115,22,.35)">
+    <div style="font-size:1.9rem;flex-shrink:0;line-height:1">⚡</div>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.7);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px">지금 가장 급한 일</div>
+      <div style="font-size:14.5px;font-weight:800;color:#fff;line-height:1.4;word-break:keep-all" id="urgency-msg">계산 중...</div>
+    </div>
+    <div style="flex-shrink:0;text-align:center;background:rgba(0,0,0,.18);border-radius:14px;padding:10px 16px;min-width:64px">
+      <div style="font-size:9px;font-weight:800;color:rgba(255,255,255,.65);letter-spacing:.08em">D-</div>
+      <div style="font-size:2.4rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em" id="urgency-dday">-</div>
+    </div>
   </div>
 
   <!-- D-Day 카드 3개 -->
@@ -712,18 +746,51 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:3rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em" id="dday-mid">-</div>
       <div style="font-size:13px;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px">일 남음</div>
       <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2026. 07. 30</div>
+      <div style="font-size:10.5px;color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);width:100%">대출 실행 → 2억 납부</div>
     </div>
     <div class="card card-red" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px">
       <div class="kpi-lbl">🏠 청라 잔금까지</div>
       <div style="font-size:3rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em" id="dday-cheongna">-</div>
       <div style="font-size:13px;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px">일 남음</div>
       <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2026. 08. 31</div>
+      <div style="font-size:10.5px;color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);width:100%">청라 집 팔고 돈 받는 날</div>
     </div>
     <div class="card card-purple" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px">
       <div class="kpi-lbl">🏢 등촌 잔금까지</div>
       <div style="font-size:3rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em" id="dday-deungchon">-</div>
       <div style="font-size:13px;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px">일 남음</div>
       <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2026. 09. 16</div>
+      <div style="font-size:10.5px;color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);width:100%">등촌 집 완전히 우리 것!</div>
+    </div>
+  </div>
+
+  <!-- 돈 흐름 한눈에 -->
+  <div class="card" style="margin-bottom:20px">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">💰 등촌 잔금 7억 8천만, 이렇게 마련해요</div>
+    <div id="money-flow-row" style="display:flex;align-items:stretch;gap:8px;flex-wrap:wrap">
+      <div style="flex:1;min-width:100px;background:var(--g2);border-radius:12px;padding:12px 10px;text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:5px">🏠 청라 집 팔아서</div>
+        <div style="font-size:17px;font-weight:900;color:var(--green);letter-spacing:-.02em">+2억 5천만</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">8월 31일 수령</div>
+      </div>
+      <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">+</div>
+      <div style="flex:1;min-width:100px;background:var(--p3);border-radius:12px;padding:12px 10px;text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:5px">🏦 은행 대출</div>
+        <div style="font-size:17px;font-weight:900;color:var(--purple);letter-spacing:-.02em">+4억 2,900만</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">주담대 실행 예정</div>
+      </div>
+      <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">+</div>
+      <div style="flex:1;min-width:100px;background:var(--o2);border-radius:12px;padding:12px 10px;text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:5px">💵 우리 현금</div>
+        <div style="font-size:17px;font-weight:900;color:var(--orange);letter-spacing:-.02em">+약 1억</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">부부 보유 현금</div>
+      </div>
+      <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">=</div>
+      <div style="flex:1;min-width:100px;background:var(--r2);border-radius:12px;padding:12px 10px;text-align:center;border:1.5px solid rgba(239,68,68,.2)">
+        <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:5px">🏢 등촌 잔금</div>
+        <div style="font-size:17px;font-weight:900;color:var(--red);letter-spacing:-.02em">7억 8천만</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">9월 16일 납부</div>
+      </div>
     </div>
   </div>
 
@@ -3738,6 +3805,37 @@ function dday(){
     paint('dday-mid',2026,7,30);
     paint('dday-cheongna',2026,8,31);
     paint('dday-deungchon',2026,9,16);
+    // 긴급 배너 동적 업데이트
+    var uMsg=document.getElementById('urgency-msg');
+    var uDay=document.getElementById('urgency-dday');
+    var uBanner=document.getElementById('urgency-banner');
+    var uSub=document.getElementById('ph-subtitle');
+    if(uMsg&&uDay&&uBanner){
+      var dM=calc(2026,7,30),dC=calc(2026,8,31),dD=calc(2026,9,16);
+      if(dM>0){
+        uDay.textContent=dM;
+        uMsg.textContent='7월 30일까지 중도금 2억 납부 · 대출 상담 → 실행 → 납부 순서로 진행해요';
+        if(uSub)uSub.textContent='지금 단계: 중도금 대출 상담 진행 중';
+        uBanner.style.background=dM<=7?'linear-gradient(135deg,#DC2626,#EF4444)':'linear-gradient(135deg,#D97706,#F97316)';
+        uBanner.style.boxShadow=dM<=7?'0 8px 28px rgba(239,68,68,.4)':'0 8px 28px rgba(249,115,22,.35)';
+      } else if(dC>0){
+        uDay.textContent=dC;
+        uMsg.innerHTML='8월 31일 청라 집 매도 잔금 수령 · <strong style="color:#fff">보금자리론 동시 상환</strong> 예정';
+        uBanner.style.background='linear-gradient(135deg,#DC2626,#EF4444)';
+        if(uSub)uSub.textContent='지금 단계: 이사업체·법무사 준비 중';
+      } else if(dD>0){
+        uDay.textContent=dD;
+        uMsg.textContent='9월 16일 등촌 잔금 납부 · 주담대 실행 후 새집 소유권 이전';
+        uBanner.style.background='linear-gradient(135deg,#5B4EDA,#7B6EF6)';
+        uBanner.style.boxShadow='0 8px 28px rgba(91,78,218,.4)';
+        if(uSub)uSub.textContent='지금 단계: 이사 준비 마무리 중';
+      } else {
+        uDay.textContent='✓';uDay.style.fontSize='2rem';
+        uMsg.textContent='모든 일정이 완료되었습니다 🎉 등촌 새집에서 잘 지내세요!';
+        uBanner.style.background='linear-gradient(135deg,#059669,#10B981)';
+        uBanner.style.boxShadow='0 8px 28px rgba(16,185,129,.4)';
+      }
+    }
   }catch(e){}
 }
 
