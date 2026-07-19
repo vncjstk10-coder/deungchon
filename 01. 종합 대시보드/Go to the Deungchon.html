@@ -3632,6 +3632,100 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 </div>
 </div>
 
+
+<!-- ══ 모바일 전용 하단 탭바 ══ -->
+<!-- ══ 전체 메뉴 패널 (모바일 전용 Toss 스타일) ══ -->
+<div class="tab-panel" id="panel-mob-all">
+<div class="con" style="padding-top:16px;padding-bottom:90px">
+
+  <!-- 핵심 6칸 바로가기 그리드 -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px">
+    <div class="mob-quick" onclick="go('loan-balance',null)"><span style="font-size:22px">💸</span><span>중도금/잔금</span></div>
+    <div class="mob-quick" onclick="go('cashflow',null)"><span style="font-size:22px">📅</span><span>자금 흐름</span></div>
+    <div class="mob-quick" onclick="go('loan-status',null)"><span style="font-size:22px">🏦</span><span>대출 현황</span></div>
+    <div class="mob-quick" onclick="go('cheongna-loan',null)"><span style="font-size:22px">💰</span><span>청라 정산</span></div>
+    <div class="mob-quick" onclick="go('deungchon',null)"><span style="font-size:22px">🏢</span><span>등촌 재정</span></div>
+    <div class="mob-quick" onclick="go('interior',null)"><span style="font-size:22px">🎨</span><span>인테리어</span></div>
+  </div>
+
+  <!-- 등촌 부영 이사 프로젝트 -->
+  <div class="mob-section-lbl">등촌 부영 이사 프로젝트</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('deungchon',null)">
+      <div class="mob-menu-icon" style="background:rgba(123,110,246,.18)">🏢</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">등촌 부영 전체 재정</div><div class="mob-menu-sub">10.9억 매매 · 단계별 납부 현황</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('loan-balance',null)">
+      <div class="mob-menu-icon" style="background:rgba(239,68,68,.15)">💸</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">중도금 / 잔금</div><div class="mob-menu-sub">7/30 중도금 2억 · 9/16 잔금 7.8억</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('loan-status',null)">
+      <div class="mob-menu-icon" style="background:rgba(49,130,246,.18)">🏦</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 현황</div><div class="mob-menu-sub">명의별 한도 · 매달 이자 분석</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cashflow',null)">
+      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">📅</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">월별 자금 흐름</div><div class="mob-menu-sub">7→8→9월 돈의 흐름 한눈에</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('post-cost',null)">
+      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💳</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">잔금 후 비용</div><div class="mob-menu-sub">취득세 3,597만 · 중개수수료</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('interior',null)">
+      <div class="mob-menu-icon" style="background:rgba(236,72,153,.15)">🎨</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/16~22 공사 · 9/23 첫 입주</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+  <!-- 청라 힐데스하임 -->
+  <div class="mob-section-lbl">청라 힐데스하임</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('cheongna',null)">
+      <div class="mob-menu-icon" style="background:rgba(249,115,22,.15)">📦</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">짐 정리</div><div class="mob-menu-sub">가져갈 것 · 두고 갈 것 · 처분</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cheongna-loan',null)">
+      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">💰</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 / 부동산중개료</div><div class="mob-menu-sub">4.9억 수령 → 보금자리론 상환 → 2.48억</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('cheongna-move',null)">
+      <div class="mob-menu-icon" style="background:rgba(99,91,255,.18)">🚚</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">이사업체</div><div class="mob-menu-sub">2단계 이사 · 8/31 창고 → 9/23 등촌</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('deungchon-temp',null)">
+      <div class="mob-menu-icon" style="background:rgba(139,92,246,.15)">🛏️</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">공백기 임시 거주</div><div class="mob-menu-sub">8/31~9/23 · 여행 + 김포 임시거주</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+  <!-- 마곡 더샵 -->
+  <div class="mob-section-lbl">마곡 더샵</div>
+  <div class="mob-card-group">
+    <div class="mob-menu-item" onclick="go('remodel',null)">
+      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💰</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">리모델링 분담금</div><div class="mob-menu-sub">30→42평 확장 · 9월 총회 분담금 확정</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+    <div class="mob-menu-item" onclick="go('magok-temp',null)">
+      <div class="mob-menu-icon" style="background:rgba(255,255,255,.08)">🛏️</div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">마곡 임시 거주</div><div class="mob-menu-sub">리모델링 기간 임시 거주 계획</div></div>
+      <span class="mob-menu-arrow">›</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
 </main>
 </div>
 
@@ -3983,98 +4077,6 @@ document.addEventListener("keydown",e=>{
 
 </script>
 
-<!-- ══ 모바일 전용 하단 탭바 ══ -->
-<!-- ══ 전체 메뉴 패널 (모바일 전용 Toss 스타일) ══ -->
-<div class="tab-panel" id="panel-mob-all">
-<div class="con" style="padding-top:16px;padding-bottom:90px">
-
-  <!-- 핵심 6칸 바로가기 그리드 -->
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px">
-    <div class="mob-quick" onclick="go('loan-balance',null)"><span style="font-size:22px">💸</span><span>중도금/잔금</span></div>
-    <div class="mob-quick" onclick="go('cashflow',null)"><span style="font-size:22px">📅</span><span>자금 흐름</span></div>
-    <div class="mob-quick" onclick="go('loan-status',null)"><span style="font-size:22px">🏦</span><span>대출 현황</span></div>
-    <div class="mob-quick" onclick="go('cheongna-loan',null)"><span style="font-size:22px">💰</span><span>청라 정산</span></div>
-    <div class="mob-quick" onclick="go('deungchon',null)"><span style="font-size:22px">🏢</span><span>등촌 재정</span></div>
-    <div class="mob-quick" onclick="go('interior',null)"><span style="font-size:22px">🎨</span><span>인테리어</span></div>
-  </div>
-
-  <!-- 등촌 부영 이사 프로젝트 -->
-  <div class="mob-section-lbl">등촌 부영 이사 프로젝트</div>
-  <div class="mob-card-group">
-    <div class="mob-menu-item" onclick="go('deungchon',null)">
-      <div class="mob-menu-icon" style="background:rgba(123,110,246,.18)">🏢</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">등촌 부영 전체 재정</div><div class="mob-menu-sub">10.9억 매매 · 단계별 납부 현황</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('loan-balance',null)">
-      <div class="mob-menu-icon" style="background:rgba(239,68,68,.15)">💸</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">중도금 / 잔금</div><div class="mob-menu-sub">7/30 중도금 2억 · 9/16 잔금 7.8억</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('loan-status',null)">
-      <div class="mob-menu-icon" style="background:rgba(49,130,246,.18)">🏦</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 현황</div><div class="mob-menu-sub">명의별 한도 · 매달 이자 분석</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('cashflow',null)">
-      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">📅</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">월별 자금 흐름</div><div class="mob-menu-sub">7→8→9월 돈의 흐름 한눈에</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('post-cost',null)">
-      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💳</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">잔금 후 비용</div><div class="mob-menu-sub">취득세 3,597만 · 중개수수료</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('interior',null)">
-      <div class="mob-menu-icon" style="background:rgba(236,72,153,.15)">🎨</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/16~22 공사 · 9/23 첫 입주</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-  </div>
-
-  <!-- 청라 힐데스하임 -->
-  <div class="mob-section-lbl">청라 힐데스하임</div>
-  <div class="mob-card-group">
-    <div class="mob-menu-item" onclick="go('cheongna',null)">
-      <div class="mob-menu-icon" style="background:rgba(249,115,22,.15)">📦</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">짐 정리</div><div class="mob-menu-sub">가져갈 것 · 두고 갈 것 · 처분</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('cheongna-loan',null)">
-      <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">💰</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">대출 / 부동산중개료</div><div class="mob-menu-sub">4.9억 수령 → 보금자리론 상환 → 2.48억</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('cheongna-move',null)">
-      <div class="mob-menu-icon" style="background:rgba(99,91,255,.18)">🚚</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">이사업체</div><div class="mob-menu-sub">2단계 이사 · 8/31 창고 → 9/23 등촌</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('deungchon-temp',null)">
-      <div class="mob-menu-icon" style="background:rgba(139,92,246,.15)">🛏️</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">공백기 임시 거주</div><div class="mob-menu-sub">8/31~9/23 · 여행 + 김포 임시거주</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-  </div>
-
-  <!-- 마곡 더샵 -->
-  <div class="mob-section-lbl">마곡 더샵</div>
-  <div class="mob-card-group">
-    <div class="mob-menu-item" onclick="go('remodel',null)">
-      <div class="mob-menu-icon" style="background:rgba(245,158,11,.15)">💰</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">리모델링 분담금</div><div class="mob-menu-sub">30→42평 확장 · 9월 총회 분담금 확정</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-    <div class="mob-menu-item" onclick="go('magok-temp',null)">
-      <div class="mob-menu-icon" style="background:rgba(255,255,255,.08)">🛏️</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">마곡 임시 거주</div><div class="mob-menu-sub">리모델링 기간 임시 거주 계획</div></div>
-      <span class="mob-menu-arrow">›</span>
-    </div>
-  </div>
-
-</div>
-</div>
 
 <nav class="mob-nav" id="mobNav">
   <button class="mob-btn active" data-p="summary" onclick="go('summary',this)">
