@@ -1721,6 +1721,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button id="loan-btn-hwang" class="person-btn active" onclick="switchPerson('hwang')">황서림</button>
       <button id="loan-btn-ahn" class="person-btn" onclick="switchPerson('ahn')">안영준</button>
       <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">합산</button>
+      <button id="loan-btn-consultant" class="person-btn" onclick="switchPerson('consultant')">📋 대출상담사 대상</button>
     </div>
   </div>
 
@@ -2282,6 +2283,144 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="ibox r" style="margin-top:10px;font-size:12px">⚠ <strong>현재 KB시세 10억 7,250만 유지 중 — 시세 안정이 핵심 조건</strong><br>→ 시세 하락 전 대출 심사 신속 완료 필요 · 8.5억 이상 유지 시 시나리오 A/B 모두 안전</div>
     </div>
   </div>
+<div id="sec-consultant" style="display:none">
+
+  <!-- ① 안내 헤더 -->
+  <div class="ibox p" style="margin-bottom:20px;line-height:1.9">
+    📋 <strong>대출 상담 문의서</strong> &nbsp;·&nbsp; 2026. 07. 20 기준<br>
+    <span style="font-size:12.5px">아래 내용을 대출 상담사 분께 공유합니다. 현재 상황과 문의 사항을 정리했습니다.</span>
+  </div>
+
+  <!-- ① 소득 현황 -->
+  <div class="stitle">① 소득 현황</div>
+  <div class="tbl-wrap" style="margin-bottom:6px">
+    <table>
+      <thead><tr><th>구분</th><th>황서림</th><th>안영준</th><th>합산 총소득</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700">2025년 과세 소득</td>
+          <td style="font-weight:800;color:var(--purple)">5,338만</td>
+          <td style="font-weight:800;color:var(--orange)">1억 739만</td>
+          <td style="font-weight:900;color:var(--green)">1억 6,077만</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">2026년 과세 소득 <span style="font-size:10px;color:var(--muted)">(비과세 제외)</span></td>
+          <td style="font-weight:800;color:var(--purple)">6,674만</td>
+          <td style="font-size:12px;color:var(--muted)">1억 739만 (25년 동일)</td>
+          <td style="font-weight:900;color:var(--green)">1억 7,413만</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:11px;color:var(--muted);margin-bottom:20px;padding:0 2px">
+    ※ 황서림 26년 소득: 아시아나항공 원천징수부 1~6월 과세 합계 3,337만 × 2 = 연 6,674만 추정 (원천징수부+재직증명서 제출 가능)<br>
+    ※ 안영준 과세 소득: 비과세 항목 제외한 순수 과세 소득 기준
+  </div>
+
+  <!-- ② 안영준 기존 대출 현황 -->
+  <div class="stitle">② 안영준 기존 대출 현황 <span style="font-size:11px;color:var(--muted);font-weight:400">(부채증명서 2026.07 기준)</span></div>
+  <div class="tbl-wrap" style="margin-bottom:8px">
+    <table>
+      <thead><tr><th>대출 항목</th><th>잔액</th><th>금리/기간</th><th>상환방식</th><th>월 납입 (실납)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>우리은행 신용대출</td>
+          <td style="font-weight:800">9,500만</td>
+          <td>4.02% / 5년</td>
+          <td>이자납입</td>
+          <td style="font-weight:800;color:var(--orange)">약 32만</td>
+        </tr>
+        <tr>
+          <td>회사 보증보험대출</td>
+          <td style="font-weight:800">1억 2,000만</td>
+          <td>4.76% / 2028.06.30</td>
+          <td>만기일시상환</td>
+          <td style="font-weight:800;color:var(--orange)">약 48만</td>
+        </tr>
+        <tr style="background:var(--lite)">
+          <td colspan="3" style="font-weight:700;text-align:right;color:var(--t2)">합계</td>
+          <td style="font-weight:700">2억 1,500만</td>
+          <td style="font-weight:900;color:var(--orange)">월 80만</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:11px;color:var(--muted);margin-bottom:20px;padding:0 2px">
+    ※ 안영준 보금자리론 2억 4,700만 → 2026. 08. 31 청라 잔금 수령 후 전액 상환 예정 · DSR 산정에서 제외
+  </div>
+
+  <!-- ③ DSR 분석 -->
+  <div class="stitle">③ 합산 소득 기준 DSR 분석 (보금자리론 상환 후 기준)</div>
+  <div class="card" style="margin-bottom:20px">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+      <div style="padding:12px;background:rgba(123,110,246,0.07);border-radius:10px;border:1px solid rgba(123,110,246,0.2)">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">25년 합산 소득</div>
+        <div style="font-size:17px;font-weight:900;color:var(--purple)">1억 6,077만</div>
+        <div style="font-size:11px;color:var(--t2)">월 환산 <strong>1,340만/월</strong></div>
+      </div>
+      <div style="padding:12px;background:rgba(123,110,246,0.07);border-radius:10px;border:1px solid rgba(123,110,246,0.2)">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">26년 합산 소득</div>
+        <div style="font-size:17px;font-weight:900;color:var(--purple)">1억 7,413만</div>
+        <div style="font-size:11px;color:var(--t2)">월 환산 <strong>1,451만/월</strong></div>
+      </div>
+    </div>
+
+    <div style="padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);margin-bottom:14px;font-size:12.5px;line-height:2">
+      <strong>현재 기존 부채 DSR 점유</strong><br>
+      · 신용대출 9,500만 → DSR 5년 균등 환산: <strong>175만/월</strong><br>
+      · 보증보험 1.2억 → DSR 10년 균등 환산: <strong>126만/월</strong><br>
+      · 기존 부채 합계: <strong>301만/월</strong><br>
+      <span style="color:var(--orange);font-weight:700">→ 25년 기준 DSR 22.5% 점유 / 26년 기준 DSR 20.7% 점유</span>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px">추가 주담대 가능 금액 (4.65% · 30년 원리금균등 기준)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>소득 기준</th><th>DSR 40% 한도</th><th>주담대 가능</th><th>DSR 50% 한도</th><th>주담대 가능</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700">25년 합산</td>
+            <td>536만/월<br><span style="font-size:11px;color:var(--green)">잔여 235만/월</span></td>
+            <td style="font-weight:900;color:var(--green);font-size:15px">약 4억 5,500만</td>
+            <td>670만/월<br><span style="font-size:11px;color:var(--orange)">잔여 369만/월</span></td>
+            <td style="font-weight:900;color:var(--orange);font-size:15px">약 7억 1,500만</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700">26년 합산</td>
+            <td>580만/월<br><span style="font-size:11px;color:var(--green)">잔여 279만/월</span></td>
+            <td style="font-weight:900;color:var(--green);font-size:15px">약 5억 4,000만</td>
+            <td>726만/월<br><span style="font-size:11px;color:var(--orange)">잔여 425만/월</span></td>
+            <td style="font-weight:900;color:var(--orange);font-size:15px">약 8억 2,400만</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">※ 스트레스 DSR 미적용 순수 한도 기준 / 실제 심사 시 스트레스 가산금리 적용 가능</div>
+  </div>
+
+  <!-- ④ 문의 사항 -->
+  <div class="stitle">④ 상담 문의 사항</div>
+  <div class="ibox r" style="margin-bottom:12px;line-height:1.9">
+    <strong>🔍 MCI / MCG 가입이 가능한 주택담보대출 상품을 찾고 있습니다.</strong><br>
+    <span style="font-size:12.5px">
+      현재 우리은행(역촌동)에서 접수한 주담대는 MCI/MCG 가입 불가로 방공제 5,500만원이 적용되어 실한도 3억 7,400만원으로 제한되었습니다.<br>
+      <strong>MCI/MCG 가입이 가능한 은행 또는 상품을 알고 계신다면 추천 부탁드립니다.</strong>
+    </span>
+  </div>
+  <div class="ibox g" style="line-height:1.9">
+    <strong>🎯 목표 대출 금액: 4억 2,900만원</strong><br>
+    <span style="font-size:12.5px">
+      매입 예정 주택: 서울시 강서구 등촌동 부영아파트 · KB 시세 10억 7,250만원 (2026.07 기준)<br>
+      차주: 황서림 / 공동채무자: 안영준<br>
+      현재 수협은행 소득합산 심사 대기 중 (4억 2,900만 신청) · 우리은행 접수 완료 (8/10 취소 가능)<br>
+      <strong>방공제 없이 LTV 한도 내 최대 4억 2,900만원 확보를 목표로 합니다.</strong>
+    </span>
+  </div>
+
+</div>
 
 </div>
 </div>
@@ -3918,12 +4057,14 @@ function renderChecklist(items, containerId, onToggle, onDelete){
 
 let _itemFilter = '전체';
 function switchPerson(name){
-  document.getElementById('sec-hwang').style.display = name==='hwang'?'':'none';
-  document.getElementById('sec-ahn').style.display = name==='ahn'?'':'none';
-  document.getElementById('sec-combined').style.display = name==='combined'?'':'none';
-  document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
-  document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
-  document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
+document.getElementById('sec-hwang').style.display = name==='hwang'?'':'none';
+document.getElementById('sec-ahn').style.display = name==='ahn'?'':'none';
+document.getElementById('sec-combined').style.display = name==='combined'?'':'none';
+document.getElementById('sec-consultant').style.display = name==='consultant'?'':'none';
+document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
+document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
+document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
+document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
 }
 function switchFundPlan(p){
   ['1','2','3','4','5'].forEach(n=>{
