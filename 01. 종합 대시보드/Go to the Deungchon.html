@@ -976,9 +976,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="tl-right"><div class="tl-date">2026. 06 완료</div></div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot pend">!</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">대출 상담 방문</div><div class="tl-desc">산림금융조합 서인천 지점 · 우리은행 역촌동 지점 · 금리·MCI 비교 후 확정</div></div>
-      <div class="tl-right"><div class="tl-amt or">예정</div><div class="tl-date">2026. 07. 20</div></div>
+      <div class="tl-dot done">✓</div><div class="tl-line"></div>
+      <div class="tl-body"><div class="tl-title">대출 접수 완료 — 수협·우리은행</div><div class="tl-desc">수협은행 오전 신청(소득합산, 4억 2,900만 · 전화 확인 대기) · 우리은행 오후 1시 접수 예정(MCI 불가, 방공제 5,500만, 8/10 취소 가능)</div></div>
+      <div class="tl-right"><div class="tl-amt gr">완료</div><div class="tl-date">2026. 07. 20</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot pend">!</div><div class="tl-line"></div>
@@ -987,7 +987,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot warn">⚠</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">황서림 주담대 확정 필요</div><div class="tl-desc">7/20 방문 후 산림금융 or 우리은행 결정 · 차주 황서림 소득합산 · DSR 50% 이내 (소득 대비 상환 비율)</div></div>
+      <div class="tl-body"><div class="tl-title">주담대 은행 확정 필요</div><div class="tl-desc">수협은행 심사 결과 대기 · 우리은행 8/10 취소 가능 기한 내 비교 · 방공제 없는 4.29억 대출 확보가 목표</div></div>
       <div class="tl-right"><div class="tl-amt re">미확정</div><div class="tl-date">잔금 전</div></div>
     </div>
     <div class="tl-item">
@@ -1723,30 +1723,34 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <div class="ibox y" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">    <h4>📖 처음 보면 어려운 단어 설명</h4>    <strong>DSR (총부채원리금상환비율)</strong> — 월급의 몇 %를 빚 갚는 데 쓰냐예요. 은행은 이 비율이 40~50% 이하인 사람에게만 주담대를 빌려줘요.<br>    <strong>LTV (담보인정비율)</strong> — 집값의 몇 %까지 빌려주냐예요. 1금융권(우리은행)은 집값의 40%, 2금융권(산림조합)은 최대 80%까지 가능해요.<br>    <strong>MCI (주택담보대출 보험)</strong> — 가입하면 LTV 한도를 높여 더 빌릴 수 있어요. 대출 신청 시 보험료 1회 납부예요.<br>    <strong>IRP/퇴직연금 해지</strong> — 회사에 적립된 퇴직금을 미리 받는 것. 세금(약 16.5%)을 내고 현금화해요. 4안에서는 두 사람 합산 6,417만원 활용해요.  </div>
   <!-- 대출 상담 일정 -->
-  <div class="ibox o" style="margin-bottom:16px">
-    📅 <strong>7/20(월) 대출 상담 방문 예정</strong> · 산림금융조합 서인천 지점 + 우리은행 역촌동 지점 비교
+  <div class="ibox g" style="margin-bottom:16px">
+    ✅ <strong>7/20 대출 접수 현황</strong><br><span style="font-size:12.5px;line-height:2">🏦 <strong>수협은행</strong> — 오전 신청 완료 (소득합산, 4억 2,900만원) · 전화 심사 결과 대기 중<br>🏦 <strong>우리은행</strong> — 오후 1시 접수 예정 (MCI/MCG 불가 → 방공제 5,500만 적용 → 실한도 3억 7,400만) · 8/10까지 취소 가능</span>
   </div>
 
-  <div class="stitle">🏦 대출 상품 비교 — 산림금융조합 vs 우리은행</div>
+  <div class="stitle">🏦 대출 상품 비교 — 신청 진행 중</div>
   <div class="g2" style="margin-bottom:20px">
     <div class="card" style="border-left:4px solid var(--green)">
-      <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:12px">🌲 산림금융조합 (서인천) ⭐ 유력</div>
-      <div class="fund-row"><div class="fund-label">1년 변동금리</div><div style="flex:1"></div><div style="font-weight:800;color:var(--green)">5.0%</div></div>
-      <div class="fund-row"><div class="fund-label">3년 고정금리</div><div style="flex:1"></div><div style="font-weight:700">5.5%</div></div>
-      <div class="fund-row"><div class="fund-label">중도상환수수료</div><div style="flex:1"></div><div style="font-size:12px;font-weight:700">0.6~0.7% · 3년 후 면제</div></div>
-      <div class="fund-row"><div class="fund-label">MCI 가입</div><div style="flex:1"></div><div style="font-weight:700;color:var(--green)">가능 ✅</div></div>
-      <div class="fund-row"><div class="fund-label">DSR 기준</div><div style="flex:1"></div><div style="font-weight:700">50% 이내</div></div>
-      <div class="fund-row"><div class="fund-label">금리 확정</div><div style="flex:1"></div><div style="font-size:12px;font-weight:700">접수일 기준 · 실행 2개월 전 접수</div></div>
-      <div class="fund-row" style="border-bottom:none"><div class="fund-label">부부합산 조건</div><div style="flex:1"></div><div style="font-size:11px;color:var(--orange);font-weight:700">배우자 기존 부채 상환 필요</div></div>
+      <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:12px">🐠 수협은행 ⭐ 신청 완료 · 심사 중</div>
+      <div class="fund-row"><div class="fund-label">신청 금액</div><div style="flex:1"></div><div style="font-weight:800;color:var(--green)">4억 2,900만</div></div>
+      <div class="fund-row"><div class="fund-label">신청 방식</div><div style="flex:1"></div><div style="font-weight:700">소득합산 (황서림+안영준)</div></div>
+      <div class="fund-row"><div class="fund-label">진행 상황</div><div style="flex:1"></div><div style="font-size:12px;font-weight:700;color:var(--orange)">전화 심사 결과 대기 중</div></div>
+      <div class="fund-row"><div class="fund-label">방공제</div><div style="flex:1"></div><div style="font-weight:700;color:var(--green)">없음 ✅</div></div>
+      <div class="fund-row"><div class="fund-label">신청일</div><div style="flex:1"></div><div style="font-weight:700">2026. 07. 20 오전</div></div>
+      <div class="fund-row" style="border-bottom:none"><div class="fund-label">결과</div><div style="flex:1"></div><div style="font-size:12px;font-weight:700;color:var(--muted)">전화 통보 예정</div></div>
     </div>
-    <div class="card" style="border-left:4px solid var(--purple)">
-      <div style="font-size:13px;font-weight:800;color:var(--purple);margin-bottom:12px">🏦 우리은행 (역촌동)</div>
-      <div class="fund-row"><div class="fund-label">금리</div><div style="flex:1"></div><div style="font-weight:700;color:var(--muted)">7/20 방문 후 확인</div></div>
-      <div class="fund-row"><div class="fund-label">중도상환수수료</div><div style="flex:1"></div><div style="font-weight:700;color:var(--muted)">확인 필요</div></div>
-      <div class="fund-row"><div class="fund-label">MCI 가입</div><div style="flex:1"></div><div style="font-weight:700;color:var(--muted)">확인 필요</div></div>
-      <div class="fund-row"><div class="fund-label">기존 신용대출</div><div style="flex:1"></div><div style="font-size:11px;font-weight:700">0.95억 보유 (DSR 5년 산정)</div></div>
-      <div class="fund-row" style="border-bottom:none"><div class="fund-label">차주 명의</div><div style="flex:1"></div><div style="font-weight:700">황서림 (소득합산)</div></div>
+    <div class="card" style="border-left:4px solid var(--orange)">
+      <div style="font-size:13px;font-weight:800;color:var(--orange);margin-bottom:4px">🏦 우리은행 (역촌동) · 접수 예정</div>
+      <div style="font-size:11px;color:var(--red);font-weight:700;margin-bottom:10px">⚠ 8/10까지 취소 가능 — 백업용 접수</div>
+      <div class="fund-row"><div class="fund-label">접수 예정</div><div style="flex:1"></div><div style="font-weight:700;color:var(--orange)">오늘 오후 1시</div></div>
+      <div class="fund-row"><div class="fund-label">MCI/MCG</div><div style="flex:1"></div><div style="font-weight:700;color:var(--red)">가입 불가 ❌</div></div>
+      <div class="fund-row"><div class="fund-label">방공제</div><div style="flex:1"></div><div style="font-weight:700;color:var(--red)">−5,500만원 차감</div></div>
+      <div class="fund-row"><div class="fund-label">실제 한도</div><div style="flex:1"></div><div style="font-weight:800;color:var(--red)">3억 7,400만</div></div>
+      <div class="fund-row"><div class="fund-label">취소 기한</div><div style="flex:1"></div><div style="font-weight:700;color:var(--orange)">2026. 08. 10</div></div>
+      <div class="fund-row" style="border-bottom:none"><div class="fund-label">전략</div><div style="flex:1"></div><div style="font-size:11px;font-weight:700">수협 or 4.29억 확보 시 취소</div></div>
     </div>
+  </div>
+  <div class="ibox o" style="font-size:12.5px;margin-bottom:20px">
+    📌 <strong>참고: 산림금융조합</strong> — 방공제 없음, LTV 80%, 4억 2,900만 가능 (1년 변동 5.0%) · 수협 심사 결과에 따라 추가 신청 검토
   </div>
 
   <!-- ── 황서림 섹션 ── -->
