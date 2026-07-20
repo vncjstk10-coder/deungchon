@@ -721,6 +721,13 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .prog-nm{color:rgba(255,255,255,.62)!important}
   .prog-vl{color:#FFFFFF!important;font-weight:800!important}
 }
+
+/* ── 신규 레이아웃 모바일 대응 ── */
+@media(max-width:768px){
+  #consultant-income-grid{grid-template-columns:1fr!important}
+  #vendor-cards-grid{grid-template-columns:1fr!important}
+  #sec-consultant .tbl-wrap{overflow-x:auto!important}
+}
 </style>
 </head>
 <body>
@@ -2298,7 +2305,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <span style="width:22px;height:22px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0">①</span>
     <span style="font-size:15px;font-weight:800;color:var(--text)">소득 현황</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px">
+  <div id="consultant-income-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px">
     <div style="padding:14px;background:rgba(123,110,246,0.07);border:1px solid rgba(123,110,246,0.2);border-radius:12px;border-top:3px solid var(--purple)">
       <div style="font-size:11px;font-weight:800;color:var(--purple);margin-bottom:10px">황서림</div>
       <div style="margin-bottom:10px">
@@ -2338,7 +2345,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ② 안영준 기존 대출 현황 -->
   <div style="display:flex;align-items:center;gap:10px;margin:24px 0 14px"><span style="width:22px;height:22px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0">②</span><span style="font-size:15px;font-weight:800;color:var(--text)">안영준 기존 대출 현황</span><span style="font-size:11px;color:var(--muted);margin-left:6px">(부채증명서 2026.07 기준)</span></div>
-  <div class="tbl-wrap" style="margin-bottom:8px;overflow-x:visible">
+  <div class="tbl-wrap" style="margin-bottom:8px;overflow-x:auto">
     <table>
       <thead><tr><th>대출 항목</th><th>잔액</th><th>금리/기간</th><th>상환방식</th><th>월 납입 (실납)</th></tr></thead>
       <tbody>
@@ -3115,7 +3122,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <!-- 인테리어 항목 -->
     <div class="stitle">🎨 인테리어 항목</div>
     <div class="card" style="margin-bottom:12px">
-      <div class="ibox o" style="margin-bottom:14px">
     <div class="ibox g" style="margin-bottom:14px">
       ✅ <strong>도배·장판 업체 확정 — 장판의 신</strong><br><span style="font-size:12.5px">합지 도배 125만 + 1.8T 장판 75만 = <strong>200만원</strong> · 공사 약 2일 소요</span>
       <table style="width:100%;border-collapse:collapse;font-size:13px">
@@ -3168,6 +3174,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </tfoot>
       </table>
     </div>
+    </div>
 
     <!-- 공사 일정 -->
     <div class="stitle">📅 공사 일정 (9/24 추석 전 완료 필수)</div>
@@ -3188,7 +3195,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <!-- 확정 업체 -->
 <div class="stitle">🏢 확정 업체</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
-
+<div id="vendor-cards-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
   <!-- 장판의 신 -->
   <div class="card" style="border-top:4px solid var(--green);padding:16px">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
