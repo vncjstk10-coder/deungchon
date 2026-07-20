@@ -724,9 +724,24 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 
 /* ── 신규 레이아웃 모바일 대응 ── */
 @media(max-width:768px){
-  #consultant-income-grid{grid-template-columns:1fr!important}
+  #consultant-income-grid{grid-template-columns:repeat(3,1fr)!important;gap:5px!important}
+  #consultant-income-grid>div{padding:8px 6px!important}
+  #consultant-income-grid [style*="1.25rem"]{font-size:0.88rem!important;letter-spacing:-.01em!important}
+  #consultant-income-grid [style*="font-size:11px"]{font-size:9px!important;margin-bottom:5px!important}
+  #consultant-income-grid [style*="font-size:10px"]{font-size:8.5px!important}
+  #consultant-income-grid [style*="margin-bottom:10px"]{margin-bottom:5px!important}
   #vendor-cards-grid{grid-template-columns:1fr!important}
-  #sec-consultant .tbl-wrap{overflow-x:auto!important}
+  #sec-consultant .ibox{line-height:1.6!important;font-size:12px!important;padding:10px 12px!important;margin-bottom:8px!important}
+  #sec-consultant .ibox[style*="line-height:2.1"]{line-height:1.5!important}
+  #sec-consultant table{min-width:0!important;font-size:12px!important;width:100%!important}
+  #sec-consultant th{padding:5px 7px!important;font-size:10.5px!important;white-space:nowrap!important}
+  #sec-consultant td{padding:7px 7px!important;font-size:12px!important}
+  #sec-consultant .tbl-wrap{overflow-x:hidden!important;margin-bottom:6px!important}
+  #sec-consultant [style*="line-height:1.9"]{line-height:1.5!important}
+  #sec-consultant [style*="font-size:12.5px"]{font-size:12px!important}
+  #sec-consultant [style*="margin:24px 0 14px"]{margin:12px 0 8px!important}
+  #sec-consultant [style*="margin:4px 0 14px"]{margin-bottom:8px!important}
+  #sec-consultant [style*="line-height:1.8"]{font-size:10px!important;line-height:1.6!important;margin-bottom:8px!important}
 }
 </style>
 </head>
@@ -2348,25 +2363,24 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div style="display:flex;align-items:center;gap:10px;margin:24px 0 14px"><span style="width:22px;height:22px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0">②</span><span style="font-size:15px;font-weight:800;color:var(--text)">안영준 기존 대출 현황</span><span style="font-size:11px;color:var(--muted);margin-left:6px">(부채증명서 2026.07 기준)</span></div>
   <div class="tbl-wrap" style="margin-bottom:8px;overflow-x:auto">
     <table>
-      <thead><tr><th>대출 항목</th><th>잔액</th><th>금리/기간</th><th>상환방식</th><th>월 납입 (실납)</th></tr></thead>
+      <thead><tr><th>대출 항목</th><th>잔액</th><th>금리 / 기간</th><th>월 납입</th></tr></thead>
       <tbody>
         <tr>
           <td>우리은행 신용대출</td>
           <td style="font-weight:800">9,500만</td>
           <td>4.02% / 5년</td>
-          <td>이자납입</td>
           <td style="font-weight:800;color:var(--orange)">약 32만</td>
         </tr>
         <tr>
           <td>회사 보증보험대출</td>
           <td style="font-weight:800">1억 2,000만</td>
           <td>4.76% / 2028.06.30</td>
-          <td>만기일시상환</td>
           <td style="font-weight:800;color:var(--orange)">약 48만</td>
         </tr>
         <tr style="background:var(--lite)">
-          <td colspan="3" style="font-weight:700;text-align:right;color:var(--t2)">합계</td>
-          <td style="font-weight:700">2억 1,500만</td>
+          <td style="font-weight:700;color:var(--t2)">합계</td>
+          <td style="font-weight:800">2억 1,500만</td>
+          <td></td>
           <td style="font-weight:900;color:var(--orange)">월 80만</td>
         </tr>
       </tbody>
