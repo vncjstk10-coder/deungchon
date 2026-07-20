@@ -747,6 +747,8 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   #sec-consultant .ibox strong{font-size:12px!important}
   .g3{grid-template-columns:1fr!important;gap:12px!important}
   .con{padding:20px 16px 80px!important}
+  .rate-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .dc-best-inner{grid-template-columns:1fr!important;gap:8px!important}
 }
 </style>
 </head>
@@ -1660,7 +1662,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:.06em;margin-bottom:6px">🏆 현재 최선의 방안</div>
     <div style="font-size:15px;font-weight:900;color:var(--green);margin-bottom:4px">🌲💼 4안 · 산림금융 + IRP 해지</div>
     <div style="font-size:11px;color:var(--muted);margin-bottom:14px">산림금융 4.29억 + IRP 해지 세후 6,417만 + 청라잔금 + 현금</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div class="dc-best-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
       <div style="background:rgba(16,185,129,.13);border-radius:12px;padding:14px;text-align:center">
         <div style="font-size:10px;color:var(--muted);margin-bottom:5px">조달 가능</div>
         <div class="dc-best-num" style="font-size:1.4rem;font-weight:900;color:var(--green)">9억 8,607만</div>
@@ -2003,7 +2005,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         → 방 공제 5,500만 차감 → <strong style="color:var(--purple)">대출 한도 3억 7,400만 확정</strong><br>
         <span style="color:var(--red);font-size:11px">⚠ MCI · MGI 현재 가입불가 상황 (시세 기반 한도 적용)</span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="rate-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div style="background:var(--p3);border-radius:12px;padding:16px;border-top:3px solid var(--purple)">
           <div style="font-size:11px;color:var(--purple);font-weight:700;margin-bottom:8px">1년 변동금리 (우대 충족시)</div>
           <div style="font-size:2rem;font-weight:900;color:var(--purple);line-height:1">4.65%</div>
