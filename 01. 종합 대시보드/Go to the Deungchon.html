@@ -921,42 +921,40 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- 3개 트랙 요약 -->
   <div class="g3" style="margin-bottom:14px">
-    <div class="card" style="cursor:pointer" onclick="go('cheongna')">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
-        <div class="kpi-lbl">🏘️ 청라힐데스하임 정리</div>
-        <span class="chip y" id="cheongna-chip">진행중</span>
-      </div>
-      <div style="font-size:22px;font-weight:900;color:var(--text)" id="cheongna-progress">- / -</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:4px">항목 처리 완료</div>
-      <div style="margin-top:14px;height:7px;background:var(--bg);border-radius:4px;overflow:hidden">
-        <div class="pbar or" id="cheongna-bar" style="width:0%"></div>
-      </div>
-      <div style="font-size:11px;color:var(--muted);margin-top:6px">→ 청라 정리 탭에서 상세 확인</div>
-    </div>
     <div class="card" style="cursor:pointer" onclick="go('loan-status')">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
         <div class="kpi-lbl">🏦 대출 현황</div>
         <span class="chip y">심사 진행 중</span>
       </div>
-      <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px">7/20 오늘 접수 완료</div>
-      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 수협은행</strong> 신청 완료<br><span style="font-size:12px">소득합산 4억 2,900만 · 전화 결과 대기 중</span></div>
-      <div class="ibox o" style="padding:10px 12px;margin-bottom:0"><strong>② 우리은행</strong> 오후 1시 접수 완료<br><span style="font-size:12px">방공제 5,500만 → 실한도 3.74억 · 8/10 취소 가능</span></div>
-
-      <div class="ibox y" style="padding:10px 12px;margin-bottom:0">
-        <strong>② 황서림 소득 인정</strong><br>26년 원천징수부 소득 인정 여부 은행 확인 필요
-      </div>
+      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 수협은행</strong> 소득합산 신청<br><span style="font-size:12px">4억 2,900만 · MCI/MCG 가입 여부 확인 중</span></div>
+      <div class="ibox o" style="padding:10px 12px;margin-bottom:6px"><strong>② 우리은행</strong> 접수 완료<br><span style="font-size:12px">방공제 5,500만 → 실한도 3.74억 · 8/10 취소 가능</span></div>
+      <div class="ibox y" style="padding:10px 12px"><strong>목표</strong> MCI/MCG 가능 은행 · 4억 2,900만<br><span style="font-size:12px">방공제 없이 LTV 한도 내 최대 확보</span></div>
     </div>
-    <div class="card" style="cursor:pointer" onclick="go('remodel')">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
-        <div class="kpi-lbl">🔨 리모델링 분담금</div>
-        <span class="chip p">사전 준비</span>
+    <div class="card" style="cursor:pointer" onclick="go('cashflow')">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+        <div class="kpi-lbl">💰 중도금 / 잔금</div>
+        <span class="chip r">2건 남음</span>
       </div>
-      <div style="font-size:22px;font-weight:900;color:var(--purple)">9월 총회</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:4px">분담금 확정 예정</div>
-      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--t2)">
-        예시: 분담금 5억 → 계약금 5,000만 현금 필요<br>
-        <span style="font-size:11px;color:var(--muted)">이주: 빠르면 내년 초 ~ 내후년</span>
+      <div style="margin-bottom:10px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:2px">중도금 (7/30)</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--yellow)">1억 1,000만</div>
       </div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:2px">잔금 (9/16)</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--red)">7억 8,000만</div>
+      </div>
+      <div class="ibox y" style="padding:8px 12px;font-size:12px">대출 + 청라 매도금 + 현금 합산</div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="go('interior')">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+        <div class="kpi-lbl">🛠️ 인테리어 업체</div>
+        <span class="chip g">2곳 확정</span>
+      </div>
+      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">239만원</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/16~22</div>
+      <div class="ibox g" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🖼️ <strong>장판의 신</strong> 도배 125 + 장판 75 = 200만</div>
+      <div class="ibox p" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🧹 <strong>청소조교</strong> 입주청소 39만</div>
+      <div class="ibox y" style="padding:8px 12px;font-size:12px">🚿 <strong>조선쎄라믹</strong> 화장실 공사 미확정 (470~590만)</div>
     </div>
   </div>
 
@@ -1048,11 +1046,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="tl-dot fut">🏠</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">공사 완료 + 등촌 입주</div><div class="tl-desc">9/22 공사 완료 · 9/23 2차 이사 (보관→등촌) · 에어컨 삼성 기사 별도 · 추석(9/24) 전 입주</div></div>
       <div class="tl-right"><div class="tl-amt gr">입주</div><div class="tl-date">2026. 09. 23</div></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot fut">8</div>
-      <div class="tl-body"><div class="tl-title">리모델링 분담금 총회</div><div class="tl-desc">분담금 확정 → 계약금 납부(10%) → 이주 준비 시작</div></div>
-      <div class="tl-right"><div class="tl-date">2026. 09 예정</div></div>
     </div>
   </div>
 </div>
@@ -3176,6 +3169,32 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="margin-top:8px;font-size:11px;color:var(--muted);text-align:center">💡 하청 없이 팀원 직접 방문</div>
   </div>
 
+
+  <!-- 조선쎄라믹 -->
+  <div class="card" style="border-top:4px solid var(--orange);padding:16px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <div style="font-size:14px;font-weight:900;color:var(--orange)">🚿 조선쎄라믹</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">화장실 공사 전문</div>
+      </div>
+      <span style="background:rgba(249,115,22,0.1);color:var(--orange);font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px">미확정</span>
+    </div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">연락처</div><div style="flex:1"></div><div style="color:var(--purple);font-weight:700">010-4819-9119</div></div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px">
+      <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
+        <div style="font-size:10px;color:var(--muted)">거실 화장실</div>
+        <div style="font-size:1.05rem;font-weight:900;color:var(--orange)">250~270만</div>
+      </div>
+      <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
+        <div style="font-size:10px;color:var(--muted)">안방 화장실</div>
+        <div style="font-size:1.05rem;font-weight:900;color:var(--orange)">220만</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;padding:8px 10px;background:rgba(239,68,68,0.08);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:12px;color:var(--t2)">바닥철거방수 설비</span>
+      <span style="font-size:12px;font-weight:800;color:var(--red)">+120만 추가</span>
+    </div>
+  </div>
 </div>
 
   </div>
