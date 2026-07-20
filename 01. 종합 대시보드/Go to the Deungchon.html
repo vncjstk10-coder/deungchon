@@ -732,7 +732,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   #consultant-income-grid [style*="margin-bottom:10px"]{margin-bottom:5px!important}
   #vendor-cards-grid{grid-template-columns:1fr!important}
   #sec-consultant .ibox{line-height:1.6!important;font-size:12px!important;padding:10px 12px!important;margin-bottom:8px!important}
-  #sec-consultant .ibox[style*="line-height:2.1"]{line-height:1.5!important}
+  #sec-consultant .ibox[style*="line-height:2.1"]{line-height:1.4!important}
   #sec-consultant table{min-width:0!important;font-size:12px!important;width:100%!important}
   #sec-consultant th{padding:5px 7px!important;font-size:10.5px!important;white-space:nowrap!important}
   #sec-consultant td{padding:7px 7px!important;font-size:12px!important}
@@ -2311,7 +2311,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <div id="sec-consultant" style="display:none">
 
   <!-- ① 안내 헤더 -->
-  <div class="ibox p" style="margin-bottom:20px;line-height:2.1">
+  <div class="ibox p" style="margin-bottom:14px;line-height:1.7">
     📋 <strong>대출 상담 문의서</strong>&nbsp;·&nbsp;2026. 07. 20 기준<br>
     <span style="font-size:12.5px;color:var(--t2)">안녕하세요, 주택담보대출 상담 관련하여 저희 상황을 아래와 같이 공유드립니다. 내용을 검토하신 후 가능한 대출 상품이 있으신지 확인 부탁드리겠습니다. 감사합니다.</span>
   </div>
@@ -2321,7 +2321,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <span style="width:22px;height:22px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0">①</span>
     <span style="font-size:15px;font-weight:800;color:var(--text)">소득 현황</span>
   </div>
-  <div id="consultant-income-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px">
+  <div id="consultant-income-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px;align-items:start">
     <div style="padding:14px;background:rgba(123,110,246,0.07);border:1px solid rgba(123,110,246,0.2);border-radius:12px;border-top:3px solid var(--purple)">
       <div style="font-size:11px;font-weight:800;color:var(--purple);margin-bottom:10px">황서림</div>
       <div style="margin-bottom:10px">
@@ -2356,7 +2356,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
   <div style="font-size:11px;color:var(--muted);margin-bottom:20px;padding:0 2px;line-height:1.8">
     ※ 황서림 26년 소득: 아시아나항공 원천징수부 1~6월 과세 합계 3,337만 × 2 = 연 6,674만 추정<br>
-    ※ 황서림 비과세 소득: 국외 비과세 연 1,200만원 발생 — 금융권 DSR 산정 시 제외 (참고용)<br>
     ※ 금융권 소득 산정: 황서림·안영준 모두 과세 소득만 적용
   </div>
 
@@ -2378,7 +2377,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <td>4.76% / 2028.06.30</td>
           <td style="font-weight:800;color:var(--orange)">약 48만</td>
         </tr>
-        <tr style="background:var(--lite)">
+        <tr style="background:var(--bg)">
           <td style="font-weight:700;color:var(--t2)">합계</td>
           <td style="font-weight:800">2억 1,500만</td>
           <td></td>
@@ -2392,14 +2391,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <div style="display:flex;align-items:center;gap:10px;margin:24px 0 14px"><span style="width:22px;height:22px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0">③</span><span style="font-size:15px;font-weight:800;color:var(--text)">상담 문의 사항</span></div>
-  <div class="ibox r" style="margin-bottom:12px;line-height:1.9">
+  <div class="ibox r" style="margin-bottom:12px;line-height:1.7">
     <strong>🔍 MCI / MCG 가입이 가능한 주택담보대출 상품을 찾고 있습니다.</strong><br>
     <span style="font-size:12.5px">
       현재 우리은행(역촌동)에서 접수한 주담대는 MCI/MCG 가입 불가로 방공제 5,500만원이 적용되어 실한도 3억 7,400만원으로 제한되었습니다.<br>
       <strong>MCI/MCG 가입이 가능한 은행 또는 상품을 알고 계신다면 추천 부탁드립니다.</strong>
     </span>
   </div>
-  <div class="ibox g" style="line-height:1.9">
+  <div class="ibox g" style="line-height:1.7">
     <strong>🎯 목표 대출 금액: 4억 2,900만원</strong><br>
     <span style="font-size:12.5px">
       매입 예정 주택: 서울시 강서구 등촌동 부영아파트 · KB 시세 10억 7,250만원 (2026.07 기준)<br>
