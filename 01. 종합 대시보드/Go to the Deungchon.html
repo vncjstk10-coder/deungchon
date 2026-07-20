@@ -308,6 +308,12 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 
   /* ─── panel-loan-balance: 시나리오 2열 → 1열 ─── */
   #panel-loan-balance .g2{grid-template-columns:1fr!important}
+  /* ─── 대출현황: 비교 카드 모바일 1열 ─── */
+  #panel-loan-status .g2{grid-template-columns:1fr!important}
+  /* ─── ibox.y heading 다크모드 색상 ─── */
+  .ibox.y h4{color:var(--yellow)!important}
+  /* ─── mob-quick 텍스트 가독성 ─── */
+  .mob-quick span:last-child{font-size:12px!important;font-weight:700!important;color:rgba(255,255,255,.75)!important}
   /* 납부 구조 3열 → 1열 */
   #panel-loan-balance #sec-lb-janggeum .g3{grid-template-columns:1fr!important}
 
@@ -905,14 +911,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:11px;color:var(--muted);margin-top:6px">→ 청라 정리 탭에서 상세 확인</div>
     </div>
     <div class="card" style="cursor:pointer" onclick="go('loan-status')">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
-        <div class="kpi-lbl">🏦 대출 / 잔금</div>
-        <span class="chip r">위험요소 2건</span>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+        <div class="kpi-lbl">🏦 대출 현황</div>
+        <span class="chip y">심사 진행 중</span>
       </div>
-      <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px">핵심 위험 요소</div>
-      <div class="ibox r" style="padding:10px 12px;margin-bottom:6px">
-        <strong>① KB 대출 규제</strong><br>3억 한도 통제 → 타 은행 영향
-      </div>
+      <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px">7/20 오늘 접수 완료</div>
+      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 수협은행</strong> 신청 완료<br><span style="font-size:12px">소득합산 4억 2,900만 · 전화 결과 대기 중</span></div>
+      <div class="ibox o" style="padding:10px 12px;margin-bottom:0"><strong>② 우리은행</strong> 오후 1시 접수<br><span style="font-size:12px">방공제 5,500만 → 실한도 3.74억 · 8/10 취소 가능</span></div>
+
       <div class="ibox y" style="padding:10px 12px;margin-bottom:0">
         <strong>② 황서림 소득 인정</strong><br>26년 원천징수부 소득 인정 여부 은행 확인 필요
       </div>
@@ -1505,6 +1511,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <h1>🛏️ 공백기 임시 거주 계획</h1>
       <p>청라 퇴거(8/31) → 여행 1주일 → 김포 임시거주(3일) → 등촌 입주(9/23) · 약 3주 공백 계획</p>
     </div>
+    <div class="ibox p" style="margin-bottom:14px;font-size:13px;line-height:1.8">      💡 <strong>이 탭은요:</strong> 청라 집을 8/31에 넘기고 나서, 등촌 입주(9/23)까지 약 3주 동안 머물 곳이 없어요. 이 탭은 그 3주를 어떻게 보낼지 계획한 페이지예요. 1단계로 여행 다녀오고, 2단계로 김포공항 근처 단기 숙소에 있다가 등촌으로 들어가는 방향이에요.    </div>
     <div class="ibox r" style="margin-bottom:14px">
       청라 잔금 8/31 → 등촌 잔금 9/16 → 공사 기간 약 5일 = <strong>총 약 3주 임시 거주 필요</strong>
     </div>
@@ -4049,8 +4056,8 @@ function dday(){
       var dM=calc(2026,7,30),dC=calc(2026,8,31),dD=calc(2026,9,16);
       if(dM>0){
         uDay.textContent=dM;
-        uMsg.textContent='7월 30일까지 중도금 2억 납부 · 대출 상담 → 실행 → 납부 순서로 진행해요';
-        if(uSub)uSub.textContent='지금 단계: 중도금 대출 상담 진행 중';
+        uMsg.textContent='7월 30일까지 중도금 2억 납부 · 수협은행 심사 결과 대기 · 우리은행 8/10 취소 가능';
+        if(uSub)uSub.textContent='지금 단계: 수협·우리은행 대출 접수 완료 · 심사 결과 대기 중';
         uBanner.style.background=dM<=7?'linear-gradient(135deg,#DC2626,#EF4444)':'linear-gradient(135deg,#D97706,#F97316)';
         uBanner.style.boxShadow=dM<=7?'0 8px 28px rgba(239,68,68,.4)':'0 8px 28px rgba(249,115,22,.35)';
       } else if(dC>0){
