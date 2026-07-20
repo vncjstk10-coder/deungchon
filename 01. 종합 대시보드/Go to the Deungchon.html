@@ -1726,6 +1726,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
 
+<div id="sec-common-header">
   <div class="ibox y" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">    <h4>📖 처음 보면 어려운 단어 설명</h4>    <strong>DSR (총부채원리금상환비율)</strong> — 월급의 몇 %를 빚 갚는 데 쓰냐예요. 은행은 이 비율이 40~50% 이하인 사람에게만 주담대를 빌려줘요.<br>    <strong>LTV (담보인정비율)</strong> — 집값의 몇 %까지 빌려주냐예요. 1금융권(우리은행)은 집값의 40%, 2금융권(산림조합)은 최대 80%까지 가능해요.<br>    <strong>MCI (주택담보대출 보험)</strong> — 가입하면 LTV 한도를 높여 더 빌릴 수 있어요. 대출 신청 시 보험료 1회 납부예요.<br>    <strong>IRP/퇴직연금 해지</strong> — 회사에 적립된 퇴직금을 미리 받는 것. 세금(약 16.5%)을 내고 현금화해요. 4안에서는 두 사람 합산 6,417만원 활용해요.  </div>
   <!-- 대출 상담 일정 -->
   <div class="ibox g" style="margin-bottom:16px">
@@ -1759,6 +1760,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <span style="line-height:2.1">📍 <strong>인천</strong> — 한도 소진 ❌ &nbsp;|&nbsp; 📍 <strong>김포</strong> — 상담 지연 ⏳ &nbsp;|&nbsp; 📍 <strong>고양</strong> — 가계 대출 제한 ❌</span><br>
     <span style="font-size:11.5px;font-weight:700">⚠ 고양·인천 이용 불가 확인 — 4안 산림금융 경로 사실상 차단 · 수협 심사 결과가 핵심 변수</span>
   </div>
+</div><!-- /sec-common-header -->
 
   <!-- ── 황서림 섹션 ── -->
   <div id="sec-hwang">
@@ -2293,7 +2295,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ① 소득 현황 -->
   <div class="stitle">① 소득 현황</div>
-  <div class="tbl-wrap" style="margin-bottom:6px">
+  <div class="tbl-wrap" style="margin-bottom:6px;overflow-x:visible">
     <table>
       <thead><tr><th>구분</th><th>황서림</th><th>안영준</th><th>합산 총소득</th></tr></thead>
       <tbody>
@@ -2319,7 +2321,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ② 안영준 기존 대출 현황 -->
   <div class="stitle">② 안영준 기존 대출 현황 <span style="font-size:11px;color:var(--muted);font-weight:400">(부채증명서 2026.07 기준)</span></div>
-  <div class="tbl-wrap" style="margin-bottom:8px">
+  <div class="tbl-wrap" style="margin-bottom:8px;overflow-x:visible">
     <table>
       <thead><tr><th>대출 항목</th><th>잔액</th><th>금리/기간</th><th>상환방식</th><th>월 납입 (실납)</th></tr></thead>
       <tbody>
@@ -2350,58 +2352,87 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <!-- ③ DSR 분석 -->
-  <div class="stitle">③ 합산 소득 기준 DSR 분석 (보금자리론 상환 후 기준)</div>
-  <div class="card" style="margin-bottom:20px">
+  <!-- ③ DSR 분석 -->
+  <div class="stitle">③ 합산 소득 기준 DSR 분석 <span style="font-size:11px;font-weight:400;color:var(--muted)">(보금자리론 상환 후 기준)</span></div>
+  <div class="card" style="margin-bottom:16px">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-      <div style="padding:12px;background:rgba(123,110,246,0.07);border-radius:10px;border:1px solid rgba(123,110,246,0.2)">
-        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">25년 합산 소득</div>
-        <div style="font-size:17px;font-weight:900;color:var(--purple)">1억 6,077만</div>
-        <div style="font-size:11px;color:var(--t2)">월 환산 <strong>1,340만/월</strong></div>
-      </div>
-      <div style="padding:12px;background:rgba(123,110,246,0.07);border-radius:10px;border:1px solid rgba(123,110,246,0.2)">
-        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">26년 합산 소득</div>
-        <div style="font-size:17px;font-weight:900;color:var(--purple)">1억 7,413만</div>
-        <div style="font-size:11px;color:var(--t2)">월 환산 <strong>1,451만/월</strong></div>
-      </div>
-    </div>
-
-    <div style="padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);margin-bottom:14px;font-size:12.5px;line-height:2">
+    <!-- 기존 부채 -->
+    <div style="padding:12px 14px;background:var(--bg);border-radius:10px;border:1px solid var(--border);margin-bottom:14px;font-size:12.5px;line-height:2">
       <strong>현재 기존 부채 DSR 점유</strong><br>
-      · 신용대출 9,500만 → DSR 5년 균등 환산: <strong>175만/월</strong><br>
-      · 보증보험 1.2억 → DSR 10년 균등 환산: <strong>126만/월</strong><br>
-      · 기존 부채 합계: <strong>301만/월</strong><br>
-      <span style="color:var(--orange);font-weight:700">→ 25년 기준 DSR 22.5% 점유 / 26년 기준 DSR 20.7% 점유</span>
+      신용대출 9,500만 → 5년 균등 환산 <strong>175만/월</strong><br>
+      보증보험 1.2억 → 10년 균등 환산 <strong>126만/월</strong><br>
+      <span style="color:var(--orange);font-weight:700">합계: 301만/월 · 25년 기준 DSR 22.5% / 26년 기준 20.7%</span>
     </div>
 
-    <div style="font-size:12px;font-weight:700;margin-bottom:8px">추가 주담대 가능 금액 (4.65% · 30년 원리금균등 기준)</div>
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr><th>소득 기준</th><th>DSR 40% 한도</th><th>주담대 가능</th><th>DSR 50% 한도</th><th>주담대 가능</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="font-weight:700">25년 합산</td>
-            <td>536만/월<br><span style="font-size:11px;color:var(--green)">잔여 235만/월</span></td>
-            <td style="font-weight:900;color:var(--green);font-size:15px">약 4억 5,500만</td>
-            <td>670만/월<br><span style="font-size:11px;color:var(--orange)">잔여 369만/월</span></td>
-            <td style="font-weight:900;color:var(--orange);font-size:15px">약 7억 1,500만</td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">26년 합산</td>
-            <td>580만/월<br><span style="font-size:11px;color:var(--green)">잔여 279만/월</span></td>
-            <td style="font-weight:900;color:var(--green);font-size:15px">약 5억 4,000만</td>
-            <td>726만/월<br><span style="font-size:11px;color:var(--orange)">잔여 425만/월</span></td>
-            <td style="font-weight:900;color:var(--orange);font-size:15px">약 8억 2,400만</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- DSR 40% -->
+    <div style="border-left:4px solid var(--green);padding:12px 14px;border-radius:0 10px 10px 0;background:rgba(34,197,94,0.05);margin-bottom:12px">
+      <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:10px">DSR 40% 기준 주담대 가능 금액</div>
+
+      <div style="font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">25년 합산 1억 6,077만 · 한도 536만/월 → 잔여 <strong>235만/월</strong></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">6개월 변동 · 5%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--green)">약 4억 3,800만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 230만</div>
+        </div>
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">5년 고정 · 6%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--green)">약 3억 9,200만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 235만</div>
+        </div>
+      </div>
+
+      <div style="font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">26년 합산 1억 7,413만 · 한도 580만/월 → 잔여 <strong>279만/월</strong></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">6개월 변동 · 5%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--green)">약 5억 2,000만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 274만</div>
+        </div>
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">5년 고정 · 6%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--green)">약 4억 6,500만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 279만</div>
+        </div>
+      </div>
     </div>
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">※ 스트레스 DSR 미적용 순수 한도 기준 / 실제 심사 시 스트레스 가산금리 적용 가능</div>
+
+    <!-- DSR 50% -->
+    <div style="border-left:4px solid var(--orange);padding:12px 14px;border-radius:0 10px 10px 0;background:rgba(245,158,11,0.05);margin-bottom:10px">
+      <div style="font-size:13px;font-weight:800;color:var(--orange);margin-bottom:10px">DSR 50% 기준 주담대 가능 금액</div>
+
+      <div style="font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">25년 합산 1억 6,077만 · 한도 670만/월 → 잔여 <strong>369만/월</strong></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">6개월 변동 · 5%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--orange)">약 6억 8,700만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 361만</div>
+        </div>
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">5년 고정 · 6%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--orange)">약 6억 1,500만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 369만</div>
+        </div>
+      </div>
+
+      <div style="font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">26년 합산 1억 7,413만 · 한도 726만/월 → 잔여 <strong>425만/월</strong></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">6개월 변동 · 5%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--orange)">약 7억 9,200만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 418만</div>
+        </div>
+        <div style="padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--muted)">5년 고정 · 6%</div>
+          <div style="font-size:18px;font-weight:900;color:var(--orange)">약 7억 900만</div>
+          <div style="font-size:11px;color:var(--t2)">월 납입 약 425만</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;color:var(--muted);padding:0 2px">※ 30년 원리금균등 기준 / 스트레스 DSR 가산금리 미적용 순수 한도</div>
   </div>
 
-  <!-- ④ 문의 사항 -->
   <div class="stitle">④ 상담 문의 사항</div>
   <div class="ibox r" style="margin-bottom:12px;line-height:1.9">
     <strong>🔍 MCI / MCG 가입이 가능한 주택담보대출 상품을 찾고 있습니다.</strong><br>
@@ -4061,6 +4092,7 @@ document.getElementById('sec-hwang').style.display = name==='hwang'?'':'none';
 document.getElementById('sec-ahn').style.display = name==='ahn'?'':'none';
 document.getElementById('sec-combined').style.display = name==='combined'?'':'none';
 document.getElementById('sec-consultant').style.display = name==='consultant'?'':'none';
+document.getElementById('sec-common-header').style.display = name==='consultant'?'none':'';
 document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
 document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
 document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
