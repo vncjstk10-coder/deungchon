@@ -899,6 +899,65 @@ tbody tr td{transition:background .12s ease}
   #panel-loan-balance .kpi-val{font-size:1.1rem!important}
   #panel-remodel .kpi-val{font-size:1.0rem!important}
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   F. panel-summary · panel-loan-balance 보완 패치 (2026-07-22)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* F-1. panel-summary .g3 카드 — 1열 전환 시 옆면 패딩 복원
+   L296 .g3>.card{padding:12px 8px!important}가 1열에서도 유지돼
+   8px 좌우 패딩이 전폭 카드에 너무 좁음 → 14px로 복원 */
+@media(max-width:768px){
+  #panel-summary .g3>.card,
+  #panel-summary .g3>.card-sm{
+    padding:14px!important
+  }
+}
+
+/* F-2. panel-loan-balance fp-btn-5 — 모바일 2-col 그리드에서 누락
+   L337이 fp-btn-1~4만 커버하고 fp-btn-5는 단독 전폭으로 떠 있음 */
+@media(max-width:768px){
+  #fp-btn-5{
+    flex:0 0 calc(50% - 3px)!important;
+    text-align:center!important
+  }
+}
+
+/* F-3. panel-loan-balance 플랜별 3열 미니요약 그리드 → 모바일 2열
+   각 fund-plan 카드 안의 inline grid-template-columns:1fr 1fr 1fr이
+   393px에서 셀 너비 약 113px — "9억 8,000만" 등 1.2rem 금액 클리핑 위험
+   → 600px 이하에서 2열로 축소, 부족/합계 셀은 항상 가독 가능하게 */
+@media(max-width:600px){
+  #fund-plan-1 [style*="grid-template-columns:1fr 1fr 1fr"],
+  #fund-plan-2 [style*="grid-template-columns:1fr 1fr 1fr"],
+  #fund-plan-3 [style*="grid-template-columns:1fr 1fr 1fr"],
+  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"],
+  #fund-plan-5 [style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important
+  }
+  /* 3열 → 2열 시 첫 행(총필요액)이 홀수 마지막 셀로 남지 않도록
+     "총 필요액" 셀은 2열 전체 폭 차지 */
+  #fund-plan-1 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
+  #fund-plan-2 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
+  #fund-plan-3 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
+  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
+  #fund-plan-5 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child{
+    grid-column:1 / -1;
+    border-left:none!important;
+    padding-left:0!important
+  }
+}
+
+/* F-4. panel-loan-balance 플랜 각주 텍스트 — 줄간격 완화
+   12px div에 inline line-height:1.8이 모바일에서 과도하게 산란
+   .ibox가 아닌 일반 div라 E-5 규칙이 적용되지 않아 별도 처리 */
+@media(max-width:768px){
+  #sec-lb-janggeum .card>[style*="line-height:1.8"]{
+    line-height:1.55!important;
+    font-size:11.5px!important
+  }
+}
 </style>
 </head>
 <body>
