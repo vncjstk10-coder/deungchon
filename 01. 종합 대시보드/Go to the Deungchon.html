@@ -18,7 +18,7 @@
   --rad:16px;--rads:10px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-system,sans-serif;
+body{font-family:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',-apple-system,sans-serif;
   background:linear-gradient(160deg,#E8ECFF 0%,#EEF1FA 35%,#F2F0FF 100%);
   background-attachment:fixed;
   color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;
@@ -751,6 +751,25 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .dc-best-inner{grid-template-columns:1fr!important;gap:8px!important}
   #interior-items-table th:nth-child(4),#interior-items-table td:nth-child(4){display:none!important}
   #interior-items-table th:nth-child(1),#interior-items-table td:nth-child(1){white-space:nowrap}
+}
+
+/* ── 시각 개선 2026-07-21 ──
+   1) 테이블 행 hover 전환 부드럽게
+   2) chip 경계선 추가 — 밝은 배경에서도 뱃지 구분 명확
+   3) kpi-lbl 자간 PC 표준화
+   4) 링크형 카드 .card-link hover 피드백 강화
+*/
+tbody tr td{transition:background .12s ease}
+.chip{border:1px solid transparent}
+.chip.g{border-color:rgba(16,185,129,.22)}
+.chip.r{border-color:rgba(239,68,68,.22)}
+.chip.o{border-color:rgba(249,115,22,.22)}
+.chip.p{border-color:rgba(123,110,246,.22)}
+.chip.y{border-color:rgba(245,158,11,.22)}
+@media(min-width:769px){
+  .kpi-lbl{letter-spacing:.05em}
+  /* ibox 호버 슬라이드 전환 부드럽게 (기존 .15s → .18s ease) */
+  .ibox{transition:transform .18s ease}
 }
 </style>
 </head>
@@ -1603,12 +1622,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:10px;color:var(--muted);margin-top:5px">계약금 06/01</div>
     </div>
     <div style="border-radius:12px;border:2px solid var(--orange);background:rgba(251,146,60,.08);padding:14px 12px;text-align:center">
-      <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:6px">⏰ D-12 다음주</div>
+      <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:6px">⏰ D-9 다음주</div>
       <div class="dc-3box-num" style="font-size:1.5rem;font-weight:900;color:var(--orange);line-height:1.15">2억</div>
       <div style="font-size:10px;color:var(--muted);margin-top:5px">중도금 7/30</div>
     </div>
     <div style="border-radius:12px;border:2px solid var(--red);background:rgba(239,68,68,.07);padding:14px 12px;text-align:center">
-      <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:6px">📅 D-60 잔금일</div>
+      <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:6px">📅 D-57 잔금일</div>
       <div class="dc-3box-num" style="font-size:1.5rem;font-weight:900;color:var(--red);line-height:1.15">7억<br>9,550만</div>
       <div style="font-size:10px;color:var(--muted);margin-top:5px">잔금+기타 9/16</div>
     </div>
@@ -1636,14 +1655,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="fund-row" style="border-bottom:none;margin-bottom:4px"><div class="fund-label">계약금</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">✓ 06/01</span><span style="font-weight:800;color:var(--muted)">1억 1,000만</span></div>
     </div>
     <div style="padding:9px 16px;background:rgba(251,146,60,.09);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:11px;font-weight:700;color:var(--orange)">⏰ D-12 · 7/30 결제 예정</span>
+      <span style="font-size:11px;font-weight:700;color:var(--orange)">⏰ D-9 · 7/30 결제 예정</span>
       <span style="font-size:11px;font-weight:800;color:var(--orange)">2억</span>
     </div>
     <div style="padding:8px 16px 4px">
       <div class="fund-row" style="border-bottom:none;margin-bottom:4px"><div class="fund-label">중도금</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">7/30</span><span style="font-weight:800;color:var(--orange)">2억</span></div>
     </div>
     <div style="padding:9px 16px;background:rgba(239,68,68,.06);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:11px;font-weight:700;color:var(--red)">📅 D-60 · 9/16 잔금일 예정</span>
+      <span style="font-size:11px;font-weight:700;color:var(--red)">📅 D-57 · 9/16 잔금일 예정</span>
       <span style="font-size:11px;font-weight:800;color:var(--red)">7억 9,550만</span>
     </div>
     <div style="padding:8px 16px 4px">
