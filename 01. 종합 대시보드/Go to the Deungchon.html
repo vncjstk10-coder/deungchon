@@ -958,6 +958,21 @@ tbody tr td{transition:background .12s ease}
     font-size:11.5px!important
   }
 }
+
+/* ── Final pass: panel-interior / panel-post-cost kpi-bar 모바일 ──
+   문제: 공통 .kpi-bar{repeat(3,1fr)} 규칙이 카드 수와 무관하게 3열 강제
+   · panel-interior kpi-bar: 카드 1개 → 33% 폭(~120px)에 갇힘
+   · panel-post-cost kpi-bar: 카드 2개 → 33%씩 + 빈 1열
+*/
+@media(max-width:768px){
+  /* 인테리어 탭 — 카드 1개, 전체폭으로 */
+  #panel-interior .kpi-bar{grid-template-columns:1fr!important}
+  #panel-interior .kpi-bar .kpi-bar-card{padding:14px 16px!important}
+  #panel-interior .kpi-bar .num{font-size:1.2rem!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+
+  /* 잔금 후 비용 탭 — 1·2번째 kpi-bar 모두 2열 (2카드→50%씩, 3카드→2+1) */
+  #panel-post-cost .kpi-bar{grid-template-columns:1fr 1fr!important}
+}
 </style>
 </head>
 <body>
@@ -1336,11 +1351,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="con">
     <div class="ph">
       <h1>💳 대출 / 부동산중개료</h1>
-      <p>8/31 청라 팔리면 4.9억 수령 → 보금자리론 2.47억 상환 → 실 수령 약 2.48억</p>
+      <p>8/31 청라 팔리면 4.9억 수령 → 보금자리론 2.47억 상환 → 중개비 252만 차감 → 실 수령 약 2.45억</p>
     </div>
 
     <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
-      💡 <strong>이 탭은요:</strong> 8월 31일에 청라 집이 팔리면 매수인이 4억 9,570만원을 줘요. 거기서 지금 남은 주택담보대출(보금자리론 약 2억 4,772만)을 갚고 나면, 실제로 우리 손에 남는 돈은 <strong>약 2억 4,800만원</strong>이에요. 이 돈이 9월 등촌 잔금에 쓰입니다.
+      💡 <strong>이 탭은요:</strong> 8월 31일에 청라 집이 팔리면 매수인이 4억 9,570만원을 줘요. 거기서 지금 남은 주택담보대출(보금자리론 약 2억 4,772만)을 갚고 나면, 실제로 우리 손에 남는 돈은 <strong>약 2억 4,545만원</strong>이에요 (보금자리론 상환 + 중개비 252만 차감 후). 이 돈이 9월 등촌 잔금에 쓰입니다.
     </div>
 
     <!-- A. 8/31 잔금일 현금 흐름 Hero -->
@@ -1373,8 +1388,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:700;background:rgba(255,255,255,0.22);color:#fff;letter-spacing:.04em">순수령</span>
         </div>
         <div class="kpi-lbl">실 수령 예상</div>
-        <div class="kpi-val" style="font-size:2.1rem;margin:8px 0 4px">≈2억 4,800만</div>
-        <div class="kpi-sub">247,975,316원</div>
+        <div class="kpi-val" style="font-size:2.1rem;margin:8px 0 4px">≈2억 4,545만</div>
+        <div class="kpi-sub">245,454,116원 (중개비 252만 차감)</div>
         <div style="margin-top:16px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px">
           <div style="height:100%;width:50%;background:rgba(255,255,255,0.65);border-radius:2px"></div>
         </div>
