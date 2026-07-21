@@ -833,6 +833,58 @@ tbody tr td{transition:background .12s ease}
   .kpi-bar-card .lbl{white-space:normal!important;line-height:1.3!important;font-size:8px!important}
   .fund-amt{min-width:72px!important;font-size:12px!important}
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   E. Round 3 완성 픽스 (2026-07-22)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* E-1. 터치 타깃 실제 44px 달성
+   L384 주석 "44px 이상" 의도대로 — 실값 36px 버그 수정 */
+@media(max-width:768px){
+  .person-btn{height:44px!important;min-height:44px!important}
+  .filter-btn{min-height:44px!important}
+}
+
+/* E-2. person-btn 4개 컨테이너 flex-wrap 보장
+   393px에서 버튼 4개가 컨테이너 내부에서 줄바꿈 가능하게 */
+@media(max-width:768px){
+  #panel-loan-status .ph>div:last-child{
+    flex-wrap:wrap!important;
+    flex-shrink:1!important;
+    width:100%
+  }
+}
+
+/* E-3. consultant-income-grid 400px 이하 3열 → 2열
+   3열시 셀 너비 약 117px — "1억 6,077만" 등 금액 클리핑 방지 */
+@media(max-width:400px){
+  #consultant-income-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important
+  }
+  #consultant-income-grid>div{padding:10px 8px!important}
+  #consultant-income-grid [style*="1.25rem"]{font-size:1rem!important}
+  #consultant-income-grid [style*="font-size:11px"]{font-size:10px!important}
+  #consultant-income-grid [style*="font-size:10px"]{font-size:9.5px!important}
+}
+
+/* E-4. urgency-banner 400px 이하 압축
+   D-Day 숫자 2.8rem 과다 — 좁은 화면 배지 폭 초과 방지 */
+@media(max-width:400px){
+  #urgency-banner{padding:10px 12px!important;gap:10px!important}
+  #urgency-dday{font-size:2rem!important}
+  #urgency-msg{font-size:12px!important}
+}
+
+/* E-5. ibox 인라인 line-height 1.8/1.9 모바일 override
+   DSR 설명(1.9), cashflow 안내(1.8), cheongna 안내(1.8) 등
+   인라인 스타일이 모바일에서도 과도한 줄간격 유발하는 문제 해소 */
+@media(max-width:768px){
+  .ibox[style*="line-height:1.8"]{line-height:1.6!important}
+  .ibox[style*="line-height:1.9"]{line-height:1.6!important}
+  .ibox[style*="line-height:2"]{line-height:1.6!important}
+  #sec-common-header .ibox{font-size:12px!important}
+}
 </style>
 </head>
 <body>
@@ -3531,8 +3583,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="fund-label">청라 부동산 중개비</div>
         <div style="flex:1"></div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
-          <div style="font-weight:800">270만원</div>
-          <div style="font-size:10px;color:var(--muted)">청라 잔금 수령액에서 차감됨</div>
+          <div style="font-weight:800">252만원</div>
+          <div style="font-size:10px;color:var(--muted)">청라 잔금 수령액에서 차감됨 (계약서 확정)</div>
         </div>
       </div>
       <div class="fund-row">
@@ -3598,7 +3650,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">💼 IRP · 퇴직연금 해지 계획</div>
     <div class="card" style="margin-bottom:20px">
       <div class="ibox o" style="margin-bottom:12px">
-        ⚠️ 4안 선택 시 실행 · 취급 기관: <strong>신한금융투자 (회사 앞)</strong>
+        ⚠️ 3안 또는 4안 선택 시 실행 · 취급 기관: <strong>신한금융투자 (회사 앞)</strong>
       </div>
       <div class="fund-row">
         <div class="fund-label">퇴직연금 해지</div>
@@ -3829,9 +3881,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:10px;color:var(--muted);margin-top:3px;white-space:normal;line-height:1.4">청약 1,020 + 퇴직금 1,016<br>+ IRP 세후 4,194만</div>
     </div>
     <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
-      <div class="lbl">주담대 (7/20 결정)</div>
+      <div class="lbl">주담대 (수협 심사 중)</div>
       <div class="num gr" style="font-size:1.3rem">미확정</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:3px;white-space:normal;line-height:1.4">산림금융 or 우리은행<br>금액에 따라 해지 범위 결정</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px;white-space:normal;line-height:1.4">수협 or 우리은행<br>심사 결과에 따라 플랜 확정</div>
     </div>
   </div>
 
