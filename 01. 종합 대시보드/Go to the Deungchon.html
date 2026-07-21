@@ -430,7 +430,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .kpi-bar{grid-template-columns:repeat(3,1fr)!important;gap:4px!important}
   .kpi-bar-card{padding:9px 5px!important}
   .kpi-bar-card .num{font-size:0.95rem!important}
-  .kpi-bar-card .lbl{font-size:8px!important}
+  .kpi-bar-card .lbl{font-size:9px!important}
   .kpi-val{font-size:1.2rem!important}
   /* 물품정리 3열은 400px 이하에서도 유지 */
   #item-kpi-bar{grid-template-columns:repeat(3,1fr)!important}
@@ -745,7 +745,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   #sec-consultant [style*="margin:4px 0 14px"]{margin-bottom:8px!important}
   #sec-consultant [style*="line-height:1.8"]{font-size:10px!important;line-height:1.6!important;margin-bottom:8px!important}
   #sec-consultant .ibox strong{font-size:12px!important}
-  .g3{grid-template-columns:1fr!important;gap:12px!important}
+  #sec-consultant .g3{grid-template-columns:1fr!important;gap:12px!important}
   .con{padding:20px 16px 80px!important}
   .rate-grid{grid-template-columns:1fr!important;gap:10px!important}
   .dc-best-inner{grid-template-columns:1fr!important;gap:8px!important}
@@ -830,7 +830,7 @@ tbody tr td{transition:background .12s ease}
   .fund-label{max-width:36vw!important}
   .mob-btn .ml{font-size:8.5px!important}
   .ln-info-nm{min-width:76px!important;font-size:11.5px!important}
-  .kpi-bar-card .lbl{white-space:normal!important;line-height:1.3!important;font-size:8px!important}
+  .kpi-bar-card .lbl{white-space:normal!important;line-height:1.3!important;font-size:9px!important}
   .fund-amt{min-width:72px!important;font-size:12px!important}
 }
 
@@ -884,6 +884,20 @@ tbody tr td{transition:background .12s ease}
   .ibox[style*="line-height:1.9"]{line-height:1.6!important}
   .ibox[style*="line-height:2"]{line-height:1.6!important}
   #sec-common-header .ibox{font-size:12px!important}
+}
+
+/* ━━ G. CSS 충돌 정리 최종 패치 2026-07-22 ━━
+   G-1. 400px kpi-val 복원: L664(@media 768px)의 1.65rem이 L434(@media 400px)의
+        1.2rem을 덮어쓰는 cascade dead rule 문제 해소 — 이 블록이 가장 후순위
+   G-2. colored card kpi-val도 400px에서 비례 축소
+*/
+@media(max-width:400px){
+  .kpi-val{font-size:1.3rem!important}
+  .card-purple .kpi-val,.card-orange .kpi-val,
+  .card-red .kpi-val,.card-green .kpi-val{font-size:1.55rem!important}
+  /* loan-balance·remodel 패널: 이미 좁게 설정된 값 유지 */
+  #panel-loan-balance .kpi-val{font-size:1.1rem!important}
+  #panel-remodel .kpi-val{font-size:1.0rem!important}
 }
 </style>
 </head>
@@ -1510,14 +1524,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">🚛 이사 상세 계획</div>
     <div class="g2" style="margin-bottom:20px">
       <div class="card">
-        <div style="font-size:13px;font-weight:800;color:var(--purple);margin-bottom:10px">1차 이사 · 2026.08.31</div>
+        <div style="font-size:13px;font-weight:800;color:var(--purple);margin-bottom:10px">1차 이사 · 2026.08.28</div>
         <div class="fund-row"><div class="fund-label">유형</div><div style="flex:1"></div><div style="font-weight:700">포장이사</div></div>
         <div class="fund-row"><div class="fund-label">출발지</div><div style="flex:1"></div><div style="font-weight:700">청라힐데스하임 129동 802호</div></div>
         <div class="fund-row"><div class="fund-label">도착지</div><div style="flex:1"></div><div style="font-weight:700">컨테이너 보관창고</div></div>
         <div class="fund-row" style="border-bottom:none"><div class="fund-label">예상 비용</div><div style="flex:1"></div><div style="font-weight:800;color:var(--purple)">약 100~200만원</div></div>
       </div>
       <div class="card">
-        <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:10px">2차 이사 · 2026.09.20 (예정)</div>
+        <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:10px">2차 이사 · 2026.09.21~23 (예정)</div>
         <div class="fund-row"><div class="fund-label">유형</div><div style="flex:1"></div><div style="font-weight:700">보관이사</div></div>
         <div class="fund-row"><div class="fund-label">출발지</div><div style="flex:1"></div><div style="font-weight:700">컨테이너 보관창고</div></div>
         <div class="fund-row"><div class="fund-label">도착지</div><div style="flex:1"></div><div style="font-weight:700">등촌 부영아파트 106동 1001호</div></div>
@@ -1688,7 +1702,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="scen-card" style="border-color:var(--orange)">
         <div class="scen-title"><span style="background:var(--o2);color:var(--orange);padding:2px 8px;border-radius:6px;font-size:12px">2단계</span> 김포공항 근처 임시거주</div>
         <div class="scen-body">
-          · 기간: <strong>9/9(화) ~ 9/11(목)</strong> 약 3일<br>
+          · 기간: <strong>9/9(수) ~ 9/11(금)</strong> 약 3일<br>
           · 위치: 김포공항 근처 (등촌 부영 인접 지역)<br>
           · 숙소: 단기 숙박 또는 에어비앤비 예정<br>
           <span style="color:var(--muted);font-size:12px">→ 구체적 숙소 미확정</span>
