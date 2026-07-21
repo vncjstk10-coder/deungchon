@@ -749,6 +749,8 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .con{padding:20px 16px 80px!important}
   .rate-grid{grid-template-columns:1fr!important;gap:10px!important}
   .dc-best-inner{grid-template-columns:1fr!important;gap:8px!important}
+  #interior-items-table th:nth-child(4),#interior-items-table td:nth-child(4){display:none!important}
+  #interior-items-table th:nth-child(1),#interior-items-table td:nth-child(1){white-space:nowrap}
 }
 </style>
 </head>
@@ -1753,6 +1755,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <!-- 대출 상담 일정 -->
   <div class="ibox g" style="margin-bottom:16px">
     ✅ <strong>7/20 대출 접수 현황</strong><br><span style="font-size:12.5px;line-height:2">🏦 <strong>수협은행</strong> — 오전 신청 완료 (소득합산, 4억 2,900만원) · 전화 심사 결과 대기 중<br>🏦 <strong>우리은행</strong> — 오후 1시 접수 완료 (MCI/MCG 불가 → 방공제 5,500만 적용 → 실한도 3억 7,400만) · 8/10까지 취소 가능</span>
+  </div>
+  <div class="ibox y" style="margin-bottom:16px">
+    ⏳ <strong>7/21 추가 검토 중 — 내일 답변 예정</strong><br>
+    <span style="font-size:12.5px;line-height:2.1">
+      🏦 <strong>우리은행 (안영준 명의 주담대)</strong> — 안영준 단독 차주로 3억 7,400만 신청 가능 여부 · 담당자 내일 확인 예정<br>
+      💳 <strong>황서림 신용대출</strong> — 황서림 명의로 신용대출 추가 신청 검토 중 · 담당자 내일 확인 예정<br>
+      🌲 <strong>산림조합금융 (정직한금융)</strong> — 2금융권 LTV 우대 조건 확인 요청 · 내일~내일모레 답변 예정
+    </span>
   </div>
 
   <div class="stitle">🏦 대출 상품 비교 — 신청 진행 중</div>
@@ -3057,7 +3067,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="card" style="margin-bottom:12px">
     <div class="ibox g" style="margin-bottom:14px">
       ✅ <strong>도배·장판 업체 확정 — 장판의 신</strong><br><span style="font-size:12.5px">합지 도배 125만 + 1.8T 장판 75만 = <strong>200만원</strong> · 공사 약 2일 소요</span>
-      <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <table id="interior-items-table" style="width:100%;border-collapse:collapse;font-size:13px">
         <thead>
           <tr style="background:var(--bg)">
             <th style="text-align:left;padding:8px 12px;font-size:11px;color:var(--muted);font-weight:700;border-bottom:1px solid var(--border)">항목</th>
@@ -3101,7 +3111,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <tfoot>
           <tr style="background:var(--p3)">
             <td colspan="2" style="padding:10px 12px;font-weight:800;color:var(--purple)">합계 예상</td>
-          <td style="padding:10px 12px;text-align:right;font-weight:900;font-size:1.1rem;color:var(--purple)">329~459만원</td>
+          <td style="padding:10px 12px;text-align:right;font-weight:900;font-size:1.1rem;color:var(--purple)">697~869만원</td>
             <td></td>
           </tr>
         </tfoot>
