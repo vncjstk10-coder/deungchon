@@ -334,7 +334,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   #panel-loan-balance .kpi-bar-card .num{font-size:1.1rem!important}
   #panel-loan-balance .kpi-bar-card .lbl{font-size:9px!important;font-weight:700!important}
   /* 플랜 버튼 2×2 그리드 */
-  #fp-btn-1,#fp-btn-2,#fp-btn-3,#fp-btn-4,#fp-btn-6,#fp-btn-7{flex:0 0 calc(50% - 3px)!important;text-align:center}
+  #fp-btn-1,#fp-btn-2,#fp-btn-3,#fp-btn-4{flex:0 0 calc(50% - 3px)!important;text-align:center}
   #panel-remodel .kpi-val{font-size:1.1rem!important}
 
   /* ─── 자금흐름 탭 ─── */
@@ -914,14 +914,6 @@ tbody tr td{transition:background .12s ease}
   }
 }
 
-/* F-2. panel-loan-balance fp-btn-5 — 모바일 2-col 그리드에서 누락
-   L337이 fp-btn-1~4만 커버하고 fp-btn-5는 단독 전폭으로 떠 있음 */
-@media(max-width:768px){
-  #fp-btn-5,#fp-btn-6,#fp-btn-7{
-    flex:0 0 calc(50% - 3px)!important;
-    text-align:center!important
-  }
-}
 
 /* F-3. panel-loan-balance 플랜별 3열 미니요약 그리드 → 모바일 2열
    각 fund-plan 카드 안의 inline grid-template-columns:1fr 1fr 1fr이
@@ -931,10 +923,7 @@ tbody tr td{transition:background .12s ease}
   #fund-plan-1 [style*="grid-template-columns:1fr 1fr 1fr"],
   #fund-plan-2 [style*="grid-template-columns:1fr 1fr 1fr"],
   #fund-plan-3 [style*="grid-template-columns:1fr 1fr 1fr"],
-  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"],
-  #fund-plan-5 [style*="grid-template-columns:1fr 1fr 1fr"],
-  #fund-plan-6 [style*="grid-template-columns:1fr 1fr 1fr"],
-  #fund-plan-7 [style*="grid-template-columns:1fr 1fr 1fr"]{
+  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"]{
     grid-template-columns:1fr 1fr!important;
     gap:8px!important
   }
@@ -943,10 +932,7 @@ tbody tr td{transition:background .12s ease}
   #fund-plan-1 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
   #fund-plan-2 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
   #fund-plan-3 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
-  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
-  #fund-plan-5 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
-  #fund-plan-6 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child,
-  #fund-plan-7 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child{
+  #fund-plan-4 [style*="grid-template-columns:1fr 1fr 1fr"]>div:first-child{
     grid-column:1 / -1;
     border-left:none!important;
     padding-left:0!important
@@ -2762,215 +2748,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">💰 돈을 어디서 마련할까?</div>
     <div class="card" style="margin-bottom:16px">
 
-      <div class="ibox y" style="margin-bottom:14px;font-size:13px;line-height:1.7;border-radius:14px">        ⚠ <strong>4안 (산림금융 + IRP해지) — 재검토 중</strong><br>        <span style="font-size:12px">7/20 산림금융 고양·인천 지점 이용 불가 확인. <strong style="color:var(--red)">수협은행 심사 결과가 핵심 분기점</strong>으로 부상. 수협 통과 시 3안으로 전환 가능해요.</span>      </div>
+      <div class="ibox y" style="margin-bottom:14px;font-size:13px;line-height:1.7;border-radius:14px">        ⚠ <strong>1안 (산림금융 + IRP해지) — 재검토 중</strong><br>        <span style="font-size:12px">7/20 산림금융 고양·인천 지점 이용 불가 확인. <strong style="color:var(--red)">수협은행 심사 결과가 핵심 분기점</strong>으로 부상. 수협 통과 시 우리은행 전환 검토 가능해요.</span>      </div>
       <!-- 플랜 토글 -->
       <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
-        <button id="fp-btn-1" class="person-btn" onclick="switchFundPlan('1')">🏦 1안 · 우리은행</button>
-        <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🌲 2안 · 산림조합</button>
-        <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">💼 3안 · 우리은행+IRP해지</button>
-        <button id="fp-btn-4" class="person-btn active" onclick="switchFundPlan('4')">🌲💼 4안 · 산림+IRP해지 ✅</button>
-        <button id="fp-btn-5" class="person-btn" onclick="switchFundPlan('5')">🏦📋 5안 · 우리은행+보증보험</button>
-        <button id="fp-btn-6" class="person-btn" onclick="switchFundPlan('6')">🏦💳 6안 · 우리은행+신용대출</button>
-        <button id="fp-btn-7" class="person-btn" onclick="switchFundPlan('7')">🏦💳💼 7안 · 우리은행+신용대출+IRP해지</button>
+        <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🌲💼 1안 · 산림+IRP해지 ✅</button>
+        <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🏦📋 2안 · 우리은행+보증보험</button>
+        <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">🏦💳 3안 · 우리은행+신용대출</button>
+        <button id="fp-btn-4" class="person-btn" onclick="switchFundPlan('4')">🏦💳💼 4안 · 우리은행+신용대출+IRP해지</button>
       </div>
 
-      <!-- ── 플랜 1: 우리은행 ── -->
-      <div id="fund-plan-1" style="display:none">
-        <div style="margin-bottom:18px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,000만 구성 비율</div>
-          <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
-            <div style="flex:38.2;background:var(--purple)" title="주담대 38.2%"></div>
-            <div style="flex:25.3;background:var(--green)" title="청라잔금 25.3%"></div>
-            <div style="flex:16.0;background:#3b82f6" title="안영준 16.0%"></div>
-            <div style="flex:9.0;background:#ec4899" title="황서림 9.0%"></div>
-            <div style="flex:11.5;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red)" title="부족 11.5%"></div>
-          </div>
-          <div style="display:flex;gap:14px;margin-top:7px;flex-wrap:wrap">
-            <span style="font-size:10px;color:var(--purple);font-weight:700">■ 우리은행 38.2%</span>
-            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 25.3%</span>
-            <span style="font-size:10px;color:#3b82f6;font-weight:700">■ 안영준 16.0%</span>
-            <span style="font-size:10px;color:#ec4899;font-weight:700">■ 황서림 9.0%</span>
-            <span style="font-size:10px;color:var(--red);font-weight:700">□ 부족 11.5%</span>
-          </div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏦 주담대 (우리은행)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:38.2%;background:var(--purple);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">3억 7,400만</div>
-          <div class="fund-pct" style="color:var(--purple);font-weight:700;font-size:12px;width:40px">38.2%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏠 청라 집 팔고 받는 돈</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:25.3%;background:var(--green);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">약 2억 4,800만</div>
-          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">25.3%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💰 영준 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:16.0%;background:#3b82f6;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">1억 5,630만</div>
-          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">16.0%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💗 서림 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:9.0%;background:#ec4899;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">8,860만</div>
-          <div class="fund-pct" style="color:#ec4899;font-weight:700;font-size:12px;width:40px">9.0%</div>
-        </div>
-        <div class="fund-row" style="border-bottom:none">
-          <div class="fund-label" style="width:210px">⚠ 부족액</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:11.5%;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px;color:var(--red)">1억 1,310만</div>
-          <div class="fund-pct" style="color:var(--red);font-weight:700;font-size:12px;width:40px">11.5%</div>
-        </div>
-        <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-          <div><div style="font-size:10px;color:var(--muted)">총 필요액</div><div style="font-size:1.2rem;font-weight:900;color:var(--text)">9억 8,000만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">전체 조달 가능</div><div style="font-size:1.2rem;font-weight:900;color:var(--purple)">8억 6,690만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">부족액</div><div style="font-size:1.2rem;font-weight:900;color:var(--red)">1억 1,310만</div><div style="font-size:10px;color:var(--orange);font-weight:700">⚠ 방안 검토 필요</div></div>
-        </div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
-          * 우리은행 주담대 3억 7,400만: 9/16 잔금 시 실행 (KB시세 10억 7,250만 × LTV 40% − 방공제 5,500만)<br>
-          * 안영준 현금 1억 5,630만: 신용대출 9,500만 + 보증보험 1.2억 수령분 포함 잔액 + 신협 100만<br>
-          * 청라 잔금 순수령: 잔금 4억 9,570만 − 보금자리론 상환 2억 4,700만 − 중개수수료 약 270만 ≈ 2억 4,800만 (8/31)<br>
-          * 황서림 가용 현금 8,860만: 미래에셋 주식 평가 4,840만 (원금 5,581만, 평가손 −742만) + 주택청약 1,020만 + 이모님 차용 3,000만
-        </div>
-      </div>
-
-      <!-- ── 플랜 2: 산림금융조합 ── -->
-      <div id="fund-plan-2" style="display:none">
-        <div style="margin-bottom:18px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,000만 구성 비율</div>
-          <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
-            <div style="flex:43.8;background:var(--orange)" title="산림금융 43.8%"></div>
-            <div style="flex:25.3;background:var(--green)" title="청라잔금 25.3%"></div>
-            <div style="flex:16.0;background:#3b82f6" title="안영준 16.0%"></div>
-            <div style="flex:9.0;background:#ec4899" title="황서림 9.0%"></div>
-            <div style="flex:5.9;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red)" title="부족 5.9%"></div>
-          </div>
-          <div style="display:flex;gap:14px;margin-top:7px;flex-wrap:wrap">
-            <span style="font-size:10px;color:var(--orange);font-weight:700">■ 산림금융 43.8%</span>
-            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 25.3%</span>
-            <span style="font-size:10px;color:#3b82f6;font-weight:700">■ 안영준 16.0%</span>
-            <span style="font-size:10px;color:#ec4899;font-weight:700">■ 황서림 9.0%</span>
-            <span style="font-size:10px;color:var(--red);font-weight:700">□ 부족 5.9%</span>
-          </div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🌲 주담대 (산림금융)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:43.8%;background:var(--orange);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">4억 2,900만</div>
-          <div class="fund-pct" style="color:var(--orange);font-weight:700;font-size:12px;width:40px">43.8%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏠 청라 집 팔고 받는 돈</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:25.3%;background:var(--green);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">약 2억 4,800만</div>
-          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">25.3%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💰 영준 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:16.0%;background:#3b82f6;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">1억 5,630만</div>
-          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">16.0%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💗 서림 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:9.0%;background:#ec4899;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">8,860만</div>
-          <div class="fund-pct" style="color:#ec4899;font-weight:700;font-size:12px;width:40px">9.0%</div>
-        </div>
-        <div class="fund-row" style="border-bottom:none">
-          <div class="fund-label" style="width:210px">⚠ 부족액</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:5.9%;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px;color:var(--red)">5,810만</div>
-          <div class="fund-pct" style="color:var(--red);font-weight:700;font-size:12px;width:40px">5.9%</div>
-        </div>
-        <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-          <div><div style="font-size:10px;color:var(--muted)">총 필요액</div><div style="font-size:1.2rem;font-weight:900;color:var(--text)">9억 8,000만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">전체 조달 가능</div><div style="font-size:1.2rem;font-weight:900;color:var(--orange)">9억 2,190만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">부족액</div><div style="font-size:1.2rem;font-weight:900;color:var(--orange)">5,810만</div><div style="font-size:10px;color:var(--orange);font-weight:700">△ 1금융 대비 5,500만 감소</div></div>
-        </div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
-          * 산림금융조합 4억 2,900만: KB시세 10억 7,250만 × LTV 80% − 방공제 5,500만 (1금융 우리은행 대비 +5,500만)<br>
-          * 안영준 현금 1억 5,630만: 신용대출 9,500만 + 보증보험 1.2억 수령분 포함 잔액 + 신협 100만<br>
-          * 청라 잔금 순수령: 잔금 4억 9,570만 − 보금자리론 상환 2억 4,700만 − 중개수수료 약 270만 ≈ 2억 4,800만 (8/31)<br>
-          * 황서림 가용 현금 8,860만: 미래에셋 주식 평가 4,840만 (원금 5,581만, 평가손 −742만) + 주택청약 1,020만 + 이모님 차용 3,000만
-        </div>
-      </div>
-
-      <!-- ── 플랜 3: 우리은행 + IRP/퇴직연금 해지 ── -->
-      <div id="fund-plan-3" style="display:none">
-        <div style="margin-bottom:18px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,000만 구성 비율</div>
-          <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
-            <div style="flex:38.2;background:var(--purple)" title="우리은행 38.2%"></div>
-            <div style="flex:25.3;background:var(--green)" title="청라잔금 25.3%"></div>
-            <div style="flex:16.0;background:#3b82f6" title="안영준 16.0%"></div>
-            <div style="flex:9.0;background:#ec4899" title="황서림 9.0%"></div>
-            <div style="flex:6.5;background:#f59e0b" title="IRP해지 6.5%"></div>
-            <div style="flex:5.0;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red)" title="부족 5.0%"></div>
-          </div>
-          <div style="display:flex;gap:14px;margin-top:7px;flex-wrap:wrap">
-            <span style="font-size:10px;color:var(--purple);font-weight:700">■ 우리은행 38.2%</span>
-            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 25.3%</span>
-            <span style="font-size:10px;color:#3b82f6;font-weight:700">■ 안영준 16.0%</span>
-            <span style="font-size:10px;color:#ec4899;font-weight:700">■ 황서림 9.0%</span>
-            <span style="font-size:10px;color:#f59e0b;font-weight:700">■ IRP해지 6.5%</span>
-            <span style="font-size:10px;color:var(--red);font-weight:700">□ 부족 5.0%</span>
-          </div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏦 주담대 (우리은행)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:38.2%;background:var(--purple);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">3억 7,400만</div>
-          <div class="fund-pct" style="color:var(--purple);font-weight:700;font-size:12px;width:40px">38.2%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏠 청라 집 팔고 받는 돈</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:25.3%;background:var(--green);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">약 2억 4,800만</div>
-          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">25.3%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💰 영준 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:16.0%;background:#3b82f6;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">1억 5,630만</div>
-          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">16.0%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💗 서림 보유 현금</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:9.0%;background:#ec4899;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">8,860만</div>
-          <div class="fund-pct" style="color:#ec4899;font-weight:700;font-size:12px;width:40px">9.0%</div>
-        </div>
-        <div class="fund-row">
-          <div class="fund-label" style="width:210px">💼 퇴직연금·IRP 해지 (세후)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:6.5%;background:#f59e0b;border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">6,417만</div>
-          <div class="fund-pct" style="color:#f59e0b;font-weight:700;font-size:12px;width:40px">6.5%</div>
-        </div>
-        <div class="fund-row" style="border-bottom:none">
-          <div class="fund-label" style="width:210px">⚠ 부족액</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:5.0%;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px;color:var(--red)">4,893만</div>
-          <div class="fund-pct" style="color:var(--red);font-weight:700;font-size:12px;width:40px">5.0%</div>
-        </div>
-        <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-          <div><div style="font-size:10px;color:var(--muted)">총 필요액</div><div style="font-size:1.2rem;font-weight:900;color:var(--text)">9억 8,000만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">전체 조달 가능</div><div style="font-size:1.2rem;font-weight:900;color:var(--purple)">9억 3,107만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">부족액</div><div style="font-size:1.2rem;font-weight:900;color:var(--orange)">4,893만</div><div style="font-size:10px;color:var(--orange);font-weight:700">△ 1안 대비 6,417만 감소</div></div>
-        </div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
-          * 우리은행 주담대 3억 7,400만: 9/16 잔금 시 실행 (KB시세 10억 7,250만 × LTV 40% − 방공제 5,500만)<br>
-          * IRP/퇴직연금 해지 세후 6,417만: 세전 합계 7,685만 (안영준 퇴직연금 5,022만 + 연금저축 1,016만 + 황서림 퇴직연금 1,647만) × 83.5% (세금 16.5% 차감)<br>
-          * 안영준 현금 1억 5,630만: 신용대출 9,500만 + 보증보험 1.2억 수령분 포함 잔액 + 신협 100만<br>
-          * 청라 잔금 순수령: 잔금 4억 9,570만 − 보금자리론 상환 2억 4,700만 − 중개수수료 약 270만 ≈ 2억 4,800만 (8/31)<br>
-          * 황서림 가용 현금 8,860만: 미래에셋 주식 평가 4,840만 (원금 5,581만, 평가손 −742만) + 주택청약 1,020만 + 이모님 차용 3,000만
-        </div>
-      </div>
-
-      <!-- ── 플랜 4: 산림금융 + IRP/퇴직연금 해지 ── -->
-      <div id="fund-plan-4">
+      <!-- ── 플랜 1: 산림금융 + IRP/퇴직연금 해지 ── -->
+      <div id="fund-plan-1">
         <div style="margin-bottom:18px">
           <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,607만 구성 비율 (목표 초과 ✅)</div>
           <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
@@ -3032,8 +2820,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 5: 우리은행 + 안영준 보증보험 3천만 ── -->
-      <div id="fund-plan-5" style="display:none">
+      <!-- ── 플랜 2: 우리은행 + 안영준 보증보험 3천만 ── -->
+      <div id="fund-plan-2" style="display:none">
         <div style="margin-bottom:18px">
           <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">전체 9억 8,000만 구성 비율</div>
           <div style="display:flex;height:32px;border-radius:8px;overflow:hidden;gap:2px">
@@ -3103,8 +2891,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 6: 우리은행(안영준 단독 차주) + 황서림 신용대출 ── -->
-      <div id="fund-plan-6" style="display:none">
+      <!-- ── 플랜 3: 우리은행(안영준 단독 차주) + 신용대출 ── -->
+      <div id="fund-plan-3" style="display:none">
         <div class="ibox r" style="margin-bottom:14px;font-size:12px;line-height:1.7">
           ⚠ <strong>현재 진행 중인 시나리오</strong> — 안영준 단독 차주로 우리은행 주담대 수령 후 황서림 명의 신용대출로 부족분 보충
         </div>
@@ -3178,8 +2966,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 7: 우리은행(안영준 단독) + 신용대출 + IRP해지 ── -->
-      <div id="fund-plan-7" style="display:none">
+      <!-- ── 플랜 4: 우리은행(안영준 단독) + 신용대출 + IRP해지 ── -->
+      <div id="fund-plan-4" style="display:none">
         <div class="ibox g" style="margin-bottom:14px;font-size:12px;line-height:1.7">
           ✅ <strong>완전 해소 시나리오</strong> — 신용대출 5,000만 기준으로도 9억 8,107만 확보, 107만 여유
         </div>
@@ -4592,13 +4380,13 @@ document.getElementById('loan-btn-combined').classList.toggle('active',name==='c
 document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
 }
 function switchFundPlan(p){
-  ['1','2','3','4','5','6','7'].forEach(n=>{
+  ['1','2','3','4'].forEach(n=>{
     document.getElementById('fund-plan-'+n).style.display = p===n?'':'none';
     document.getElementById('fp-btn-'+n).classList.toggle('active',p===n);
   });
-  const totals={'1':'8억 6,690만','2':'9억 2,190만','3':'9억 3,107만','4':'9억 8,607만','5':'8억 9,690만','6':'9억 1,690만~3,364만','7':'9억 8,107만~9억 9,781만'};
-  const shorts={'1':'1억 1,310만','2':'5,810만','3':'4,893만','4':'완전 해소 ✅','5':'8,310만','6':'4,636만~6,310만','7':'완전 해소 ✅'};
-  const labels={'1':'우리은행+청라+안영준+황서림','2':'산림금융+청라+안영준+황서림','3':'우리은행+IRP해지+청라+안영준+황서림','4':'산림금융+IRP해지+청라+안영준+황서림','5':'우리은행+보증보험+청라+안영준+황서림','6':'우리은행(안영준단독)+신용대출+청라+안영준+황서림','7':'우리은행+신용대출+IRP해지+청라+안영준+황서림'};
+  const totals={'1':'9억 8,607만','2':'8억 9,690만','3':'9억 1,690만~3,364만','4':'9억 8,107만~9억 9,781만'};
+  const shorts={'1':'완전 해소 ✅','2':'8,310만','3':'4,636만~6,310만','4':'완전 해소 ✅'};
+  const labels={'1':'산림금융+IRP해지+청라+안영준+황서림','2':'우리은행+보증보험+청라+안영준+황서림','3':'우리은행+신용대출+청라+안영준+황서림','4':'우리은행+신용대출+IRP해지+청라+안영준+황서림'};
   document.getElementById('kpi-loan-total').textContent=totals[p];
   const el=document.getElementById('kpi-loan-short');
   el.textContent=shorts[p];
@@ -4607,10 +4395,10 @@ function switchFundPlan(p){
   const card=document.getElementById('kpi-short-card');
   const sub=document.getElementById('kpi-short-sub');
   const lbl=document.getElementById('kpi-short-lbl');
-  if(p==='4'||p==='7'){
+  if(p==='1'||p==='4'){
     card.style.borderTopColor='var(--green)';
     lbl.textContent='여유 (목표 초과)';
-    sub.textContent=p==='4'?'✅ 완전 해소 — 607만 여유':'✅ 완전 해소 — 신용대출 5천만 기준 107만 여유';
+    sub.textContent=p==='1'?'✅ 완전 해소 — 607만 여유':'✅ 완전 해소 — 신용대출 5천만 기준 107만 여유';
     sub.style.color='var(--green)';
   } else {
     card.style.borderTopColor='var(--red)';
