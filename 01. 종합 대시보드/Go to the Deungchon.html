@@ -7,7 +7,7 @@
 <title>등촌부영 이사 프로젝트</title>
 <style>
 :root{
-  --bg:#EEF1FA;--white:#FDFCFF;--border:rgba(99,91,255,0.09);
+  --bg:#EEF1FA;--white:#FDFCFF;--card:#FDFCFF;--border:rgba(99,91,255,0.09);
   --sh:0 2px 20px rgba(99,91,255,0.09);--sh2:0 8px 36px rgba(99,91,255,0.18);
   --purple:#7B6EF6;--p2:#5B4EDA;--p3:#EEEEFF;--p4:rgba(123,110,246,0.13);
   --orange:#F97316;--o2:#FFF3EC;
@@ -36,7 +36,7 @@ body{font-family:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Malgun 
   position:sticky;top:0;height:100vh;overflow-y:auto;
   box-shadow:4px 0 32px rgba(0,0,0,0.25)}
 .sb-logo{display:flex;flex-direction:row;align-items:center;gap:10px;padding:14px 16px 12px;
-  border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;gap:10px}
+  border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
 .logo-icon{width:42px;height:42px;border-radius:10px;
   background:#fff;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:0;
@@ -1258,8 +1258,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">7</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">등촌 잔금 납부 + 공사 시작</div><div class="tl-desc">대출 + 현금 + 청라 매도금 합산 · 잔금 당일 인테리어 공사 시작 (도배·장판·화장실·싱크대)</div></div>
-      <div class="tl-right"><div class="tl-amt mi">9.955억</div><div class="tl-date">2026. 09. 16</div></div>
+      <div class="tl-body"><div class="tl-title">등촌 잔금 납부 + 공사 시작</div><div class="tl-desc">잔금 7.8억 납부 (대출 + 현금 + 청라 매도금 합산) · 잔금 당일 인테리어 공사 시작 (도배·장판·화장실·싱크대)</div></div>
+      <div class="tl-right"><div class="tl-amt mi">7.8억</div><div class="tl-date">2026. 09. 16</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">🏠</div><div class="tl-line"></div>
@@ -1968,13 +1968,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     ✅ <strong>7/20 대출 접수 현황</strong><br><span style="font-size:12.5px;line-height:2">🏦 <strong>수협은행</strong> — 오전 신청 완료 (소득합산, 4억 2,900만원) · 전화 심사 결과 대기 중<br>🏦 <strong>우리은행</strong> — 오후 1시 접수 완료 (MCI/MCG 불가 → 방공제 5,500만 적용 → 실한도 3억 7,400만) · 8/10까지 취소 가능</span>
   </div>
   <div class="ibox y" style="margin-bottom:12px">
-    ⏳ <strong>7/22 진행 중 — 내일(7/23) 우리은행 방문 예정</strong><br>
+    ⏳ <strong>7/23 우리은행 방문 — 진행 현황</strong><br>
     <span style="font-size:12.5px;line-height:2.1">
       🏦 <strong>우리은행 역촌동 (안영준 단독 차주 전환) — 3억 7,400만</strong><br>
-      안영준이 내일 신분증 지참 후 역촌동 지점 방문 → 김성희 차장님께 서류 3종 작성 송부<br>
+      안영준이 7/23 신분증 지참 후 역촌동 지점 방문 → 김성희 차장님께 서류 3종 작성 송부<br>
       &nbsp;&nbsp;① 신용정보조회동의서 &nbsp;② 국토부조회동의서 &nbsp;③ 적합성·적정성 고객정보 확인서<br>
       💳 <strong>황서림 신용대출</strong> — 9/16 주담대 실행 직후 오전 9시 신용대출 신청 목표<br>
-      🌲 <strong>산림조합금융 (정직한금융)</strong> — LTV 우대 조건 확인 요청 중 · 오늘~내일 답변 예정<br>
+      🌲 <strong>산림조합금융 (정직한금융)</strong> — LTV 우대 조건 확인 요청 중 · 7/22~7/23 답변 예정<br>
       ❌ <strong>안영준 새마을금고 보증보험대출 3,000만</strong> — 추가 불가 확인
     </span>
   </div>
@@ -2751,7 +2751,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="ibox y" style="margin-bottom:14px;font-size:13px;line-height:1.7;border-radius:14px">        ⚠ <strong>1안 (산림금융 + IRP해지) — 재검토 중</strong><br>        <span style="font-size:12px">7/20 산림금융 고양·인천 지점 이용 불가 확인. <strong style="color:var(--red)">수협은행 심사 결과가 핵심 분기점</strong>으로 부상. 수협 통과 시 우리은행 전환 검토 가능해요.</span>      </div>
       <!-- 플랜 토글 -->
       <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
-        <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🌲💼 1안 · 산림+IRP해지 ✅</button>
+        <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🌲💼 1안 · 산림+IRP해지</button>
         <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🏦📋 2안 · 우리은행+보증보험</button>
         <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">🏦💳 3안 · 우리은행+신용대출</button>
         <button id="fp-btn-4" class="person-btn" onclick="switchFundPlan('4')">🏦💳💼 4안 · 우리은행+신용대출+IRP해지</button>
@@ -4452,7 +4452,6 @@ function renderAll(){
   renderChecklist(d.remodelItems,"remodel-checklist",()=>renderChecklist(d.remodelItems,"remodel-checklist",()=>{},()=>{renderAll();}),()=>{d.remodelItems=d.remodelItems;renderAll();});
   const memo=document.getElementById("remodelMemo");
   if(memo&&!memo.matches(":focus")) memo.value=d.remodelMemo;
-  document.getElementById("remodelMemo")?.addEventListener("input",e=>{d.remodelMemo=e.target.value;save();},{once:false});
   if(d.updatedAt) document.getElementById("savedTime").textContent="저장 "+d.updatedAt;
 }
 
@@ -4474,6 +4473,20 @@ function go(name,btn){
   if(btn&&btn.classList) btn.classList.add("active");
   var mb=document.querySelector('.mob-btn[data-p="'+name+'"]');
   if(mb) mb.classList.add("active");
+  // 사이드바 버튼이 btn으로 전달되지 않은 경우(요약카드·퀵메뉴 클릭) 사이드바 탭 자동 동기화
+  if(!btn||(!btn.classList.contains('sb-tab')&&!btn.classList.contains('sb-subtab'))){
+    document.querySelectorAll('.sb-tab,.sb-subtab').forEach(function(t){
+      if((t.getAttribute('onclick')||'').indexOf("'"+name+"'")>-1){
+        t.classList.add('active');
+        var sg=t.parentElement;
+        if(sg&&sg.classList.contains('sb-subgroup')){
+          sg.classList.add('open');
+          var hdr=sg.previousElementSibling;
+          if(hdr) hdr.classList.add('open');
+        }
+      }
+    });
+  }
   window.scrollTo(0,0);
 }
 
@@ -4544,6 +4557,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 
 load(); try{renderAll();}catch(e){} dday();
+setInterval(dday,3600000); // D-day 매 1시간마다 자동 갱신
 document.addEventListener("keydown",e=>{
   if((e.ctrlKey||e.metaKey)&&e.key==="s"){e.preventDefault();save();}
 });
