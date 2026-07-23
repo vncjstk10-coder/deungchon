@@ -1964,21 +1964,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
 <div id="sec-common-header">
   <div class="ibox y" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">    <h4>📖 처음 보면 어려운 단어 설명</h4>    <strong>DSR (총부채원리금상환비율)</strong> — 월급의 몇 %를 빚 갚는 데 쓰냐예요. 은행은 이 비율이 40~50% 이하인 사람에게만 주담대를 빌려줘요.<br>    <strong>LTV (담보인정비율)</strong> — 집값의 몇 %까지 빌려주냐예요. 1금융권(우리은행)은 집값의 40%, 2금융권(산림조합)은 최대 80%까지 가능해요.<br>    <strong>MCI (주택담보대출 보험)</strong> — 가입하면 LTV 한도를 높여 더 빌릴 수 있어요. 대출 신청 시 보험료 1회 납부예요.<br>    <strong>IRP/퇴직연금 해지</strong> — 회사에 적립된 퇴직금을 미리 받는 것. 세금(약 16.5%)을 내고 현금화해요. 4안에서는 두 사람 합산 6,417만원 활용해요.  </div>
-  <!-- 대출 상담 일정 -->
-  <div class="ibox g" style="margin-bottom:16px">
-    ✅ <strong>7/20 대출 접수 현황</strong><br><span style="font-size:12.5px;line-height:2">🏦 <strong>수협은행</strong> — 오전 신청 완료 (소득합산, 4억 2,900만원) · 전화 심사 결과 대기 중<br>🏦 <strong>우리은행</strong> — 오후 1시 접수 완료 (MCI/MCG 불가 → 방공제 5,500만 적용 → 실한도 3억 7,400만) · 8/10까지 취소 가능</span>
-  </div>
-  <div class="ibox y" style="margin-bottom:12px">
-    ⏳ <strong>7/23 우리은행 방문 — 진행 현황</strong><br>
-    <span style="font-size:12.5px;line-height:2.1">
-      🏦 <strong>우리은행 역촌동 (안영준 단독 차주 전환) — 3억 7,400만</strong><br>
-      안영준이 7/23 신분증 지참 후 역촌동 지점 방문 → 김성희 차장님께 서류 3종 작성 송부<br>
-      &nbsp;&nbsp;① 신용정보조회동의서 &nbsp;② 국토부조회동의서 &nbsp;③ 적합성·적정성 고객정보 확인서<br>
-      💳 <strong>황서림 신용대출</strong> — 9/16 주담대 실행 직후 오전 9시 신용대출 신청 목표<br>
-      🌲 <strong>산림조합금융 (정직한금융)</strong> — LTV 우대 조건 확인 요청 중 · 7/22~7/23 답변 예정<br>
-      ❌ <strong>안영준 새마을금고 보증보험대출 3,000만</strong> — 추가 불가 확인
-    </span>
-  </div>
   <div class="ibox p" style="margin-bottom:16px">
     💳 <strong>황서림 신용대출 한도 추정</strong><br>
     <span style="font-size:12.5px;line-height:2.1">
@@ -2046,63 +2031,42 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- 등촌 주담대 접수 타임라인 -->
+    <!-- 진행 타임라인 -->
     <div class="stitle">🗓 등촌 주담대 접수 진행 타임라인</div>
 
-    <div class="tl-item">
-      <div class="tl-dot done">✓</div>
-      <div class="tl-body">
-        <div class="tl-title" style="color:var(--green)">7/20 (일) — 주담대 접수 완료</div>
-        <div class="tl-desc">
-          🐠 <strong>수협은행</strong> — 소득합산 (황서림+안영준) · 4억 2,900만 신청 · 전화 심사 결과 대기 중<br>
-          🏦 <strong>우리은행 역촌동</strong> — 오후 1시 접수 완료 · MCI/MCG 불가 · 방공제 5,500만 차감 → 실한도 <strong>3억 7,400만</strong> · 8/10까지 취소 가능
-        </div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-amt pu" style="font-size:13px">3.74억 확보</div>
-        <div class="tl-date">접수 완료</div>
-      </div>
+    <div class="ibox g" style="margin-bottom:12px">
+      ✅ <strong>7/20 (일) — 주담대 접수 완료</strong><br>
+      <span style="font-size:12.5px;line-height:2">
+        🐠 <strong>수협은행</strong> — 소득합산 (황서림+안영준) · 4억 2,900만 신청 · 전화 심사 결과 대기 중<br>
+        🏦 <strong>우리은행 역촌동</strong> — 오후 1시 접수 완료 · MCI/MCG 불가 · 방공제 5,500만 → 실한도 <strong>3억 7,400만</strong> · 8/10까지 취소 가능
+      </span>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-dot done">✓</div>
-      <div class="tl-body">
-        <div class="tl-title" style="color:var(--green)">7/22 (화) — 전략 재검토</div>
-        <div class="tl-desc">
-          👤 <strong>안영준 단독 차주 전환</strong> 추진 결정 — 우리은행 3억 7,400만<br>
-          🌲 <strong>산림조합금융</strong> — LTV 우대 조건 확인 요청 중<br>
-          ❌ <strong>안영준 새마을금고 보증보험대출 3,000만</strong> — 추가 불가 확인
-        </div>
-      </div>
+    <div class="ibox g" style="margin-bottom:12px">
+      ✅ <strong>7/22 (화) — 전략 재검토</strong><br>
+      <span style="font-size:12.5px;line-height:2">
+        👤 <strong>안영준 단독 차주 전환</strong> 추진 결정 — 우리은행 3억 7,400만<br>
+        🌲 <strong>산림조합금융</strong> — LTV 우대 조건 확인 요청 중<br>
+        ❌ <strong>안영준 새마을금고 보증보험대출 3,000만</strong> — 추가 불가 확인
+      </span>
     </div>
 
-    <div class="tl-item">
-      <div class="tl-dot pend" style="font-size:10px;font-weight:900">TODAY</div>
-      <div class="tl-body">
-        <div class="tl-title" style="color:var(--orange)">7/23 (수) — 오늘 · 우리은행 역촌동 방문 완료</div>
-        <div class="tl-desc" style="line-height:1.8">
-          🏦 <strong>안영준 단독 차주 전환 서류 접수</strong><br>
-          &nbsp;&nbsp;&nbsp;① 신용정보조회동의서<br>
-          &nbsp;&nbsp;&nbsp;② 국토부조회동의서<br>
-          &nbsp;&nbsp;&nbsp;③ 적합성·적정성 고객정보 확인서<br>
-          📞 <strong>담당: 김성희 차장님</strong> — 심사 후 결과 안내 예정
-        </div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-amt or">결과 대기</div>
-        <div class="tl-date">진행 중</div>
-      </div>
+    <div class="ibox y" style="margin-bottom:12px">
+      ⏳ <strong>7/23 (수) 오늘 — 우리은행 역촌동 방문 완료</strong><br>
+      <span style="font-size:12.5px;line-height:2.1">
+        🏦 <strong>우리은행 역촌동 (안영준 단독 차주 전환) — 3억 7,400만</strong><br>
+        안영준이 신분증 지참 후 역촌동 지점 방문 → 김성희 차장님께 서류 3종 작성 송부<br>
+        &nbsp;&nbsp;① 신용정보조회동의서 &nbsp;② 국토부조회동의서 &nbsp;③ 적합성·적정성 고객정보 확인서<br>
+        📞 <strong>담당: 김성희 차장님</strong> — 심사 후 결과 안내 예정
+      </span>
     </div>
 
-    <div class="tl-item" style="opacity:.6">
-      <div class="tl-dot fut">…</div>
-      <div class="tl-body">
-        <div class="tl-title">다음 단계 — 결과 수령 후</div>
-        <div class="tl-desc">
-          단독 차주 전환 승인 시 → 소득합산 수협은행 취소 or 두 은행 비교 검토<br>
-          9/16 잔금일에 맞춰 주담대 실행 완료 목표
-        </div>
-      </div>
+    <div class="ibox" style="margin-bottom:12px;opacity:.7;border-color:var(--border)">
+      … <strong>다음 단계 — 결과 수령 후</strong><br>
+      <span style="font-size:12.5px;line-height:2;color:var(--muted)">
+        단독 차주 전환 승인 시 → 수협은행 취소 or 두 은행 비교 검토<br>
+        9/16 잔금일에 맞춰 주담대 실행 완료 목표
+      </span>
     </div>
 
     <!-- DSR Q&A -->
