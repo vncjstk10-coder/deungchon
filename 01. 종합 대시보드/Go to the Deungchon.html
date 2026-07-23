@@ -876,6 +876,14 @@ tbody tr td{transition:background .12s ease}
   #urgency-msg{font-size:12px!important}
 }
 
+/* F. 다크모드 가독성 패치 2026-07-23 */
+@media(max-width:768px){
+  /* F-1. ibox 내 strong 태그 — 다크 배경에서 검정 텍스트 방지 */
+  .ibox strong{color:#F0F0F8!important}
+  /* F-2. purple 인라인 설명 박스 — 8% 투명도가 다크에서 소멸하는 문제 */
+  [style*="rgba(123,110,246,0.08)"]{background:rgba(123,110,246,0.18)!important}
+}
+
 /* E-5. ibox 인라인 line-height 1.8/1.9 모바일 override
    DSR 설명(1.9), cashflow 안내(1.8), cheongna 안내(1.8) 등
    인라인 스타일이 모바일에서도 과도한 줄간격 유발하는 문제 해소 */
@@ -1120,8 +1128,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">+</div>
       <div style="flex:1;min-width:100px;background:var(--p3);border-radius:12px;padding:12px 10px;text-align:center">
         <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:5px">🏦 은행 대출</div>
-        <div style="font-size:17px;font-weight:900;color:var(--purple);letter-spacing:-.02em">+4억 2,900만</div>
-        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">주담대 실행 예정</div>
+        <div style="font-size:17px;font-weight:900;color:var(--purple);letter-spacing:-.02em">+3억 7,400만</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">안영준 단독 차주 · 우리은행 확정</div>
       </div>
       <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">+</div>
       <div style="flex:1;min-width:100px;background:var(--o2);border-radius:12px;padding:12px 10px;text-align:center">
@@ -1145,9 +1153,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="kpi-lbl">🏦 대출 현황</div>
         <span class="chip y">심사 진행 중</span>
       </div>
-      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 수협은행</strong> 소득합산 신청<br><span style="font-size:12px">4억 2,900만 · MCI/MCG 가입 여부 확인 중</span></div>
-      <div class="ibox o" style="padding:10px 12px;margin-bottom:6px"><strong>② 우리은행</strong> 접수 완료<br><span style="font-size:12px">방공제 5,500만 → 실한도 3.74억 · 8/10 취소 가능</span></div>
-      <div class="ibox y" style="padding:10px 12px"><strong>목표</strong> MCI/MCG 가능 은행 · 4억 2,900만<br><span style="font-size:12px">방공제 없이 LTV 한도 내 최대 확보</span></div>
+      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 우리은행</strong> 안영준 단독 차주 · 진행 중<br><span style="font-size:12px">3억 7,400만 · 7/23 서초금융센터 서류 접수 · 박영훈 상담사 결과 대기</span></div>
+      <div class="ibox o" style="padding:10px 12px;margin-bottom:6px"><strong>② 수협은행</strong> 소득합산 심사 대기<br><span style="font-size:12px">4억 2,900만 신청 · 전화 심사 결과 대기 중</span></div>
+      <div class="ibox y" style="padding:10px 12px"><strong>전략</strong> 황서림 신용대출 9/16 당일 신청 (DSR 제한 없음)<br><span style="font-size:12px">MCI 불가 5,500만 보완 목표</span></div>
     </div>
     <div class="card" style="cursor:pointer" onclick="go('cashflow')">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
@@ -1213,7 +1221,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="card">
     <div class="tl-item">
       <div class="tl-dot done">✓</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">신용대출 실행 완료 (9,500만)</div><div class="tl-desc">새마을금고 · 4.02%/5년</div></div>
+      <div class="tl-body"><div class="tl-title">신용대출 실행 완료 (9,500만)</div><div class="tl-desc">우리은행 · 4.02%/5년 · 이자납입</div></div>
       <div class="tl-right"><div class="tl-date">2026. 05 완료</div></div>
     </div>
     <div class="tl-item">
@@ -1227,14 +1235,19 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="tl-right"><div class="tl-amt gr">완료</div><div class="tl-date">2026. 07. 20</div></div>
     </div>
     <div class="tl-item">
+      <div class="tl-dot done">✓</div><div class="tl-line"></div>
+      <div class="tl-body"><div class="tl-title">안영준 단독 차주 전환 서류 접수</div><div class="tl-desc">우리은행 서초금융센터 방문 → 서류 3종 역촌동 지점 송부 · 담당: 박영훈 상담사 (010-3194-1781) · 결과 대기 중</div></div>
+      <div class="tl-right"><div class="tl-amt or">대기중</div><div class="tl-date">2026. 07. 23</div></div>
+    </div>
+    <div class="tl-item">
       <div class="tl-dot pend">!</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">중도금 납부 (2억)</div><div class="tl-desc">안영준 현금 + 퇴직연금 해지 1,016만 + 주택청약 해지 1,020만 + 이모님 차입</div></div>
       <div class="tl-right"><div class="tl-amt or">2억</div><div class="tl-date">2026. 07. 30</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot warn">⚠</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">주담대 은행 확정 필요</div><div class="tl-desc">수협은행 심사 결과 대기 · 우리은행 8/10 취소 가능 기한 내 비교 · 방공제 없는 4.29억 대출 확보가 목표</div></div>
-      <div class="tl-right"><div class="tl-amt re">미확정</div><div class="tl-date">잔금 전</div></div>
+      <div class="tl-body"><div class="tl-title">우리은행 안영준 단독 차주 전환 심사 중</div><div class="tl-desc">박영훈 상담사 심사 진행 중 · 수협은행 4.29억 병행 탐색 · 8/10 취소 기한 내 최종 결정</div></div>
+      <div class="tl-right"><div class="tl-amt or">대기중</div><div class="tl-date">8/10 기한</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">▶</div><div class="tl-line"></div>
@@ -1243,17 +1256,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">4</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">청라힐데스하임 잔금 수령</div><div class="tl-desc">매도 완료 · 보금자리 상환 후 순수령 약 3.25억<br>⚠ 등촌 잔금일(9/16)과 16일 공백 → <strong>임시 거주지 필요</strong></div></div>
-      <div class="tl-right"><div class="tl-amt pl">+3.25억</div><div class="tl-date">2026. 08. 31</div></div>
+      <div class="tl-body"><div class="tl-title">청라힐데스하임 잔금 수령</div><div class="tl-desc">매도 완료 · 보금자리론 2억 4,772만 상환 후 순수령 약 2억 4,800만<br>⚠ 등촌 잔금일(9/16)과 16일 공백 → <strong>임시 거주지 필요</strong></div></div>
+      <div class="tl-right"><div class="tl-amt pl">+2.48억</div><div class="tl-date">2026. 08. 31</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">5</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">보증보험 추가 신청 (8,000만)</div><div class="tl-desc">현대차 보증 · 매도인 직지급</div></div>
-      <div class="tl-right"><div class="tl-date">2026. 09. 02</div></div>
+      <div class="tl-body"><div class="tl-title">회사 보증보험 추가 3,000만 신청 (조건부)</div><div class="tl-desc">8/31 보금자리론 상환 후 DSR 여유 확인 → 안영준 회사 보증보험 한도 1억 5,000만 중 잔여 3,000만 추가 목표</div></div>
+      <div class="tl-right"><div class="tl-date">8/31 이후</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">6</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">황서림 주담대 실행 (4억)</div><div class="tl-desc" style="color:var(--orange)">⚠ 반드시 5년+ 고정금리</div></div>
+      <div class="tl-body"><div class="tl-title">안영준 주담대 실행 (3억 7,400만) + 황서림 신용대출 당일 신청</div><div class="tl-desc">안영준 단독 차주 · 우리은행 역촌동 · 황서림은 주담대 없어 DSR 제한 없이 신용대출 신청 가능 → MCI 불가 5,500만 보완 목표</div></div>
       <div class="tl-right"><div class="tl-date">2026. 09. 16</div></div>
     </div>
     <div class="tl-item">
@@ -1957,12 +1970,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button id="loan-btn-hwang" class="person-btn active" onclick="switchPerson('hwang')">황서림</button>
       <button id="loan-btn-ahn" class="person-btn" onclick="switchPerson('ahn')">안영준</button>
       <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">합산</button>
-      <button id="loan-btn-consultant" class="person-btn" onclick="switchPerson('consultant')">📋 대출상담사 대상</button>
+      <button id="loan-btn-consultant" class="person-btn" onclick="switchPerson('consultant')">📋 상담사</button>
     </div>
   </div>
 
 
 <div id="sec-common-header">
+  <div class="stitle" style="margin-top:0">📋 대출 공통 정보</div>
   <div class="ibox y" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">    <h4>📖 처음 보면 어려운 단어 설명</h4>    <strong>DSR (총부채원리금상환비율)</strong> — 월급의 몇 %를 빚 갚는 데 쓰냐예요. 은행은 이 비율이 40~50% 이하인 사람에게만 주담대를 빌려줘요.<br>    <strong>LTV (담보인정비율)</strong> — 집값의 몇 %까지 빌려주냐예요. 1금융권(우리은행)은 집값의 40%, 2금융권(산림조합)은 최대 80%까지 가능해요.<br>    <strong>MCI (주택담보대출 보험)</strong> — 가입하면 LTV 한도를 높여 더 빌릴 수 있어요. 대출 신청 시 보험료 1회 납부예요.<br>    <strong>IRP/퇴직연금 해지</strong> — 회사에 적립된 퇴직금을 미리 받는 것. 세금(약 16.5%)을 내고 현금화해요. 4안에서는 두 사람 합산 6,417만원 활용해요.  </div>
   <div class="ibox p" style="margin-bottom:16px">
     💳 <strong>황서림 신용대출 한도 추정</strong><br>
@@ -4671,7 +4685,7 @@ document.addEventListener("keydown",e=>{
     <span class="mi">💸</span><span class="ml">자금</span>
   </button>
   <button class="mob-btn" data-p="cashflow" onclick="go('cashflow',this)">
-    <span class="mi">📅</span><span class="ml">일정</span>
+    <span class="mi">💰</span><span class="ml">자금흐름</span>
   </button>
   <button class="mob-btn" data-p="loan-status" onclick="go('loan-status',this)">
     <span class="mi">🏦</span><span class="ml">대출</span>
