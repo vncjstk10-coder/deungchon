@@ -1953,6 +1953,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <p>누구 명의로 얼마나 빌릴 수 있나 · 매달 이자는 얼마 · 7/20 은행 상담 후 확정</p>
     </div>
     <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0">
+      <button id="loan-btn-timeline" class="person-btn" onclick="switchPerson('timeline')">📅 진행 현황</button>
       <button id="loan-btn-hwang" class="person-btn active" onclick="switchPerson('hwang')">황서림</button>
       <button id="loan-btn-ahn" class="person-btn" onclick="switchPerson('ahn')">안영준</button>
       <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">합산</button>
@@ -2022,6 +2023,109 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <span style="font-size:11.5px;font-weight:700">⚠ 고양·인천 이용 불가 확인 — 4안 산림금융 경로 사실상 차단 · 수협 심사 결과가 핵심 변수</span>
   </div>
 </div><!-- /sec-common-header -->
+
+  <!-- ── 진행 현황 섹션 ── -->
+  <div id="sec-timeline" style="display:none">
+
+    <!-- 기존 대출 요약 -->
+    <div class="stitle">📋 현재 대출 현황 (안영준 기준 · 2026.07)</div>
+    <div class="g2" style="margin-bottom:20px">
+      <div class="card" style="border-left:4px solid var(--orange)">
+        <div style="font-size:12px;font-weight:800;color:var(--orange);margin-bottom:10px">💳 우리은행 신용대출</div>
+        <div class="fund-row"><div class="fund-label">잔 액</div><div style="flex:1"></div><div style="font-weight:800">9,500만</div></div>
+        <div class="fund-row"><div class="fund-label">금리 / 만기</div><div style="flex:1"></div><div style="font-weight:700">4.02% / 5년</div></div>
+        <div class="fund-row"><div class="fund-label">상환 방식</div><div style="flex:1"></div><div style="font-size:12px;color:var(--muted);font-weight:600">이자납입 (거치식)</div></div>
+        <div class="fund-row" style="border-bottom:none"><div class="fund-label">월 납입</div><div style="flex:1"></div><div style="font-weight:800;color:var(--orange)">약 32만/월</div></div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--purple)">
+        <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:10px">🏢 회사 보증보험대출</div>
+        <div class="fund-row"><div class="fund-label">잔 액</div><div style="flex:1"></div><div style="font-weight:800">1억 2,000만</div></div>
+        <div class="fund-row"><div class="fund-label">금리 / 만기</div><div style="flex:1"></div><div style="font-weight:700">4.76% / 2028.06.30</div></div>
+        <div class="fund-row"><div class="fund-label">상환 방식</div><div style="flex:1"></div><div style="font-size:12px;color:var(--muted);font-weight:600">만기일시상환</div></div>
+        <div class="fund-row" style="border-bottom:none"><div class="fund-label">월 납입</div><div style="flex:1"></div><div style="font-weight:800;color:var(--purple)">약 48만/월</div></div>
+      </div>
+    </div>
+
+    <!-- 등촌 주담대 접수 타임라인 -->
+    <div class="stitle">🗓 등촌 주담대 접수 진행 타임라인</div>
+
+    <div class="tl-item">
+      <div class="tl-dot done">✓</div>
+      <div class="tl-body">
+        <div class="tl-title" style="color:var(--green)">7/20 (일) — 주담대 접수 완료</div>
+        <div class="tl-desc">
+          🐠 <strong>수협은행</strong> — 소득합산 (황서림+안영준) · 4억 2,900만 신청 · 전화 심사 결과 대기 중<br>
+          🏦 <strong>우리은행 역촌동</strong> — 오후 1시 접수 완료 · MCI/MCG 불가 · 방공제 5,500만 차감 → 실한도 <strong>3억 7,400만</strong> · 8/10까지 취소 가능
+        </div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-amt pu" style="font-size:13px">3.74억 확보</div>
+        <div class="tl-date">접수 완료</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot done">✓</div>
+      <div class="tl-body">
+        <div class="tl-title" style="color:var(--green)">7/22 (화) — 전략 재검토</div>
+        <div class="tl-desc">
+          👤 <strong>안영준 단독 차주 전환</strong> 추진 결정 — 우리은행 3억 7,400만<br>
+          🌲 <strong>산림조합금융</strong> — LTV 우대 조건 확인 요청 중<br>
+          ❌ <strong>안영준 새마을금고 보증보험대출 3,000만</strong> — 추가 불가 확인
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot pend" style="font-size:10px;font-weight:900">TODAY</div>
+      <div class="tl-body">
+        <div class="tl-title" style="color:var(--orange)">7/23 (수) — 오늘 · 우리은행 역촌동 방문 완료</div>
+        <div class="tl-desc" style="line-height:1.8">
+          🏦 <strong>안영준 단독 차주 전환 서류 접수</strong><br>
+          &nbsp;&nbsp;&nbsp;① 신용정보조회동의서<br>
+          &nbsp;&nbsp;&nbsp;② 국토부조회동의서<br>
+          &nbsp;&nbsp;&nbsp;③ 적합성·적정성 고객정보 확인서<br>
+          📞 <strong>담당: 김성희 차장님</strong> — 심사 후 결과 안내 예정
+        </div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-amt or">결과 대기</div>
+        <div class="tl-date">진행 중</div>
+      </div>
+    </div>
+
+    <div class="tl-item" style="opacity:.6">
+      <div class="tl-dot fut">…</div>
+      <div class="tl-body">
+        <div class="tl-title">다음 단계 — 결과 수령 후</div>
+        <div class="tl-desc">
+          단독 차주 전환 승인 시 → 소득합산 수협은행 취소 or 두 은행 비교 검토<br>
+          9/16 잔금일에 맞춰 주담대 실행 완료 목표
+        </div>
+      </div>
+    </div>
+
+    <!-- DSR Q&A -->
+    <div class="ibox p" style="margin-top:6px">
+      <div style="font-size:13px;font-weight:800;margin-bottom:10px">❓ 신용대출 1,500만 갚으면 보증보험대출 3,000만 추가 가능할까?</div>
+      <div style="font-size:12.5px;line-height:2">
+        <strong>신용대출 구조 먼저 이해하기</strong><br>
+        · 신용대출(9,500만)은 <strong>이자만 납입</strong>하는 거치식 → 매달 원금은 안 줄고 이자(약 32만)만 냄<br>
+        · 보증보험대출(1.2억)도 <strong>만기일시상환</strong> → 매달 이자(약 48만)만 냄<br>
+        · <strong>5년(신용대출) / 10년(보증보험)</strong> 만기는 "그 시점에 원금을 한 번에 갚는다"는 뜻<br><br>
+        <strong>신용대출 1,500만만 갚으면?</strong><br>
+        · 잔액 9,500만 → 8,000만 / 이자 32만 → <strong>약 27만으로 감소</strong> (월 5만 여유)<br>
+        · 보증보험 3,000만 추가 이자: 3,000만 × 4.76% ÷ 12 = <strong>약 12만/월</strong><br>
+        · 결론: <span style="background:rgba(239,68,68,0.12);padding:2px 6px;border-radius:4px;color:var(--red);font-weight:700">월 5만 여유 &lt; 12만 이자 → DSR 부족, 3,000만 추가 어려움</span><br><br>
+        <strong>신용대출이 만기(5년) 되어 전액 상환되면?</strong><br>
+        · 매달 32만 DSR 부담이 완전히 사라짐<br>
+        · 이 여유분(32만)으로 보증보험 3,000만 이자(12만) 충분히 커버<br>
+        · 결론: <span style="background:rgba(34,197,94,0.12);padding:2px 6px;border-radius:4px;color:var(--green);font-weight:700">신용대출 만기 상환 완료 후 → 3,000만 추가 가능성 높음 ✅</span><br><br>
+        <span style="font-size:11px;color:var(--muted)">⚠ 단, 회사 보증보험대출은 복지 한도(현재 1억 5,000만)가 있어 회사 내규 변경 여부도 확인 필요. 8/31 계획(보금자리론 상환 후 3,000만 추가)은 이와 별개로 이미 진행 중.</span>
+      </div>
+    </div>
+
+  </div><!-- /sec-timeline -->
 
   <!-- ── 황서림 섹션 ── -->
   <div id="sec-hwang">
@@ -4373,11 +4477,13 @@ document.getElementById('sec-hwang').style.display = name==='hwang'?'':'none';
 document.getElementById('sec-ahn').style.display = name==='ahn'?'':'none';
 document.getElementById('sec-combined').style.display = name==='combined'?'':'none';
 document.getElementById('sec-consultant').style.display = name==='consultant'?'':'none';
-document.getElementById('sec-common-header').style.display = name==='consultant'?'none':'';
+document.getElementById('sec-timeline').style.display = name==='timeline'?'':'none';
+document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline')?'none':'';
 document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
 document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
 document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
 document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
+document.getElementById('loan-btn-timeline').classList.toggle('active',name==='timeline');
 }
 function switchFundPlan(p){
   ['1','2','3','4'].forEach(n=>{
