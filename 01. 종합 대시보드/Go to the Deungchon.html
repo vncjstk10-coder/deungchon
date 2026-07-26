@@ -3666,11 +3666,21 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <!-- ══ TAB: 잔금 후 비용 ══ -->
 <div class="tab-panel" id="panel-post-cost">
   <div class="con">
-    <div class="ph">
-      <h1>💳 잔금 후 비용</h1>
-      <p>집 사면 꼭 내야 하는 세금 · 수수료 · 9/16 잔금일 전후 추가 비용 정리</p>
+    <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+      <div>
+        <h1>💳 잔금 후 비용</h1>
+        <p>집 사면 꼭 내야 하는 세금 · 수수료 · 9/16 잔금일 전후 추가 비용 정리</p>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
+        <button id="pc-btn-all" class="person-btn active" onclick="switchPostCost('all')">종합</button>
+        <button id="pc-btn-tax" class="person-btn" onclick="switchPostCost('tax')">취득세</button>
+        <button id="pc-btn-fee" class="person-btn" onclick="switchPostCost('fee')">중개수수료</button>
+        <button id="pc-btn-moving" class="person-btn" onclick="switchPostCost('moving')">이사비</button>
+        <button id="pc-btn-notary" class="person-btn" onclick="switchPostCost('notary')">법무사</button>
+      </div>
     </div>
 
+    <div id="sec-pc-all">
     <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
       💡 <strong>이 탭은요:</strong> 잔금(7.8억) 말고도 추가로 내야 하는 돈들이 있어요. 가장 큰 건 <strong>취득세 약 3,597만원</strong>(집값의 3.3%)이에요. 이 비용들은 잔금일 전후로 별도로 준비해야 해요.
     </div>
@@ -3763,6 +3773,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
+    </div><!-- /sec-pc-all -->
+
+    <div id="sec-pc-tax" style="display:none">
     <!-- 취득세 상세 -->
     <div class="stitle">🧾 취득세 상세 계산</div>
     <div class="card" style="margin-bottom:20px">
@@ -3794,6 +3807,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:11px;color:var(--muted);margin-top:8px">* 납부기한: 잔금일(9/16)로부터 60일 이내 · 법무사 대행 가능</div>
     </div>
 
+    </div><!-- /sec-pc-tax -->
+
+    <div id="sec-pc-fee" style="display:none">
     <!-- 중개수수료 확정 -->
     <div class="stitle">🏠 부동산 중개수수료 (계약서 확정)</div>
     <div class="card" style="margin-bottom:20px">
@@ -3835,6 +3851,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="ibox o">공동중개 · 매수인은 매수인 측 중개사(하나부동산)에게 납부 · 지급시기: <strong>잔금 시 (9/16)</strong></div>
     </div>
 
+    </div><!-- /sec-pc-fee -->
+
+    <div id="sec-pc-moving" style="display:none">
     <!-- 이사 비용 -->
     <div class="stitle">🚚 이사 비용</div>
     <div class="card" style="margin-bottom:20px">
@@ -3874,6 +3893,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
 
+    </div><!-- /sec-pc-moving -->
+
+    <div id="sec-pc-notary" style="display:none">
     <!-- 법무사 -->
     <div class="stitle">⚖️ 법무사 (취득세 신고 · 소유권이전등기)</div>
     <div class="card" style="margin-bottom:20px">
@@ -3896,6 +3918,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-weight:700;color:var(--purple)">잔금 후 법무사 진행</div>
       </div>
     </div>
+
+    </div><!-- /sec-pc-notary -->
 
     <!-- IRP/퇴직연금 해지 계획 -->
     <div class="stitle">💼 IRP · 퇴직연금 해지 계획</div>
@@ -4620,6 +4644,15 @@ function switchLoanBalance(tab){
   document.getElementById('sec-lb-janggeum').style.display = tab==='janggeum'?'':'none';
   document.getElementById('lb-btn-jungdo').classList.toggle('active',tab==='jungdo');
   document.getElementById('lb-btn-janggeum').classList.toggle('active',tab==='janggeum');
+}
+function switchPostCost(name){
+  var tabs=['all','tax','fee','moving','notary'];
+  tabs.forEach(function(t){
+    var el=document.getElementById('sec-pc-'+t);
+    if(el) el.style.display=t===name?'':'none';
+    var btn=document.getElementById('pc-btn-'+t);
+    if(btn) btn.classList.toggle('active',t===name);
+  });
 }
 function filterItems(val, btn){
   _itemFilter = val;
