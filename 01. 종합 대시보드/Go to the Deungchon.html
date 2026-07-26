@@ -2789,10 +2789,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="lbl">납부 기한</div>
         <div class="num" style="font-size:1.2rem;color:var(--text)">2026.07.30</div>
       </div>
-      <div class="kpi-bar-card" style="border-top:3px solid var(--red)">
-        <div class="lbl">연금저축 해지 전 부족</div>
-        <div class="num re" style="font-size:1.2rem">−439만</div>
-        <div style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px">해지 시 409만 여유 ✅</div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
+        <div class="lbl">총 재원 (연금저축 해지 포함)</div>
+        <div class="num gr" style="font-size:1.2rem">2억 409만</div>
+        <div style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px">여유 +409만 ✅</div>
       </div>
     </div>
     <div class="stitle" style="margin-top:0">💰 중도금 재원 분석</div>
@@ -2812,43 +2812,39 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="fund-pct" style="color:#10b981;font-weight:700">5.1%</div>
       </div>
       <div class="fund-row">
+        <div class="fund-label">💼 안영준 연금저축 해지 <span style="font-size:10px;font-weight:400;color:var(--muted)">(세전 1,016만 · 세율 16.5%)</span></div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:4.2%;background:#8b5cf6"></div></div>
+        <div class="fund-amt">848만</div>
+        <div class="fund-pct" style="color:#8b5cf6;font-weight:700">4.2%</div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin:-6px 0 10px 4px;line-height:1.5">계좌 270-83-535321 · 예수금 10,159,619원 전액 현금 · 기타소득세 16.5% 공제 후 8,483,282원 · <strong style="color:var(--purple)">이번에 해지 확정</strong></div>
+      <div class="fund-row">
         <div class="fund-label">🤝 다섯째 이모님 차입</div>
         <div class="fund-bar-wrap"><div class="fund-bar" style="width:15.0%;background:#f59e0b"></div></div>
         <div class="fund-amt">3,000만</div>
         <div class="fund-pct" style="color:#f59e0b;font-weight:700">15.0%</div>
       </div>
 
-      <!-- 소계 vs 목표 -->
+      <!-- 합계 vs 목표 -->
       <div style="border-top:1px solid var(--border);margin:12px 0 10px;padding-top:12px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-          <span style="font-size:12px;font-weight:700;color:var(--text)">소계</span>
-          <span style="font-size:15px;font-weight:900;color:var(--orange)">1억 9,561만원</span>
+          <span style="font-size:12px;font-weight:700;color:var(--text)">합계</span>
+          <span style="font-size:15px;font-weight:900;color:var(--green)">2억 409만원</span>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
           <span style="font-size:12px;font-weight:700;color:var(--text)">목표 (중도금)</span>
           <span style="font-size:15px;font-weight:900;color:var(--text)">2억원</span>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:rgba(239,68,68,0.08);border-radius:8px">
-          <span style="font-size:12px;font-weight:700;color:var(--red)">⚠ 현재 부족액</span>
-          <span style="font-size:16px;font-weight:900;color:var(--red)">−439만원</span>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:rgba(16,185,129,0.09);border-radius:8px">
+          <span style="font-size:12px;font-weight:700;color:var(--green)">✅ 여유액</span>
+          <span style="font-size:16px;font-weight:900;color:var(--green)">+409만원</span>
         </div>
-      </div>
-
-      <!-- 해결 옵션 -->
-      <div style="margin-top:12px;padding:12px;background:rgba(123,110,246,0.08);border-radius:10px;border:1px solid rgba(123,110,246,0.2)">
-        <div style="font-size:11px;font-weight:800;color:var(--purple);margin-bottom:8px">💡 부족액 해결 방안</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:4px">
-          <span>연금저축 해지 (세전 1,016만 · 세율 16.5%)</span>
-          <span style="font-weight:800;color:var(--purple)">세후 약 848만</span>
-        </div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px">→ 해지 시 1억 9,561만 + 848만 = <strong style="color:var(--green)">2억 409만 · 409만 여유 ✅</strong></div>
-        <div style="font-size:11px;color:var(--muted)">※ 연금저축은 기타소득세 16.5% 부과 · IRP와 별도 계좌 (10,159,619원)</div>
       </div>
     </div>
 
     <div class="ibox y" style="font-size:12px;line-height:1.7" id="jungdo-status-box">
       ⏰ <strong>중도금 2억 · D-4 (7/30) 납부 예정</strong><br>
-      <span style="font-size:11px">케이뱅크 1억 5,541만 + 청약 해지 1,020만 + 이모님 차입 3,000만 = 1억 9,561만 → 연금저축 해지(세후 848만) 필요 · 납부 후 약 409만 여유</span>
+      <span style="font-size:11px">케이뱅크 1억 5,541만 + 연금저축 해지 848만 + 청약 해지 1,020만 + 이모님 차입 3,000만 = <strong>2억 409만 · 409만 여유</strong></span>
     </div>
   </div>
 
