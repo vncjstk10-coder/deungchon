@@ -3675,16 +3675,91 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       💡 <strong>이 탭은요:</strong> 잔금(7.8억) 말고도 추가로 내야 하는 돈들이 있어요. 가장 큰 건 <strong>취득세 약 3,597만원</strong>(집값의 3.3%)이에요. 이 비용들은 잔금일 전후로 별도로 준비해야 해요.
     </div>
 
-    <div class="kpi-bar" style="margin-bottom:20px">
-      <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
-        <div class="lbl">취득세 + 지방교육세</div>
-        <div class="num pu">약 3,597만</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:4px">10.9억 × 3.3% · 농특세 면제</div>
+    <!-- 비용 전체 현황 스택 바 -->
+    <div class="stitle" style="margin-top:0">💳 잔금 후 비용 전체 현황</div>
+    <div class="card" style="margin-bottom:20px;display:flex;flex-direction:column;gap:18px">
+
+      <!-- ① 취득세 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">🧾 취득세 + 지방교육세</span>
+          <span style="font-size:14px;font-weight:900;color:var(--purple);white-space:nowrap">3,597만 <span style="font-size:11px;font-weight:600;color:var(--muted)">63.5%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+          <div style="width:63.5%;height:100%;background:var(--purple);border-radius:99px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">10.9억 × 3.3% · 1주택자 기준 · 농특세 면제 · 잔금일(9/16)로부터 60일 이내 납부</div>
       </div>
-      <div class="kpi-bar-card" style="border-top:3px solid var(--orange)">
-        <div class="lbl">중개수수료 (VAT 포함)</div>
-        <div class="num or">599.5만원</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:4px">계약서 확정 · 잔금 시 지급</div>
+
+      <!-- ② 인테리어 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">🎨 인테리어</span>
+          <span style="font-size:14px;font-weight:900;color:var(--orange);white-space:nowrap">697~869만 <span style="font-size:11px;font-weight:600;color:var(--muted)">~15.3%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+          <div style="width:15.3%;height:100%;background:var(--orange);border-radius:99px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실 398~490만 (두담/조선쎄라믹 비교 중) · 베란다·싱크대·청소 99~179만</div>
+      </div>
+
+      <!-- ③ 등촌 중개수수료 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">🏠 등촌 중개수수료 (VAT 포함)</span>
+          <span style="font-size:14px;font-weight:900;color:#f97316;white-space:nowrap">599.5만 <span style="font-size:11px;font-weight:600;color:var(--muted)">10.6%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+          <div style="width:10.6%;height:100%;background:#f97316;border-radius:99px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted)">하나공인중개사 최진주 (010-2534-2453) · 잔금일 9/16 지급</div>
+      </div>
+
+      <!-- ④ 이사비 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">🚚 이사비 (1차+2차)</span>
+          <span style="font-size:14px;font-weight:900;color:var(--green);white-space:nowrap">300만 <span style="font-size:11px;font-weight:600;color:var(--muted)">5.3%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+          <div style="width:5.3%;height:100%;background:var(--green);border-radius:99px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted)">SK익스프레스 윤옹기 확정 · 1차 8/28 청라→보관 150만 · 2차 9/21~23 보관→등촌 150만</div>
+      </div>
+
+      <!-- ⑤ 청라 중개비 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">🏠 청라 중개수수료</span>
+          <span style="font-size:14px;font-weight:900;color:var(--muted);white-space:nowrap">252만 <span style="font-size:11px;font-weight:600;color:var(--muted)">4.4%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+          <div style="width:4.4%;height:100%;background:#94a3b8;border-radius:99px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted)">8/31 청라 잔금 수령액에서 차감 — 별도 현금 지출 없음</div>
+      </div>
+
+      <!-- ⑥ 에어컨 -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+          <span style="font-size:13px;font-weight:700;color:var(--text)">❄️ 에어컨 해체·설치</span>
+          <span style="font-size:14px;font-weight:900;color:var(--text);white-space:nowrap">50만 <span style="font-size:11px;font-weight:600;color:var(--muted)">0.9%</span></span>
+        </div>
+        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden">
+          <div style="width:0.9%;height:100%;background:#94a3b8;border-radius:99px"></div>
+        </div>
+      </div>
+
+      <!-- 합계 -->
+      <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;font-weight:600;color:var(--muted)">현금 지출 합계 (취득세 제외)</span>
+          <span style="font-size:14px;font-weight:900;color:var(--text)">약 1,647~1,819만</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(239,68,68,0.08);border-radius:10px">
+          <span style="font-size:13px;font-weight:700;color:var(--red)">🧾 취득세 포함 총합</span>
+          <span style="font-size:18px;font-weight:900;color:var(--red)">약 5,244~5,416만</span>
+        </div>
       </div>
     </div>
 
@@ -3798,57 +3873,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- 전체 예상 합계 -->
-    <div class="card" style="background:var(--p3);border:1.5px solid var(--purple);margin-bottom:12px">
-      <div style="font-size:13px;font-weight:700;color:var(--purple);margin-bottom:12px">💳 즉시 필요한 추가 비용 (취득세 제외)</div>
-      <div class="fund-row">
-        <div class="fund-label">이사비 (1차+2차)</div>
-        <div style="flex:1"></div>
-        <div style="font-weight:800;color:var(--green)">300만원</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label">청라 부동산 중개비</div>
-        <div style="flex:1"></div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
-          <div style="font-weight:800">252만원</div>
-          <div style="font-size:10px;color:var(--muted)">청라 잔금 수령액에서 차감됨 (계약서 확정)</div>
-        </div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label">등촌 부동산 중개비 (VAT포함)</div>
-        <div style="flex:1"></div>
-        <div style="font-weight:800">599.5만원</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label">에어컨 해체·설치</div>
-        <div style="flex:1"></div>
-        <div style="font-weight:800">50만원</div>
-      </div>
-      <div class="fund-row">
-        <div class="fund-label">인테리어 비용</div>
-        <div style="flex:1"></div>
-        <div style="font-weight:800">697~869만원</div>
-      </div>
-      <div class="fund-row" style="border-bottom:none;margin-top:8px;padding-top:12px">
-        <div class="fund-label" style="font-weight:900;color:var(--text);font-size:14px">소계 (취득세 제외)</div>
-        <div style="flex:1"></div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--purple)">약 1,647~1,819만원</div>
-      </div>
-    </div>
-    <div class="card" style="background:var(--r2);border:1.5px solid var(--red)">
-      <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:12px">🧾 취득세 — 6개월 할부 (총 필요액 별도)</div>
-      <div class="fund-row">
-        <div class="fund-label">취득세 + 지방교육세</div>
-        <div style="flex:1"></div>
-        <div style="font-weight:800">3,597만원</div>
-      </div>
-      <div class="fund-row" style="border-bottom:none">
-        <div class="fund-label">월 납부액 (6개월 분할)</div>
-        <div style="flex:1"></div>
-        <div style="font-size:1.1rem;font-weight:900;color:var(--red)">약 599.5만원/월</div>
-      </div>
-      <div style="margin-top:10px;font-size:11px;color:var(--muted);line-height:1.7">* 납부기한: 잔금일(9/16)로부터 60일 이내 · 자금 조달 계획 금액에는 미포함</div>
-    </div>
 
     <!-- 법무사 -->
     <div class="stitle">⚖️ 법무사 (취득세 신고 · 소유권이전등기)</div>
