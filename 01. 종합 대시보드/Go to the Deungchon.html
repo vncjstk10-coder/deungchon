@@ -3534,9 +3534,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <!-- ══ TAB: 인테리어 ══ -->
 <div class="tab-panel" id="panel-interior">
   <div class="con">
-    <div class="ph">
-      <h1>🎨 인테리어</h1>
-  <p>9/16 잔금 → 즉시 공사 → 9/22 완료 → 9/23 첫 입주 · 예상 비용 700~870만</p>
+    <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+      <div>
+        <h1>🎨 인테리어</h1>
+        <p>9/16 잔금 → 즉시 공사 → 9/22 완료 → 9/23 첫 입주 · 예상 비용 700~870만</p>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
+        <button id="int-btn-all" class="person-btn active" onclick="switchInterior('all')">전체</button>
+        <button id="int-btn-floor" class="person-btn" onclick="switchInterior('floor')">🖼️ 도배/장판</button>
+        <button id="int-btn-bath" class="person-btn" onclick="switchInterior('bath')">🚿 화장실</button>
+        <button id="int-btn-curtain" class="person-btn" onclick="switchInterior('curtain')">🪟 커텐</button>
+      </div>
     </div>
 
     <div class="ibox p" style="margin-bottom:12px;font-size:13px;line-height:1.8">
@@ -3561,13 +3569,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- 인테리어 탭 버튼 -->
-    <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
-      <button id="int-btn-all" class="person-btn active" onclick="switchInterior('all')">전체</button>
-      <button id="int-btn-floor" class="person-btn" onclick="switchInterior('floor')">🖼️ 도배/장판</button>
-      <button id="int-btn-bath" class="person-btn" onclick="switchInterior('bath')">🚿 화장실</button>
-      <button id="int-btn-curtain" class="person-btn" onclick="switchInterior('curtain')">🪟 커텐</button>
-    </div>
 
     <div id="sec-int-all">
     <!-- 인테리어 항목 -->
@@ -4214,6 +4215,41 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:1.2rem;font-weight:900;color:var(--purple)">3,597만원</div>
       </div>
       <div style="font-size:11px;color:var(--muted);margin-top:8px">* 납부기한: 잔금일(9/16)로부터 60일 이내 · 법무사 대행 가능</div>
+    </div>
+
+    <div class="stitle">💳 납부 계획</div>
+    <div class="card" style="margin-bottom:20px">
+      <div class="ibox p" style="margin-bottom:14px;font-size:13px;line-height:1.8">
+        💡 취득세 3,597만원은 <strong>잔금 조달 금액에 미포함</strong> — 신용카드 6개월 할부로 별도 납부 후 안영준 2026년 성과급으로 상환
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">납부 방법</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:800;color:var(--purple)">신용카드 6개월 할부</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">월 납부액</div>
+        <div style="flex:1"></div>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--orange)">약 600만원 / 월</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">납부 기한</div>
+        <div style="flex:1"></div>
+        <div style="font-size:12px;font-weight:700">잔금일 9/16 → 60일 이내 · 최대 11월 15일</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">납부 채널</div>
+        <div style="flex:1"></div>
+        <div style="font-size:12px;font-weight:700">위택스(wetax.go.kr) 신용카드 납부</div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label">재원</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--green)">안영준 2026년 성과급</div>
+          <div style="font-size:10px;color:var(--muted)">성과급 수령 후 카드 할부 잔액 일시 상환</div>
+        </div>
+      </div>
     </div>
 
     </div><!-- /sec-pc-tax -->
