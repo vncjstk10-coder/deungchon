@@ -3252,26 +3252,29 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
     <!-- 상단 KPI -->
     <div class="kpi-bar" style="margin-top:0;margin-bottom:16px">
-      <div class="kpi-bar-card" style="border-top:3px solid var(--red)">
-        <div class="lbl">총 얼마가 필요해?</div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--red);background:linear-gradient(160deg,#fff 50%,rgba(239,68,68,0.07) 100%)">
+        <div class="lbl" style="color:var(--red);font-weight:700">총 필요액</div>
         <div class="num re">7억 8,000만</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:2px">잔금 기준 · 중도금 별도 계산</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">잔금 기준 · 중도금 별도</div>
       </div>
-      <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
-        <div class="lbl">우리가 모을 수 있는 돈</div>
-        <div class="num re" id="kpi-loan-total">7억 4,390만~7억 6,064만</div>
-        <div style="font-size:10px;color:var(--muted);font-weight:700;margin-top:2px" id="kpi-loan-label">우리은행+신용대출+청라+안영준+황서림</div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--purple);background:linear-gradient(160deg,#fff 50%,rgba(123,110,246,0.09) 100%)">
+        <div class="lbl" style="color:var(--purple);font-weight:700">우리가 모을 수 있는 돈</div>
+        <div class="num pu" id="kpi-loan-total">7억 4,390만~7억 6,064만</div>
+        <div style="font-size:10px;color:var(--muted);font-weight:600;margin-top:4px" id="kpi-loan-label">우리은행+신용대출+청라+안영준+황서림</div>
       </div>
       <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--red)">
         <div class="lbl" id="kpi-short-lbl">아직 부족한 금액</div>
         <div class="num re" id="kpi-loan-short">1,936만~3,610만</div>
-        <div id="kpi-short-sub" style="font-size:10px;color:var(--orange);font-weight:700;margin-top:2px">⚠ 2안(+IRP) 선택 시 완전 해소 가능</div>
+        <div id="kpi-short-sub" style="font-size:10px;color:var(--orange);font-weight:700;margin-top:4px">⚠ 2안(+IRP) 선택 시 완전 해소 가능</div>
       </div>
     </div>
 
     <!-- 납부 완료 현황 + 잔금 포커스 -->
-    <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.8">
-      ✅ <strong>계약금 1억 1,000만 납부 완료 (2026.06.01)</strong> &nbsp;·&nbsp; ✅ <strong>중도금 2억 납부 완료 (2026.07.30)</strong><br>
+    <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.6">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+        <span style="display:inline-flex;align-items:center;background:var(--green);color:#fff;border-radius:99px;padding:3px 12px;font-size:11.5px;font-weight:700">✅ 계약금 1억 1,000만 완료</span>
+        <span style="display:inline-flex;align-items:center;background:var(--green);color:#fff;border-radius:99px;padding:3px 12px;font-size:11.5px;font-weight:700">✅ 중도금 2억 완료</span>
+      </div>
       → 이제 남은 건 <strong style="color:var(--red)">9/16 잔금 7억 8,000만</strong>을 어떻게 마련하느냐입니다.
     </div>
 
@@ -3279,10 +3282,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">💰 돈을 어디서 마련할까?</div>
     <div class="card" style="margin-bottom:16px">
 
-      <div class="ibox p" style="margin-bottom:14px;font-size:12px;line-height:1.85;border-radius:14px">
-        💡 <strong>우리은행(1·2안) vs 제2금융권(3·4안) 핵심 차이</strong><br>
-        🏦 <strong>우리은행</strong> — 안영준 단독 차주 · MCI 불가 · 3억 8,500만 → <strong>황서림이 신용대출 DSR 제한 없이 당일 신청 가능</strong><br>
-        🏦 <strong>제2금융권(MCI 가능)</strong> — 황서림 차주 · 방공제 없음 · 4억 4,000만 → <strong>안영준 보증보험 추가 3,000만 신청 가능</strong>
+      <div style="margin-bottom:14px">
+        <div style="font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">💡 핵심 선택 기준 — 어느 은행으로 주담대?</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div style="flex:1;min-width:180px;background:var(--p3);border-left:3px solid var(--purple);border-radius:12px;padding:12px 14px">
+            <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:6px">🏦 1·2안 — 우리은행</div>
+            <div style="font-size:11.5px;color:var(--t2);line-height:1.75">안영준 단독 차주 · MCI 불가<br>한도 <strong style="color:var(--text)">3억 8,500만</strong><br>→ 황서림 신용대출 DSR 무제한</div>
+          </div>
+          <div style="flex:1;min-width:180px;background:var(--g2);border-left:3px solid var(--green);border-radius:12px;padding:12px 14px">
+            <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:6px">🏦 3·4안 — 제2금융권</div>
+            <div style="font-size:11.5px;color:var(--t2);line-height:1.75">황서림 차주 · MCI 가능 · 방공제 없음<br>한도 <strong style="color:var(--text)">4억 4,000만</strong><br>→ 안영준 보증보험 +3,000만</div>
+          </div>
+        </div>
       </div>
       <!-- 플랜 토글 -->
       <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
