@@ -651,7 +651,7 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
 @media(max-width:768px){
 
   /* 1. 카드 배경 대비 강화 — 배경과 카드 구분 명확히 */
-  .card{background:#20233B!important;border:1px solid rgba(255,255,255,.10)!important}
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){background:#20233B!important;border:1px solid rgba(255,255,255,.10)!important}
   .card-sm{background:#20233B!important}
 
   /* 2. 페이지 헤더 가시성 */
@@ -1042,7 +1042,7 @@ tbody tr td{transition:background .12s ease}
 
 /* ─── 모바일: 카드 배경 대비 강화 ─── */
 @media(max-width:768px){
-  .card{background:#232645!important;border:1px solid rgba(255,255,255,.12)!important}
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){background:#232645!important;border:1px solid rgba(255,255,255,.12)!important}
   .card-sm{background:#232645!important}
   .kpi-bar-card{background:#2B2F52!important}
 }
@@ -1087,12 +1087,12 @@ body{
 
 /* ─── PC: 와이드스크린 max-width ─── */
 @media(min-width:1280px){
-  .con{max-width:980px}
+  .con{max-width:1440px}
 }
 
 /* ─── PC: 카드 — 레이어드 그림자 + 정밀 테두리 ─── */
 @media(min-width:769px){
-  .card{
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){
     background:#FEFEFF;
     border:1px solid rgba(99,91,255,.07);
     box-shadow:
@@ -1188,7 +1188,7 @@ body{
   .layout,.main,.tab-panel,.tab-panel.active,.con{background:#0B0E18!important}
 
   /* 카드 */
-  .card{
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){
     background:#14172A!important;
     border:1px solid rgba(255,255,255,.09)!important;
     box-shadow:0 2px 20px rgba(0,0,0,.45)!important;
