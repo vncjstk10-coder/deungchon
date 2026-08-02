@@ -2108,21 +2108,67 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <!-- ── STEP 2 ── -->
-  <div class="stitle">📤 STEP 2 — 9/16 등촌 잔금 7억 8,000만 재원 구성</div>
+  <div class="stitle">📤 STEP 2 — 9/16 등촌 잔금 7억 8,000만 재원 구성 <span style="font-size:11px;font-weight:400;color:var(--muted)">(2안 · 우리은행+신용대출+IRP)</span></div>
   <div class="card" style="padding:0!important;overflow:hidden;margin-bottom:20px">
     <div style="padding:9px 16px;background:rgba(239,68,68,.07);display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:11px;font-weight:700;color:var(--red)">목표: 7억 8,000만 조달</span>
+      <span style="font-size:11px;font-weight:700;color:var(--red)">목표: 7억 8,000만</span>
+      <span style="font-size:11px;font-weight:700;color:var(--green)">조달 가능 7억 9,757만~8억 1,431만 ✅</span>
     </div>
     <div style="padding:8px 16px">
-      <div class="fund-row"><div class="fund-label">① 청라 잔금 수령분 투입</div><div style="flex:1"></div><span style="font-weight:800;color:var(--green)">2억 4,618만</span></div>
-      <div class="fund-row"><div class="fund-label">② 주담대 (우리은행 · 1금융권)</div><div style="flex:1"></div><span style="font-weight:800;color:var(--purple)">3억 8,500만</span></div>
-      <div class="fund-row"><div class="fund-label">② 주담대 (제2금융권 · MCI 가능)</div><div style="flex:1"></div><span style="font-weight:800;color:var(--purple)">4억 4,000만</span></div>
-      <div class="fund-row" style="border-bottom:none"><div class="fund-label">③ 현금 보완 (안영준·황서림)</div><div style="flex:1"></div><span style="font-weight:800;color:var(--orange)">나머지 충당</span></div>
+      <div class="fund-row">
+        <div class="fund-label">🏦 안영준 주담대 (우리은행 · 단독 차주)</div>
+        <div style="flex:1"></div>
+        <span style="font-size:11px;color:var(--muted);margin-right:8px">4.65% · 9/16 실행</span>
+        <span style="font-weight:800;color:var(--purple)">3억 8,500만</span>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">💳 황서림 신용대출 (9/16 주담대 직후 신청)</div>
+        <div style="flex:1"></div>
+        <span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">DSR 제한 없음</span>
+        <span style="font-weight:800;color:var(--orange)">5,000만~6,674만</span>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">💼 IRP·퇴직연금 해지 세후 (안영준+황서림)</div>
+        <div style="flex:1"></div>
+        <span style="font-size:11px;color:var(--muted);margin-right:8px">세전 6,427만 × 83.5%</span>
+        <span style="font-weight:800;color:#6366f1">5,367만</span>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">🏠 청라 잔금 순수령 (8/31)</div>
+        <div style="flex:1"></div>
+        <span style="font-size:11px;color:var(--muted);margin-right:8px">4.96억 − 보금자리론 − 중개비</span>
+        <span style="font-weight:800;color:var(--green)">2억 4,800만</span>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">👩 황서림 현금 (주식 매도)</div>
+        <div style="flex:1"></div>
+        <span style="font-weight:800">2,800만</span>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">👩‍👧 이모님 차용</div>
+        <div style="flex:1"></div>
+        <span style="font-weight:800">3,000만</span>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label">👨 안영준 현금</div>
+        <div style="flex:1"></div>
+        <span style="font-weight:800">290만</span>
+      </div>
     </div>
-    <div style="padding:12px 16px;background:var(--p3);border-top:1px solid var(--border)">
-      <div style="font-size:12px;color:var(--muted);line-height:2">
-        <span style="display:block">🏦 <strong style="color:var(--purple)">우리은행 선택 시 현금 부족분:</strong> 7.8억 − 3.85억 − 2.46억 = <strong style="color:var(--red)">약 1억 4,882만</strong></span>
-        <span style="display:block">🏢 <strong style="color:var(--purple)">제2금융 선택 시 현금 부족분:</strong> 7.8억 − 4.4억 − 2.46억 = <strong style="color:var(--orange)">약 9,382만</strong></span>
+    <div style="padding:12px 16px;background:var(--g2);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:2px">총 조달 가능</div>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--green)">7억 9,757만~8억 1,431만</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:2px">목표 초과 여유</div>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--green)">+1,757만~3,431만 ✅</div>
+      </div>
+    </div>
+    <div style="padding:10px 16px;border-top:1px solid var(--border)">
+      <div style="font-size:11px;color:var(--muted);line-height:1.9">
+        💼 <strong>IRP 세부:</strong> 안영준 퇴직연금 4,827만 + 황서림 퇴직연금 1,600만 = 세전 6,427만 × 83.5% = 5,367만 (기타소득세 16.5%)<br>
+        💳 <strong>신용대출 전략:</strong> 안영준이 주담대 단독 차주 → 황서림은 대출 이력 없음 → 9/16 당일 DSR 제한 없이 신용대출 신청 가능
       </div>
     </div>
   </div>
