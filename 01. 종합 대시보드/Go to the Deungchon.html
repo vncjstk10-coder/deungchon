@@ -5065,73 +5065,183 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <p>등촌 부영 아파트 · 포스코 ENC · 712→818세대 · 강서구 최초 리모델링</p>
   </div>
 
-  <!-- 사업계획승인 완료 배너 -->
-  <div class="ibox g" style="margin-bottom:20px">
-    <h4>✅ 사업계획승인 완료 — 2026년 3월 27일</h4>
-    2017년 조합 설립 후 <strong>9년 만에 승인</strong> · 이제 진짜 속도전<br>
-    <span style="font-size:12px;color:var(--muted)">확정총회(2026 가을) → 이주(2027 상반기) → 공사 2년 6개월 → 완공 2029~2030년 예상</span>
-  </div>
-
-  <!-- 핵심 KPI -->
-  <div class="kpi-bar" style="margin-bottom:24px">
-    <div class="kpi-bar-card">
-      <div class="lbl">현재 세대</div>
-      <div class="num">712</div>
-    </div>
-    <div class="kpi-bar-card">
-      <div class="lbl">완공 후</div>
-      <div class="num gr">818</div>
-    </div>
-    <div class="kpi-bar-card">
-      <div class="lbl">증가</div>
-      <div class="num" style="color:var(--purple)">+106</div>
-    </div>
-    <div class="kpi-bar-card">
-      <div class="lbl">공사 기간</div>
-      <div class="num" style="color:var(--orange)">2.5년</div>
+  <!-- ① 사업계획승인 히어로 배너 -->
+  <div class="card-green card" style="padding:20px 22px;margin-bottom:20px">
+    <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:180px">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px">사업계획승인 완료</div>
+        <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.3;margin-bottom:8px">2017년 조합 설립 후 <span style="color:#bbf7d0">9년 만에</span> 승인<br>이제 진짜 속도전</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.75">확정총회(2026 가을) → 이주(2027 상반기) → 공사 2년 6개월 → 완공 2029~2030년 예상</div>
+      </div>
+      <div style="flex-shrink:0;background:rgba(255,255,255,.18);border-radius:12px;padding:14px 20px;text-align:center;min-width:80px">
+        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.8px;text-transform:uppercase">승인일</div>
+        <div style="font-size:17px;font-weight:900;color:#fff;margin-top:4px;font-variant-numeric:tabular-nums">2026.03.27</div>
+        <div style="margin-top:8px;font-size:22px">✅</div>
+      </div>
     </div>
   </div>
 
-  <!-- 진행 타임라인 -->
+  <!-- ② 핵심 KPI 4개 -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:22px">
+    <div class="card" style="padding:14px;text-align:center">
+      <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px">현재 세대</div>
+      <div style="font-size:28px;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">712</div>
+    </div>
+    <div class="card" style="padding:14px;text-align:center;border:1.5px solid var(--green)">
+      <div style="font-size:9px;font-weight:700;color:var(--green);letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px">완공 후</div>
+      <div style="font-size:28px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">818</div>
+    </div>
+    <div class="card" style="padding:14px;text-align:center">
+      <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px">세대 증가</div>
+      <div style="font-size:28px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">+106</div>
+    </div>
+    <div class="card" style="padding:14px;text-align:center">
+      <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px">공사 기간</div>
+      <div style="font-size:28px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">2.5<span style="font-size:16px">년</span></div>
+    </div>
+  </div>
+
+  <!-- ③ 진행 타임라인 -->
   <div class="stitle">진행 타임라인</div>
-  <div class="card" style="margin-bottom:20px">
-    <div class="tl-item">
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:22px">
+    <div class="tl-item" style="padding:14px 16px">
       <div class="tl-dot done">✓</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">조합 설립</div><div class="tl-desc">강서구 최초 리모델링 조합 · 건축심의 + 일조권 문제 + 수직→수평 방식 전환 과정</div></div>
       <div class="tl-right"><div class="tl-date">2017년</div></div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item" style="padding:14px 16px">
       <div class="tl-dot done">✓</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">사업계획 승인 완료 ✅</div><div class="tl-desc">9년간의 과정 마무리 · 본격 속도전 시작</div></div>
       <div class="tl-right"><div class="tl-date">2026.03.27</div></div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item" style="padding:14px 16px;background:rgba(245,158,11,.04)">
       <div class="tl-dot pend">!</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">확정 총회</div><div class="tl-desc">분담금 확정 · 커뮤니티 시설 확정 · 공사비 협상 완료</div></div>
+      <div class="tl-body"><div class="tl-title">확정 총회 <span style="font-size:10px;font-weight:600;color:var(--orange);background:rgba(249,115,22,.12);padding:1px 7px;border-radius:8px;margin-left:4px">대기 중</span></div><div class="tl-desc">분담금 확정 · 커뮤니티 시설 확정 · 공사비 협상 완료</div></div>
       <div class="tl-right"><div class="tl-date">2026년 가을 예정</div></div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item" style="padding:14px 16px">
       <div class="tl-dot fut">4</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">분담금 계약 + 계약금 납부</div><div class="tl-desc">분담금 10% 현금 납부 · 자금 사전 준비 필요</div></div>
       <div class="tl-right"><div class="tl-amt re">현금 필요</div><div class="tl-date">총회 직후</div></div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item" style="padding:14px 16px">
       <div class="tl-dot fut">5</div><div class="tl-line"></div>
       <div class="tl-body"><div class="tl-title">이주 시작</div><div class="tl-desc">총회 후 약 6개월 · 임시 거주지 확보 필요 · 실거주 의무 기간</div></div>
       <div class="tl-right"><div class="tl-date">2027년 상반기 예정</div></div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item" style="padding:14px 16px;border-bottom:none">
       <div class="tl-dot fut">6</div>
       <div class="tl-body"><div class="tl-title">리모델링 완공 · 재입주</div><div class="tl-desc">공사 2.5년 · 분담금 잔금 납부 · 30→42평 재입주 · 더샵 브랜드</div></div>
       <div class="tl-right"><div class="tl-date">2029~2030년 예상</div></div>
     </div>
   </div>
 
-  <!-- 단지 정보 -->
+  <!-- ④ 분담금 시나리오 (핵심 섹션) -->
+  <div class="stitle">💰 분담금 시나리오</div>
+  <div style="background:var(--o2);border:1.5px solid var(--orange);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;line-height:1.7">
+    <strong>확정 총회(2026년 가을)</strong>에서 금액 확정 · 납부 구조: <span style="font-weight:800;color:var(--red)">계약금 10% 현금</span> / 중도금 60% / 잔금 30% — 이주~공사 기간 내 분할 납부
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px">
+
+    <!-- 낮은 경우: 4억 -->
+    <div class="card" style="padding:0;overflow:hidden;border:2px solid var(--green)">
+      <div style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.05));padding:14px 16px;border-bottom:1px solid rgba(16,185,129,.2)">
+        <div style="font-size:9px;font-weight:700;color:var(--green);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">낮은 경우</div>
+        <div style="font-size:30px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;line-height:1">4억</div>
+      </div>
+      <div style="padding:12px 14px">
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="font-weight:700;color:var(--red)">계약금 10% <span style="font-size:10px;background:rgba(239,68,68,.1);padding:1px 5px;border-radius:5px">현금</span></span>
+            <span style="font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">4,000만</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:10%;height:100%;background:var(--red);border-radius:3px"></div></div>
+        </div>
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">중도금 60%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">2억 4,000만</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:60%;height:100%;background:var(--orange);border-radius:3px"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">잔금 30%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">1억 2,000만</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:30%;height:100%;background:var(--green);border-radius:3px"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 중간 예상: 5억 -->
+    <div class="card" style="padding:0;overflow:hidden;border:2px solid var(--orange)">
+      <div style="background:linear-gradient(135deg,rgba(249,115,22,.15),rgba(249,115,22,.04));padding:14px 16px;border-bottom:1px solid rgba(249,115,22,.2)">
+        <div style="font-size:9px;font-weight:700;color:var(--orange);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">중간 예상</div>
+        <div style="font-size:30px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1">5억</div>
+      </div>
+      <div style="padding:12px 14px">
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="font-weight:700;color:var(--red)">계약금 10% <span style="font-size:10px;background:rgba(239,68,68,.1);padding:1px 5px;border-radius:5px">현금</span></span>
+            <span style="font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">5,000만</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:10%;height:100%;background:var(--red);border-radius:3px"></div></div>
+        </div>
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">중도금 60%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">3억</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:60%;height:100%;background:var(--orange);border-radius:3px"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">잔금 30%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">1억 5,000만</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:30%;height:100%;background:var(--green);border-radius:3px"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 높은 경우: 6억+ -->
+    <div class="card" style="padding:0;overflow:hidden;border:2px solid var(--red)">
+      <div style="background:linear-gradient(135deg,rgba(239,68,68,.13),rgba(239,68,68,.04));padding:14px 16px;border-bottom:1px solid rgba(239,68,68,.2)">
+        <div style="font-size:9px;font-weight:700;color:var(--red);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">높은 경우</div>
+        <div style="font-size:30px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">6억+</div>
+      </div>
+      <div style="padding:12px 14px">
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="font-weight:700;color:var(--red)">계약금 10% <span style="font-size:10px;background:rgba(239,68,68,.1);padding:1px 5px;border-radius:5px">현금</span></span>
+            <span style="font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">6,000만+</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:10%;height:100%;background:var(--red);border-radius:3px"></div></div>
+        </div>
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">중도금 60%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">3억 6,000만+</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:60%;height:100%;background:var(--orange);border-radius:3px"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span style="color:var(--muted)">잔금 30%</span>
+            <span style="font-weight:700;font-variant-numeric:tabular-nums">1억 8,000만+</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden"><div style="width:30%;height:100%;background:var(--green);border-radius:3px"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ 단지 정보 -->
   <div class="stitle">단지 정보</div>
   <div class="g2" style="margin-bottom:20px">
     <div class="card card-sm">
-      <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">🏢 기본 정보</div>
+      <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)">🏢 기본 정보</div>
       <div class="ln-info-row"><div class="ln-info-nm">준공 연도</div><div class="ln-info-vl">1994년 (33년차 구축)</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">증축 방식</div><div class="ln-info-vl">수평 증축 (수직→변경)</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">분양 구성</div><div class="ln-info-vl" style="color:var(--green);font-weight:700">민형 세대만 · 임대 없음</div></div>
@@ -5139,125 +5249,97 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">상가</div><div class="ln-info-vl">리모델링 별도 진행</div></div>
     </div>
     <div class="card card-sm">
-      <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">🏗️ 시공사 · 커뮤니티</div>
+      <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)">🏗️ 시공사 · 커뮤니티</div>
       <div class="ln-info-row"><div class="ln-info-nm">시공사</div><div class="ln-info-vl" style="color:var(--purple);font-weight:800">포스코 ENC</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">수주 실적</div><div class="ln-info-vl">누적 13조원</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">대표 사례</div><div class="ln-info-vl">잠실 더샵 루벤 (국내 최초 수직증축)</div></div>
-      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">커뮤니티</div><div class="ln-info-vl" style="line-height:1.7">경로당 · 북카페 · 키즈카페<br>맘스라운지 · 돌봄센터 · 도서관<br>독서실 · 골프연습장 · 피트니스 · 사우나</div></div>
+      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">커뮤니티</div><div class="ln-info-vl" style="line-height:1.75">경로당 · 북카페 · 키즈카페<br>맘스라운지 · 돌봄센터 · 도서관<br>독서실 · 골프연습장 · 피트니스 · 사우나</div></div>
     </div>
   </div>
 
-  <!-- 동별 특징 -->
+  <!-- ⑥ 동별 특징 -->
   <div class="stitle">동별 특징</div>
-  <div class="ibox p" style="margin-bottom:20px;font-size:13px;line-height:1.85">
-    <strong>103동 · 104동</strong> — 정면 도로변 · 앞이 트인 뷰 (동 메리트 ↑)<br>
-    <strong>107동 · 101동 사이</strong> — 단지 내 초등학교 인접 (초품아)<br>
-    <strong>1호 라인</strong> — 평수 큰 편 → 분담금 다소 높을 수 있음<br>
-    <span style="font-size:11.5px;color:var(--muted)">리모델링 특성: 현재 층수·방향·호실 그대로 유지 (1:1 제자리 리모델링)</span>
+  <div class="card" style="padding:14px 16px;margin-bottom:20px">
+    <div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.6">
+      <div style="display:flex;gap:10px;align-items:baseline"><span style="font-weight:800;color:var(--purple);white-space:nowrap">103·104동</span><span>정면 도로변 · 앞이 트인 뷰 · 동 메리트 높음</span></div>
+      <div style="display:flex;gap:10px;align-items:baseline"><span style="font-weight:800;color:var(--green);white-space:nowrap">107·101동 사이</span><span>단지 내 초등학교 인접 (초품아)</span></div>
+      <div style="display:flex;gap:10px;align-items:baseline"><span style="font-weight:800;color:var(--orange);white-space:nowrap">1호 라인</span><span>평수 큰 편 → 분담금 다소 높을 수 있음</span></div>
+      <div style="font-size:11px;color:var(--muted);padding-top:6px;border-top:1px solid var(--border);margin-top:2px">리모델링 특성: 현재 층수·방향·호실 그대로 유지 (1:1 제자리 리모델링)</div>
+    </div>
   </div>
 
-  <!-- 입지 & 호재 -->
+  <!-- ⑦ 입지 & 호재 -->
   <div class="stitle">입지 & 호재</div>
   <div class="g2" style="margin-bottom:12px">
     <div class="ibox p">
-      <h4>🚇 교통</h4>
+      <div style="font-size:12px;font-weight:800;margin-bottom:7px">🚇 교통</div>
       <strong>9호선 가양역</strong> 도보권 · <strong>5호선 발산역</strong> 이용<br>
       양천교역 도보권<br>
       <span style="color:var(--green);font-weight:700">▲ 대장-홍대선 강서권 통과 예정 (미래 호재)</span>
     </div>
     <div class="ibox g">
-      <h4>🏫 생활 인프라</h4>
+      <div style="font-size:12px;font-weight:800;margin-bottom:7px">🏫 생활 인프라</div>
       초품아 (단지 내 초등학교) · 중고등학교 근거리<br>
       NC백화점 도보권 · 가양 홈플러스<br>
       마곡 이마트 트레이더스 · 서울식물원
     </div>
   </div>
   <div class="ibox y" style="margin-bottom:20px">
-    <h4>🏙️ 핵심 호재 — 마곡 더 그리드</h4>
+    <div style="font-size:12px;font-weight:800;margin-bottom:7px">🏙️ 핵심 호재 — 마곡 더 그리드</div>
     힐스테이트 <strong>1,000세대 이상</strong> + <strong>스타필드 몰</strong> 복합 개발 인근 → 인프라 대폭 개선 예정<br>
-    <span style="font-size:12px;color:var(--muted)">비교 단지: 레미안 엘라비네 84타입 18억대 분양 (옵션 포함 약 19억대)</span>
+    <span style="font-size:11.5px;color:var(--muted)">비교 단지: 레미안 엘라비네 84타입 18억대 분양 (옵션 포함 약 19억대)</span>
   </div>
 
-  <!-- 시세 현황 -->
+  <!-- ⑧ 시세 현황 -->
   <div class="stitle">시세 현황 (2026.07 기준)</div>
   <div class="g2" style="margin-bottom:20px">
     <div class="card card-sm">
-      <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px">📊 매매가 현황</div>
+      <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border)">📊 매매가 현황</div>
       <div class="ln-info-row"><div class="ln-info-nm">9억 미만</div><div class="ln-info-vl" style="color:var(--red);font-weight:800">매물 없음</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">최저 네이버 매물</div><div class="ln-info-vl">9억 8,000만</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">주요 거래가</div><div class="ln-info-vl" style="font-weight:800;color:var(--purple)">10억 중후반~11억</div></div>
       <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">매물 수</div><div class="ln-info-vl">약 20건 내외 (소진 중)</div></div>
     </div>
     <div class="card card-sm">
-      <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px">🏠 내부 상태별 가격</div>
+      <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border)">🏠 내부 상태별 가격</div>
       <div class="ln-info-row"><div class="ln-info-nm">원상 유지</div><div class="ln-info-vl">10억 중후반대</div></div>
-      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">리모델링됨</div><div class="ln-info-vl" style="font-weight:800">11억~13억</div></div>
-      <div class="ibox r" style="margin-top:10px;font-size:11.5px;padding:8px 10px">
+      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">리모델링됨</div><div class="ln-info-vl" style="font-weight:800;color:var(--purple)">11억~13억</div></div>
+      <div style="margin-top:10px;background:var(--r2);border-radius:7px;padding:8px 10px;font-size:11.5px;color:var(--red);font-weight:600">
         사업 단계 진행 → 가격 움직임↑ · 매물 지속 소진 중
       </div>
     </div>
   </div>
 
-  <!-- 분담금 시나리오 -->
-  <div class="stitle">분담금 시나리오</div>
-  <div class="ibox y" style="margin-bottom:14px;font-size:12.5px">
-    💡 <strong>확정 총회(2026년 가을)</strong>에서 분담금 확정 · 납부: <strong>계약금 10% / 중도금 60% / 잔금 30%</strong> — 이주~공사 기간 내 분할
-  </div>
-  <div class="g3" style="margin-bottom:20px">
-    <div class="card card-sm" style="border:2px solid var(--green)">
-      <div class="kpi-lbl" style="color:var(--green)">낮은 경우</div>
-      <div class="kpi-val gr" style="font-size:1.5rem">4억</div>
-      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
-        <div style="font-size:12px;color:var(--t2)">계약금 (10%)</div>
-        <div style="font-size:1.2rem;font-weight:800;color:var(--green)">4,000만원</div>
-        <div class="prog-wrap" style="margin-top:6px"><div class="prog-bar" style="width:10%;background:var(--green)"></div></div>
-        <div style="font-size:11px;color:var(--muted);margin-top:2px">총 분담금 대비 10%</div>
-      </div>
-    </div>
-    <div class="card card-sm" style="border:2px solid var(--orange)">
-      <div class="kpi-lbl" style="color:var(--orange)">중간 예상</div>
-      <div class="kpi-val or" style="font-size:1.5rem">5억</div>
-      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
-        <div style="font-size:12px;color:var(--t2)">계약금 (10%)</div>
-        <div style="font-size:1.2rem;font-weight:800;color:var(--orange)">5,000만원</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:4px">현금 필요</div>
-      </div>
-    </div>
-    <div class="card card-sm" style="border:2px solid var(--red)">
-      <div class="kpi-lbl" style="color:var(--red)">높은 경우</div>
-      <div class="kpi-val re" style="font-size:1.5rem">6억+</div>
-      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
-        <div style="font-size:12px;color:var(--t2)">계약금 (10%)</div>
-        <div style="font-size:1.2rem;font-weight:800;color:var(--red)">6,000만원+</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:4px">현금 필요</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 리스크 & 참고 -->
+  <!-- ⑨ 리스크 & 참고 -->
   <div class="stitle">리스크 & 참고사항</div>
-  <div class="ibox r" style="margin-bottom:12px;font-size:13px;line-height:1.75">
-    <h4>⚠️ 주의사항</h4>
-    이주 기간 중 <strong>실거주 의무</strong> (소화제 구간) · 이주~착공까지 몸테크 필요<br>
-    분담금 납부 기간 중 기존 주담대와 <strong>대출 한도 충돌 가능성</strong> 감안<br>
-    확정총회 조합원 의견 불일치 시 지연 가능 (현재로선 가능성 낮음)
-  </div>
-  <div class="ibox p" style="margin-bottom:20px;font-size:12.5px;line-height:1.75">
-    LTV 40% 기준: 10억 매수 시 현금 약 6억 필요 (취득세·중개수수료·분담금 별도)<br>
-    분담금 중도금 대출 이자 별도 발생 · 잔금 시 기존 주담대 대출 한도와 조율 필요
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+    <div style="background:var(--r2);padding:12px 16px;border-bottom:1px solid rgba(239,68,68,.15)">
+      <div style="font-size:12px;font-weight:800;color:var(--red);margin-bottom:8px">⚠️ 주의사항</div>
+      <div style="font-size:12.5px;line-height:1.8;color:var(--t2)">
+        이주 기간 중 <strong>실거주 의무</strong> (소화제 구간) · 이주~착공까지 몸테크 필요<br>
+        분담금 납부 기간 중 기존 주담대와 <strong>대출 한도 충돌 가능성</strong> 감안<br>
+        확정총회 조합원 의견 불일치 시 지연 가능 (현재로선 가능성 낮음)
+      </div>
+    </div>
+    <div style="padding:12px 16px;background:var(--p3)">
+      <div style="font-size:12px;line-height:1.8;color:var(--t2)">
+        LTV 40% 기준: 10억 매수 시 현금 약 6억 필요 (취득세·중개수수료·분담금 별도)<br>
+        분담금 중도금 대출 이자 별도 발생 · 잔금 시 기존 주담대 대출 한도와 조율 필요
+      </div>
+    </div>
   </div>
 
-  <!-- 이주 기간 거주지 고민 -->
+  <!-- ⑩ 이주 기간 거주지 고민 -->
   <div class="stitle">🏠 이주 기간 거주지 고민</div>
-  <div class="card">
+  <div class="card" style="margin-bottom:20px">
     <div id="remodel-checklist"></div>
     <div class="ibox y" style="margin-top:14px;margin-bottom:0">
-      <h4>📌 미리 생각해야 할 것들</h4>
+      <div style="font-size:12px;font-weight:800;margin-bottom:6px">📌 미리 생각해야 할 것들</div>
       아이 학군 · 이주 기간 임대료 예산 · 짐 보관 비용 · 재입주 타이밍 조율 (2027 상반기~)
     </div>
   </div>
 
-  <!-- 메모 -->
+  <!-- ⑪ 메모 -->
   <div class="stitle">📝 메모</div>
   <div class="card">
     <textarea class="memo-area" id="remodelMemo" rows="5"
