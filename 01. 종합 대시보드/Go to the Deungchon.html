@@ -3153,189 +3153,194 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
 <div id="sec-family">
 
-  <!-- 가족 차용금 현황 -->
-  <div class="stitle" style="margin-top:0">👨‍👩‍👧 가족 차용금 현황</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-    <div class="card" style="border-left:3px solid var(--orange);padding:14px">
-      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:4px">이모님 차용금</div>
-      <div style="font-size:26px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">3,000만</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:2px">무이자 · 8월 차용 예정</div>
-      <div class="chip y" style="margin-top:8px;font-size:10px;display:inline-block">연말 성과급 상환 목표</div>
+  <!-- ① 가족 차용금 히어로 카드 -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px">
+    <div class="card-orange card" style="padding:20px">
+      <div class="kpi-lbl">이모님 차용금</div>
+      <div class="kpi-val" style="font-size:2rem;font-variant-numeric:tabular-nums">3,000만</div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;align-items:center">
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">무이자</span>
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">8월 차용 예정</span>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:8px">2027 Q1 보증보험 대출로 즉시 상환 목표</div>
     </div>
-    <div class="card" style="border-left:3px solid var(--purple);padding:14px">
-      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:4px">큰누나·매형 차용금</div>
-      <div style="font-size:26px;font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums">4,500만</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:2px">이자 13만/월 · 이미 차용</div>
-      <div style="margin-top:8px;display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(139,92,246,.12);color:var(--purple)">2027년 말 성과급 상환 목표</div>
-    </div>
-  </div>
-
-  <!-- 전체 월 상환 현황 -->
-  <div class="stitle">💸 전체 월 상환 부담 (가족 차용 포함)</div>
-  <div class="tbl-wrap" style="margin-bottom:14px">
-    <table>
-      <thead>
-        <tr>
-          <th>대출 항목</th>
-          <th style="text-align:right">잔액</th>
-          <th style="text-align:center">금리</th>
-          <th style="text-align:right">월 납입</th>
-          <th>방식</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🏠 주담대 (우리은행)</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">3억 8,500만</td>
-          <td style="text-align:center">4.65%</td>
-          <td style="text-align:right;font-weight:700;color:var(--red);font-variant-numeric:tabular-nums">198만</td>
-          <td style="font-size:11px">원리금 균등</td>
-        </tr>
-        <tr>
-          <td>💳 신용대출 (안영준)</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">9,500만</td>
-          <td style="text-align:center">4.02%</td>
-          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">32만</td>
-          <td style="font-size:11px">이자만 납입</td>
-        </tr>
-        <tr>
-          <td>🏢 보증보험대출</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">1억 2,000만</td>
-          <td style="text-align:center">4.76%</td>
-          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">48만</td>
-          <td style="font-size:11px">이자만 <span style="color:var(--red)">만기 2028.06</span></td>
-        </tr>
-        <tr>
-          <td>💳 신용대출 (황서림)</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">5,000만~6,000만</td>
-          <td style="text-align:center">5.00%</td>
-          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">21~25만</td>
-          <td style="font-size:11px">이자만 납입</td>
-        </tr>
-        <tr style="background:rgba(139,92,246,.04)">
-          <td>👨‍👩‍👧 큰누나·매형</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">4,500만</td>
-          <td style="text-align:center">약 3.5%</td>
-          <td style="text-align:right;font-weight:700;color:var(--purple);font-variant-numeric:tabular-nums">13만</td>
-          <td style="font-size:11px">이자만 납입</td>
-        </tr>
-        <tr style="background:rgba(16,185,129,.04)">
-          <td>👩‍👧 이모님</td>
-          <td style="text-align:right;font-variant-numeric:tabular-nums">3,000만</td>
-          <td style="text-align:center">무이자</td>
-          <td style="text-align:right;font-weight:700;color:var(--green);font-variant-numeric:tabular-nums">0만</td>
-          <td style="font-size:11px">무이자</td>
-        </tr>
-        <tr style="background:var(--lite)">
-          <td colspan="3" style="font-weight:700">💡 월 납입 합계</td>
-          <td style="text-align:right;font-weight:800;color:var(--red);font-size:16px;font-variant-numeric:tabular-nums">약 315만</td>
-          <td style="font-size:11px;color:var(--muted)">/월</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 소득 대비 분석 -->
-  <div class="stitle">📊 실제 현금흐름 (2026.07 데이터 기준)</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
-    <div class="card" style="padding:12px;text-align:center">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">합산 세후 수입</div>
-      <div style="font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums">1,019만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">안영준 600 + 황서림 419만</div>
-    </div>
-    <div class="card" style="padding:12px;text-align:center">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 전체 지출</div>
-      <div style="font-size:22px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">−660만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">대출 315 + 기타 345</div>
-    </div>
-    <div class="card" style="padding:12px;text-align:center;border-color:var(--green)">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 순 여유금</div>
-      <div style="font-size:26px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">약 360만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">차용금 상환 재원</div>
-    </div>
-  </div>
-  <div class="ibox y" style="font-size:12px;margin-bottom:14px;line-height:1.7">
-    💡 <strong>기타 지출 345만 내역 (실제 7월 기준)</strong><br>
-    카드 (안영준 105만 + 황서림 51만) · 청년도약 70만 · 교통·관리비 38만 · 계모임 24만 · 보험·회비·청약 등 57만<br>
-    <span style="color:var(--muted)">* 잔금 후 IRP 불입 종료 → 지출 감소 / 황서림 신용대출 이자 21만 추가</span>
-  </div>
-
-  <!-- 보증보험 추가 대출 -->
-  <div class="ibox p" style="margin-bottom:14px">
-    💡 <strong>2027년 Q1 보증보험 추가 대출 3,000만 활용 가능</strong><br>
-    <div style="font-size:12px;margin-top:6px;line-height:1.8">
-      • 2026년 승진 → 원천징수액 증가 → DSR 여유 확보<br>
-      • 2027년 1분기 중 보증보험대출 <strong>3,000만 추가 실행</strong> 예상<br>
-      • 이 자금으로 이모님 3,000만 <strong>즉시 전액 상환</strong> 가능<br>
-      • 추가 이자: 3,000만 × 4.76% ÷ 12 ≈ <strong>+12만원/월</strong> 증가
+    <div class="card-purple card" style="padding:20px">
+      <div class="kpi-lbl">큰누나·매형 차용금</div>
+      <div class="kpi-val" style="font-size:2rem;font-variant-numeric:tabular-nums">4,500만</div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;align-items:center">
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">이자 13만/월</span>
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">이미 차용</span>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:8px">2027년 12월 성과급 활용 상환 목표</div>
     </div>
   </div>
 
-  <!-- 상환 시뮬레이션 -->
+  <!-- ② 월 납입 현황 (카드 리스트) -->
+  <div class="stitle" style="margin-top:4px">💸 월 납입 현황</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">🏠 주담대 (우리은행)</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">3억 8,500만 · 4.65% · 원리금 균등</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">198만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">💳 신용대출 (안영준)</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">9,500만 · 4.02% · 이자납입</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">32만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">🏢 보증보험대출</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 4.76% · 재직 중 연장</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">48만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">💳 신용대출 (황서림)</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">5,000만~6,000만 · 5.00% · 이자납입</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">21~25만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);background:rgba(139,92,246,.04)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">👨‍👩‍👧 큰누나·매형</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">4,500만 · 약 3.5% · 이자납입</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">13만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);background:rgba(16,185,129,.04)">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:700">👩‍👧 이모님</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">3,000만 · 무이자</div>
+      </div>
+      <div style="font-size:17px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">0만</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:13px 16px;background:var(--lite)">
+      <div style="flex:1;font-size:13px;font-weight:800">합계 (6개 대출)</div>
+      <div style="font-size:22px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">315만<span style="font-size:12px;font-weight:600;color:var(--muted)">/월</span></div>
+    </div>
+  </div>
+
+  <!-- ③ 실제 현금흐름 -->
+  <div class="stitle">📊 실제 현금흐름 (2026.07 기준)</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:8px">
+    <div class="card" style="padding:14px;text-align:center">
+      <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px">합산 수입</div>
+      <div style="font-size:21px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;line-height:1">1,019만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:5px">안영준 600<br>황서림 419</div>
+    </div>
+    <div class="card" style="padding:14px;text-align:center">
+      <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px">전체 지출</div>
+      <div style="font-size:21px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">660만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:5px">대출 315<br>기타 345</div>
+    </div>
+    <div class="card" style="padding:14px;text-align:center;border:2px solid var(--green)">
+      <div style="font-size:9px;font-weight:700;color:var(--green);letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px">월 순 여유금</div>
+      <div style="font-size:23px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1">약 360만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:5px">상환 재원</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--muted);background:var(--lite);border-radius:8px;padding:9px 13px;margin-bottom:18px;line-height:1.8">
+    기타 지출 345만 내역 — 카드 156만 · 청년도약 70만 · 교통·관리비 38만 · 보험·회비·청약 57만 · 계모임 24만<br>
+    <span style="color:var(--purple);font-weight:600">* 잔금 후 IRP 납입 종료(−40만) / 황서림 신용대출 이자 추가(+21만)</span>
+  </div>
+
+  <!-- ④ 보증보험 추가 대출 기회 카드 -->
+  <div style="background:var(--p4);border:1.5px solid var(--purple);border-radius:12px;padding:16px 18px;margin-bottom:20px">
+    <div style="display:flex;align-items:flex-start;gap:12px">
+      <div style="font-size:26px;line-height:1;flex-shrink:0;padding-top:2px">🚀</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:800;color:var(--purple);margin-bottom:6px">2027년 Q1 — 보증보험 추가 대출 3,000만 활용</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.8">2026년 승진 → 원천징수 증가 → DSR 여유 확보<br>이 자금으로 이모님 3,000만 <strong>즉시 전액 상환</strong> · 추가 이자 +12만/월</div>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+          <span class="chip p">보증보험 +3,000만</span>
+          <span class="chip g">이모님 즉시 상환</span>
+          <span class="chip o">이자 +12만/월</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ 시뮬레이션 A / B -->
   <div class="stitle">📅 차용금 상환 시뮬레이션</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:16px;align-items:start">
 
-  <!-- 시나리오 A 헤더 -->
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-    <div style="flex:1;height:1px;background:var(--border)"></div>
-    <div style="font-size:11px;font-weight:700;color:var(--green);white-space:nowrap;padding:2px 10px;background:rgba(16,185,129,.1);border-radius:10px">🟢 시나리오 A — 현재 기준 (황서림 재직)</div>
-    <div style="flex:1;height:1px;background:var(--border)"></div>
-  </div>
-  <div class="ibox g" style="margin-bottom:8px">
-    <strong>① 이모님 3,000만 — 2027년 Q1 즉시 상환 ✅</strong>
-    <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 2027년 1분기 보증보험 추가 대출 3,000만 실행 → 이모님 <strong>즉시 전액 상환</strong><br>
-      • 월 여유금 360만은 그대로 큰누나 상환에 집중 가능<br>
-      • 추가 이자 12만/월 발생 → 이후 월 여유금 <strong>348만</strong>으로 소폭 감소
+    <!-- 시나리오 A -->
+    <div style="border:1.5px solid var(--green);border-radius:12px;overflow:hidden">
+      <div style="background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(16,185,129,.05));padding:14px 16px;border-bottom:1px solid rgba(16,185,129,.18)">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;flex-shrink:0"></span>
+          <span style="font-size:10px;font-weight:700;color:var(--green);letter-spacing:.4px">시나리오 A</span>
+        </div>
+        <div style="font-size:14px;font-weight:800;color:var(--text)">황서림 재직 기준</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px">월 여유금 360만 · 2027 Q1 추가 대출 전제</div>
+      </div>
+      <div style="padding:14px 16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:12px;font-weight:700">이모님 3,000만</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">보증보험 추가 대출로 즉시 상환</div>
+          </div>
+          <span class="chip g" style="font-size:10px;flex-shrink:0;margin-left:8px">2027 Q1</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0 0">
+          <div>
+            <div style="font-size:12px;font-weight:700">큰누나·매형 4,500만</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">저축 5,628만 + 성과급 3,500만</div>
+            <div style="font-size:10px;color:var(--green);font-weight:700;margin-top:2px">상환 후 잔여 4,628만</div>
+          </div>
+          <span class="chip g" style="font-size:10px;flex-shrink:0;margin-left:8px">2027.12</span>
+        </div>
+        <div style="margin-top:12px;padding:9px 12px;background:var(--g2);border-radius:8px;font-size:11px;font-weight:700;color:var(--green);text-align:center">
+          2027년 안에 두 채무 완전 해결 ✅
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="ibox p" style="margin-bottom:18px">
-    <strong>② 큰누나·매형 4,500만 — 2027년 12월 상환 ✅</strong>
-    <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 2026.09~2027.01 (5개월) × 360만 = <strong>1,800만</strong> 저축<br>
-      • 2027.02~12 (11개월) × 348만 = <strong>3,828만</strong><br>
-      • 2027년 성과급: <strong>3,500만</strong><br>
-      • 총 가용: <strong>9,128만</strong> → 4,500만 상환 후 잔여 <strong>4,628만</strong> ✅
+
+    <!-- 시나리오 B -->
+    <div style="border:1.5px solid var(--orange);border-radius:12px;overflow:hidden">
+      <div style="background:linear-gradient(135deg,rgba(249,115,22,.12),rgba(249,115,22,.04));padding:14px 16px;border-bottom:1px solid rgba(249,115,22,.18)">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;flex-shrink:0"></span>
+          <span style="font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.4px">시나리오 B</span>
+        </div>
+        <div style="font-size:14px;font-weight:800;color:var(--text)">황서림 육아휴직 1년</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px">휴직급여 150만 · 휴직 중 여유금 78만 · 복직 후 348만</div>
+      </div>
+      <div style="padding:14px 16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:12px;font-weight:700">이모님 3,000만</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">A와 동일 — 보증보험 대출 즉시 상환</div>
+          </div>
+          <span class="chip g" style="font-size:10px;flex-shrink:0;margin-left:8px">2027 Q1</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0 0">
+          <div>
+            <div style="font-size:12px;font-weight:700">큰누나·매형 4,500만</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">저축 2,058만 + 성과급 3,500만</div>
+            <div style="font-size:10px;color:var(--orange);font-weight:700;margin-top:2px">상환 후 잔여 1,058만</div>
+          </div>
+          <span class="chip g" style="font-size:10px;flex-shrink:0;margin-left:8px">2027.12</span>
+        </div>
+        <div style="margin-top:12px;padding:9px 12px;background:rgba(16,185,129,.08);border-radius:8px;font-size:11px;font-weight:700;color:var(--green);text-align:center">
+          육아휴직해도 A와 동일 시기 달성 ✅
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- 시나리오 B 헤더 -->
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-    <div style="flex:1;height:1px;background:var(--border)"></div>
-    <div style="font-size:11px;font-weight:700;color:var(--orange);white-space:nowrap;padding:2px 10px;background:rgba(251,146,60,.1);border-radius:10px">🟡 시나리오 B — 황서림 육아휴직 1년 가정</div>
-    <div style="flex:1;height:1px;background:var(--border)"></div>
-  </div>
-  <div class="ibox y" style="margin-bottom:8px;font-size:12px;line-height:1.8">
-    <strong>📌 가정 조건</strong><br>
-    • 육아휴직 시작: 2026년 Q3~Q4 / 복직: 2027년 Q3~Q4<br>
-    • 육아휴직급여: 약 <strong>150만원/월</strong> (통상임금 상한 기준, 보수적 가정)<br>
-    • 이 기간 <strong>월 여유금 약 78만원</strong> (600만 + 육아급여 150만 − 지출 660만 − 추가이자 12만)
-  </div>
-  <div class="ibox" style="margin-bottom:8px;border-color:var(--orange);background:rgba(251,146,60,.05)">
-    <strong>① 이모님 3,000만 — 2027년 Q1 즉시 상환 ✅</strong>
-    <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 시나리오 A와 동일: 2027년 1분기 보증보험 추가 대출 3,000만으로 즉시 상환<br>
-      • 육아휴직 중이어도 안영준 소득으로 추가 이자 12만/월 커버 가능
-    </div>
-  </div>
-  <div class="ibox" style="margin-bottom:4px;border-color:var(--orange);background:rgba(251,146,60,.05)">
-    <strong>② 큰누나·매형 4,500만 — 2027년 12월 상환 ✅</strong>
-    <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 2026.09~2027.01 (5개월) × 78만 = <strong>390만</strong><br>
-      • 2027.02~09 (8개월, 육아휴직 잔여) × 78만 = <strong>624만</strong><br>
-      • 복직 후 2027.10~12 (3개월) × 348만 = <strong>1,044만</strong><br>
-      • 2027년 성과급: <strong>3,500만</strong><br>
-      • 총 가용: <strong>5,558만</strong> → 4,500만 상환 후 잔여 <strong>1,058만</strong> ✅<br>
-      <span style="color:var(--green);font-weight:700">→ 보증보험 추가 대출 덕분에 시나리오 A/B 모두 2027년 12월로 수렴 ✅</span>
-    </div>
-  </div>
-
-  <!-- 보증보험 안내 -->
-  <div class="ibox g" style="margin-bottom:10px;font-size:12px;line-height:1.7">
+  <!-- ⑥ 보증보험 안내 + 만기 일람 -->
+  <div class="ibox g" style="margin-bottom:14px;font-size:12px;line-height:1.7">
     🏢 <strong>보증보험대출 (1억 2,000만) — 재직 중 계속 연장 가능 ✅</strong><br>
-    회사에 재직 중인 한 만기 연장이 가능한 구조 · 이자(월 48만)만 납입하면 됨
+    이자(월 48만)만 납입 · 회사에 재직하는 한 만기 연장 구조 유지
   </div>
 
-  <!-- 장기 만기 일람 -->
   <div class="stitle">📋 대출 만기 일람</div>
   <div class="tbl-wrap" style="margin-bottom:4px">
     <table>
@@ -3347,7 +3352,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <td>🏢 보증보험대출</td>
           <td>재직 중 연장</td>
           <td style="text-align:right;font-variant-numeric:tabular-nums">1억 2,000만</td>
-          <td style="font-size:11px;color:var(--green)">✅ 재직 중 계속 연장 가능</td>
+          <td style="font-size:11px;color:var(--green)">✅ 재직 중 계속 연장</td>
         </tr>
         <tr>
           <td>💳 안영준 신용대출</td>
