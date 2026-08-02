@@ -1074,6 +1074,293 @@ tbody tr td{transition:background .12s ease}
 @media(max-width:768px){
   input[type=checkbox]{accent-color:#3182F6!important}
 }
+
+/* ══════════════════════════════════════════════════════
+   DESIGN v7 — 2026-08-02  PC + Mobile 종합 디자인 개선
+══════════════════════════════════════════════════════ */
+
+/* ─── GLOBAL: 배경 세련화 ─── */
+body{
+  background:linear-gradient(145deg,#E2E8FF 0%,#ECEFFE 40%,#EEE8FF 100%);
+  letter-spacing:-.01em
+}
+
+/* ─── PC: 와이드스크린 max-width ─── */
+@media(min-width:1280px){
+  .con{max-width:980px}
+}
+
+/* ─── PC: 카드 — 레이어드 그림자 + 정밀 테두리 ─── */
+@media(min-width:769px){
+  .card{
+    background:#FEFEFF;
+    border:1px solid rgba(99,91,255,.07);
+    box-shadow:
+      0 1px 2px rgba(0,0,0,.04),
+      0 4px 16px rgba(99,91,255,.08),
+      0 12px 40px rgba(99,91,255,.04)
+  }
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green):hover{
+    box-shadow:
+      0 2px 4px rgba(0,0,0,.06),
+      0 8px 28px rgba(99,91,255,.15),
+      0 24px 52px rgba(99,91,255,.06)!important;
+    transform:translateY(-3px)!important
+  }
+}
+
+/* ─── PC: 사이드바 세련화 ─── */
+@media(min-width:769px){
+  .sidebar{
+    background:linear-gradient(175deg,#17162E 0%,#111024 50%,#0A091E 100%);
+    box-shadow:6px 0 48px rgba(0,0,0,.4)
+  }
+  .sb-logo{padding:20px 18px 16px}
+  .sb-tab{font-size:12.5px;border-radius:10px}
+  .sb-tab.active{
+    background:linear-gradient(90deg,rgba(123,110,246,.34),rgba(123,110,246,.06))!important;
+    box-shadow:inset 4px 0 0 #A396FF!important;
+    color:#fff!important
+  }
+  .sb-tab:hover:not(.active){background:rgba(255,255,255,.06)!important;color:rgba(255,255,255,.82)!important}
+  .sb-subtab.active{background:rgba(123,110,246,.22)!important;color:#C5BFFF!important}
+}
+
+/* ─── PC: 페이지 헤더 ─── */
+@media(min-width:769px){
+  .ph{padding-left:18px;border-left:4px solid var(--purple);margin-bottom:36px}
+  .ph h1{font-size:24px!important;font-weight:900;letter-spacing:-.035em}
+  .ph p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
+}
+
+/* ─── PC: 섹션 타이틀 — uppercase 라벨 스타일 ─── */
+@media(min-width:769px){
+  .stitle{
+    font-size:10.5px!important;
+    font-weight:800!important;
+    text-transform:uppercase!important;
+    letter-spacing:.1em!important;
+    color:var(--muted)!important;
+    padding-left:10px!important;
+    border-left:2px solid rgba(123,110,246,.45)!important;
+    margin:36px 0 16px!important;
+    display:flex;align-items:center;gap:10px
+  }
+  .stitle:first-child{margin-top:0!important}
+  .stitle::after{
+    content:'';flex:1;height:1px;
+    background:linear-gradient(90deg,rgba(99,91,255,.12) 0%,transparent 80%)
+  }
+}
+
+/* ─── PC: KPI 바 카드 ─── */
+@media(min-width:769px){
+  .kpi-bar-card{
+    border:1px solid rgba(99,91,255,.07);
+    border-top:3px solid rgba(123,110,246,.5)!important;
+    box-shadow:0 2px 12px rgba(99,91,255,.07);
+    padding:14px 18px
+  }
+  .kpi-bar-card:hover{box-shadow:0 8px 24px rgba(99,91,255,.15)!important;transform:translateY(-2px)}
+  .kpi-bar-card .lbl{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .kpi-bar-card .num{font-size:1.55rem;font-weight:900;letter-spacing:-.03em}
+}
+
+/* ─── PC: 테이블 ─── */
+@media(min-width:769px){
+  .tbl-wrap{box-shadow:0 2px 16px rgba(99,91,255,.07);border:1px solid rgba(99,91,255,.08)}
+  th{background:rgba(123,110,246,.06)!important;font-size:10.5px!important;letter-spacing:.07em!important;padding:10px 16px!important}
+  td{padding:11px 16px!important;font-size:13px!important}
+  tbody tr:nth-child(even) td{background:rgba(123,110,246,.025)}
+  tbody tr:hover td{background:rgba(123,110,246,.07)!important}
+}
+
+/* ─── PC: ibox 정제 ─── */
+@media(min-width:769px){
+  .ibox{border-radius:12px;padding:15px 18px;font-size:13.5px;line-height:1.75;border-left-width:3px}
+}
+
+/* ─── MOBILE: 전면 통합 정제 ─── */
+@media(max-width:768px){
+
+  /* 배경 */
+  body{background:#0B0E18!important}
+  .layout,.main,.tab-panel,.tab-panel.active,.con{background:#0B0E18!important}
+
+  /* 카드 */
+  .card{
+    background:#14172A!important;
+    border:1px solid rgba(255,255,255,.09)!important;
+    box-shadow:0 2px 20px rgba(0,0,0,.45)!important;
+    border-radius:18px!important
+  }
+  .card-sm{background:#14172A!important}
+  .kpi-bar-card{
+    background:#1C2038!important;
+    border:1px solid rgba(255,255,255,.08)!important;
+    border-top:2.5px solid rgba(49,130,246,.48)!important;
+    border-radius:14px!important
+  }
+
+  /* 페이지 헤더 */
+  .ph{
+    border-left:none!important;
+    border-bottom:1px solid rgba(255,255,255,.06)!important;
+    padding-bottom:16px!important;
+    padding-left:0!important
+  }
+  .ph h1{font-size:20px!important;font-weight:900!important;letter-spacing:-.035em!important;color:#F6F6FB!important}
+  .ph p{color:rgba(255,255,255,.38)!important;font-size:12px!important}
+
+  /* 섹션 타이틀 */
+  .stitle{
+    font-size:10px!important;
+    font-weight:700!important;
+    text-transform:uppercase!important;
+    letter-spacing:.12em!important;
+    color:rgba(255,255,255,.33)!important;
+    padding-left:0!important;
+    border-left:none!important;
+    margin:28px 0 12px!important;
+    display:flex!important;align-items:center!important;gap:8px!important
+  }
+  .stitle:first-child{margin-top:0!important}
+  .stitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)!important}
+
+  /* KPI */
+  .kpi-val{font-size:1.75rem!important;letter-spacing:-.04em!important;color:#F6F6FB!important}
+  .card-purple .kpi-val,.card-orange .kpi-val,
+  .card-red .kpi-val,.card-green .kpi-val{
+    font-size:1.95rem!important;color:#fff!important;
+    text-shadow:0 2px 12px rgba(0,0,0,.28)!important
+  }
+  .kpi-lbl{color:rgba(255,255,255,.45)!important;font-size:10px!important;letter-spacing:.06em!important}
+  .kpi-bar-card .num{color:#F6F6FB!important;font-size:1.1rem!important}
+  .kpi-bar-card .lbl{color:rgba(255,255,255,.40)!important;font-size:9px!important}
+
+  /* 타임라인 */
+  .tl-title{color:#F0F0F8!important;font-size:13.5px!important;font-weight:800!important}
+  .tl-desc{color:rgba(255,255,255,.44)!important;font-size:11.5px!important;line-height:1.55!important}
+  .tl-item:not(:last-child) .tl-line{background:rgba(255,255,255,.09)!important}
+
+  /* 테이블 */
+  th{background:rgba(255,255,255,.04)!important;color:rgba(255,255,255,.36)!important;font-size:10px!important}
+  td{color:rgba(255,255,255,.70)!important;font-size:12.5px!important;border-color:rgba(255,255,255,.05)!important}
+  td.tot{background:rgba(49,130,246,.12)!important;color:#fff!important}
+  tbody tr:hover td{background:rgba(49,130,246,.08)!important}
+
+  /* ibox */
+  .ibox{border-radius:14px!important;padding:13px 15px!important;border-left-width:3px!important}
+  .ibox.p{background:rgba(49,130,246,.13)!important;border-left-color:#3182F6!important}
+  .ibox.g{background:rgba(35,199,94,.11)!important;border-left-color:#23C75E!important}
+  .ibox.o{background:rgba(255,138,0,.11)!important;border-left-color:#FF8A00!important}
+  .ibox.r{background:rgba(240,68,82,.11)!important;border-left-color:#F04452!important}
+  .ibox.y{background:rgba(245,166,35,.11)!important;border-left-color:#F5A623!important}
+  .ibox{color:rgba(255,255,255,.68)!important;font-size:12.5px!important;line-height:1.65!important}
+  .ibox h4{color:#F0F0F8!important;font-size:13px!important}
+  .ibox strong{color:#F0F0F8!important}
+  .ibox[style*="line-height:1.8"]{line-height:1.6!important}
+  .ibox[style*="line-height:1.9"]{line-height:1.6!important}
+  .ibox[style*="line-height:2"]{line-height:1.6!important}
+
+  /* 정보 행 */
+  .ln-info-nm{color:rgba(255,255,255,.40)!important;font-size:12px!important;min-width:88px!important}
+  .ln-info-vl{color:rgba(255,255,255,.82)!important;font-weight:700!important;font-size:12.5px!important}
+  .ln-info-row{border-color:rgba(255,255,255,.05)!important;padding:8px 0!important}
+
+  /* fund 바 */
+  .fund-bar-wrap{background:rgba(255,255,255,.07)!important}
+  .fund-label{color:rgba(255,255,255,.58)!important;font-size:12.5px!important}
+  .fund-amt{color:#FFFFFF!important;font-size:12.5px!important}
+  .fund-pct{color:rgba(255,255,255,.40)!important}
+  .fund-row{border-color:rgba(255,255,255,.05)!important}
+
+  /* 현금흐름 */
+  .cf-desc .nm{color:#F0F0F8!important;font-size:13.5px!important;font-weight:800!important}
+  .cf-desc .sb{color:rgba(255,255,255,.46)!important;font-size:11px!important}
+  .cf-amt{color:#FFFFFF!important}
+  .cf-net-lbl{color:rgba(255,255,255,.46)!important}
+  .cf-tx{
+    background:rgba(255,255,255,.03)!important;
+    border-radius:10px!important;
+    padding:10px 12px!important;
+    margin-bottom:6px!important;
+    border-bottom:none!important
+  }
+  .cf-net{background:rgba(49,130,246,.1)!important;border:1px solid rgba(49,130,246,.14)!important}
+
+  /* 리스크 카드 */
+  .risk-card{background:rgba(240,68,82,.08)!important;border-color:rgba(240,68,82,.2)!important;border-radius:16px!important}
+  .risk-title{color:#F04452!important;font-size:14px!important}
+  .risk-body{color:rgba(255,255,255,.66)!important;font-size:12.5px!important}
+
+  /* 체크리스트 */
+  .checklist-item,.chk-item{border-color:rgba(255,255,255,.05)!important}
+  .cl-label,.chk-label{color:rgba(255,255,255,.68)!important;font-size:13px!important}
+
+  /* 칩 */
+  .chip.g{background:rgba(35,199,94,.16)!important;color:#2DD072!important;border-color:rgba(35,199,94,.28)!important}
+  .chip.r{background:rgba(240,68,82,.16)!important;color:#FF6270!important;border-color:rgba(240,68,82,.28)!important}
+  .chip.o{background:rgba(255,138,0,.16)!important;color:#FFA040!important;border-color:rgba(255,138,0,.28)!important}
+  .chip.p{background:rgba(49,130,246,.18)!important;color:#60A5FA!important;border-color:rgba(49,130,246,.28)!important}
+  .chip.y{background:rgba(245,166,35,.16)!important;color:#FBC043!important;border-color:rgba(245,166,35,.28)!important}
+
+  /* 프로그레스 */
+  .prog-track,.prog-wrap{background:rgba(255,255,255,.08)!important}
+  .prog-nm{color:rgba(255,255,255,.56)!important}
+  .prog-vl{color:#FFFFFF!important;font-weight:800!important}
+
+  /* 하단 탭바 */
+  .mob-nav{background:#09091A!important;border-top:1px solid rgba(255,255,255,.06)!important}
+  .mob-btn .ml{color:rgba(255,255,255,.35)!important;font-size:9.5px!important}
+  .mob-btn .mi{font-size:22px!important}
+  .mob-btn.active{background:rgba(49,130,246,.14)!important}
+  .mob-btn.active .ml{color:#4B9EFF!important;font-weight:700!important}
+  .mob-btn.active .mi{filter:brightness(1.2)}
+
+  /* 그래디언트 카드 장식 */
+  .card-orange,.card-red,.card-purple,.card-green{overflow:hidden;position:relative}
+  .card-orange::after,.card-red::after,.card-purple::after,.card-green::after{
+    content:'';position:absolute;bottom:-30px;right:-24px;
+    width:130px;height:130px;border-radius:50%;
+    background:rgba(255,255,255,.08);pointer-events:none;z-index:0
+  }
+
+  /* 다크 배경 인라인 스타일 패치 */
+  [style*="rgba(123,110,246,0.08)"]{background:rgba(123,110,246,.2)!important}
+  [style*="rgba(123,110,246,0.04)"]{background:rgba(123,110,246,.12)!important}
+  [style*="rgba(16,185,129,.04)"]{background:rgba(16,185,129,.1)!important}
+  [style*="rgba(249,115,22,.04)"]{background:rgba(249,115,22,.1)!important}
+
+  /* 전체 메뉴 패널 */
+  .mob-card-group{background:#141727!important;border-radius:16px!important}
+  .mob-menu-title{color:#F0F0F8!important;font-size:14.5px!important}
+  .mob-menu-sub{color:rgba(255,255,255,.38)!important}
+  .mob-section-lbl{color:rgba(255,255,255,.35)!important;font-size:10px!important;letter-spacing:.1em!important}
+
+  /* person-btn (대출현황 탭) */
+  .person-btn{
+    background:#1A1D30!important;
+    border-color:rgba(255,255,255,.12)!important;
+    color:rgba(255,255,255,.55)!important;
+    border-radius:10px!important
+  }
+  .person-btn.active{
+    background:rgba(49,130,246,.25)!important;
+    border-color:rgba(49,130,246,.5)!important;
+    color:#4B9EFF!important
+  }
+}
+
+/* ─── 400px 이하 최종 보정 ─── */
+@media(max-width:400px){
+  .kpi-val{font-size:1.45rem!important}
+  .card-purple .kpi-val,.card-orange .kpi-val,
+  .card-red .kpi-val,.card-green .kpi-val{font-size:1.65rem!important}
+  #panel-loan-balance .kpi-val{font-size:1.1rem!important}
+  #panel-remodel .kpi-val{font-size:1.0rem!important}
+  .con{padding:12px 14px 88px!important}
+}
 </style>
 </head>
 <body>
