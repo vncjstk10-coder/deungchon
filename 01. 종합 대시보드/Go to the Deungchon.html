@@ -2349,10 +2349,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0">
       <button id="loan-btn-timeline" class="person-btn" onclick="switchPerson('timeline')">📅 진행 현황</button>
-      <button id="loan-btn-hwang" class="person-btn active" onclick="switchPerson('hwang')">황서림</button>
-      <button id="loan-btn-ahn" class="person-btn" onclick="switchPerson('ahn')">안영준</button>
+      <button id="loan-btn-hwang" class="person-btn" style="display:none" onclick="switchPerson('hwang')">황서림</button>
+      <button id="loan-btn-ahn" class="person-btn" style="display:none" onclick="switchPerson('ahn')">안영준</button>
       <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">합산</button>
-      <button id="loan-btn-consultant" class="person-btn" onclick="switchPerson('consultant')">📋 상담사</button>
+      <button id="loan-btn-consultant" class="person-btn" style="display:none" onclick="switchPerson('consultant')">📋 상담사</button>
+      <button id="loan-btn-family" class="person-btn active" onclick="switchPerson('family')">👨‍👩‍👧 가족 대출</button>
     </div>
   </div>
 
@@ -2612,7 +2613,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div><!-- /sec-timeline -->
 
   <!-- ── 황서림 섹션 ── -->
-  <div id="sec-hwang">
+  <div id="sec-hwang" style="display:none">
   <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
     💡 <strong>이 탭은요:</strong> 집을 살 때 전부 우리 돈만으로는 부족해서 은행에서 빌려요. 이 탭은 황서림 / 안영준 각각 얼마나 빌릴 수 있는지, 매달 이자는 얼마인지 분석한 페이지예요. 위 버튼으로 이름을 눌러 각자 대출 현황을 확인하세요.
   </div>
@@ -3149,6 +3150,188 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="ibox r" style="margin-top:10px;font-size:12px">⚠ <strong>현재 KB시세 10억 7,250만 유지 중 — 시세 안정이 핵심 조건</strong><br>→ 시세 하락 전 대출 심사 신속 완료 필요 · 8.5억 이상 유지 시 시나리오 A/B 모두 안전</div>
     </div>
   </div>
+
+<div id="sec-family">
+
+  <!-- 가족 차용금 현황 -->
+  <div class="stitle" style="margin-top:0">👨‍👩‍👧 가족 차용금 현황</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+    <div class="card" style="border-left:3px solid var(--orange);padding:14px">
+      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:4px">이모님 차용금</div>
+      <div style="font-size:26px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">3,000만</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">무이자 · 8월 차용 예정</div>
+      <div class="chip y" style="margin-top:8px;font-size:10px;display:inline-block">연말 성과급 상환 목표</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--purple);padding:14px">
+      <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:4px">큰누나·매형 차용금</div>
+      <div style="font-size:26px;font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums">4,500만</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">이자 13만/월 · 이미 차용</div>
+      <div style="margin-top:8px;display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(139,92,246,.12);color:var(--purple)">2027년 말 성과급 상환 목표</div>
+    </div>
+  </div>
+
+  <!-- 전체 월 상환 현황 -->
+  <div class="stitle">💸 전체 월 상환 부담 (가족 차용 포함)</div>
+  <div class="tbl-wrap" style="margin-bottom:14px">
+    <table>
+      <thead>
+        <tr>
+          <th>대출 항목</th>
+          <th style="text-align:right">잔액</th>
+          <th style="text-align:center">금리</th>
+          <th style="text-align:right">월 납입</th>
+          <th>방식</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🏠 주담대 (우리은행)</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">3억 8,500만</td>
+          <td style="text-align:center">4.65%</td>
+          <td style="text-align:right;font-weight:700;color:var(--red);font-variant-numeric:tabular-nums">198만</td>
+          <td style="font-size:11px">원리금 균등</td>
+        </tr>
+        <tr>
+          <td>💳 신용대출 (안영준)</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">9,500만</td>
+          <td style="text-align:center">4.02%</td>
+          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">32만</td>
+          <td style="font-size:11px">이자만 납입</td>
+        </tr>
+        <tr>
+          <td>🏢 보증보험대출</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">1억 2,000만</td>
+          <td style="text-align:center">4.76%</td>
+          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">48만</td>
+          <td style="font-size:11px">이자만 <span style="color:var(--red)">만기 2028.06</span></td>
+        </tr>
+        <tr>
+          <td>💳 신용대출 (황서림)</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">5,000만~6,000만</td>
+          <td style="text-align:center">4.02%</td>
+          <td style="text-align:right;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums">17~20만</td>
+          <td style="font-size:11px">이자만 납입</td>
+        </tr>
+        <tr style="background:rgba(139,92,246,.04)">
+          <td>👨‍👩‍👧 큰누나·매형</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">4,500만</td>
+          <td style="text-align:center">약 3.5%</td>
+          <td style="text-align:right;font-weight:700;color:var(--purple);font-variant-numeric:tabular-nums">13만</td>
+          <td style="font-size:11px">이자만 납입</td>
+        </tr>
+        <tr style="background:rgba(16,185,129,.04)">
+          <td>👩‍👧 이모님</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">3,000만</td>
+          <td style="text-align:center">무이자</td>
+          <td style="text-align:right;font-weight:700;color:var(--green);font-variant-numeric:tabular-nums">0만</td>
+          <td style="font-size:11px">무이자</td>
+        </tr>
+        <tr style="background:var(--lite)">
+          <td colspan="3" style="font-weight:700">💡 월 납입 합계</td>
+          <td style="text-align:right;font-weight:800;color:var(--red);font-size:16px;font-variant-numeric:tabular-nums">약 310만</td>
+          <td style="font-size:11px;color:var(--muted)">/월</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 소득 대비 분석 -->
+  <div class="stitle">📊 월 소득 대비 여유자금</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+    <div class="card" style="padding:12px;text-align:center">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">합산 월 소득 (세후)</div>
+      <div style="font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums">1,000만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">안영준 600 + 황서림 400</div>
+    </div>
+    <div class="card" style="padding:12px;text-align:center">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 납입 합계</div>
+      <div style="font-size:22px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">−310만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">6개 대출 모두 포함</div>
+    </div>
+    <div class="card" style="padding:12px;text-align:center;border-color:var(--green)">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">납입 후 가용액</div>
+      <div style="font-size:22px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">690만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">생활비 + 저축 포함</div>
+    </div>
+  </div>
+  <div class="ibox y" style="font-size:12px;margin-bottom:14px;line-height:1.7">
+    💡 <strong>생활비 350만 가정 시</strong> 월 저축 가능금액 약 <strong>340만원/월</strong><br>
+    &nbsp;&nbsp;&nbsp;생활비가 줄거나 늘면 저축액이 비례하여 달라집니다
+  </div>
+
+  <!-- 상환 시뮬레이션 -->
+  <div class="stitle">📅 차용금 상환 시뮬레이션</div>
+  <div class="ibox g" style="margin-bottom:10px">
+    <strong>① 이모님 3,000만 — 2026년 연말 상환 가능 ✅</strong>
+    <div style="font-size:12px;margin-top:8px;line-height:1.9">
+      • 연말 성과급 세후 <strong>3,500만</strong> 수령 예정<br>
+      • 이모님 3,000만 전액 상환 → 성과급 잔여 <strong>500만</strong> 저축<br>
+      • 별도 월 저축 소진 없이 성과급만으로 충분히 해결 가능
+    </div>
+  </div>
+  <div class="ibox p" style="margin-bottom:14px">
+    <strong>② 큰누나·매형 4,500만 — 2027년 말 상환 가능 ✅</strong>
+    <div style="font-size:12px;margin-top:8px;line-height:1.9">
+      • 2026년 성과급 잔여 이월: <strong>500만</strong><br>
+      • 2026년 9~12월 저축 (340만 × 4개월): <strong>1,360만</strong><br>
+      • 2026년 말 누적 가용: <strong>1,860만</strong><br>
+      • 2027년 월 저축 (340만 × 12개월): <strong>4,080만</strong><br>
+      • 2027년 성과급: <strong>3,500만</strong><br>
+      • 2027년 말 총 가용: <strong>약 9,440만</strong><br>
+      → 4,500만 상환 후 잔여 <strong>4,940만</strong> 저축 ✅
+    </div>
+  </div>
+
+  <!-- 중기 경고 -->
+  <div class="stitle">⚠️ 중기 위험 요소</div>
+  <div class="ibox r" style="margin-bottom:10px">
+    <strong>보증보험대출 만기 2028.06.30 — 1억 2,000만 일시상환 필요</strong>
+    <div style="font-size:12px;margin-top:8px;line-height:1.9">
+      • 현재 이자만 납입 중 (월 48만), 2028.06에 원금 전액 상환 의무<br>
+      • 2028.06까지 예상 저축 누적: <strong>약 6,980만</strong> → 약 <strong style="color:var(--red)">5,020만 부족</strong><br>
+      • 대응 방안 ①: 신규 신용대출·대환대출로 갈아타기<br>
+      • 대응 방안 ②: 회사에 만기 연장 협의 (사전 타진 필요)
+    </div>
+  </div>
+
+  <!-- 장기 만기 일람 -->
+  <div class="stitle">📋 대출 만기 일람</div>
+  <div class="tbl-wrap" style="margin-bottom:4px">
+    <table>
+      <thead>
+        <tr><th>항목</th><th>만기</th><th style="text-align:right">잔액</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:rgba(239,68,68,.05)">
+          <td>🏢 보증보험대출</td>
+          <td style="font-weight:700;color:var(--red)">2028.06.30</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">1억 2,000만</td>
+          <td style="font-size:11px;color:var(--red)">⚠ 대환/연장 검토 필요</td>
+        </tr>
+        <tr>
+          <td>💳 안영준 신용대출</td>
+          <td>2031년경</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">9,500만</td>
+          <td style="font-size:11px">5년 거치 만기 일시상환</td>
+        </tr>
+        <tr>
+          <td>💳 황서림 신용대출</td>
+          <td>2031년경</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">5,000만~6,000만</td>
+          <td style="font-size:11px">5년 거치 만기 일시상환</td>
+        </tr>
+        <tr style="background:rgba(16,185,129,.05)">
+          <td>🏠 주담대 (우리은행)</td>
+          <td>2056년경</td>
+          <td style="text-align:right;font-variant-numeric:tabular-nums">3억 8,500만→감소</td>
+          <td style="font-size:11px;color:var(--green)">원리금 균등, 매월 원금 감소</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /sec-family -->
+
 <div id="sec-consultant" style="display:none">
 
   <!-- ① 안내 헤더 -->
@@ -5528,12 +5711,14 @@ document.getElementById('sec-ahn').style.display = name==='ahn'?'':'none';
 document.getElementById('sec-combined').style.display = name==='combined'?'':'none';
 document.getElementById('sec-consultant').style.display = name==='consultant'?'':'none';
 document.getElementById('sec-timeline').style.display = name==='timeline'?'':'none';
-document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline')?'none':'';
+document.getElementById('sec-family').style.display = name==='family'?'':'none';
+document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline'||name==='family')?'none':'';
 document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
 document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
 document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
 document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
 document.getElementById('loan-btn-timeline').classList.toggle('active',name==='timeline');
+document.getElementById('loan-btn-family').classList.toggle('active',name==='family');
 }
 function switchFundPlan(p){
   ['1','2','3','4'].forEach(n=>{
