@@ -3236,48 +3236,49 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <!-- 소득 대비 분석 -->
-  <div class="stitle">📊 월 소득 대비 여유자금</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+  <div class="stitle">📊 실제 현금흐름 (2026.07 데이터 기준)</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
     <div class="card" style="padding:12px;text-align:center">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">합산 월 소득 (세후)</div>
-      <div style="font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums">1,000만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">안영준 600 + 황서림 400</div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">합산 세후 수입</div>
+      <div style="font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums">1,019만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">안영준 600 + 황서림 419만</div>
     </div>
     <div class="card" style="padding:12px;text-align:center">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 납입 합계</div>
-      <div style="font-size:22px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">−315만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">6개 대출 모두 포함</div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 전체 지출</div>
+      <div style="font-size:22px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums">−660만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">대출 315 + 기타 345</div>
     </div>
     <div class="card" style="padding:12px;text-align:center;border-color:var(--green)">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">납입 후 가용액</div>
-      <div style="font-size:22px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">685만</div>
-      <div style="font-size:10px;color:var(--muted);margin-top:2px">생활비 + 저축 포함</div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">월 순 여유금</div>
+      <div style="font-size:26px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums">약 360만</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">차용금 상환 재원</div>
     </div>
   </div>
   <div class="ibox y" style="font-size:12px;margin-bottom:14px;line-height:1.7">
-    💡 <strong>생활비 350만 가정 시</strong> 월 저축 가능금액 약 <strong>335만원/월</strong><br>
-    &nbsp;&nbsp;&nbsp;생활비가 줄거나 늘면 저축액이 비례하여 달라집니다
+    💡 <strong>기타 지출 345만 내역 (실제 7월 기준)</strong><br>
+    카드 (안영준 105만 + 황서림 51만) · 청년도약 70만 · 교통·관리비 38만 · 계모임 24만 · 보험·회비·청약 등 57만<br>
+    <span style="color:var(--muted)">* 잔금 후 IRP 불입 종료 → 지출 감소 / 황서림 신용대출 이자 21만 추가</span>
   </div>
 
   <!-- 상환 시뮬레이션 -->
   <div class="stitle">📅 차용금 상환 시뮬레이션</div>
   <div class="ibox g" style="margin-bottom:10px">
-    <strong>① 이모님 3,000만 — 2027년 5월경 상환 가능 ✅</strong>
+    <strong>① 이모님 3,000만 — 2027년 5월 상환 가능 ✅</strong>
     <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 연말 성과급은 취득세 납부에 사용 → 이모님 상환은 <strong>월 저축</strong>으로만 진행<br>
-      • 월 저축 가능액: <strong>335만/월</strong> (생활비 350만 가정)<br>
-      • 2026.09~12 (4개월) = 1,340만 / 2027.01~05 (5개월) = 1,675만<br>
-      • 누적 합계: <strong>3,015만</strong> → <strong>2027년 5월 이모님 3,000만 상환</strong> ✅
+      • 연말 성과급은 취득세에 사용 → 이모님 상환은 <strong>월 여유금 360만</strong>으로 진행<br>
+      • 2026.09~12 (4개월) = 1,440만 / 2027.01~05 (5개월) = 1,800만<br>
+      • 누적 합계: <strong>3,240만</strong> → <strong>2027년 5월 이모님 3,000만 상환</strong> ✅<br>
+      • 상환 후 잔여 240만은 큰누나 상환으로 이월
     </div>
   </div>
   <div class="ibox p" style="margin-bottom:14px">
     <strong>② 큰누나·매형 4,500만 — 2027년 12월 상환 가능 ✅</strong>
     <div style="font-size:12px;margin-top:8px;line-height:1.9">
-      • 이모님 상환(2027.05) 후 저축 재개<br>
-      • 2027.06~12 (7개월) × 335만 = <strong>2,345만</strong><br>
+      • 이모님 상환(2027.05) 후 잔여 240만 이월<br>
+      • 2027.06~12 (7개월) × 360만 = <strong>2,520만</strong><br>
       • 2027년 연말 성과급: <strong>3,500만</strong><br>
-      • 2027년 12월 총 가용: <strong>5,845만</strong><br>
-      → 4,500만 상환 후 잔여 <strong>1,345만</strong> 저축 ✅
+      • 2027년 12월 총 가용: 240 + 2,520 + 3,500 = <strong>6,260만</strong><br>
+      → 4,500만 상환 후 잔여 <strong>1,760만</strong> 저축 ✅
     </div>
   </div>
 
