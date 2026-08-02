@@ -4244,6 +4244,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
         <button id="pc-btn-all" class="person-btn active" onclick="switchPostCost('all')">종합</button>
+        <button id="pc-btn-notax" class="person-btn" onclick="switchPostCost('notax')">종합(취득세 제외)</button>
         <button id="pc-btn-tax" class="person-btn" onclick="switchPostCost('tax')">취득세</button>
         <button id="pc-btn-fee" class="person-btn" onclick="switchPostCost('fee')">중개수수료</button>
         <button id="pc-btn-moving" class="person-btn" onclick="switchPostCost('moving')">이사비</button>
@@ -4442,6 +4443,93 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
     </div><!-- /sec-pc-all -->
+
+    <div id="sec-pc-notax" style="display:none">
+      <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.8">
+        💳 <strong>취득세 3,597만은 카드로 납부</strong> — 아래는 잔금 이후 <strong>현금으로 별도 준비해야 하는 비용</strong>만 모아봤어요. 잔금 탭의 남는 금액으로 이 비용들을 충당해요.
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+        <div class="kpi-bar-card" style="border-top:3px solid var(--purple);background:linear-gradient(160deg,#fff 50%,rgba(123,110,246,0.07) 100%)">
+          <div class="lbl" style="color:var(--purple);font-weight:700">💳 카드 납부 (취득세)</div>
+          <div class="num pu">3,597만</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">잔금일로부터 60일 이내</div>
+        </div>
+        <div class="kpi-bar-card" style="border-top:3px solid var(--orange);background:linear-gradient(160deg,#fff 50%,rgba(249,115,22,0.07) 100%)">
+          <div class="lbl" style="color:var(--orange);font-weight:700">💰 현금 지출 합계</div>
+          <div class="num" style="color:var(--orange);font-size:1.35rem">1,647~1,819만</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">잔금 후 별도 준비 필요</div>
+        </div>
+      </div>
+
+      <div class="stitle" style="margin-top:0">💰 현금 지출 항목 (취득세 제외)</div>
+      <div class="card" style="margin-bottom:20px;display:flex;flex-direction:column;gap:18px">
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+            <span style="font-size:13px;font-weight:700;color:var(--text)">🎨 인테리어</span>
+            <span style="font-size:14px;font-weight:900;color:var(--orange);white-space:nowrap">697~869만 <span style="font-size:11px;font-weight:600;color:var(--muted)">42~48%</span></span>
+          </div>
+          <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+            <div style="width:47%;height:100%;background:var(--orange);border-radius:99px"></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실 398만 (두담 확정 ✅) · 베란다·싱크대·청소 99~179만</div>
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+            <span style="font-size:13px;font-weight:700;color:var(--text)">🏠 등촌 중개수수료 (VAT 포함)</span>
+            <span style="font-size:14px;font-weight:900;color:#f97316;white-space:nowrap">599.5만 <span style="font-size:11px;font-weight:600;color:var(--muted)">36%</span></span>
+          </div>
+          <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+            <div style="width:36%;height:100%;background:#f97316;border-radius:99px"></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted)">하나공인중개사 최진주 (010-2534-2453) · 잔금일 9/16 지급</div>
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+            <span style="font-size:13px;font-weight:700;color:var(--text)">🚚 이사비 (1차+2차)</span>
+            <span style="font-size:14px;font-weight:900;color:var(--green);white-space:nowrap">300만 <span style="font-size:11px;font-weight:600;color:var(--muted)">18%</span></span>
+          </div>
+          <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+            <div style="width:18%;height:100%;background:var(--green);border-radius:99px"></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted)">SK익스프레스 윤옹기 확정 · 1차 8/28 청라→보관 150만 · 2차 9/21~23 보관→등촌 150만</div>
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+            <span style="font-size:13px;font-weight:700;color:var(--text)">❄️ 에어컨 해체·설치</span>
+            <span style="font-size:14px;font-weight:900;color:var(--text);white-space:nowrap">50만 <span style="font-size:11px;font-weight:600;color:var(--muted)">3%</span></span>
+          </div>
+          <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
+            <div style="width:3%;height:100%;background:#94a3b8;border-radius:99px"></div>
+          </div>
+        </div>
+
+        <div style="opacity:0.5">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
+            <span style="font-size:13px;font-weight:700;color:var(--muted)">🏠 청라 중개수수료 <span style="font-size:10.5px;font-weight:500">(별도 현금 없음)</span></span>
+            <span style="font-size:14px;font-weight:900;color:var(--muted);white-space:nowrap">252만</span>
+          </div>
+          <div style="background:var(--lite);border-radius:99px;height:8px;overflow:hidden;margin-bottom:5px">
+            <div style="width:15%;height:100%;background:#94a3b8;border-radius:99px"></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted)">8/31 청라 잔금 수령액에서 차감 — 별도 현금 지출 없음</div>
+        </div>
+
+        <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(249,115,22,0.09);border-radius:10px">
+            <span style="font-size:13px;font-weight:700;color:var(--orange)">💰 현금 지출 총합 (취득세 제외)</span>
+            <span style="font-size:18px;font-weight:900;color:var(--orange)">약 1,647~1,819만</span>
+          </div>
+          <div class="ibox p" style="font-size:12px;line-height:1.8">
+            🧾 취득세 3,597만은 카드 납부 (잔금일로부터 60일 이내) → 현금 흐름에서 분리됩니다.
+          </div>
+        </div>
+      </div>
+    </div><!-- /sec-pc-notax -->
 
     <div id="sec-pc-tax" style="display:none">
     <!-- 취득세 상세 -->
@@ -5375,7 +5463,7 @@ function switchLoanBalance(tab){
   document.getElementById('lb-btn-janggeum').classList.toggle('active',tab==='janggeum');
 }
 function switchPostCost(name){
-  var tabs=['all','tax','fee','moving','notary'];
+  var tabs=['all','notax','tax','fee','moving','notary'];
   tabs.forEach(function(t){
     var el=document.getElementById('sec-pc-'+t);
     if(el) el.style.display=t===name?'':'none';
