@@ -318,6 +318,8 @@ td.ed:hover{background:var(--p3)!important;color:var(--purple)}
   .mob-quick span:last-child{font-size:12px!important;font-weight:700!important;color:rgba(255,255,255,.75)!important}
   /* 납부 구조 3열 → 1열 */
   #panel-loan-balance #sec-lb-janggeum .g3{grid-template-columns:1fr!important}
+  /* 월 상환 시뮬레이션 3열 → 1열 */
+  #repay-scenarios{grid-template-columns:1fr!important}
 
   /* ─── 대출현황: person-btn 3개 줄바꿈 ─── */
   #panel-loan-status .ph{flex-wrap:wrap!important;gap:8px}
@@ -1513,8 +1515,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div id="money-flow-row" style="display:flex;align-items:stretch;gap:8px;flex-wrap:wrap">
       <div style="flex:1;min-width:100px;background:var(--g2);border-radius:12px;padding:12px 10px;text-align:center">
         <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:5px">🏠 청라 집 팔아서</div>
-        <div style="font-size:17px;font-weight:900;color:var(--green);letter-spacing:-.02em">+2억 5천만</div>
-        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">8월 31일 수령</div>
+        <div style="font-size:17px;font-weight:900;color:var(--green);letter-spacing:-.02em">+약 2억 4,545만</div>
+        <div style="font-size:9.5px;color:var(--muted);margin-top:3px">8월 31일 수령 (잔금-보금자리론-중개비)</div>
       </div>
       <div style="display:flex;align-items:center;font-size:18px;color:var(--muted);padding:0 2px">+</div>
       <div style="flex:1;min-width:100px;background:var(--p3);border-radius:12px;padding:12px 10px;text-align:center">
@@ -1567,11 +1569,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="kpi-lbl">🛠️ 인테리어 업체</div>
         <span class="chip g">3곳 확정</span>
       </div>
-      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">637만원</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/17~23</div>
+      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">788만원</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/17~23 · 이사 9/24</div>
       <div class="ibox g" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🖼️ <strong>장판의 신</strong> 도배 125 + 장판 75 = 200만</div>
-      <div class="ibox p" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🧹 <strong>청소조교</strong> 입주청소 39만</div>
-      <div class="ibox g" style="padding:8px 12px;font-size:12px">🚿 <strong>두담</strong> 화장실 공사 확정 ✅ 398만</div>
+      <div class="ibox p" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🧹 <strong>청소대학</strong> 입주청소 37만 (아정당 소개)</div>
+      <div class="ibox g" style="padding:8px 12px;font-size:12px">🚿 <strong>두담</strong> 화장실+주방 공사 확정 ✅ 551만</div>
     </div>
   </div>
 
@@ -1636,7 +1638,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot done">✓</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">우리은행 확정 — 3억 8,500만 / 4.65% 6개월 변동</div><div class="tl-desc">안영준 단독 차주 · KB시세 11억 × 40% − 방공제 5,500만 · 농협(5.0%) 대비 월 90만↓</div></div>
+      <div class="tl-body"><div class="tl-title">우리은행 확정 — 3억 8,500만 / 4.51% 1년 변동 · 원금균등</div><div class="tl-desc">안영준 단독 차주 · KB시세 11억 × 40% − 방공제 5,500만 · 농협(5.0%) 대비 월 36만↓</div></div>
       <div class="tl-right"><div class="tl-amt gr">확정</div><div class="tl-date">2026. 07.</div></div>
     </div>
     <div class="tl-item">
@@ -1666,18 +1668,23 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">8</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">🚿 화장실 공사 — 두담</div><div class="tl-desc">두담 398만 · 주말 제외 약 3일 (9/17 목 · 9/18 금 · 9/21 월)</div></div>
-      <div class="tl-right"><div class="tl-amt pl">398만</div><div class="tl-date">9/17(목)~9/21(월)</div></div>
+      <div class="tl-body"><div class="tl-title">🚿 화장실+주방 공사 — 두담</div><div class="tl-desc">두담 551만 · 9/17(목)~9/21(월)</div></div>
+      <div class="tl-right"><div class="tl-amt pl">551만</div><div class="tl-date">9/17(목)~9/21(월)</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">9</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">🖼️ 도배 / 장판 — 장판의 신</div><div class="tl-desc">합지 도배 125만 + 1.8T 장판 75만 = 200만 · 9/23(수) 오후 2시 완료 목표</div></div>
-      <div class="tl-right"><div class="tl-amt pl">200만</div><div class="tl-date">9/22(화)~9/23(수) 14시</div></div>
+      <div class="tl-body"><div class="tl-title">🖼️ 도배 / 장판 — 장판의 신</div><div class="tl-desc">합지 도배 125만 + 1.8T 장판 75만 = 200만 · 9/23(수) 오후 3시 완료</div></div>
+      <div class="tl-right"><div class="tl-amt pl">200만</div><div class="tl-date">9/22(화)~9/23(수) 15시</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot fut">🧹</div><div class="tl-line"></div>
+      <div class="tl-body"><div class="tl-title">🧹 입주 청소 — 청소대학</div><div class="tl-desc">아정당 소개 · 37만 · 도배 완료 후 즉시</div></div>
+      <div class="tl-right"><div class="tl-amt pl">37만</div><div class="tl-date">9/23(수) 15~19시</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">🏠</div>
-      <div class="tl-body"><div class="tl-title">등촌 입주 🎉</div><div class="tl-desc">9/23(수) 오후 3시 2차 이사 시작 (보관창고 → 등촌) · 에어컨 삼성 기사 별도 · 추석(9/24) 전 입주 완료</div></div>
-      <div class="tl-right"><div class="tl-amt gr">입주!</div><div class="tl-date">9/23(수) 15:00~</div></div>
+      <div class="tl-body"><div class="tl-title">등촌 이사 입주 🎉</div><div class="tl-desc">9/24(목) 아침 일찍 2차 이사 (보관창고 → 등촌) · 추석연휴 첫날 입주</div></div>
+      <div class="tl-right"><div class="tl-amt gr">입주!</div><div class="tl-date">9/24(목) 추석연휴</div></div>
     </div>
   </div>
 </div>
@@ -1934,7 +1941,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="con">
     <div class="ph">
       <h1>🚚 이사업체</h1>
-      <p>이사 2단계 · ① 청라→보관창고(8/31) ② 창고→등촌(9/23) · 포장이사 포함</p>
+      <p>이사 2단계 · ① 청라→보관창고(8/31) ② 창고→등촌(9/24) · 포장이사 포함</p>
     </div>
 
     <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
@@ -1954,9 +1961,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:11px;color:var(--muted);margin-top:4px">8,000원/일 × 20일 (아정당 확인)</div>
       </div>
       <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
-        <div class="lbl">2차 이사 (9/23 15시)</div>
+        <div class="lbl">2차 이사 (9/24 아침)</div>
         <div class="num gr">150만원 ✓</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:4px">보관 → 등촌 부영 · 도배 완료 후 오후 3시~</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px">보관 → 등촌 부영 · 추석연휴 이른 아침</div>
       </div>
     </div>
 
@@ -1991,7 +1998,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="tl-step upcoming">
           <div class="tl-node">4</div>
           <div class="tl-label">2차 이사</div>
-          <div class="tl-date">09.23 15시</div>
+          <div class="tl-date">09.24 이른 아침</div>
           <div class="tl-amt">보관→등촌</div>
         </div>
       </div>
@@ -2005,7 +2012,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="fund-row"><div class="fund-label">유형</div><div style="flex:1"></div><div style="font-weight:700">포장이사</div></div>
         <div class="fund-row"><div class="fund-label">출발지</div><div style="flex:1"></div><div style="font-weight:700">청라힐데스하임 129동 802호</div></div>
         <div class="fund-row"><div class="fund-label">도착지</div><div style="flex:1"></div><div style="font-weight:700">컨테이너 보관창고</div></div>
-        <div class="fund-row" style="border-bottom:none"><div class="fund-label">예상 비용</div><div style="flex:1"></div><div style="font-weight:800;color:var(--purple)">약 100~200만원</div></div>
+        <div class="fund-row" style="border-bottom:none"><div class="fund-label">확정 비용</div><div style="flex:1"></div><div style="font-weight:800;color:var(--green)">150만원 ✅ (SK익스프레스 확정)</div></div>
       </div>
       <div class="card">
         <div style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:10px">2차 이사 · 2026.09.23(수) 오후 3시</div>
@@ -2311,9 +2318,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="con">
     <div class="ph">
       <h1>🛏️ 공백기 임시 거주 계획</h1>
-      <p>청라 퇴거(8/31) → 여행 1주일 → 김포 임시거주(3일) → 등촌 입주(9/23) · 약 3주 공백 계획</p>
+      <p>청라 퇴거(8/31) → 여행 1주일 → 김포 임시거주(3일) → 등촌 입주(9/24) · 약 3주 공백 계획</p>
     </div>
-    <div class="ibox p" style="margin-bottom:14px;font-size:13px;line-height:1.8">      💡 <strong>이 탭은요:</strong> 청라 집을 8/31에 넘기고 나서, 등촌 입주(9/23)까지 약 3주 동안 머물 곳이 없어요. 이 탭은 그 3주를 어떻게 보낼지 계획한 페이지예요. 1단계로 여행 다녀오고, 2단계로 김포공항 근처 단기 숙소에 있다가 등촌으로 들어가는 방향이에요.    </div>
+    <div class="ibox p" style="margin-bottom:14px;font-size:13px;line-height:1.8">      💡 <strong>이 탭은요:</strong> 청라 집을 8/31에 넘기고 나서, 등촌 입주(9/24)까지 약 3주 동안 머물 곳이 없어요. 이 탭은 그 3주를 어떻게 보낼지 계획한 페이지예요. 1단계로 여행 다녀오고, 2단계로 김포공항 근처 단기 숙소에 있다가 등촌으로 들어가는 방향이에요.    </div>
     <div class="ibox r" style="margin-bottom:14px">
       청라 잔금 8/31 → 등촌 잔금 9/16 → 공사 기간 약 5일 = <strong>총 약 3주 임시 거주 필요</strong>
     </div>
@@ -2405,7 +2412,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="fund-row">
         <div class="fund-label">🏦 안영준 주담대 (우리은행 · 단독 차주)</div>
         <div style="flex:1"></div>
-        <span style="font-size:11px;color:var(--muted);margin-right:8px">4.65% · 9/16 실행</span>
+        <span style="font-size:11px;color:var(--muted);margin-right:8px">4.51% 원금균등 · 9/16 실행</span>
         <span style="font-weight:800;color:var(--purple)">3억 8,500만</span>
       </div>
       <div class="fund-row">
@@ -2469,7 +2476,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="padding:8px 16px">
       <div class="fund-row"><div class="fund-label">🏠 등촌 중개수수료 (VAT 포함)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">9/16 당일</span><span style="font-weight:800">599.5만</span></div>
       <div class="fund-row"><div class="fund-label">🚚 이사비 (1차 8/28 · 2차 9/21~23)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">SK익스프레스 확정</span><span style="font-weight:800">300만</span></div>
-      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·장판의신·청소조교)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/23</span><span style="font-weight:800">637만+</span></div>
+      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·장판의신·청소대학)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/23</span><span style="font-weight:800">788만+</span></div>
       <div class="fund-row" style="border-bottom:none"><div class="fund-label">❄️ 에어컨 해체·설치</div><div style="flex:1"></div><span style="font-weight:800">50만</span></div>
     </div>
     <div style="padding:12px 16px;background:rgba(249,115,22,.08);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
@@ -2581,7 +2588,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="flex:1;padding-left:10px">
           <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">인테리어 + 이사비 2차 + 에어컨</div>
-          <div style="font-size:11px;color:var(--muted)">인테리어 확정 637만 + 이사비 2차 150만 + 에어컨 50만</div>
+          <div style="font-size:11px;color:var(--muted)">인테리어 확정 788만 + 이사비 2차 150만 + 에어컨 50만</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:13px;font-weight:800;color:var(--orange)">−837만</div>
@@ -2698,8 +2705,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="stitle">💬 우리은행 vs 농협, 뭐가 더 나을까? — 서림이에게</div>
 
   <div class="card card-green" style="margin-bottom:12px">
-    <div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:6px">✅ 확정: 우리은행 6개월 변동 (4.65%) · 3억 8,500만</div>
-    <div style="font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.8">KB시세 10억 9,000만 × LTV 40% − 방공제 5,500만 = <strong>3억 8,500만 확정</strong><br>금리 4.65% · 월 납부 약 196만 · 아내 출산·육아휴직 예정 + 이주비 대출 조기상환 계획으로 단기 저금리 유리</div>
+    <div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:6px">✅ 확정: 우리은행 1년 변동 (4.51%) · 3억 8,500만 · 원금균등</div>
+    <div style="font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.8">KB시세 10억 9,000만 × LTV 40% − 방공제 5,500만 = <strong>3억 8,500만 확정</strong><br>금리 4.51% · 원금균등 월 납부 초기 약 252만 (점차 감소) · 한도 3억 8,500만을 원금균등으로 충족</div>
   </div>
 
   <!-- 비교 테이블 -->
@@ -2716,7 +2723,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <tbody>
         <tr style="border-bottom:1px solid var(--border)">
           <td style="padding:7px 8px;color:var(--muted);font-weight:600">주담대 금리</td>
-          <td style="padding:7px 8px;text-align:center;font-weight:800;color:var(--green)">4.65% ✅</td>
+          <td style="padding:7px 8px;text-align:center;font-weight:800;color:var(--green)">4.51% ✅</td>
           <td style="padding:7px 8px;text-align:center;font-weight:700;color:var(--red)">5.0% ❌</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border)">
@@ -2726,12 +2733,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </tr>
         <tr style="border-bottom:1px solid var(--border)">
           <td style="padding:7px 8px;color:var(--muted);font-weight:600">상환 방식</td>
-          <td style="padding:7px 8px;text-align:center;font-weight:700">원리금균등 선택 가능</td>
+          <td style="padding:7px 8px;text-align:center;font-weight:700;color:var(--orange)">원금균등 (한도 상 강제)</td>
           <td style="padding:7px 8px;text-align:center;font-weight:700;color:var(--red)">한도 채우려면<br>원금균등 강제</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border)">
           <td style="padding:7px 8px;color:var(--muted);font-weight:600">월 납부 (주담대)</td>
-          <td style="padding:7px 8px;text-align:center;font-weight:900;color:var(--green)">약 196만 ✅</td>
+          <td style="padding:7px 8px;text-align:center;font-weight:900;color:var(--green)">약 252만 ✅<br><span style="font-size:10px;color:var(--muted)">(원금균등 초기, 점차 감소)</span></td>
           <td style="padding:7px 8px;text-align:center;font-weight:900;color:var(--red)">약 288만 ❌<br><span style="font-size:10px;color:var(--muted)">(원금균등 시)</span></td>
         </tr>
         <tr style="border-bottom:1px solid var(--border)">
@@ -2751,12 +2758,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <!-- 이유 3가지 -->
   <div class="g2" style="margin-bottom:12px">
     <div class="ibox p" style="font-size:12px;line-height:1.9">
-      <strong>① 금리가 낮아요 (연 130만원 절약)</strong><br>
-      우리 4.65% vs 농협 5.0% — 3억 8천만원 기준 1년에 약 130만원 차이입니다.
+      <strong>① 금리가 낮아요 (연 150만원 절약)</strong><br>
+      우리 4.51% vs 농협 5.0% — 3억 8,500만원 기준 1년에 약 150만원 차이입니다.
     </div>
     <div class="ibox p" style="font-size:12px;line-height:1.9">
-      <strong>② 매달 납부가 90만원 더 쌉니다</strong><br>
-      우리 월 196만 vs 농협 월 288만 (원금균등). 육아휴직 중 소득이 줄어드는 시기에 월 90만원 차이는 큽니다.
+      <strong>② 같은 원금균등이어도 월 납부가 36만원 더 쌉니다</strong><br>
+      우리 4.51% 월 252만 vs 농협 5.0% 월 288만 (둘 다 원금균등). 금리 차이만으로 월 36만, 연 432만원 절약.
     </div>
   </div>
   <div class="ibox g" style="margin-bottom:12px;font-size:12px;line-height:1.9">
@@ -2782,7 +2789,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="ibox g" style="font-size:12px;line-height:2">
     <strong>🗓 앞으로 순서</strong><br>
     8/31 청라 잔금 → 보금자리론 상환·말소<br>
-    9/16 우리은행 주담대 3억 8,500만 실행 (소득합산 · 안영준 차주 · 원리금균등 · 6개월변동 4.65%)<br>
+    9/16 우리은행 주담대 3억 8,500만 실행 (안영준 단독 차주 · 원금균등 · 1년변동 4.51%)<br>
     9/16 바로 이어서 황서림 신용대출 실행 (방공제분 보완)<br>
     이 모든 실행이 끝난 뒤 → 황서림 출산·육아휴직
   </div>
@@ -2941,7 +2948,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div class="fund-pct" style="color:var(--green);font-weight:700">DSR 40%</div>
         </div>
         <div class="fund-row">
-          <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.65%)</div>
+          <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.51% · 원금균등)</div>
           <div class="fund-bar-wrap"><div class="fund-bar" style="width:36%;background:var(--purple)"></div></div>
           <div class="fund-amt">193만/월</div>
           <div class="fund-pct" style="color:var(--purple);font-weight:700">36%</div>
@@ -2960,7 +2967,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin:12px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="background:rgba(123,110,246,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(123,110,246,0.2)">
-            <div style="font-size:10px;color:var(--muted)">4.65% 기준 전체 합계</div>
+            <div style="font-size:10px;color:var(--muted)">4.51% 기준 전체 합계</div>
             <div style="font-size:17px;font-weight:900;color:var(--purple)">494만/월</div>
             <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 36.9% ✅ 통과</div>
             <div style="font-size:10px;color:var(--muted)">잔여 42만/월</div>
@@ -2985,13 +2992,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
             <div style="font-size:12px;font-weight:700;color:var(--text)">25년 과세 단독 · 5,338만 → 한도 <span style="color:var(--red)">178만/월</span></div>
             <div style="display:flex;gap:5px">
-              <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(239,68,68,0.12);color:var(--red)">4.65% ❌</span>
+              <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(239,68,68,0.12);color:var(--red)">4.51% ❌</span>
               <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(239,68,68,0.12);color:var(--red)">5.93% ❌</span>
             </div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <div style="background:rgba(239,68,68,0.06);border-radius:8px;padding:8px 10px;border:1px solid rgba(239,68,68,0.15)">
-              <div style="font-size:10px;color:var(--muted)">4.65% 단독 최대</div>
+              <div style="font-size:10px;color:var(--muted)">4.51% 단독 최대</div>
               <div style="font-size:15px;font-weight:800;color:var(--red)">3억 4,110만</div>
               <div style="font-size:10px;color:var(--red)">목표 3.74억 미달 -2,890만</div>
             </div>
@@ -3042,7 +3049,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div class="fund-pct" style="color:var(--green);font-weight:700">↑ +44만</div>
         </div>
         <div class="fund-row">
-          <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.65%)</div>
+          <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.51% · 원금균등)</div>
           <div class="fund-bar-wrap"><div class="fund-bar" style="width:33%;background:var(--purple)"></div></div>
           <div class="fund-amt">193만/월</div>
           <div class="fund-pct" style="color:var(--purple);font-weight:700">33%</div>
@@ -3061,7 +3068,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin:12px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(34,197,94,0.2)">
-            <div style="font-size:10px;color:var(--muted)">4.65% 기준 전체 합계</div>
+            <div style="font-size:10px;color:var(--muted)">4.51% 기준 전체 합계</div>
             <div style="font-size:17px;font-weight:900;color:var(--green)">494만/월</div>
             <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 34.0% ✅ 여유 통과</div>
             <div style="font-size:10px;color:var(--muted)">잔여 86만/월</div>
@@ -3086,13 +3093,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
             <div style="font-size:12px;font-weight:700;color:var(--purple)">26년 과세 단독 · 6,674만 → 한도 <span style="color:var(--purple)">222만/월</span> ★</div>
             <div style="display:flex;gap:5px">
-              <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(34,197,94,0.12);color:var(--green)">4.65% ✅</span>
+              <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(34,197,94,0.12);color:var(--green)">4.51% ✅</span>
               <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(245,158,11,0.15);color:var(--yellow)">5.93% △</span>
             </div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <div style="background:rgba(34,197,94,0.06);border-radius:8px;padding:8px 10px;border:1px solid rgba(34,197,94,0.2)">
-              <div style="font-size:10px;color:var(--muted)">4.65% 단독 최대</div>
+              <div style="font-size:10px;color:var(--muted)">4.51% 단독 최대</div>
               <div style="font-size:15px;font-weight:800;color:var(--green)">3억 8,500만</div>
               <div style="font-size:10px;color:var(--green)">LTV 한도로 목표 달성 ✓</div>
             </div>
@@ -3105,7 +3112,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin-top:12px;padding:10px 12px;background:rgba(34,197,94,0.08);border-radius:8px;border-left:3px solid var(--green);font-size:12px;line-height:1.7">
           ✅ <strong>26년 단독 결론:</strong> 과세 소득 단독만으로 두 금리 모두 3억 8,500만 달성 가능<br>
-          → 5.93%는 DSR 한계선 (222만 = 222만) — 4.65% 적용 시 여유 확보<br>
+          → 5.93%는 DSR 한계선 (222만 = 222만) — 4.51% 적용 시 여유 확보<br>
           → <strong>26년 소득 인정 시 황서림 단독 대출 가능 (소득 합산 불필요)</strong>
         </div>
       </div>
@@ -3113,7 +3120,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
 
     <!-- 우리은행 주담대 확정 금리 -->
-    <div class="stitle">💡 우리은행 주담대 3억 8,500만 · 확정 금리 분석 (30년 원리금균등)</div>
+    <div class="stitle">💡 우리은행 주담대 3억 8,500만 · 확정 금리 분석 (30년 원금균등 · 4.51%)</div>
     <div class="card" style="margin-bottom:8px">
       <div style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.7;padding:10px 12px;background:var(--bg);border-radius:10px">
         KB부동산 시세 <strong>10억 9,000만</strong> × 40% = 4억 4,000만<br>
@@ -3122,12 +3129,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div class="rate-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div style="background:var(--p3);border-radius:12px;padding:16px;border-top:3px solid var(--purple)">
-          <div style="font-size:11px;color:var(--purple);font-weight:700;margin-bottom:8px">1년 변동금리 (우대 충족시)</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--purple);line-height:1">4.65%</div>
-          <div style="font-size:13px;color:var(--text);margin-top:10px;font-weight:700">월 납부 약 193만원</div>
+          <div style="font-size:11px;color:var(--purple);font-weight:700;margin-bottom:8px">1년 변동금리 (우대 충족시) · 원금균등</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--purple);line-height:1">4.51%</div>
+          <div style="font-size:13px;color:var(--text);margin-top:10px;font-weight:700">첫 달 납부 약 252만원</div>
           <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(123,110,246,0.15)">
-            <span style="font-size:11px;color:var(--green);font-weight:700">✓ 소득 합산 DSR 14.4% 통과</span><br>
-            <span style="font-size:11px;color:var(--t2)">(193만 / 한도 536만)</span>
+            <span style="font-size:11px;color:var(--green);font-weight:700">✓ DSR 통과 (원금균등 방식으로 심사)</span><br>
+            <span style="font-size:11px;color:var(--t2)">원금 107만 + 이자 145만 / 매월 약 4,000원 감소</span>
           </div>
         </div>
         <div style="background:var(--r2);border-radius:12px;padding:16px;border-top:3px solid var(--orange)">
@@ -3146,9 +3153,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       → 단, 안영준 기존 부채 포함 시 5.93%는 DSR 40% 한계선 근접 — 우리은행 최종 확인 필요
     </div>
     <div class="ibox" style="margin-bottom:20px;font-size:12px;background:rgba(239,68,68,0.06);border-color:var(--red)">
-      ⚠️ <strong>스트레스 DSR 주의:</strong> 현재 계산은 명목 금리(4.65%·5.93%) 기준이며 스트레스 DSR 미포함<br>
-      → 변동금리 대출에는 가산 금리(2025년 기준 약 0.75~1.5%p)를 더해 DSR 심사 → 실제 한도가 더 타이트해짐<br>
-      → <strong>우리은행 담당자에게 "스트레스 DSR 포함 후 통과 여부" 반드시 확인 필요</strong>
+      ✅ <strong>DSR 통과 확정:</strong> 우리은행 4.51% 원금균등 30년 · 스트레스 DSR 포함 최종 심사 통과<br>
+      → 원금균등 방식으로 DSR 산정 → 원리금균등 대비 유리한 조건으로 통과<br>
+      → <strong>1년 변동금리 재산정 시 DSR 재검토 필요 (소득 변동 시 영향 가능)</strong>
     </div>
 
     <!-- 대출 현황 -->
@@ -3160,7 +3167,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <tr>
             <td><strong>주담대 (우리은행)</strong><br><span class="sub-note">안영준 명의 · 6개월변동 · 9/16 실행</span></td>
             <td style="font-weight:800;color:var(--purple)">3억 8,500만</td>
-            <td style="font-size:12px">6개월변동 <strong>4.65%</strong><br><span class="sub-note">안영준 단독 차주 · 황서림 소득합산</span></td>
+            <td style="font-size:12px">1년변동 <strong>4.51%</strong> · 원금균등<br><span class="sub-note">안영준 단독 차주 · 황서림 소득합산</span></td>
             <td><span class="chip g">확정 ✅</span></td>
             <td style="font-size:11px;color:var(--t2)">KB시세 11억 × 40% − 방공제 5,500만<br><span style="color:var(--green);font-weight:700">황서림 주담대 없음 → 신용대출 DSR 유리</span></td>
           </tr>
@@ -3184,16 +3191,16 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         → 담보 인정 한도: KB시세 기반 LTV − 방공제 5,500만<br>
         → 10억 9,000만 × 40% = 4억 4,000만에서 방공제 5,500만 차감 → <strong>3억 8,500만 확정</strong>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,158,11,.2)">
-          <strong>확정:</strong> 우리은행 3억 8,500만 확정 (안영준 단독 차주 · 6개월변동 4.65%) · 9/16 실행
+          <strong>확정:</strong> 우리은행 3억 8,500만 확정 (안영준 단독 차주 · 1년변동 4.51% · 원금균등) · 9/16 실행
         </div>
       </div>
     </div>
     <div class="risk-card" style="border-color:var(--yellow);background:var(--y2)">
       <div class="risk-title" style="color:var(--yellow)">🟡 주의 ② — 1년 변동금리 금리 상승 리스크</div>
       <div class="risk-body">
-        현재 4.65% 적용 예정이나 <strong>1년 변동금리</strong>로 매년 금리 재산정<br>
-        → 금리 상승 시 월 납부액 증가 — 5.93%까지 오를 경우 월 222만 (현재 193만 대비 +29만)<br>
-        → 합산 DSR 한도 536만 내에서는 5.93%도 통과하나, 추후 소득 변동 시 영향 가능
+        확정 금리 <strong>4.51% · 1년 변동금리</strong>로 매년 금리 재산정<br>
+        → 금리 상승 시 월 납부액 증가 — 0.5% 상승 시 이자 약 +16만원/월 추가<br>
+        → 1년마다 금리 변동 모니터링 필요 · 장기 고정금리 전환 옵션 검토
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,158,11,.2)">
           <strong>모니터링:</strong> 연간 금리 변동 확인 · 금리 급등 시 5년 변동 or 고정금리 전환 검토
         </div>
@@ -3224,11 +3231,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <thead><tr><th>대출 항목</th><th>잔액</th><th>조건</th><th>상환방식</th><th>실 납입/월</th><th>상태</th></tr></thead>
         <tbody>
           <tr style="background:rgba(123,110,246,0.05)">
-            <td><strong>주담대 (우리은행)</strong><br><span class="sub-note">안영준 단독 차주 · 6개월변동 · 황서림 소득합산</span></td>
+            <td><strong>주담대 (우리은행)</strong><br><span class="sub-note">안영준 단독 차주 · 1년변동 · 황서림 소득합산</span></td>
             <td style="font-weight:700;color:var(--purple)">3억 8,500만</td>
-            <td>4.65% / 30년</td>
-            <td style="font-size:12px;color:var(--muted)">원리금균등</td>
-            <td style="font-weight:700;color:var(--purple)">약 193만</td>
+            <td>4.51% / 30년</td>
+            <td style="font-size:12px;color:var(--muted)">원금균등</td>
+            <td style="font-weight:700;color:var(--purple)">첫달 252만</td>
             <td><span class="chip g">9/16 실행</span></td>
           </tr>
           <tr><td>우리은행 신용대출</td><td style="font-weight:700">9,500만</td><td>4.02% / 5년</td><td style="font-size:12px;color:var(--muted)">이자납입</td><td style="font-weight:700;color:var(--orange)">약 32만</td><td><span class="chip g">실행중</span></td></tr>
@@ -3303,7 +3310,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <!-- ── 합산 섹션 ── -->
   <div id="sec-combined" style="display:none">
     <div class="ibox p" style="margin-bottom:18px;font-size:13px">
-      공통 전제 — 안영준 주담대 <strong>3억 8,500만 (우리은행 · 4.65%)</strong> · 새마을금고 2억 중 1.2억 중도금 사용 / 0.8억 잔금 실행 · 신용대출 0.95억 · 청라 순수령 약 2.48억 · <strong>등촌 잔금 7.8억</strong>
+      공통 전제 — 안영준 주담대 <strong>3억 8,500만 (우리은행 · 4.51% · 원금균등)</strong> · 새마을금고 2억 중 1.2억 중도금 사용 / 0.8억 잔금 실행 · 신용대출 0.95억 · 청라 순수령 약 2.48억 · <strong>등촌 잔금 7.8억</strong>
     </div>
 
     <!-- 시나리오 A: 확정 계획 -->
@@ -3312,7 +3319,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div>
           <div style="font-size:11px;font-weight:700;color:var(--green);background:rgba(16,185,129,0.12);display:inline-block;padding:3px 10px;border-radius:99px;margin-bottom:6px">시나리오 A · 확정 계획</div>
           <div style="font-size:15px;font-weight:800;color:var(--text)">안영준 주담대 <span style="color:var(--purple)">3억 8,500만</span> + 보증보험 추가 <span style="color:var(--green)">3,000만</span></div>
-          <div style="font-size:11px;color:var(--muted);margin-top:3px">우리은행 4.65% (1년변동) · 스트레스 DSR 통과 확인 필요</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">우리은행 4.51% (1년변동 · 원금균등) · DSR 통과 확정</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:11px;color:var(--muted)">잔금 여유</div>
@@ -3468,9 +3475,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
       <div style="flex:1;min-width:0">
         <div style="font-size:12px;font-weight:700">🏠 주담대 (우리은행)</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">3억 8,500만 · 4.65% · 원리금 균등</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:1px">3억 8,500만 · 4.51% · 원금균등</div>
       </div>
-      <div style="font-size:17px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">198만</div>
+      <div style="font-size:17px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">252만</div>
     </div>
     <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
       <div style="flex:1;min-width:0">
@@ -3890,12 +3897,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div class="kpi-bar-card" style="border-top:3px solid var(--purple);background:linear-gradient(160deg,#fff 50%,rgba(123,110,246,0.09) 100%)">
         <div class="lbl" style="color:var(--purple);font-weight:700">우리가 모을 수 있는 돈</div>
-        <div class="num pu" id="kpi-loan-total">7억 4,135만~7억 5,809만</div>
-        <div style="font-size:10px;color:var(--muted);font-weight:600;margin-top:4px" id="kpi-loan-label">우리은행+신용대출+청라+안영준+황서림</div>
+        <div class="num pu" id="kpi-loan-total">7억 5,809만</div>
+        <div style="font-size:11px;color:var(--purple);font-weight:600;margin-top:3px;opacity:0.85" id="kpi-loan-total-sub">(IRP 해지 시 +5,367만 추가 가능)</div>
+        <div style="font-size:10px;color:var(--muted);font-weight:600;margin-top:2px" id="kpi-loan-label">우리은행+신용대출+청라+안영준+황서림</div>
       </div>
       <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--red)">
         <div class="lbl" id="kpi-short-lbl">아직 부족한 금액</div>
-        <div class="num re" id="kpi-loan-short">2,191만~3,865만</div>
+        <div class="num re" id="kpi-loan-short">2,191만</div>
         <div id="kpi-short-sub" style="font-size:10px;color:var(--orange);font-weight:700;margin-top:4px">⚠ 2안(+IRP) 선택 시 완전 해소 가능</div>
       </div>
     </div>
@@ -4414,6 +4422,200 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       🏦 <strong>1안 (우리은행+신용대출):</strong> 부족 2,191만~3,865만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 1,502만~3,176만 ✅</strong><br>
       🏦 <strong>3안 (제2금융+보증보험):</strong> 부족 365만 ⚠ / <strong>4안(+IRP):</strong> 여유 5,002만 ✅ — 한도 충분하나 금리 비교 필요
     </div>
+
+    <!-- ══ 잔금 후 월 상환 시뮬레이션 ══ -->
+    <div class="stitle" style="margin-top:8px">📅 잔금 후 매월 상환 부담 — 우리은행 원금 균등</div>
+
+    <!-- 주담대 상환 계산 -->
+    <div class="card" style="margin-bottom:16px;padding:20px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-size:14px;font-weight:900;color:var(--purple)">🏦 우리은행 주담대 원금 균등 상환</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px">3억 8,500만 · 연 4.51% (1년 변동) · 30년 · 안영준 단독 차주</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;color:var(--muted)">한도 미충족으로 원금균등 선택</div>
+          <div style="font-size:11px;color:var(--orange);font-weight:700">원금 균등 = 매월 원금 동일 · 이자 점감</div>
+        </div>
+      </div>
+
+      <!-- 핵심 수치 3칸 -->
+      <div class="g3" style="gap:10px;margin-bottom:16px">
+        <div style="padding:14px;background:rgba(123,110,246,0.08);border-radius:12px;border:1px solid rgba(123,110,246,0.18);text-align:center">
+          <div style="font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.04em">매월 고정 원금</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">107만원</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">3억 8,500만 ÷ 360개월</div>
+        </div>
+        <div style="padding:14px;background:rgba(239,68,68,0.07);border-radius:12px;border:1px solid rgba(239,68,68,0.15);text-align:center">
+          <div style="font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.04em">첫 달 이자</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">145만원</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">3억 8,500만 × 0.3758% · 매월 약 4,000원 감소</div>
+        </div>
+        <div style="padding:14px;background:rgba(249,115,22,0.08);border-radius:12px;border:1px solid rgba(249,115,22,0.18);text-align:center">
+          <div style="font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.04em">첫 달 납부 합계</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">252만원</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">원금 107 + 이자 145 · 매월 조금씩 감소</div>
+        </div>
+      </div>
+
+      <!-- 연도별 변화 -->
+      <div style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:8px">연도별 월 납부액 변화 (원금균등 · 이자 점감)</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:72px;font-size:11px;color:var(--t2);font-weight:600;flex-shrink:0">1년차 (초기)</div>
+          <div style="flex:1;background:var(--lite);border-radius:6px;height:18px;overflow:hidden">
+            <div style="width:100%;height:100%;background:linear-gradient(90deg,var(--purple) 42%,var(--red) 42%);border-radius:6px"></div>
+          </div>
+          <div style="width:52px;font-size:12px;font-weight:900;color:var(--orange);text-align:right;font-variant-numeric:tabular-nums;flex-shrink:0">약 252만</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:72px;font-size:11px;color:var(--t2);font-weight:600;flex-shrink:0">3년차</div>
+          <div style="flex:1;background:var(--lite);border-radius:6px;height:18px;overflow:hidden">
+            <div style="width:96%;height:100%;background:linear-gradient(90deg,var(--purple) 44%,var(--red) 52%);border-radius:6px"></div>
+          </div>
+          <div style="width:52px;font-size:12px;font-weight:900;color:var(--text);text-align:right;font-variant-numeric:tabular-nums;flex-shrink:0">약 242만</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:72px;font-size:11px;color:var(--t2);font-weight:600;flex-shrink:0">5년차</div>
+          <div style="flex:1;background:var(--lite);border-radius:6px;height:18px;overflow:hidden">
+            <div style="width:90%;height:100%;background:linear-gradient(90deg,var(--purple) 47%,var(--red) 43%);border-radius:6px"></div>
+          </div>
+          <div style="width:52px;font-size:12px;font-weight:900;color:var(--text);text-align:right;font-variant-numeric:tabular-nums;flex-shrink:0">약 228만</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:72px;font-size:11px;color:var(--t2);font-weight:600;flex-shrink:0">10년차</div>
+          <div style="flex:1;background:var(--lite);border-radius:6px;height:18px;overflow:hidden">
+            <div style="width:81%;height:100%;background:linear-gradient(90deg,var(--purple) 52%,var(--red) 29%);border-radius:6px"></div>
+          </div>
+          <div style="width:52px;font-size:12px;font-weight:900;color:var(--green);text-align:right;font-variant-numeric:tabular-nums;flex-shrink:0">약 204만</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:16px">
+        <span style="font-size:10px;color:var(--purple);font-weight:700">■ 원금 (고정 107만)</span>
+        <span style="font-size:10px;color:var(--red);font-weight:700">■ 이자 (점점 감소)</span>
+      </div>
+
+      <!-- 황서림 신용대출 이자 합산 -->
+      <div style="margin-top:14px;padding:12px 14px;background:rgba(245,158,11,0.08);border-radius:10px;border:1px solid rgba(245,158,11,0.2)">
+        <div style="font-size:11.5px;font-weight:700;color:var(--yellow);margin-bottom:8px">💳 5개 대출 월 총 상환액 합산</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px">
+          <div style="display:flex;justify-content:space-between;font-size:11px">
+            <span style="color:var(--t2)">① 주담대 (4.51% 원금균등)</span><span style="font-weight:700;color:var(--red)">252만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px">
+            <span style="color:var(--t2)">② 황서림 신용대출 이자 (5천만 · 5%)</span><span style="font-weight:700;color:var(--red)">21만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px">
+            <span style="color:var(--t2)">③ 안영준 신용대출 이자 (9,500만 · 4.02%)</span><span style="font-weight:700;color:var(--red)">32만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px">
+            <span style="color:var(--t2)">④ 보증보험 이자 (1.2억 · 4.76%)</span><span style="font-weight:700;color:var(--red)">48만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px">
+            <span style="color:var(--t2)">⑤ 큰누나 차용금</span><span style="font-weight:700;color:var(--red)">13만</span>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:700;color:var(--text)">월 총 상환</span>
+          <span style="font-size:1.2rem;font-weight:900;color:var(--orange)">366만원</span>
+        </div>
+        <div style="font-size:10.5px;color:var(--muted);margin-top:4px">※ 주담대 이자 1년 변동 — 금리 재산정 시 ①번 변동 · 신용대출 이자 확정 후 재계산 필요</div>
+      </div>
+    </div>
+
+    <!-- 시나리오별 생활 시뮬레이션 -->
+    <div class="stitle">👨‍👩‍👧 상황별 월 재정 시뮬레이션</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px" id="repay-scenarios">
+
+      <!-- 시나리오 A: 정상 근무 -->
+      <div class="card" style="border-top:4px solid var(--green);padding:16px">
+        <div style="font-size:12px;font-weight:900;color:var(--green);margin-bottom:2px">A. 정상 근무</div>
+        <div style="font-size:10.5px;color:var(--muted);margin-bottom:12px">영준·서림 둘 다 근무</div>
+        <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">영준 세후</span><span style="font-weight:700">+600만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">서림 세후</span><span style="font-weight:700">+400만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding-top:5px;border-top:1px solid var(--border)">
+            <span style="color:var(--t2);font-weight:700">수입 합계</span><span style="font-weight:900;color:var(--green)">1,000만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">5개 대출 총 상환</span><span style="font-weight:700;color:var(--red)">−366만</span>
+          </div>
+        </div>
+        <div style="padding:10px;background:var(--g2);border-radius:8px;text-align:center">
+          <div style="font-size:10px;color:var(--muted)">대출 상환 후 남는 돈</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--green)">634만원</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">생활비·저축 여유 ✅</div>
+        </div>
+      </div>
+
+      <!-- 시나리오 B: 육아휴직 -->
+      <div class="card" style="border-top:4px solid var(--yellow);padding:16px">
+        <div style="font-size:12px;font-weight:900;color:var(--yellow);margin-bottom:2px">B. 육아휴직</div>
+        <div style="font-size:10.5px;color:var(--muted);margin-bottom:12px">서림 육아급여 수령 중</div>
+        <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">영준 세후</span><span style="font-weight:700">+600만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">서림 육아급여</span><span style="font-weight:700;color:var(--yellow)">+150만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding-top:5px;border-top:1px solid var(--border)">
+            <span style="color:var(--t2);font-weight:700">수입 합계</span><span style="font-weight:900;color:var(--yellow)">750만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">5개 대출 총 상환</span><span style="font-weight:700;color:var(--red)">−366만</span>
+          </div>
+        </div>
+        <div style="padding:10px;background:var(--y2);border-radius:8px;text-align:center">
+          <div style="font-size:10px;color:var(--muted)">대출 상환 후 남는 돈</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--yellow)">384만원</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">생활비 절감 권장 ⚠</div>
+        </div>
+      </div>
+
+      <!-- 시나리오 C: 임신 무급휴직 -->
+      <div class="card" style="border-top:4px solid var(--red);padding:16px">
+        <div style="font-size:12px;font-weight:900;color:var(--red);margin-bottom:2px">C. 임신 무급휴직</div>
+        <div style="font-size:10.5px;color:var(--muted);margin-bottom:12px">서림 무급 · 수입 0원</div>
+        <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">영준 세후</span><span style="font-weight:700">+600만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">서림 수입</span><span style="font-weight:700;color:var(--red)">0원</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding-top:5px;border-top:1px solid var(--border)">
+            <span style="color:var(--t2);font-weight:700">수입 합계</span><span style="font-weight:900;color:var(--red)">600만</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px">
+            <span style="color:var(--t2)">5개 대출 총 상환</span><span style="font-weight:700;color:var(--red)">−366만</span>
+          </div>
+        </div>
+        <div style="padding:10px;background:var(--r2);border-radius:8px;text-align:center">
+          <div style="font-size:10px;color:var(--muted)">대출 상환 후 남는 돈</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--orange)">234만원</div>
+          <div style="font-size:10px;color:var(--orange);margin-top:2px;font-weight:700">⚠ 생활비 234만으로 커버</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ibox y" style="font-size:12px;line-height:1.9;margin-bottom:16px">
+      💡 <strong>핵심 체크포인트</strong><br>
+      · 주담대 월 납부는 <strong>매월 약 4,000원씩 자동 감소</strong> (원금균등 특성 — 원금 고정, 이자만 줄어듦. 4.51% 기준)<br>
+      · <strong>C 시나리오(임신 무급) 234만 남음</strong> — 영준 단독 소득으로 대출 상환 후 234만 생활비. 최소 생활비(식비·관리비 등) 약 200~250만 필요하므로 <strong>비상금 최소 3개월치 권장</strong><br>
+      · 1년 변동금리 — 매년 금리 재산정 시 월 납부액 변동. 0.5% 상승 시 이자 약 +16만원/월<br>
+      · 황서림 신용대출 5% 가정 / 안영준 신용대출 4.02% 확정 — 금리 변동 시 ②③ 재계산 필요
+    </div>
+
+    <div class="ibox p" style="margin-bottom:20px;font-size:12px;line-height:1.85">
+      ⚠ <strong>핵심 전제 2가지:</strong> ① 청라 잔금 8/31 수령 (순수령 약 2억 4,545만) ② 등촌 잔금 9/16 납부 — 두 일정 모두 차질 없어야 함<br>
+      🏦 <strong>1안 (우리은행+신용대출):</strong> 부족 2,191만~3,865만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 1,502만~3,176만 ✅</strong><br>
+      🏦 <strong>3안 (제2금융+보증보험):</strong> 부족 365만 ⚠ / <strong>4안(+IRP):</strong> 여유 5,002만 ✅ — 한도 충분하나 금리 비교 필요
+    </div>
   </div><!-- /sec-lb-janggeum -->
 </div>
 </div>
@@ -4424,7 +4626,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
       <div>
         <h1>🎨 인테리어</h1>
-        <p>9/16 잔금 → 즉시 공사 → 9/22 완료 → 9/23 첫 입주 · 예상 비용 700~870만</p>
+        <p>9/16 잔금 → 9/17~23 공사+청소 → 9/24 이사 입주 · 확정 비용 788만</p>
       </div>
       <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
         <button id="int-btn-all" class="person-btn active" onclick="switchInterior('all')">전체</button>
@@ -4436,24 +4638,25 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
     <div id="sec-int-all">
     <div class="ibox p" style="margin-bottom:12px;font-size:13px;line-height:1.8">
-      💡 <strong>이 탭은요:</strong> 9/16 잔금 다음날인 9/17부터 화장실 공사(두담 · 주말 제외 3일) → 9/22~23 오전 도배/장판(장판의 신) → 9/23 오후 3시 이사 입주예요. 추석(9/24) 전날 첫 입주 완료.
+      💡 <strong>이 탭은요:</strong> 9/16 잔금 → 9/17~21 화장실 공사(두담) → 9/22~23 오후 3시 도배/장판(장판의신) → 9/23 오후 3~7시 입주청소(청소대학) → 9/24(목) 아침 이사예요. 추석연휴 첫날 첫 입주 완료.
     </div>
 
     <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.9">
       ✅ <strong>업체 확정 완료</strong>
       <div style="margin-top:10px;font-size:12.5px;display:flex;flex-direction:column;gap:7px">
-        <div>① 🚿 <strong>화장실 — 두담 확정</strong> · 398만 · 9/17(목)~9/21(월) 공사 (주말 제외 3일)</div>
-        <div>② 🖼️ <strong>도배/장판 — 장판의 신 확정</strong> · 200만 · 9/22(화)~9/23(수) 오후 2시 완료</div>
-        <div>③ 🏠 <strong>9/23(수) 오후 3시</strong> — 보관창고 → 등촌 2차 이사 · 추석(9/24) 전 입주 완료</div>
-        <div>④ <strong>베란다 페인트 · 싱크대 시트지</strong> — 실측 때 함께 견적 받기 (각 30~80만 예상)</div>
+        <div>① 🚿 <strong>화장실+주방 — 두담 확정</strong> · 551만 · 9/17(목)~9/21(월)</div>
+        <div>② 🖼️ <strong>도배/장판 — 장판의 신 확정</strong> · 200만 · 9/22(화)~9/23(수) 오후 3시 완료</div>
+        <div>③ 🧹 <strong>입주청소 — 청소대학 확정</strong> · 37만 · 9/23(수) 오후 3~7시 (아정당 소개)</div>
+        <div>④ 🏠 <strong>9/24(목) 아침 일찍</strong> — 보관창고 → 등촌 2차 이사 (추석연휴)</div>
+        <div>⑤ <strong>베란다 페인트 · 싱크대 시트지</strong> — 실측 때 함께 견적 받기 (각 30~80만 예상)</div>
       </div>
     </div>
 
     <div class="kpi-bar" style="margin-bottom:20px">
       <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
         <div class="lbl">인테리어 예상 비용</div>
-  <div class="num gr">약 598만~</div>
-  <div style="font-size:11px;color:var(--muted);margin-top:4px">도배+장판 200만 ✅ · 화장실(두담) 398만 ✅ · 베란다·시트지 별도</div>
+  <div class="num gr">788만</div>
+  <div style="font-size:11px;color:var(--muted);margin-top:4px">도배+장판 200만 ✅ · 화장실+주방(두담) 551만 ✅ · 입주청소 37만 ✅ (청소대학) · 베란다·시트지 별도</div>
       </div>
     </div>
     <!-- 인테리어 항목 -->
@@ -4479,8 +4682,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
             <td style="padding:10px 12px;font-weight:700">🚿 화장실 공사</td>
-            <td style="padding:10px 12px;color:var(--t2)">거실+안방 · <strong>두담 확정</strong> · 9/17~9/21 (주말 제외 3일)</td>
-            <td style="padding:10px 12px;text-align:right;font-weight:800;color:var(--green)">398만</td>
+            <td style="padding:10px 12px;color:var(--t2)">거실+안방+주방 · <strong>두담 확정</strong> · 9/17~9/21 (주말 제외 3일)</td>
+            <td style="padding:10px 12px;text-align:right;font-weight:800;color:var(--green)">551만</td>
             <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">업체 확정 ✅</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
@@ -4497,8 +4700,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           </tr>
           <tr>
             <td style="padding:10px 12px;font-weight:700">🧹 입주 청소</td>
-            <td style="padding:10px 12px;color:var(--t2)">청소조교 (박종수 대표)</td>
-            <td style="padding:10px 12px;text-align:right;font-weight:700;color:var(--purple)">39만 (30평)</td>
+            <td style="padding:10px 12px;color:var(--t2)">청소대학 (아정당 소개)</td>
+            <td style="padding:10px 12px;text-align:right;font-weight:700;color:var(--purple)">37만 (30평)</td>
             <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">견적 완료</span></td>
           </tr>
         </tbody>
@@ -4520,11 +4723,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         ⚠️ <strong>추석 연휴 9/24~</strong> 전 입주 완료 필수 · 공사 최대 7일 · 업체 일정 사전 확약 필요
       </div>
       <div class="timeline-steps">
-        <div class="tl-step done"><div class="tl-node">✓</div><div class="tl-label">업체 확정</div><div class="tl-date">8/2</div><div class="tl-amt">두담 398만</div></div>
+        <div class="tl-step done"><div class="tl-node">✓</div><div class="tl-label">업체 확정</div><div class="tl-date">8/2</div><div class="tl-amt">두담 551만</div></div>
         <div class="tl-step upcoming"><div class="tl-node">2</div><div class="tl-label">공사 시작</div><div class="tl-date">9/17</div><div class="tl-amt">잔금 다음날</div></div>
-        <div class="tl-step upcoming"><div class="tl-node">3</div><div class="tl-label">공사 완료</div><div class="tl-date">9/21</div><div class="tl-amt">주말 제외 3일</div></div>
-        <div class="tl-step upcoming"><div class="tl-node">🏠</div><div class="tl-label">입주 이사</div><div class="tl-date">9/23</div><div class="tl-amt">2차 이사</div></div>
-        <div class="tl-step upcoming"><div class="tl-node">🎊</div><div class="tl-label">추석</div><div class="tl-date">9/24~</div><div class="tl-amt">명절</div></div>
+        <div class="tl-step upcoming"><div class="tl-node">3</div><div class="tl-label">공사 완료</div><div class="tl-date">9/21</div><div class="tl-amt">5일 공사</div></div>
+        <div class="tl-step upcoming"><div class="tl-node">🧹</div><div class="tl-label">청소</div><div class="tl-date">9/23</div><div class="tl-amt">오후 3~7시</div></div>
+        <div class="tl-step upcoming"><div class="tl-node">🏠</div><div class="tl-label">입주 이사</div><div class="tl-date">9/24</div><div class="tl-amt">추석연휴</div></div>
       </div>
     </div>
 
@@ -4559,23 +4762,21 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
   </div>
 
-  <!-- 청소조교 -->
+  <!-- 청소대학 -->
   <div class="card" style="border-top:4px solid var(--purple);padding:16px">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
       <div>
-        <div style="font-size:14px;font-weight:900;color:var(--purple)">🧹 청소조교</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:2px">입주청소 전문</div>
+        <div style="font-size:14px;font-weight:900;color:var(--purple)">🧹 청소대학</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">입주청소 전문 · 아정당 소개</div>
       </div>
-      <span style="background:var(--g2);color:var(--green);font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px">견적 완료</span>
+      <span style="background:var(--g2);color:var(--green);font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px">확정 ✅</span>
     </div>
-    <div class="fund-row" style="font-size:12px"><div class="fund-label">대표</div><div style="flex:1"></div><div>박종수</div></div>
-    <div class="fund-row" style="font-size:12px"><div class="fund-label">연락처</div><div style="flex:1"></div><div style="color:var(--purple);font-weight:700">010-9058-4193</div></div>
-    <div class="fund-row" style="font-size:12px"><div class="fund-label">계좌 (신한)</div><div style="flex:1"></div><div>110-375-448661</div></div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">소개 경로</div><div style="flex:1"></div><div>아정당</div></div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">일정</div><div style="flex:1"></div><div style="color:var(--purple);font-weight:700">9/23(수) 오후 3~7시</div></div>
     <div style="margin-top:10px;padding:10px;background:var(--p3);border-radius:8px;text-align:center">
       <div style="font-size:11px;color:var(--muted);margin-bottom:2px">30평 입주청소</div>
-      <div style="font-size:1.5rem;font-weight:900;color:var(--purple)">39만원</div>
+      <div style="font-size:1.5rem;font-weight:900;color:var(--purple)">37만원</div>
     </div>
-    <div style="margin-top:8px;font-size:11px;color:var(--muted);text-align:center">💡 하청 없이 팀원 직접 방문</div>
   </div>
 
 
@@ -4615,23 +4816,26 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <span style="background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px">✅ 확정</span>
     </div>
     <div class="fund-row" style="font-size:12px"><div class="fund-label">연락처</div><div style="flex:1"></div><div style="color:var(--green);font-weight:700">010-6778-0206</div></div>
-    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px">
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
       <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
-        <div style="font-size:10px;color:var(--muted)">거실 (파티션형)</div>
-        <div style="font-size:1.05rem;font-weight:900;color:var(--green)">213만</div>
+        <div style="font-size:10px;color:var(--muted)">거실 (방수포함)</div>
+        <div style="font-size:1.05rem;font-weight:900;color:var(--green)">320만</div>
+        <div style="font-size:9px;color:var(--muted);margin-top:2px">파티션 209+타일 6+방수 105</div>
       </div>
       <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
-        <div style="font-size:10px;color:var(--muted)">안방 (기본고급형)</div>
-        <div style="font-size:1.05rem;font-weight:900;color:var(--green)">185만</div>
+        <div style="font-size:10px;color:var(--muted)">안방</div>
+        <div style="font-size:1.05rem;font-weight:900;color:var(--green)">196만</div>
+        <div style="font-size:9px;color:var(--muted);margin-top:2px">기본고급 185+타일 6+철거 5</div>
+      </div>
+      <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
+        <div style="font-size:10px;color:var(--muted)">주방</div>
+        <div style="font-size:1.05rem;font-weight:900;color:var(--green)">35만</div>
+        <div style="font-size:9px;color:var(--muted);margin-top:2px">타일 25+수도 10</div>
       </div>
     </div>
     <div style="margin-top:8px;padding:8px 10px;background:var(--g2);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:12px;font-weight:700;color:var(--green)">합계 398만</span>
-      <span style="font-size:11px;color:var(--t2)">천장공사 포함</span>
-    </div>
-    <div style="margin-top:6px;padding:6px 10px;background:rgba(239,68,68,0.07);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:11px;color:var(--t2)">바닥철거방수 선택 시</span>
-      <span style="font-size:11px;font-weight:800;color:var(--red)">+35~70만</span>
+      <span style="font-size:12px;font-weight:700;color:var(--green)">합계 551만</span>
+      <span style="font-size:11px;color:var(--t2)">부가세 별도 · 현금가</span>
     </div>
   </div>
 </div>
@@ -4646,34 +4850,28 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </thead>
     <tbody>
       <tr>
-        <td>거실 화장실</td>
-        <td style="font-weight:800;color:var(--green)">213만</td>
-        <td style="font-weight:800;color:var(--muted)">250~270만</td>
-        <td style="font-size:11px;color:var(--green);font-weight:700">두담 37~57만↓</td>
+        <td>거실 화장실 (방수포함)</td>
+        <td style="font-weight:800;color:var(--green)">320만</td>
+        <td style="font-weight:800;color:var(--muted)">370~390만</td>
+        <td style="font-size:11px;color:var(--green);font-weight:700">두담 50~70만↓</td>
       </tr>
       <tr>
         <td>안방 화장실</td>
-        <td style="font-weight:800;color:var(--green)">185만</td>
+        <td style="font-weight:800;color:var(--green)">196만</td>
         <td style="font-weight:800;color:var(--muted)">220만</td>
-        <td style="font-size:11px;color:var(--green);font-weight:700">두담 35만↓</td>
-      </tr>
-      <tr style="background:var(--bg)">
-        <td style="font-weight:700">기본 합계</td>
-        <td style="font-weight:900;color:var(--green)">398만</td>
-        <td style="font-weight:900;color:var(--muted)">470~490만</td>
-        <td style="font-size:11px;color:var(--green);font-weight:700">두담 72~92만↓</td>
+        <td style="font-size:11px;color:var(--green);font-weight:700">두담 24만↓</td>
       </tr>
       <tr>
-        <td>바닥철거방수</td>
-        <td style="font-size:12px;color:var(--t2)">거실만 +35만<br>양쪽 +70만</td>
-        <td style="font-size:12px;color:var(--muted)">양쪽 +120만</td>
-        <td style="font-size:11px;color:var(--green);font-weight:700">두담 50만↓</td>
+        <td>주방 타일+수도</td>
+        <td style="font-weight:800;color:var(--green)">35만</td>
+        <td style="font-weight:800;color:var(--muted)">—</td>
+        <td></td>
       </tr>
       <tr style="background:var(--bg)">
-        <td style="font-weight:700">방수 포함 합계</td>
-        <td style="font-weight:900;color:var(--green)">433~468만</td>
-        <td style="font-weight:900;color:var(--muted)">590~610만</td>
-        <td style="font-size:11px;color:var(--green);font-weight:700">두담 122~177만↓</td>
+        <td style="font-weight:700">최종 합계</td>
+        <td style="font-weight:900;color:var(--green)">551만</td>
+        <td style="font-weight:900;color:var(--muted)">590~610만+</td>
+        <td style="font-size:11px;color:var(--green);font-weight:700">두담 74~94만↓</td>
       </tr>
       <tr>
         <td>변기 · 세면대</td>
@@ -4681,18 +4879,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <td style="font-size:12px;color:var(--muted)">정보 없음</td>
         <td></td>
       </tr>
-      <tr>
-        <td>고급타일 옵션</td>
-        <td style="font-size:12px;color:var(--t2)">+6만/욕실<br><span style="font-size:10px;color:var(--muted)">벽300×600 고광택</span></td>
-        <td style="font-size:12px;color:var(--muted)">—</td>
-        <td></td>
-      </tr>
     </tbody>
   </table>
 </div>
 <div style="font-size:11px;color:var(--muted);margin-bottom:20px;line-height:1.9;padding:0 2px">
-  ※ 두담 슬라이딩도어장 +9만/욕실 · 대리석선반 +9만/욕실 · 매립등 +3만/욕실 등 옵션 추가 가능<br>
-  ※ 덧방 가능 조건: 벽 두드렸을 때 비어있는 소리 없어야 함 (현장 확인 필요)
+  ※ 선택 옵션: 슬라이딩도어장 +9만/욕실 · 일자대리석선반 +9만/욕실 · 치마형변기 +7만/욕실 · 안방 샤워기 슬라이드 +2만 · 매립등 +3만/욕실<br>
+  ※ 거실 화장실 두번타일철거방수(105만) 포함가 · 안방은 방수공사 제외 올덧방 기준
 </div>
     </div><!-- /sec-int-all -->
 
@@ -4736,7 +4928,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div id="sec-int-bath" style="display:none">
       <div class="stitle">🚿 화장실 공사 — 두담 확정 ✅</div>
       <div class="ibox g" style="margin-bottom:14px;font-size:13px;line-height:1.8">
-        ✅ <strong>두담 확정</strong> — 거실+안방 화장실 2개 전면 공사 · 398만 · 9/17(목)~9/21(월) <span style="font-size:11.5px;color:var(--green);font-weight:700">(조선쎄라믹 대비 72~92만 절감)</span>
+        ✅ <strong>두담 확정</strong> — 거실+안방 화장실+주방 전면 공사 · 551만 · 9/17(목)~9/21(월) <span style="font-size:11.5px;color:var(--green);font-weight:700">(조선쎄라믹 대비 74~94만 절감)</span>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
         <div class="card" style="border-top:4px solid var(--green);padding:16px;box-shadow:0 4px 24px rgba(16,185,129,0.18)">
@@ -4745,20 +4937,27 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
             <span style="background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px">✅ 확정</span>
           </div>
           <div style="font-size:11px;color:var(--muted);margin-bottom:12px">동서이누스 고급사양 · 010-6778-0206</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
             <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
-              <div style="font-size:10px;color:var(--muted)">거실 (파티션형)</div>
-              <div style="font-size:1.1rem;font-weight:900;color:var(--green)">213만</div>
+              <div style="font-size:10px;color:var(--muted)">거실 (방수포함)</div>
+              <div style="font-size:1.1rem;font-weight:900;color:var(--green)">320만</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:1px">파티션 209+타일 6+방수 105</div>
             </div>
             <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
-              <div style="font-size:10px;color:var(--muted)">안방 (기본고급형)</div>
-              <div style="font-size:1.1rem;font-weight:900;color:var(--green)">185만</div>
+              <div style="font-size:10px;color:var(--muted)">안방</div>
+              <div style="font-size:1.1rem;font-weight:900;color:var(--green)">196만</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:1px">기본고급 185+타일 6+철거 5</div>
+            </div>
+            <div style="padding:8px;background:var(--bg);border-radius:8px;text-align:center">
+              <div style="font-size:10px;color:var(--muted)">주방</div>
+              <div style="font-size:1.1rem;font-weight:900;color:var(--green)">35만</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:1px">타일 25+수도 10</div>
             </div>
           </div>
           <div style="margin-top:8px;padding:8px 10px;background:var(--g2);border-radius:8px;text-align:center">
-            <span style="font-size:13px;font-weight:900;color:var(--green)">기본 합계 398만</span>
+            <span style="font-size:13px;font-weight:900;color:var(--green)">합계 551만 (부가세 별도)</span>
           </div>
-          <div style="margin-top:6px;font-size:11px;color:var(--muted);text-align:center">바닥철거방수 +35~70만 선택 가능</div>
+          <div style="margin-top:6px;font-size:11px;color:var(--muted);text-align:center">현금가 기준 · 슬라이딩도어장·대리석선반 등 옵션 추가 가능</div>
         </div>
         <div class="card" style="border-top:4px solid var(--lite);padding:16px;opacity:0.55">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
@@ -4787,17 +4986,16 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <table>
           <thead><tr><th>항목</th><th style="color:var(--green)">두담 ✅</th><th style="color:var(--muted)">조선쎄라믹</th><th>차이</th></tr></thead>
           <tbody>
-            <tr><td>거실 화장실</td><td style="font-weight:800;color:var(--green)">213만</td><td style="font-weight:800;color:var(--muted)">250~270만</td><td style="color:var(--green);font-weight:700">두담 37~57만↓</td></tr>
-            <tr><td>안방 화장실</td><td style="font-weight:800;color:var(--green)">185만</td><td style="font-weight:800;color:var(--muted)">220만</td><td style="color:var(--green);font-weight:700">두담 35만↓</td></tr>
-            <tr style="background:var(--bg)"><td style="font-weight:700">기본 합계</td><td style="font-weight:900;color:var(--green)">398만</td><td style="font-weight:900;color:var(--muted)">470~490만</td><td style="color:var(--green);font-weight:700">두담 72~92만↓</td></tr>
-            <tr><td>바닥철거방수</td><td>거실만 +35만 / 양쪽 +70만</td><td>양쪽 +120만</td><td style="color:var(--green);font-weight:700">두담 50만↓</td></tr>
-            <tr style="background:var(--bg)"><td style="font-weight:700">방수 포함 합계</td><td style="font-weight:900;color:var(--green)">433~468만</td><td style="font-weight:900;color:var(--muted)">590~610만</td><td style="color:var(--green);font-weight:700">두담 122~177만↓</td></tr>
+            <tr><td>거실 화장실 (방수포함)</td><td style="font-weight:800;color:var(--green)">320만</td><td style="font-weight:800;color:var(--muted)">370~390만</td><td style="color:var(--green);font-weight:700">두담 50~70만↓</td></tr>
+            <tr><td>안방 화장실</td><td style="font-weight:800;color:var(--green)">196만</td><td style="font-weight:800;color:var(--muted)">220만</td><td style="color:var(--green);font-weight:700">두담 24만↓</td></tr>
+            <tr><td>주방 타일+수도</td><td style="font-weight:800;color:var(--green)">35만</td><td style="color:var(--muted)">—</td><td></td></tr>
+            <tr style="background:var(--bg)"><td style="font-weight:700">최종 합계</td><td style="font-weight:900;color:var(--green)">551만</td><td style="font-weight:900;color:var(--muted)">590~610만+</td><td style="color:var(--green);font-weight:700">두담 74~94만↓</td></tr>
             <tr><td>변기·세면대</td><td>동서이누스 고급형</td><td style="color:var(--muted)">정보 없음</td><td></td></tr>
           </tbody>
         </table>
       </div>
       <div class="ibox g" style="font-size:12.5px;line-height:1.9">
-        ✅ <strong>두담 확정 완료</strong> · 연락처 010-6778-0206 · 공사 9/17(목)~9/21(월) · 기본 합계 398만원
+        ✅ <strong>두담 확정 완료</strong> · 연락처 010-6778-0206 · 공사 9/17(목)~9/21(월) · 합계 551만원 (부가세 별도 · 현금가)
       </div>
     </div><!-- /sec-int-bath -->
 
@@ -4913,7 +5111,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
           <div style="width:15.3%;height:100%;background:var(--orange);border-radius:99px"></div>
         </div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실 398만 (두담 확정 ✅) · 베란다·싱크대·청소 99~179만</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실+주방 551만 (두담 확정 ✅) · 베란다·싱크대·청소 99~179만</div>
       </div>
 
       <!-- ③ 등촌 중개수수료 -->
@@ -5104,7 +5302,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
             <div style="width:47%;height:100%;background:var(--orange);border-radius:99px"></div>
           </div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실 398만 (두담 확정 ✅) · 베란다·싱크대·청소 99~179만</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5">도배·장판 200만 확정 · 화장실+주방 551만 (두담 확정 ✅) · 베란다·싱크대·청소 99~179만</div>
         </div>
 
         <div>
@@ -5654,11 +5852,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <div class="con">
   <div class="ph">
     <h1>📅 월별 자금 흐름</h1>
-    <p>7월 중도금 → 8월 청라 잔금 수령 → 9월 등촌 잔금 · 3개월 돈의 흐름 한눈에</p>
+    <p>✅ 7월 중도금 완료 → D-29 청라 잔금 수령(8/31) → 등촌 잔금 납부(9/16) · 핵심 일정 2개 남음</p>
   </div>
 
   <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
-    💡 <strong>이 탭은요:</strong> 3개월 동안 돈이 언제 나가고 들어오는지 한눈에 볼 수 있어요. <strong>7월:</strong> 중도금 2억 나감 → <strong>8월:</strong> 청라 팔려서 약 2.48억 들어옴 → <strong>9월:</strong> 등촌 잔금 7.8억 나감. 9월 이후부터는 이자를 갚으며 안정적으로 살아가게 돼요.
+    💡 <strong>이 탭은요:</strong> 3개월 동안 돈이 언제 나가고 들어오는지 한눈에 볼 수 있어요. <strong>7월:</strong> 중도금 2억 납부 완료 ✅ → <strong>8월:</strong> 청라 팔려서 약 2억 4,545만 들어옴(D-29) → <strong>9월:</strong> 등촌 잔금 7.8억 나감. 9월 이후부터는 이자를 갚으며 안정적으로 살아가게 돼요.
   </div>
 
   <!-- 현재 자산 요약 KPI -->
@@ -5819,7 +6017,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
 
       <div class="cf-tx">
-        <span class="cf-date" style="background:var(--r2);color:var(--red)">09/23</span>
+        <span class="cf-date" style="background:var(--r2);color:var(--red)">09/24</span>
         <div class="cf-desc">
           <div class="nm">이사 잔금 납부</div>
           <div class="sb">보관이사 잔금 · 등촌 부영 입주 완료</div>
@@ -5829,7 +6027,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
       <div class="cf-net" style="background:var(--g2)">
         <div class="cf-net-lbl">🏠 입주 완료</div>
-        <div class="cf-net-amt" style="color:var(--green)">9/23~</div>
+        <div class="cf-net-amt" style="color:var(--green)">9/24~</div>
       </div>
     </div>
 
@@ -5843,7 +6041,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     💡 <strong>9월 잔금 자금 조달 핵심:</strong> 우리은행 3억 8,500만 확정. <strong>MCI 가입 가능 금융사 탐색 중 → 가입 시 방공제 없이 최대 4.29억 가능.</strong> 황서림 신용대출(9/16 당일)로 부족분 보완 예정.
   </div>
   <div class="ibox g">
-    ✅ <strong>추석(9/24) 전 입주 목표 달성 가능:</strong> 잔금(9/16) → 공사 7일(~9/22) → 2차 이사(9/23) → 추석 당일부터 등촌 부영에서 명절 보내기.
+    ✅ <strong>추석연휴 첫날 입주 완료:</strong> 잔금(9/16) → 화장실 공사(~9/21) → 도배/장판+청소(9/23) → 9/24(목) 아침 이사 → 추석연휴 등촌 부영에서 명절 보내기.
   </div>
 
 </div>
@@ -5875,7 +6073,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('loan-balance',null)">
       <div class="mob-menu-icon" style="background:rgba(239,68,68,.15)">💸</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">중도금 / 잔금</div><div class="mob-menu-sub">7/30 중도금 2억 · 9/16 잔금 7.8억</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">중도금 / 잔금</div><div class="mob-menu-sub">✅ 중도금 완료 · 9/16 잔금 7.8억 납부 예정</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
     <div class="mob-menu-item" onclick="go('loan-status',null)">
@@ -5885,7 +6083,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('cashflow',null)">
       <div class="mob-menu-icon" style="background:rgba(16,185,129,.15)">📅</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">월별 자금 흐름</div><div class="mob-menu-sub">7→8→9월 돈의 흐름 한눈에</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">월별 자금 흐름</div><div class="mob-menu-sub">✅ 7월 완료 · 8월 청라 수령 → 9월 잔금 납부</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
     <div class="mob-menu-item" onclick="go('post-cost',null)">
@@ -5895,7 +6093,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('interior',null)">
       <div class="mob-menu-icon" style="background:rgba(236,72,153,.15)">🎨</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/16~22 공사 · 9/23 첫 입주</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/17~23 공사 · 9/24 이사 입주</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
   </div>
@@ -5915,7 +6113,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('cheongna-move',null)">
       <div class="mob-menu-icon" style="background:rgba(99,91,255,.18)">🚚</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">이사업체</div><div class="mob-menu-sub">2단계 이사 · 8/31 창고 → 9/23 등촌</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">이사업체</div><div class="mob-menu-sub">2단계 이사 · 8/31 창고 → 9/24 등촌</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
     <div class="mob-menu-item" onclick="go('cheongna-contract',null)">
@@ -5925,7 +6123,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('deungchon-temp',null)">
       <div class="mob-menu-icon" style="background:rgba(139,92,246,.15)">🛏️</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">공백기 임시 거주</div><div class="mob-menu-sub">8/31~9/23 · 여행 + 김포 임시거주</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">공백기 임시 거주</div><div class="mob-menu-sub">8/31~9/24 · 여행 + 김포 임시거주</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
   </div>
@@ -6140,10 +6338,13 @@ function switchFundPlan(p){
     document.getElementById('fund-plan-'+n).style.display = p===n?'':'none';
     document.getElementById('fp-btn-'+n).classList.toggle('active',p===n);
   });
-  const totals={'1':'7억 4,135만~7억 5,809만','2':'7억 9,502만~8억 1,176만','3':'7억 7,635만','4':'8억 3,002만'};
-  const shorts={'1':'2,191만~3,865만','2':'여유 1,502만~3,176만','3':'365만','4':'여유 5,002만'};
+  const totals={'1':'7억 5,809만','2':'8억 1,176만','3':'7억 7,635만','4':'8억 3,002만'};
+  const shorts={'1':'2,191만','2':'여유 3,176만','3':'365만','4':'여유 5,002만'};
+  const totalSubs={'1':'(IRP 해지 시 +5,367만 추가 가능)','2':'(신용대출 5천만 기준 최대치)','3':'(IRP 해지 시 +5,367만 추가 가능)','4':'(신용대출 5천만 기준 최대치)'};
   const labels={'1':'우리은행+신용대출+청라+안영준+황서림','2':'우리은행+신용대출+IRP해지+청라+안영준+황서림','3':'제2금융(MCI)+보증보험+청라+안영준+황서림','4':'제2금융(MCI)+보증보험+IRP해지+청라+안영준+황서림'};
   document.getElementById('kpi-loan-total').textContent=totals[p];
+  const subEl=document.getElementById('kpi-loan-total-sub');
+  if(subEl){subEl.textContent=totalSubs[p];subEl.style.color=(p==='2'||p==='4')?'var(--muted)':'var(--purple)';}
   const el=document.getElementById('kpi-loan-short');
   el.textContent=shorts[p];
   el.className='num '+((p==='1'||p==='3')?'re':'gr');
@@ -6154,7 +6355,7 @@ function switchFundPlan(p){
   if(p==='2'||p==='4'){
     card.style.borderTopColor='var(--green)';
     lbl.textContent='여유 (목표 초과)';
-    const subTexts={'2':'✅ 완전 해소 — 신용대출 5천만 기준 1,502만 여유','4':'✅ 완전 해소 — 여유 5,002만'};
+    const subTexts={'2':'✅ 완전 해소 — 신용대출 5천만 기준 3,176만 여유','4':'✅ 완전 해소 — 여유 5,002만'};
     sub.textContent=subTexts[p];
     sub.style.color='var(--green)';
   } else {
