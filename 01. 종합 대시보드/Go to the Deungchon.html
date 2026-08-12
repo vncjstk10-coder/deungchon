@@ -1544,9 +1544,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="card" style="cursor:pointer" onclick="go('loan-status')">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
         <div class="kpi-lbl">🏦 대출 현황</div>
-        <span class="chip y">심사 진행 중</span>
+        <span class="chip g">✅ 확정</span>
       </div>
-      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 우리은행</strong> 안영준 단독 차주 · 진행 중<br><span style="font-size:12px">3억 8,500만 · 7/23 서초금융센터 서류 접수 · 박영훈 상담사 결과 대기</span></div>
+      <div class="ibox g" style="padding:10px 12px;margin-bottom:6px"><strong>① 우리은행</strong> 안영준 단독 차주 · ✅ 확정<br><span style="font-size:12px">3억 8,500만 · 4.51% 1년변동 · 원금균등 · 9/16 실행 예정</span></div>
       <div class="ibox y" style="padding:10px 12px"><strong>전략</strong> 황서림 신용대출 9/16 당일 신청 (DSR 제한 없음)<br><span style="font-size:12px">MCI 불가 5,500만 보완 목표</span></div>
     </div>
     <div class="card" style="cursor:pointer" onclick="go('cashflow')">
@@ -1628,7 +1628,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot done">✓</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">안영준 단독 차주 전환 서류 접수</div><div class="tl-desc">우리은행 서초금융센터 방문 → 서류 3종 역촌동 지점 송부 · 담당: 박영훈 상담사 (010-3194-1781) · 결과 대기 중</div></div>
+      <div class="tl-body"><div class="tl-title">안영준 단독 차주 전환 서류 접수</div><div class="tl-desc">우리은행 서초금융센터 방문 → 서류 3종 역촌동 지점 송부 · 담당: 박영훈 상담사 (010-3194-1781) · ✅ 역촌동 확정 · 4.51% 원금균등 · 9/16 실행</div></div>
       <div class="tl-right"><div class="tl-amt or">대기중</div><div class="tl-date">2026. 07. 23</div></div>
     </div>
     <div class="tl-item" style="opacity:0.4">
@@ -1945,7 +1945,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
     <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
-      💡 <strong>이 탭은요:</strong> 이번 이사는 <strong>두 번</strong> 해요. ① 8월 31일에 청라에서 짐을 빼서 보관창고에 맡기고, ② 인테리어 공사가 끝난 9월 23일에 등촌으로 최종 입주해요. 이사 비용과 업체 정보를 여기서 확인할 수 있어요.
+      💡 <strong>이 탭은요:</strong> 이번 이사는 <strong>두 번</strong> 해요. ① 8월 31일에 청라에서 짐을 빼서 보관창고에 맡기고, ② 인테리어 공사가 끝난 9월 24일에 등촌으로 최종 입주해요. 이사 비용과 업체 정보를 여기서 확인할 수 있어요.
     </div>
 
     <!-- 비용 요약 KPI -->
@@ -2671,11 +2671,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </span>
   </div>
 
-  <div class="stitle">🏦 대출 현황 — 병행 진행 중</div>
+  <div class="stitle">🏦 대출 현황 — 우리은행 역촌동 확정 ✅</div>
   <div class="g2" style="margin-bottom:20px">
     <div class="card" style="border-left:4px solid var(--orange)">
       <div style="font-size:13px;font-weight:800;color:var(--orange);margin-bottom:4px">🏦 우리은행 (역촌동) · 접수 완료</div>
-      <div style="font-size:11px;color:var(--orange);font-weight:700;margin-bottom:10px">✅ 접수 완료 · 8/10까지 취소 가능</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700;margin-bottom:10px">✅ 최종 확정 · 4.51% 원금균등 · 9/16 실행 예정</div>
       <div class="fund-row"><div class="fund-label">접수일</div><div style="flex:1"></div><div style="font-weight:700;color:var(--green)">2026. 07. 20 오후 1시 ✅</div></div>
       <div class="fund-row"><div class="fund-label">MCI/MCG</div><div style="flex:1"></div><div style="font-weight:700;color:var(--red)">가입 불가 ❌</div></div>
       <div class="fund-row"><div class="fund-label">방공제</div><div style="flex:1"></div><div style="font-weight:700;color:var(--red)">−5,500만원 차감</div></div>
@@ -2935,7 +2935,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div class="ibox g" style="margin-bottom:16px;font-size:12px">
         ✅ <strong>소득 합산 DSR 전략:</strong> 안영준 단독 차주 · 황서림 소득 합산으로 DSR 산정<br>
-        DSR 40% 월 한도 <strong>536만/월</strong> → 주담대 193만 사용 (DSR <strong>14.4%</strong>)
+        DSR 40% 월 한도 <strong>536만/월</strong> → 주담대 179만 사용 (DSR <strong>13.4%</strong>)
       </div>
 
       <!-- 25년 합산 DSR -->
@@ -2949,9 +2949,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.51% · 원금균등)</div>
-          <div class="fund-bar-wrap"><div class="fund-bar" style="width:36%;background:var(--purple)"></div></div>
-          <div class="fund-amt">193만/월</div>
-          <div class="fund-pct" style="color:var(--purple);font-weight:700">36%</div>
+          <div class="fund-bar-wrap"><div class="fund-bar" style="width:33%;background:var(--purple)"></div></div>
+          <div class="fund-amt">179만/월</div>
+          <div class="fund-pct" style="color:var(--purple);font-weight:700">33%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:185px">💳 안영준 신용대출 (5년 산정)</div>
@@ -2968,9 +2968,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="margin:12px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="background:rgba(123,110,246,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(123,110,246,0.2)">
             <div style="font-size:10px;color:var(--muted)">4.51% 기준 전체 합계</div>
-            <div style="font-size:17px;font-weight:900;color:var(--purple)">494만/월</div>
-            <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 36.9% ✅ 통과</div>
-            <div style="font-size:10px;color:var(--muted)">잔여 42만/월</div>
+            <div style="font-size:17px;font-weight:900;color:var(--purple)">480만/월</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 35.8% ✅ 통과</div>
+            <div style="font-size:10px;color:var(--muted)">잔여 56만/월</div>
           </div>
           <div style="background:rgba(245,158,11,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(245,158,11,0.25)">
             <div style="font-size:10px;color:var(--muted)">5.93% 기준 전체 합계</div>
@@ -3011,7 +3011,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin-top:12px;padding:10px 12px;background:var(--y2);border-radius:8px;border-left:3px solid var(--yellow);font-size:12px;line-height:1.7">
           💡 <strong>25년 단독 결론:</strong> 과세 소득 단독으로는 두 금리 모두 3억 8,500만 불가<br>
-          → <strong>소득 합산이 필요한 이유: 25년 기준 DSR 한도 178만 vs 주담대 193만 — 한도 초과</strong>
+          → <strong>소득 합산이 필요한 이유: 25년 기준 DSR 한도 178만 vs 주담대 179만 — 한도 초과</strong>
         </div>
       </div>
     </div><!-- /sec-yr-25 -->
@@ -3050,9 +3050,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:185px">🏦 안영준 주담대 (4.51% · 원금균등)</div>
-          <div class="fund-bar-wrap"><div class="fund-bar" style="width:33%;background:var(--purple)"></div></div>
-          <div class="fund-amt">193만/월</div>
-          <div class="fund-pct" style="color:var(--purple);font-weight:700">33%</div>
+          <div class="fund-bar-wrap"><div class="fund-bar" style="width:31%;background:var(--purple)"></div></div>
+          <div class="fund-amt">179만/월</div>
+          <div class="fund-pct" style="color:var(--purple);font-weight:700">31%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:185px">💳 안영준 신용대출 (5년 산정)</div>
@@ -3069,9 +3069,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="margin:12px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(34,197,94,0.2)">
             <div style="font-size:10px;color:var(--muted)">4.51% 기준 전체 합계</div>
-            <div style="font-size:17px;font-weight:900;color:var(--green)">494만/월</div>
-            <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 34.0% ✅ 여유 통과</div>
-            <div style="font-size:10px;color:var(--muted)">잔여 86만/월</div>
+            <div style="font-size:17px;font-weight:900;color:var(--green)">480만/월</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:2px">DSR 33.1% ✅ 여유 통과</div>
+            <div style="font-size:10px;color:var(--muted)">잔여 100만/월</div>
           </div>
           <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:10px 12px;border:1px solid rgba(34,197,94,0.2)">
             <div style="font-size:10px;color:var(--muted)">5.93% 기준 전체 합계</div>
@@ -3765,11 +3765,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </span>
   </div>
   <div class="ibox p" style="line-height:1.7">
-    <strong>🏦 우리은행 병행 진행 중 (취소 기한 8/10)</strong><br>
+    <strong>✅ 우리은행 역촌동 최종 확정 — 지역농협 미선택</strong><br>
     <span style="font-size:12.5px">
       매입 주택: 서울시 강서구 등촌동 부영아파트 · KB 시세 11억원 (2026.08 기준)<br>
       MCI/MCG 불가 · 방공제 5,500만 차감 → 실한도 <strong>3억 8,500만</strong><br>
-      지역농협 최종 확정 시 우리은행 취소 예정 (8/10 기한 내)
+      → 우리은행 4.51% 1년변동 · 원금균등 30년 · 초기 납부 252만/월 (점차 감소)
     </span>
   </div>
 
@@ -6499,14 +6499,14 @@ function dday(){
       if(dM>0){
         uDay.textContent=dM;
         uMsg.textContent='지역농협 3억 7,000만 확인 (원리금균등 30년 · 5.0% · 원금균등 시 최대 4억 2,000만) · 우리은행 3억 8,500만 병행 · 8/10 취소 기한';
-        if(uSub)uSub.textContent='지금 단계: 지역농협 합산소득 진행 · 원금균등 여부 검토 중 · 우리은행 취소 기한 8/10';
+        if(uSub)uSub.textContent='지금 단계: 우리은행 4.51% 원금균등 확정 ✅ · 청라 잔금 8/31 · 등촌 잔금 9/16 준비 중';
         uBanner.style.background=dM<=7?'linear-gradient(135deg,#DC2626,#EF4444)':'linear-gradient(135deg,#D97706,#F97316)';
         uBanner.style.boxShadow=dM<=7?'0 8px 28px rgba(239,68,68,.4)':'0 8px 28px rgba(249,115,22,.35)';
       } else if(dC>0){
         uDay.textContent=dC;
         uMsg.innerHTML='8월 31일 청라 집 매도 잔금 수령 · <strong style="color:#fff">보금자리론 동시 상환</strong> 예정';
         uBanner.style.background='linear-gradient(135deg,#DC2626,#EF4444)';
-        if(uSub)uSub.textContent='지금 단계: 이사업체·법무사 준비 중';
+        if(uSub)uSub.textContent='지금 단계: 우리은행 주담대 확정 ✅ · 인테리어 공사 9/17 예정 · 잔금 9/16까지 D-'+dC+'일';
       } else if(dD>0){
         uDay.textContent=dD;
         uMsg.textContent='9월 16일 등촌 잔금 납부 · 주담대 실행 후 새집 소유권 이전';
