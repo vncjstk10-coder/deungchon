@@ -1433,7 +1433,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <button class="sb-tab" onclick="go('cashflow',this)"><span class="sb-icon">📅</span><span class="sb-label">자금 흐름</span></button>
     <button class="sb-group-hdr open" id="grp-cheongna-hdr" onclick="toggleGroup('cheongna')">
       <span class="sb-icon">🏘️</span>
-      <span class="sb-label" style="white-space:nowrap;font-size:11.5px">청라 힐데스하임 <span style="opacity:0.6">~8/31</span></span>
+      <span class="sb-label" style="white-space:nowrap;font-size:11.5px">청라 힐데스하임 <span style="color:var(--green);font-weight:700">✅ 매도완료</span></span>
       <span class="sb-chevron">›</span>
     </button>
     <div class="sb-subgroup open" id="grp-cheongna">
@@ -1503,12 +1503,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2026. 07. 30</div>
       <div style="font-size:10.5px;color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);width:100%">2억 납부 완료</div>
     </div>
-    <div class="card card-red" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px">
-      <div class="kpi-lbl">🏠 청라 잔금까지</div>
-      <div style="font-size:3rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em" id="dday-cheongna">-</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px">일 남음</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2026. 08. 31</div>
-      <div style="font-size:10.5px;color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);width:100%">청라 집 팔고 돈 받는 날</div>
+    <div class="card card-green" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;opacity:0.6">
+      <div class="kpi-lbl">🏠 청라 잔금 수령</div>
+      <div style="font-size:2.2rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em">✅</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.9);font-weight:700;margin-top:3px">완료</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px">2026. 08. 31</div>
+      <div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.2);width:100%">순수령 약 2억 4,545만 ✓</div>
     </div>
     <div class="card card-purple" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px">
       <div class="kpi-lbl">🏢 등촌 잔금까지</div>
@@ -1603,8 +1603,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="tl-date">2026.07.30</div>
         <div class="tl-amt">2억</div>
       </div>
-      <div class="tl-step upcoming">
-        <div class="tl-node">3</div>
+      <div class="tl-step done" style="opacity:0.4">
+        <div class="tl-node">✓</div>
         <div class="tl-label">청라 잔금 수령</div>
         <div class="tl-date">2026.08.31</div>
         <div class="tl-amt">4억 9,570만</div>
@@ -1652,13 +1652,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div class="tl-right"><div class="tl-amt gr">확정</div><div class="tl-date">2026. 07.</div></div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot fut">▶</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">1차 이사 — 청라 → 보관창고</div><div class="tl-desc">SK익스프레스 윤옹기 · 포장이사 150만 · 황서림 8/31 근무로 전날 사전 이사</div></div>
+      <div class="tl-dot done">✓</div><div class="tl-line"></div>
+      <div class="tl-body"><div class="tl-title">1차 이사 — 청라 → 보관창고 <span style="color:var(--green);font-size:11px">✅ 완료</span></div><div class="tl-desc">SK익스프레스 윤옹기 · 포장이사 150만 · 황서림 8/31 근무로 전날 사전 이사</div></div>
       <div class="tl-right"><div class="tl-amt pl">150만</div><div class="tl-date">2026. 08. 28</div></div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot fut">4</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">청라힐데스하임 잔금 수령</div><div class="tl-desc">매도 완료 · 보금자리론 2억 4,772만 + 중개보수 252만 차감 후 순수령 약 2억 4,545만<br>⚠ 등촌 잔금일(9/16)과 16일 공백 → <strong>임시 거주지 필요</strong></div></div>
+      <div class="tl-dot done">✓</div><div class="tl-line"></div>
+      <div class="tl-body"><div class="tl-title">청라힐데스하임 잔금 수령 <span style="color:var(--green);font-size:11px">✅ 완료</span></div><div class="tl-desc">매도 완료 · 보금자리론 2억 4,772만 + 중개보수 252만 차감 후 순수령 약 2억 4,545만<br>→ 등촌 잔금일(9/16)까지 <strong>임시 거주지 진행 중</strong></div></div>
       <div class="tl-right"><div class="tl-amt pl">+2.48억</div><div class="tl-date">2026. 08. 31</div></div>
     </div>
     <div class="tl-item">
@@ -1981,17 +1981,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">📅 이사 일정</div>
     <div class="card" style="padding:20px 24px;margin-bottom:20px">
       <div class="timeline-steps">
-        <div class="tl-step upcoming">
-          <div class="tl-node">1</div>
+        <div class="tl-step done" style="opacity:0.4">
+          <div class="tl-node">✓</div>
           <div class="tl-label">1차 이사</div>
           <div class="tl-date">2026.08.28</div>
           <div class="tl-amt">청라→보관</div>
         </div>
-        <div class="tl-step upcoming">
-          <div class="tl-node">2</div>
+        <div class="tl-step done" style="opacity:0.4">
+          <div class="tl-node">✓</div>
           <div class="tl-label">청라 잔금</div>
           <div class="tl-date">2026.08.31</div>
-          <div class="tl-amt">매도 완료</div>
+          <div class="tl-amt">✅ 매도 완료</div>
         </div>
         <div class="tl-step upcoming">
           <div class="tl-node">📦</div>
@@ -4124,8 +4124,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
             <div style="font-size:11.5px;color:var(--t2);line-height:1.75">안영준 단독 차주 · MCI 불가<br>한도 <strong style="color:var(--text)">3억 9,500만</strong><br>→ 황서림 신용대출 DSR 무제한</div>
           </div>
           <div style="flex:1;min-width:180px;background:var(--g2);border-left:3px solid var(--green);border-radius:12px;padding:12px 14px">
-            <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:6px">🏦 3·4안 — 제2금융권</div>
-            <div style="font-size:11.5px;color:var(--t2);line-height:1.75">황서림 차주 · MCI 가능 · 방공제 없음<br>한도 <strong style="color:var(--text)">4억 5,000만</strong><br>→ 안영준 보증보험 +3,000만</div>
+            <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:6px">🌲 3·4안 — 경주 산림조합</div>
+            <div style="font-size:11.5px;color:var(--t2);line-height:1.75">황서림 차주 · MCI 가능 · 방공제 없음<br>승인 <strong style="color:var(--text)">4억 2,900만</strong><br>→ 안영준 보증보험 +3,000만</div>
           </div>
         </div>
       </div>
@@ -4133,8 +4133,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
         <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🏦💳 1안 · 우리은행+신용대출</button>
         <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🏦💳💼 2안 · 우리은행+신용대출+IRP</button>
-        <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">🏦🏢 3안 · 제2금융+보증보험</button>
-        <button id="fp-btn-4" class="person-btn" onclick="switchFundPlan('4')">🏦🏢💼 4안 · 제2금융+보증보험+IRP</button>
+        <button id="fp-btn-3" class="person-btn" onclick="switchFundPlan('3')">🌲🏢 3안 · 경주산림조합+보증보험</button>
+        <button id="fp-btn-4" class="person-btn" onclick="switchFundPlan('4')">🌲🏢💼 4안 · 경주산림조합+보증보험+IRP</button>
       </div>
 
       <!-- ── 플랜 1: 우리은행(안영준 단독 차주) + 황서림 신용대출 ── -->
@@ -4298,51 +4298,51 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 3: 제2금융(황서림 차주 · MCI) + 안영준 보증보험 ── -->
+      <!-- ── 플랜 3: 경주 산림조합(황서림 차주 · MCI) + 안영준 보증보험 ── -->
       <div id="fund-plan-3" style="display:none">
         <div class="ibox y" style="margin-bottom:14px;font-size:12px;line-height:1.8">
-          🏦 <strong>제2금융권 황서림 차주 · MCI 가입 가능</strong> — 방공제 없음 → KB시세 11억 2,500만 × LTV 40% = 4억 5,000만<br>
+          🌲 <strong>경주 산림조합 황서림 차주 · MCI 가입 가능</strong> — 방공제 없음 → 승인 금액 4억 2,900만 (금리 5.3% · 원리금균등 30년)<br>
           🏢 <strong>안영준 보증보험 3,000만 추가</strong> — 황서림이 주담대 차주이므로 안영준 명의 별도 신청 가능<br>
-          ✅ <strong>중도금 납부 후에도 여유 635만 달성</strong> — 4안(+IRP) 선택 시 여유 6,002만
+          ⚠ <strong>중도금 납부 후 부족 1,465만</strong> — 4안(+IRP 5,367만) 선택 시 여유 3,902만
         </div>
         <div style="margin-bottom:18px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">잔금 7억 8,635만 조달 (여유 635만 · 4안 선택 시 여유 6,002만)</div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">잔금 7억 6,535만 조달 (부족 1,465만 · 4안 선택 시 여유 3,902만)</div>
           <div style="display:flex;height:44px;border-radius:10px;overflow:hidden;gap:3px">
-            <div style="flex:56.4;background:var(--orange)" title="제2금융 56.4%"></div>
-            <div style="flex:31.8;background:var(--green)" title="청라잔금 31.8%"></div>
+            <div style="flex:55.0;background:var(--orange)" title="경주산림조합 55.0%"></div>
+            <div style="flex:31.5;background:var(--green)" title="청라잔금 31.5%"></div>
             <div style="flex:0.5;background:#3b82f6" title="안영준 290만"></div>
             <div style="flex:3.6;background:#ec4899" title="서림현금 3.6%"></div>
             <div style="flex:3.8;background:#f472b6" title="이모님 3.8%"></div>
             <div style="flex:3.8;background:#0891b2" title="보증보험 3.8%"></div>
-            <div style="flex:0.1;background:rgba(239,68,68,0.25);box-shadow:inset 0 0 0 2px var(--red)" title="부족 0.1%"></div>
+            <div style="flex:1.9;background:rgba(239,68,68,0.35);box-shadow:inset 0 0 0 2px var(--red)" title="부족 1.9%"></div>
           </div>
           <div style="display:flex;gap:14px;margin-top:7px;flex-wrap:wrap">
-            <span style="font-size:10px;color:var(--orange);font-weight:700">■ 제2금융 56.4%</span>
-            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 31.8%</span>
+            <span style="font-size:10px;color:var(--orange);font-weight:700">■ 경주산림조합 55.0%</span>
+            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 31.5%</span>
             <span style="font-size:10px;color:#3b82f6;font-weight:700">■ 안영준 290만</span>
             <span style="font-size:10px;color:#ec4899;font-weight:700">■ 서림 현금 3.6%</span>
             <span style="font-size:10px;color:#f472b6;font-weight:700">■ 이모님 3.8%</span>
             <span style="font-size:10px;color:#0891b2;font-weight:700">■ 보증보험 3.8%</span>
-            <span style="font-size:10px;color:var(--red);font-weight:700">□ 부족 0.1%</span>
+            <span style="font-size:10px;color:var(--red);font-weight:700">□ 부족 1.9%</span>
           </div>
         </div>
         <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏦 주담대 (제2금융 · 황서림 차주 · MCI)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:56.4%;background:var(--orange);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">4억 5,000만</div>
-          <div class="fund-pct" style="color:var(--orange);font-weight:700;font-size:12px;width:40px">56.4%</div>
+          <div class="fund-label" style="width:210px">🌲 주담대 (경주 산림조합 · 황서림 차주 · MCI)</div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:55.0%;background:var(--orange);border-radius:6px"></div></div>
+          <div class="fund-amt" style="font-size:14px">4억 2,900만</div>
+          <div class="fund-pct" style="color:var(--orange);font-weight:700;font-size:12px;width:40px">55.0%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">🏠 청라 집 팔고 받는 돈</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:31.8%;background:var(--green);border-radius:6px"></div></div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:31.5%;background:var(--green);border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px">약 2억 4,545만</div>
-          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">31.8%</div>
+          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">31.5%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">💰 영준 보유 현금</div>
           <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:1%;background:#3b82f6;border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px;color:var(--orange)">290만</div>
-          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">0.2%</div>
+          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">0.4%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">💗 서림 보유 현금</div>
@@ -4364,11 +4364,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
           <div><div style="font-size:10px;color:var(--muted)">총 필요액 (잔금)</div><div style="font-size:1.2rem;font-weight:900;color:var(--text)">7억 8,000만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">조달 가능 (추정)</div><div style="font-size:1.2rem;font-weight:900;color:var(--purple)">7억 8,635만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">부족액</div><div style="font-size:1.2rem;font-weight:900;color:var(--red)">365만</div><div style="font-size:10px;color:var(--orange);font-weight:700">△ IRP 해지 시 완전 해소 → 4안 선택</div></div>
+          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">조달 가능 (추정)</div><div style="font-size:1.2rem;font-weight:900;color:var(--purple)">7억 6,535만</div></div>
+          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">부족액</div><div style="font-size:1.2rem;font-weight:900;color:var(--red)">1,465만</div><div style="font-size:10px;color:var(--orange);font-weight:700">⚠ 4안(+IRP) 선택 시 여유 3,902만</div></div>
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
-          * 제2금융권 주담대 4억 5,000만: 황서림 차주 · MCI 가입 가능 → 방공제 없음 (KB시세 11억 2,500만 × LTV 40% = 4억 5,000만) · 금리·기관 현장 확인 필요<br>
+          * 경주 산림조합 주담대 4억 2,900만: 황서림 차주 · MCI 가입 가능 → 방공제 없음 · 금리 5.3% 1년변동 · 원리금균등 30년 · 월 약 238만<br>
           * 안영준 보증보험 3,000만: 황서림이 주담대 차주이므로 안영준 명의로 별도 신청 가능 · 9/16 잔금 직후 신청<br>
           * 안영준 현금 290만: 잔여 현금 190만 (1,893,681원) + 새마을금고 금리 인하 평잔액 100만 (8/3 인출 가능 여부 문의)<br>
           * 청라 잔금 순수령: 잔금 4억 9,570만 − 보금자리론 상환 2억 4,772만 − 중개보수 252만 ≈ 2억 4,545만 (8/31)<br>
@@ -4376,50 +4376,50 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 4: 제2금융(황서림 차주 · MCI) + 안영준 보증보험 + IRP 해지 ── -->
+      <!-- ── 플랜 4: 경주 산림조합(황서림 차주 · MCI) + 안영준 보증보험 + IRP 해지 ── -->
       <div id="fund-plan-4" style="display:none">
         <div class="ibox g" style="margin-bottom:14px;font-size:12px;line-height:1.8">
-          ✅ <strong>최대 조달 시나리오 · 여유 6,002만</strong> — 제2금융 4억 5,000만 + 보증보험 3,000만 + IRP 해지 5,367만<br>
+          ✅ <strong>최대 조달 시나리오 · 여유 3,902만</strong> — 경주 산림조합 4억 2,900만 + 보증보험 3,000만 + IRP 해지 5,367만<br>
           💼 <strong>IRP 해지 세후 5,367만</strong> — 세전 6,427만 (안영준 퇴직연금 4,827만 + 황서림 퇴직연금 1,600만) × 83.5% · 연금저축 1,016만 중도금 납부 시 이미 사용
         </div>
         <div style="margin-bottom:18px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">총 조달 8억 4,002만 ✅ (잔금 7억 8,000만 대비 여유 6,002만)</div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.3px">총 조달 8억 1,902만 ✅ (잔금 7억 8,000만 대비 여유 3,902만)</div>
           <div style="display:flex;height:44px;border-radius:10px;overflow:hidden;gap:3px">
-            <div style="flex:52.9;background:var(--orange)" title="제2금융 52.9%"></div>
-            <div style="flex:29.8;background:var(--green)" title="청라잔금 29.8%"></div>
+            <div style="flex:52.4;background:var(--orange)" title="경주산림조합 52.4%"></div>
+            <div style="flex:30.0;background:var(--green)" title="청라잔금 30.0%"></div>
             <div style="flex:0.5;background:#3b82f6" title="안영준 290만"></div>
             <div style="flex:3.4;background:#ec4899" title="서림현금 3.4%"></div>
-            <div style="flex:3.6;background:#f472b6" title="이모님 3.6%"></div>
-            <div style="flex:3.6;background:#0891b2" title="보증보험 3.6%"></div>
-            <div style="flex:6.2;background:#6366f1" title="IRP해지 6.2%"></div>
+            <div style="flex:3.7;background:#f472b6" title="이모님 3.7%"></div>
+            <div style="flex:3.7;background:#0891b2" title="보증보험 3.7%"></div>
+            <div style="flex:6.5;background:#6366f1" title="IRP해지 6.5%"></div>
           </div>
           <div style="display:flex;gap:14px;margin-top:7px;flex-wrap:wrap">
-            <span style="font-size:10px;color:var(--orange);font-weight:700">■ 제2금융 52.9%</span>
-            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 29.8%</span>
+            <span style="font-size:10px;color:var(--orange);font-weight:700">■ 경주산림조합 52.4%</span>
+            <span style="font-size:10px;color:var(--green);font-weight:700">■ 청라잔금 30.0%</span>
             <span style="font-size:10px;color:#3b82f6;font-weight:700">■ 안영준 290만</span>
             <span style="font-size:10px;color:#ec4899;font-weight:700">■ 서림 현금 3.4%</span>
-            <span style="font-size:10px;color:#f472b6;font-weight:700">■ 이모님 3.6%</span>
-            <span style="font-size:10px;color:#0891b2;font-weight:700">■ 보증보험 3.6%</span>
-            <span style="font-size:10px;color:#6366f1;font-weight:700">■ IRP해지 6.2%</span>
+            <span style="font-size:10px;color:#f472b6;font-weight:700">■ 이모님 3.7%</span>
+            <span style="font-size:10px;color:#0891b2;font-weight:700">■ 보증보험 3.7%</span>
+            <span style="font-size:10px;color:#6366f1;font-weight:700">■ IRP해지 6.5%</span>
           </div>
         </div>
         <div class="fund-row">
-          <div class="fund-label" style="width:210px">🏦 주담대 (제2금융 · 황서림 차주 · MCI)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:52.9%;background:var(--orange);border-radius:6px"></div></div>
-          <div class="fund-amt" style="font-size:14px">4억 5,000만</div>
-          <div class="fund-pct" style="color:var(--orange);font-weight:700;font-size:12px;width:40px">52.9%</div>
+          <div class="fund-label" style="width:210px">🌲 주담대 (경주 산림조합 · 황서림 차주 · MCI)</div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:52.4%;background:var(--orange);border-radius:6px"></div></div>
+          <div class="fund-amt" style="font-size:14px">4억 2,900만</div>
+          <div class="fund-pct" style="color:var(--orange);font-weight:700;font-size:12px;width:40px">52.4%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">🏠 청라 집 팔고 받는 돈</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:29.8%;background:var(--green);border-radius:6px"></div></div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:30.0%;background:var(--green);border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px">약 2억 4,545만</div>
-          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">29.8%</div>
+          <div class="fund-pct" style="color:var(--green);font-weight:700;font-size:12px;width:40px">30.0%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">💰 영준 보유 현금</div>
           <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:1%;background:#3b82f6;border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px;color:var(--orange)">290만</div>
-          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">0.2%</div>
+          <div class="fund-pct" style="color:#3b82f6;font-weight:700;font-size:12px;width:40px">0.4%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">💗 서림 보유 현금</div>
@@ -4429,29 +4429,29 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">👩‍👧 이모님 차용</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:3.6%;background:#f472b6;border-radius:6px"></div></div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:3.7%;background:#f472b6;border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px;color:#f472b6">3,000만</div>
-          <div class="fund-pct" style="color:#f472b6;font-weight:700;font-size:12px;width:40px">3.6%</div>
+          <div class="fund-pct" style="color:#f472b6;font-weight:700;font-size:12px;width:40px">3.7%</div>
         </div>
         <div class="fund-row">
           <div class="fund-label" style="width:210px">🏢 보증보험 (안영준 명의)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:3.6%;background:#0891b2;border-radius:6px"></div></div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:3.7%;background:#0891b2;border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px;color:#0891b2">3,000만</div>
-          <div class="fund-pct" style="color:#0891b2;font-weight:700;font-size:12px;width:40px">3.6%</div>
+          <div class="fund-pct" style="color:#0891b2;font-weight:700;font-size:12px;width:40px">3.7%</div>
         </div>
         <div class="fund-row" style="border-bottom:none">
           <div class="fund-label" style="width:210px">💼 IRP·퇴직연금 해지 (세후)</div>
-          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:6.2%;background:#6366f1;border-radius:6px"></div></div>
+          <div class="fund-bar-wrap" style="height:20px;border-radius:6px"><div class="fund-bar" style="width:6.5%;background:#6366f1;border-radius:6px"></div></div>
           <div class="fund-amt" style="font-size:14px;color:#6366f1">5,367만</div>
-          <div class="fund-pct" style="color:#6366f1;font-weight:700;font-size:12px;width:40px">6.2%</div>
+          <div class="fund-pct" style="color:#6366f1;font-weight:700;font-size:12px;width:40px">6.5%</div>
         </div>
         <div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:10px;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
           <div><div style="font-size:10px;color:var(--muted)">총 필요액 (잔금)</div><div style="font-size:1.2rem;font-weight:900;color:var(--text)">7억 8,000만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">전체 조달 가능</div><div style="font-size:1.2rem;font-weight:900;color:var(--green)">8억 4,002만</div></div>
-          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">여유 (목표 초과)</div><div style="font-size:1.2rem;font-weight:900;color:var(--green)">6,002만</div><div style="font-size:10px;color:var(--green);font-weight:700">✅ 최대 조달 완전 해소</div></div>
+          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">전체 조달 가능</div><div style="font-size:1.2rem;font-weight:900;color:var(--green)">8억 1,902만</div></div>
+          <div style="border-left:1px solid var(--border);padding-left:10px"><div style="font-size:10px;color:var(--muted)">여유 (목표 초과)</div><div style="font-size:1.2rem;font-weight:900;color:var(--green)">3,902만</div><div style="font-size:10px;color:var(--green);font-weight:700">✅ 최대 조달 완전 해소</div></div>
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
-          * 제2금융권 주담대 4억 5,000만: 황서림 차주 · MCI 가입 가능 → 방공제 없음 (KB시세 11억 2,500만 × LTV 40% = 4억 5,000만)<br>
+          * 경주 산림조합 주담대 4억 2,900만: 황서림 차주 · MCI 가입 가능 → 방공제 없음 · 금리 5.3% 1년변동 · 원리금균등 30년<br>
           * 안영준 보증보험 3,000만: 황서림이 주담대 차주이므로 안영준 명의 별도 신청 가능 · 9/16 잔금 직후 신청<br>
           * IRP 해지 세후 5,367만: 세전 6,427만 (안영준 퇴직연금 4,827만 + 황서림 퇴직연금 1,600만) × 83.5% · 연금저축 1,016만은 중도금 납부 시 이미 해지 사용<br>
           * 안영준 현금 290만: 잔여 현금 190만 (1,893,681원) + 새마을금고 금리 인하 평잔액 100만 (8/3 인출 가능 여부 문의)<br>
@@ -4513,18 +4513,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           </div>
         </div>
         <div style="background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border)">
-          <div style="font-size:11px;font-weight:800;color:var(--orange);margin-bottom:6px">🏦 3·4안 — 제2금융권 (MCI 가능)</div>
+          <div style="font-size:11px;font-weight:800;color:var(--orange);margin-bottom:6px">🌲 3·4안 — 경주 산림조합 (MCI 가능)</div>
           <div style="font-size:10px;color:var(--muted);line-height:1.7">
             · 황서림 차주 · MCI 가입 → 방공제 없음<br>
-            · 한도 4억 5,000만 (1금융 대비 +5,500만)<br>
+            · 승인 4억 2,900만 (우리은행 대비 +3,400만)<br>
             · 안영준 보증보험 3,000만 추가 가능<br>
-            · <strong style="color:var(--red)">3안: 부족 365만</strong><br>
-            · <strong style="color:var(--green)">4안(+IRP): 여유 6,002만 ✅</strong>
+            · <strong style="color:var(--red)">3안: 부족 1,465만 ⚠</strong><br>
+            · <strong style="color:var(--green)">4안(+IRP): 여유 3,902만 ✅</strong>
           </div>
         </div>
       </div>
       <div style="margin-top:10px;padding:8px 12px;background:rgba(99,102,241,0.06);border-radius:8px;font-size:11px;color:var(--muted)">
-        💡 <strong>결론:</strong> 우리은행(1·2안)은 1금융권으로 금리가 유리하나 1안 단독은 부족 — 2안(IRP 해지)으로 완전 해소 가능. 제2금융(3·4안)은 한도가 크고 3안만으로도 여유 635만 달성 — 4안(IRP 해지) 선택 시 여유 6,002만으로 최대 확보.
+        💡 <strong>결론:</strong> 우리은행(1·2안)은 1금융권으로 금리가 유리하나 1안 단독은 부족 — 2안(IRP 해지)으로 완전 해소 가능. 경주 산림조합(3·4안)은 한도가 크고 MCI 가능하나 3안 단독으로는 부족 1,465만 ⚠ — 4안(IRP 해지) 선택 시 여유 3,902만으로 최대 확보.
       </div>
     </div>
 
@@ -4615,7 +4615,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ibox p" style="margin-bottom:20px;font-size:12px;line-height:1.85">
       ⚠ <strong>핵심 전제 2가지:</strong> ① 청라 잔금 8/31 수령 (순수령 약 2억 4,545만) ② 등촌 잔금 9/16 납부 — 두 일정 모두 차질 없어야 함<br>
       🏦 <strong>1안 (우리은행+신용대출):</strong> 부족 1,191만~2,865만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 2,502만~4,176만 ✅</strong><br>
-      🏦 <strong>3안 (제2금융+보증보험):</strong> 여유 635만 ✅ / <strong>4안(+IRP):</strong> 여유 6,002만 ✅ — 한도 충분하나 금리 비교 필요
+      🌲 <strong>3안 (경주산림조합+보증보험):</strong> 부족 1,465만 ⚠ / <strong>4안(+IRP):</strong> 여유 3,902만 ✅ — 한도 우리은행 대비 +3,400만 유리
     </div>
 
     <!-- ══ 잔금 후 월 상환 시뮬레이션 ══ -->
@@ -4809,7 +4809,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ibox p" style="margin-bottom:20px;font-size:12px;line-height:1.85">
       ⚠ <strong>핵심 전제 2가지:</strong> ① 청라 잔금 8/31 수령 (순수령 약 2억 4,545만) ② 등촌 잔금 9/16 납부 — 두 일정 모두 차질 없어야 함<br>
       🏦 <strong>1안 (우리은행+신용대출):</strong> 부족 1,191만~2,865만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 2,502만~4,176만 ✅</strong><br>
-      🏦 <strong>3안 (제2금융+보증보험):</strong> 여유 635만 ✅ / <strong>4안(+IRP):</strong> 여유 6,002만 ✅ — 한도 충분하나 금리 비교 필요
+      🌲 <strong>3안 (경주산림조합+보증보험):</strong> 부족 1,465만 ⚠ / <strong>4안(+IRP):</strong> 여유 3,902만 ✅ — 한도 우리은행 대비 +3,400만 유리
     </div>
     <!-- 잔금날 준비 체크리스트 (하나부동산 안내) -->
     <div class="stitle" style="margin-top:28px">📋 잔금날 준비 체크리스트 <span style="font-size:11px;font-weight:400;color:var(--muted)">하나부동산 안내 · 2026.09.16 (수) 오전 11시</span></div>
@@ -6571,10 +6571,10 @@ function switchFundPlan(p){
     document.getElementById('fund-plan-'+n).style.display = p===n?'':'none';
     document.getElementById('fp-btn-'+n).classList.toggle('active',p===n);
   });
-  const totals={'1':'7억 6,809만','2':'8억 2,176만','3':'7억 8,635만','4':'8억 4,002만'};
-  const shorts={'1':'1,191만','2':'여유 4,176만','3':'여유 635만','4':'여유 6,002만'};
+  const totals={'1':'7억 6,809만','2':'8억 2,176만','3':'7억 6,535만','4':'8억 1,902만'};
+  const shorts={'1':'1,191만','2':'여유 4,176만','3':'부족 1,465만','4':'여유 3,902만'};
   const totalSubs={'1':'(IRP 해지 시 +5,367만 추가 가능)','2':'(신용대출 5천만 기준 최대치)','3':'(IRP 해지 시 +5,367만 추가 가능)','4':'(신용대출 5천만 기준 최대치)'};
-  const labels={'1':'우리은행+신용대출+청라+안영준+황서림','2':'우리은행+신용대출+IRP해지+청라+안영준+황서림','3':'제2금융(MCI)+보증보험+청라+안영준+황서림','4':'제2금융(MCI)+보증보험+IRP해지+청라+안영준+황서림'};
+  const labels={'1':'우리은행+신용대출+청라+안영준+황서림','2':'우리은행+신용대출+IRP해지+청라+안영준+황서림','3':'경주산림조합(MCI)+보증보험+청라+안영준+황서림','4':'경주산림조합(MCI)+보증보험+IRP해지+청라+안영준+황서림'};
   document.getElementById('kpi-loan-total').textContent=totals[p];
   const subEl=document.getElementById('kpi-loan-total-sub');
   if(subEl){subEl.textContent=totalSubs[p];subEl.style.color=(p==='2'||p==='4')?'var(--muted)':'var(--purple)';}
