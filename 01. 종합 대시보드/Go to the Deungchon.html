@@ -1373,6 +1373,84 @@ body{
   /* 황서림 현금 구성 3열 → 2열 */
   #sl-cash-grid{grid-template-columns:1fr 1fr!important}
 }
+
+/* ══════════════════════════════════════════
+   시인성 패치 2026-09-04
+   1. --card2 토큰  2. 카드 테두리 강화
+   3. 소폰트 상향  4. 색상 대비 강화
+══════════════════════════════════════════ */
+
+/* 1. --card2 미정의 변수 — 캘린더 일반 셀 배경 */
+:root{--card2:#EFEEFD}
+@media(max-width:768px){
+  body{--card2:rgba(255,255,255,.06)}
+}
+
+/* 2. PC 카드 테두리 강화 (기존 .09 → .18) */
+@media(min-width:769px){
+  .card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){
+    border-color:rgba(99,91,255,0.18)!important
+  }
+}
+
+/* 3. 테이블 th — 10px → 11.5px */
+th{font-size:11.5px}
+
+/* 4. kpi-lbl — 10.5px → 12px */
+.kpi-lbl{font-size:12px}
+
+/* 5. fund-label PC — 12px → 13px */
+@media(min-width:769px){
+  .fund-label{font-size:13px;width:120px}
+}
+
+/* 6. 타임라인 날짜·설명 */
+.tl-date{font-size:12px}
+.tl-desc{font-size:12.5px}
+
+/* 7. 현금흐름 서브 텍스트 */
+.cf-desc .sb{font-size:12px}
+
+/* 8. sub-note 주석 */
+.sub-note{font-size:12px}
+
+/* 9. ln-info-nm 라벨 */
+.ln-info-nm{font-size:13px}
+
+/* 10. PC ibox 폰트 */
+@media(min-width:769px){
+  .ibox{font-size:13.5px}
+}
+
+/* ── 모바일 대비 강화 ── */
+@media(max-width:768px){
+  /* stitle: 52% → 70% */
+  .stitle{color:rgba(255,255,255,.70)!important}
+
+  /* kpi-bar-card lbl: 48% → 62% */
+  .kpi-bar-card .lbl{color:rgba(255,255,255,.62)!important}
+
+  /* tl-desc: 48% → 62% */
+  .tl-desc{color:rgba(255,255,255,.62)!important;font-size:12.5px!important}
+
+  /* fund-label: 62% → 72% */
+  .fund-label{color:rgba(255,255,255,.72)!important}
+
+  /* save-lbl 사이드바 날짜: 28% → 45% */
+  .save-lbl{color:rgba(255,255,255,.45)!important}
+
+  /* th 모바일 */
+  th{font-size:11px!important;color:rgba(255,255,255,.55)!important}
+
+  /* tl-date */
+  .tl-date{font-size:12px!important;color:rgba(255,255,255,.55)!important}
+
+  /* ibox 본문 색상 강화 */
+  .ibox{color:rgba(255,255,255,.80)!important}
+
+  /* 체크리스트 */
+  .cl-label,.chk-label{color:rgba(255,255,255,.78)!important}
+}
 </style>
 </head>
 <body>
