@@ -5893,14 +5893,26 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div id="sec-pc-notary" style="display:none">
     <!-- 법무사 -->
     <div class="stitle">⚖️ 법무사 (취득세 신고 · 소유권이전등기)</div>
-    <div class="card" style="margin-bottom:20px">
-      <div class="ibox g" style="margin-bottom:12px">
-        ✅ <strong>하나공인중개사 연계 법무사</strong> 사용 예정 · 잔금일(9/16) 동석
+
+    <!-- 법무사 정보 카드 -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="ibox g" style="margin-bottom:14px;font-size:12px">
+        ✅ <strong>태원 종합법률사무소 확정</strong> · 안희권 대표변호사 · 잔금일(9/16) 동석
       </div>
       <div class="fund-row">
-        <div class="fund-label">담당 중개사</div>
+        <div class="fund-label">법무사</div>
         <div style="flex:1"></div>
-        <div style="font-weight:700">하나공인중개사 최진주 (010-2534-2453)</div>
+        <div style="font-weight:700">태원 종합법률사무소 (안희권 대표변호사)</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">연락처</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--purple)">010-9049-1806</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">연계 중개사</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--muted)">하나공인중개사 최진주 (010-2534-2453)</div>
       </div>
       <div class="fund-row">
         <div class="fund-label">취득세 신고 대행</div>
@@ -5911,6 +5923,49 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="fund-label">소유권이전등기</div>
         <div style="flex:1"></div>
         <div style="font-weight:700;color:var(--purple)">잔금 후 법무사 진행</div>
+      </div>
+    </div>
+
+    <!-- 견적서 비용 내역 (태원 종합법률사무소) -->
+    <div class="stitle">📄 견적서 비용 내역 <span style="font-size:11px;font-weight:400;color:var(--muted)">취득세·지방교육세 제외 · 법무사 실비용</span></div>
+    <div class="card" style="margin-bottom:16px">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:12px">※ 취득세 3,270만 + 지방교육세 327만은 별도 납부 (취득세 탭 참고)</div>
+
+      <div class="fund-row">
+        <div class="fund-label">인지대</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:47%;background:var(--purple)"></div></div>
+        <div class="fund-amt">350,000원</div>
+        <div class="fund-pct" style="color:var(--purple);font-weight:700">35만</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">증지대</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:2%;background:var(--muted)"></div></div>
+        <div class="fund-amt">15,000원</div>
+        <div class="fund-pct" style="color:var(--muted);font-weight:700">1.5만</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">보수료 (법무사 수수료)</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:51%;background:var(--orange)"></div></div>
+        <div class="fund-amt">380,000원</div>
+        <div class="fund-pct" style="color:var(--orange);font-weight:700">38만</div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label">농어촌특별세 · 부가가치세</div>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:0%;background:var(--muted)"></div></div>
+        <div class="fund-amt" style="color:var(--muted)">0원</div>
+        <div class="fund-pct" style="color:var(--green);font-weight:700">면제</div>
+      </div>
+
+      <!-- 합계 -->
+      <div style="margin-top:14px;padding:10px 14px;background:rgba(99,91,255,0.06);border-radius:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(99,91,255,0.15)">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text)">법무사 실비용 합계</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">추가비용 없음 확인</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:18px;font-weight:900;color:var(--purple)">74.5만원</div>
+          <div style="font-size:10px;color:var(--muted)">745,000원</div>
+        </div>
       </div>
     </div>
 
