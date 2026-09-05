@@ -4005,6 +4005,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button id="lb-btn-jungdo" class="person-btn" onclick="switchLoanBalance('jungdo')" style="opacity:0.4;font-size:11px">중도금 ✅</button>
       <button id="lb-btn-janggeum" class="person-btn active" onclick="switchLoanBalance('janggeum')">잔금</button>
       <button id="lb-btn-janggeum-all" class="person-btn" onclick="switchLoanBalance('janggeum-all')" style="font-size:11px">잔금(부대비용 포함)</button>
+      <button id="lb-btn-after" class="person-btn" onclick="switchLoanBalance('after')" style="font-size:11px">잔금 이후</button>
     </div>
   </div>
 
@@ -4868,6 +4869,141 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
   </div><!-- /sec-lb-janggeum-all -->
+
+  <!-- ── 잔금 이후 섹션 ── -->
+  <div id="sec-lb-after" style="display:none">
+
+    <!-- KPI 바 -->
+    <div class="kpi-bar" style="margin-top:0;margin-bottom:16px">
+      <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
+        <div class="lbl">잔금 후 남은 여유</div>
+        <div class="num gr">838만</div>
+      </div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--orange)">
+        <div class="lbl">인테리어 + 가전</div>
+        <div class="num or">772만</div>
+      </div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
+        <div class="lbl">충당 후 잔여</div>
+        <div class="num pl">66만</div>
+      </div>
+    </div>
+
+    <!-- 결론 박스 -->
+    <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.9">
+      ✅ <strong>인테리어 + 가전 설치 모두 충당 가능</strong> — 838만 여유로 772만 커버, 66만 남음.<br>
+      <span style="font-size:12px;color:rgba(255,255,255,.8)">※ 삼성 정수기 설치비 현장 확인 필요 · 이사비 잔금(140만+에어컨 50만)은 별도</span>
+    </div>
+
+    <!-- 여유 자금 출처 -->
+    <div class="stitle" style="font-size:14px;margin-bottom:10px">💰 잔금 후 남은 여유 — 838만</div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="fund-row">
+        <div class="fund-label">전체 조달 합계</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700">7억 9,512만</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label" style="color:var(--red)">잔금날 납부 (잔금+중개+법무사)</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--red)">−7억 8,674만</div>
+      </div>
+      <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:12px;font-weight:700;color:var(--muted)">남은 여유</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--green)">838만</div>
+      </div>
+    </div>
+
+    <!-- 인테리어 공사비 -->
+    <div class="stitle" style="font-size:14px;margin-bottom:10px">🔨 인테리어 공사비 — 753만 (확정)</div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="fund-row">
+        <div class="fund-label">🚿 두담 화장실 공사</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--green)">516만</div>
+          <div style="font-size:11px;color:var(--muted)">9/17(목)~9/21(월) ✅ 확정</div>
+        </div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label">🪟 장판의신 도배·장판</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--green)">200만</div>
+          <div style="font-size:11px;color:var(--muted)">9/22~23 ✅ 확정</div>
+        </div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label">🧹 청소대학 입주청소</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--green)">37만</div>
+          <div style="font-size:11px;color:var(--muted)">9/23(화) 오후 ✅ 확정</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:12px;font-weight:700;color:var(--muted)">인테리어 소계</div>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--green)">753만</div>
+      </div>
+    </div>
+
+    <!-- 가전 이전 설치비 -->
+    <div class="stitle" style="font-size:14px;margin-bottom:10px">📺 가전 이전 설치비 — 19만 (확정) + 삼성 정수기</div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="fund-row">
+        <div class="fund-label">📺 TV 벽걸이 + 🫧 세탁기·건조기</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--purple)">19만</div>
+          <div style="font-size:11px;color:var(--muted)">홈핏 단디맨 · 9/28(일) ✅ 확정</div>
+        </div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label">🚰 정수기 설치</div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <div style="font-weight:800;color:var(--orange)">현장 확인</div>
+          <div style="font-size:11px;color:var(--muted)">삼성 서비스 기사 · 9/30(화) ✅ 확정</div>
+        </div>
+      </div>
+      <div class="ibox y" style="margin-top:10px;font-size:12px;line-height:1.7">
+        ⚠ 삼성 정수기 설치비는 기사님이 현장에서 직수관 조건 확인 후 결정 — 별도 추가될 수 있음
+      </div>
+      <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:12px;font-weight:700;color:var(--muted)">가전 소계 (확정분만)</div>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--purple)">19만</div>
+      </div>
+    </div>
+
+    <!-- 최종 정산 -->
+    <div class="stitle" style="font-size:14px;margin-bottom:10px">📊 최종 정산</div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="fund-row">
+        <div class="fund-label">잔금 후 여유</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--green)">838만</div>
+      </div>
+      <div class="fund-row">
+        <div class="fund-label" style="color:var(--red)">인테리어 753만</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--red)">−753만</div>
+      </div>
+      <div class="fund-row" style="border-bottom:none">
+        <div class="fund-label" style="color:var(--red)">가전 설치 19만</div>
+        <div style="flex:1"></div>
+        <div style="font-weight:700;color:var(--red)">−19만</div>
+      </div>
+      <div style="border-top:2px solid var(--green);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;font-weight:800;color:var(--green)">✅ 충당 후 잔여 (정수기 제외)</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--green)">66만</div>
+      </div>
+    </div>
+
+    <div class="ibox y" style="font-size:12px;line-height:1.7;margin-bottom:8px">
+      ⚠ <strong>별도 고려 항목</strong>: 이사비 잔금 140만 (9/24) + 에어컨 이전 50만 (9/24) = 190만은 여기 포함 안 됨 — 이사비 탭 참고
+    </div>
+
+  </div><!-- /sec-lb-after -->
 
 </div>
 </div>
@@ -7086,9 +7222,11 @@ function switchLoanBalance(tab){
   document.getElementById('sec-lb-jungdo').style.display = tab==='jungdo'?'':'none';
   document.getElementById('sec-lb-janggeum').style.display = tab==='janggeum'?'':'none';
   document.getElementById('sec-lb-janggeum-all').style.display = tab==='janggeum-all'?'':'none';
+  document.getElementById('sec-lb-after').style.display = tab==='after'?'':'none';
   document.getElementById('lb-btn-jungdo').classList.toggle('active',tab==='jungdo');
   document.getElementById('lb-btn-janggeum').classList.toggle('active',tab==='janggeum');
   document.getElementById('lb-btn-janggeum-all').classList.toggle('active',tab==='janggeum-all');
+  document.getElementById('lb-btn-after').classList.toggle('active',tab==='after');
 }
 function switchPostCost(name){
   var tabs=['all','notax','tax','fee','moving','notary'];
