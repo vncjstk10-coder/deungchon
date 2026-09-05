@@ -2489,41 +2489,40 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="font-size:14px;font-weight:900;color:var(--red)">8/31</div>
           <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">⭐ 청라 잔금<br><span style="font-size:10px;font-weight:400;color:var(--muted)">✈ SIN→ICN</span></div>
         </div>
-        <!-- 1~6 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">1</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">2</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">3</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">4</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">5</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">6</div></div>
+        <!-- 1~6 회색 처리 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">1</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">2</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">3</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">4</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">5</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">6</div></div>
       </div>
 
       <!-- 계양 기간 표시 -->
       <div style="padding:4px 10px;font-size:11px;font-weight:700;color:var(--green);border-left:3px solid var(--green);margin:8px 0 4px">🏠 계양구 작전역 에어비앤비 · 9/8(화) 체크인 → 9/15(화) 체크아웃</div>
       <!-- W2: 9/7~9/13 -->
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
-        <!-- 7 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">7</div></div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:2px">
+        <!-- 7 회색 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">7</div></div>
         <!-- 9/8 ★ 계양 체크인 -->
         <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:var(--card2);border:2px solid var(--green)">
           <div style="font-size:14px;font-weight:900;color:var(--green)">8</div>
           <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">▶ 계양 체크인<br><span style="font-size:10px;font-weight:400;color:var(--muted)">15:00</span></div>
         </div>
-        <!-- 9~13 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">9</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">10</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">11</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">12</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">13</div></div>
+        <!-- 9~13 계양 기간 중 (연결감 위해 살짝 더 보이게) -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:var(--muted)">9</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:var(--muted)">10</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:var(--muted)">11</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:#f87171">12</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:#f87171">13</div></div>
       </div>
-
-      <!-- 동백 기간 표시 -->
-      <div style="padding:4px 10px;font-size:11px;font-weight:700;color:var(--orange);border-left:3px solid var(--orange);margin:8px 0 4px">🏠 동백 백현마을동일하이빌 · 9/15(화) 입실 → 9/24(목) 퇴실 → 등촌 입주!</div>
+      <!-- W2→W3 연결: 계양 기간 이어짐 표시 -->
+      <div style="padding:3px 10px;font-size:10px;color:rgba(16,185,129,.6);text-align:right;margin-bottom:2px">계양 에어비앤비 기간 중 ↓</div>
       <!-- W3: 9/14~9/20 -->
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
-        <!-- 14 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">14</div></div>
-        <!-- 9/15 ★ 동백 입실 -->
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:2px">
+        <!-- 14 계양 마지막 날 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid rgba(16,185,129,.3)"><div style="font-size:12px;color:var(--muted)">14</div></div>
+        <!-- 9/15 ★ 계양 체크아웃 + 동백 입실 -->
         <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:var(--card2);border:2px solid var(--orange)">
           <div style="font-size:14px;font-weight:900;color:var(--orange)">15</div>
           <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">◀ 계양 체크아웃<br>▶ 동백 입실</div>
@@ -2533,28 +2532,28 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="font-size:15px;font-weight:900;color:var(--red)">16</div>
           <div style="font-size:12px;font-weight:800;color:var(--red);margin-top:6px;line-height:1.6">🔑 등촌 잔금!<br><span style="font-size:10px;font-weight:400;color:var(--muted)">🛬 SGN→ICN</span></div>
         </div>
-        <!-- 17~20 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">17</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">18</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">19</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">20</div></div>
+        <!-- 17~20 회색 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">17</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">18</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">19</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">20</div></div>
       </div>
 
       <!-- W4: 9/21~9/27 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px">
-        <!-- 21~23 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">21</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">22</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">23</div></div>
+        <!-- 21~23 회색 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">21</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">22</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">23</div></div>
         <!-- 9/24 ★★ 등촌 입주 -->
         <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:rgba(16,185,129,.06);border:2px solid var(--green)">
           <div style="font-size:15px;font-weight:900;color:var(--green)">24</div>
           <div style="font-size:12px;font-weight:800;color:var(--green);margin-top:6px;line-height:1.6">🏠 등촌 입주!<br><span style="font-size:10px;font-weight:400;color:var(--muted)">🛬 16:30 귀국</span></div>
         </div>
-        <!-- 25~27 흐리게 -->
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">25</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">26</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">27</div></div>
+        <!-- 25~27 회색 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">25</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">26</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.4;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">27</div></div>
       </div>
     </div>
     <div class="ibox y" style="font-size:13px;line-height:2">
@@ -5584,19 +5583,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:11px;color:var(--muted)">SK익스프레스 윤옹기 · 1차 8/28 완료 · 2차 9/24 예정 · 보관비 8,000원/일 약 25일 ≈ 20만 포함</div>
       </div>
 
-      <!-- ⑤ 청라 중개비 -->
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-          <span style="font-size:13px;font-weight:700;color:var(--text)">🏠 청라 중개수수료</span>
-          <span style="font-size:14px;font-weight:900;color:var(--muted);white-space:nowrap">252만 <span style="font-size:11px;font-weight:600;color:var(--muted)">4.4%</span></span>
-        </div>
-        <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
-          <div style="width:4.4%;height:100%;background:#94a3b8;border-radius:99px"></div>
-        </div>
-        <div style="font-size:11px;color:var(--muted)">8/31 청라 잔금 수령액에서 차감 — 별도 현금 지출 없음</div>
-      </div>
-
-      <!-- ⑥ 에어컨 -->
+      <!-- ⑤ 에어컨 -->
       <div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
           <span style="font-size:13px;font-weight:700;color:var(--text)">❄️ 에어컨 해체·설치</span>
@@ -5793,17 +5780,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="background:var(--lite);border-radius:99px;height:12px;overflow:hidden;margin-bottom:5px">
             <div style="width:3%;height:100%;background:#94a3b8;border-radius:99px"></div>
           </div>
-        </div>
-
-        <div style="opacity:0.5">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-            <span style="font-size:13px;font-weight:700;color:var(--muted)">🏠 청라 중개수수료 <span style="font-size:10.5px;font-weight:500">(별도 현금 없음)</span></span>
-            <span style="font-size:14px;font-weight:900;color:var(--muted);white-space:nowrap">252만</span>
-          </div>
-          <div style="background:var(--lite);border-radius:99px;height:8px;overflow:hidden;margin-bottom:5px">
-            <div style="width:15%;height:100%;background:#94a3b8;border-radius:99px"></div>
-          </div>
-          <div style="font-size:11px;color:var(--muted)">8/31 청라 잔금 수령액에서 차감 — 별도 현금 지출 없음</div>
         </div>
 
         <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:8px">
