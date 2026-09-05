@@ -2717,7 +2717,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <!-- ── STEP 2 ── -->
-  <div class="stitle">📤 STEP 2 — 9/16 등촌 잔금 7억 8,000만 재원 구성 <span style="font-size:11px;font-weight:400;color:var(--muted)">(2안 · 우리은행+신용대출+IRP)</span></div>
+  <div class="stitle">📤 STEP 2 — 9/16 등촌 잔금 7억 8,000만 재원 구성 <span style="font-size:11px;font-weight:400;color:var(--muted)">(최종 확정안 · 우리은행+신용대출+IRP)</span></div>
   <div class="card" style="padding:0!important;overflow:hidden;margin-bottom:20px">
     <div style="padding:9px 16px;background:rgba(239,68,68,.07);display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:11px;font-weight:700;color:var(--red)">목표: 7억 8,000만</span>
@@ -4117,10 +4117,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:11px;color:var(--purple);font-weight:600;margin-top:3px;opacity:0.85" id="kpi-loan-total-sub">(IRP 해지 시 +5,367만 추가 가능)</div>
         <div style="font-size:10px;color:var(--muted);font-weight:600;margin-top:2px" id="kpi-loan-label">우리은행+신용대출+청라+안영준+황서림</div>
       </div>
-      <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--red)">
-        <div class="lbl" id="kpi-short-lbl">아직 부족한 금액</div>
-        <div class="num re" id="kpi-loan-short">1,191만</div>
-        <div id="kpi-short-sub" style="font-size:10px;color:var(--orange);font-weight:700;margin-top:4px">⚠ 2안(+IRP) 선택 시 완전 해소 가능</div>
+      <div id="kpi-short-card" class="kpi-bar-card" style="border-top:3px solid var(--green)">
+        <div class="lbl" id="kpi-short-lbl" style="color:var(--green)">최종안 여유 금액</div>
+        <div class="num gr" id="kpi-loan-short">2,002만~3,676만</div>
+        <div id="kpi-short-sub" style="font-size:10px;color:var(--green);font-weight:700;margin-top:4px">✅ IRP 해지 최종 확정 · 완전 해소</div>
       </div>
     </div>
 
@@ -4141,19 +4141,15 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">💡 핵심 선택 기준 — 어느 은행으로 주담대?</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:180px;background:var(--p3);border-left:3px solid var(--purple);border-radius:12px;padding:12px 14px">
-            <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:6px">🏦 1·2안 — 우리은행</div>
+            <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:6px">🏦 최종 확정안 — 우리은행</div>
             <div style="font-size:11.5px;color:var(--t2);line-height:1.75">안영준 명의 · 소득합산 · MCI 불가<br>한도 <strong style="color:var(--text)">3억 8,500만</strong><br>→ 황서림 신용대출 DSR 무제한</div>
           </div>
         </div>
       </div>
-      <!-- 플랜 토글 -->
-      <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
-        <button id="fp-btn-1" class="person-btn active" onclick="switchFundPlan('1')">🏦💳 1안 · 우리은행+신용대출</button>
-        <button id="fp-btn-2" class="person-btn" onclick="switchFundPlan('2')">🏦💳💼 2안 · 우리은행+신용대출+IRP</button>
-      </div>
+      <div class="ibox g" style="margin-bottom:12px;font-size:12px">✅ <strong>최종 확정: 우리은행+신용대출+IRP 해지</strong> — 여유 2,002만~3,676만 완전 해소</div>
 
-      <!-- ── 플랜 1: 우리은행(안영준 명의·소득합산) + 황서림 신용대출 ── -->
-      <div id="fund-plan-1">
+      <!-- ── 1안 (미채택 · 숨김) ── -->
+      <div id="fund-plan-1" style="display:none">
         <div class="ibox y" style="margin-bottom:14px;font-size:12px;line-height:1.8">
           🏦 <strong>우리은행 3억 8,500만 — 안영준 명의 · 소득합산 ✅ 최종 확정</strong> (MCI 불가 · 원금균등 30년 · 4.62% 1년변동 · 9/16 실행)<br>
           💳 <strong>황서림 신용대출 당일 신청</strong> — 주담대 없는 명의 → DSR 제한 없이 9/16 주담대 실행 직후 신청 · 추정 5,000만~6,674만<br>
@@ -4239,8 +4235,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- ── 플랜 2: 우리은행(안영준 명의·소득합산) + 황서림 신용대출 + IRP 해지 ── -->
-      <div id="fund-plan-2" style="display:none">
+      <!-- ── 최종 확정안: 우리은행(안영준 명의·소득합산) + 황서림 신용대출 + IRP 해지 ── -->
+      <div id="fund-plan-2">
         <div class="ibox g" style="margin-bottom:14px;font-size:12px;line-height:1.8">
           ✅ <strong>완전 해소 · 여유 2,002만~3,676만</strong> — 우리은행 3억 8,500만 (안영준 명의 · 소득합산) + 황서림 신용대출 + IRP 해지 5,367만 + 아버지 지원 500만<br>
           💼 <strong>IRP 해지 세후 5,367만</strong> — 세전 6,427만 (안영준 퇴직연금 4,827만 + 황서림 퇴직연금 1,600만) × 83.5% · 연금저축 1,016만은 중도금 납부 시 이미 해지 사용
@@ -4335,14 +4331,14 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
     <!-- 부족액 시나리오 -->
-    <div class="stitle">📊 퇴직연금·IRP, 해지할까?</div>
+    <div class="stitle">📊 퇴직연금·IRP — 최종 결정</div>
     <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
 
-      <!-- IRP 유지 -->
-      <div class="card" style="border-top:3px solid var(--red)">
-        <div style="font-size:12px;font-weight:800;color:var(--red);margin-bottom:12px">IRP 유지 → 1안 기준 부족</div>
-        <div style="font-size:2rem;font-weight:900;color:var(--red);margin-bottom:4px">1,691만~3,365만</div>
-        <div style="font-size:11px;color:var(--orange);font-weight:700;margin-bottom:12px">⚠ 추가 조달 방안 필요 (2안 선택 시 해소)</div>
+      <!-- IRP 유지 (미채택) -->
+      <div class="card" style="border-top:3px solid var(--border);opacity:0.55">
+        <div style="font-size:12px;font-weight:800;color:var(--muted);margin-bottom:12px">❌ IRP 유지 (미채택) — 부족</div>
+        <div style="font-size:2rem;font-weight:900;color:var(--muted);margin-bottom:4px">1,691만~3,365만</div>
+        <div style="font-size:11px;color:var(--muted);font-weight:700;margin-bottom:12px">미채택 — 최종안은 IRP 해지로 확정</div>
         <div style="font-size:11px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);padding-top:10px">
           <div style="display:flex;justify-content:space-between"><span>우리은행+신용대출+아버지 조달</span><span style="font-weight:700;color:var(--text)">7억 4,635만~7억 6,309만</span></div>
           <div style="display:flex;justify-content:space-between;margin-top:4px"><span>안영준 퇴직연금</span><span style="color:var(--muted)">4,827만 — 유지</span></div>
@@ -4353,9 +4349,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
       <!-- IRP 해지 -->
       <div class="card" style="border-top:3px solid var(--green)">
-        <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:12px">IRP 해지 → 2안 기준 여유</div>
+        <div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:12px">✅ IRP 해지 — 최종 확정</div>
         <div style="font-size:2rem;font-weight:900;color:var(--green);margin-bottom:4px">2,002만~3,676만</div>
-        <div style="font-size:11px;color:var(--green);font-weight:700;margin-bottom:12px">✅ 완전 해소 (1안→2안 전환 시)</div>
+        <div style="font-size:11px;color:var(--green);font-weight:700;margin-bottom:12px">✅ 완전 해소 (최종 확정)</div>
         <div style="font-size:11px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);padding-top:10px">
           <div style="display:grid;grid-template-columns:1fr auto auto;gap:4px 8px;align-items:center">
             <span style="font-weight:600;color:var(--t2)">항목</span><span style="text-align:right;font-weight:600;color:var(--t2)">세전</span><span style="text-align:right;font-weight:600;color:var(--green)">세후(×83.5%)</span>
@@ -4369,23 +4365,22 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- 플랜 선택 요약 -->
-    <div class="stitle">📋 어떤 플랜을 선택할까?</div>
+    <!-- 최종 확정 요약 -->
+    <div class="stitle">✅ 최종 확정 플랜</div>
     <div class="card" style="margin-bottom:16px">
-      <div style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.8">위 버튼에서 각 안을 클릭하면 상세 조달 내역을 확인할 수 있습니다. 핵심 비교:</div>
-      <div style="background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border)">
-          <div style="font-size:11px;font-weight:800;color:var(--purple);margin-bottom:6px">🏦 1·2안 — 우리은행 최종 확정 ✅</div>
-          <div style="font-size:10px;color:var(--muted);line-height:1.7">
+      <div style="background:rgba(16,185,129,0.06);border-radius:10px;padding:12px;border:1px solid rgba(16,185,129,0.25)">
+          <div style="font-size:11px;font-weight:800;color:var(--green);margin-bottom:6px">🏦 우리은행+신용대출+IRP 해지 — 최종 확정 ✅</div>
+          <div style="font-size:10px;color:var(--t2);line-height:1.8">
             · 안영준 명의 · 소득합산 · MCI 불가<br>
-            · 한도 3억 8,500만 (방공제 5,500만) · 4.62% 1년변동<br>
-            · 황서림 신용대출 DSR 제한 없음<br>
-            · 아버지 지원금 500만 추가<br>
-            · <strong style="color:var(--red)">1안: 1,691만~3,365만 부족</strong><br>
-            · <strong style="color:var(--green)">2안(+IRP): 2,002만~3,676만 여유 ✅</strong>
+            · 우리은행 3억 8,500만 · 4.62% 1년변동 · 원금균등 30년<br>
+            · 황서림 신용대출 DSR 제한 없음 (5,000만~6,674만)<br>
+            · IRP 해지 세후 5,367만 — 세전 6,427만 × 83.5%<br>
+            · 아버지 지원금 500만 포함<br>
+            · <strong style="color:var(--green)">여유 2,002만~3,676만 ✅</strong>
           </div>
       </div>
-      <div style="margin-top:10px;padding:8px 12px;background:rgba(99,102,241,0.06);border-radius:8px;font-size:11px;color:var(--muted)">
-        💡 <strong>결론:</strong> 우리은행 최종 확정. 1안 단독은 부족 — <strong>2안(IRP 해지 5,367만) 선택 시 여유 2,002만~3,676만으로 완전 해소 ✅</strong>
+      <div style="margin-top:10px;padding:8px 12px;background:rgba(16,185,129,0.06);border-radius:8px;font-size:11px;color:var(--t2)">
+        ✅ <strong>IRP 해지 최종 확정</strong> — 우리은행+황서림 신용대출+IRP 세후 5,367만으로 <strong>여유 2,002만~3,676만 완전 해소</strong>
       </div>
     </div>
 
@@ -4475,7 +4470,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
     <div class="ibox p" style="margin-bottom:20px;font-size:12px;line-height:1.85">
       ⚠ <strong>핵심 전제 2가지:</strong> ① 청라 잔금 8/31 수령 (순수령 약 2억 4,337만) ② 등촌 잔금 9/16 납부 — 두 일정 모두 차질 없어야 함<br>
-      🏦 <strong>1안 (우리은행+신용대출+아버지500만):</strong> 부족 1,691만~3,365만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 2,002만~3,676만 ✅</strong>
+      ✅ <strong>최종 확정: 우리은행+신용대출+IRP 해지</strong> — 여유 <strong>2,002만~3,676만</strong> 완전 해소
     </div>
 
     <!-- ══ 잔금 후 월 상환 시뮬레이션 ══ -->
@@ -4668,7 +4663,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
     <div class="ibox p" style="margin-bottom:20px;font-size:12px;line-height:1.85">
       ⚠ <strong>핵심 전제 2가지:</strong> ① 청라 잔금 8/31 수령 (순수령 약 2억 4,337만) ② 등촌 잔금 9/16 납부 — 두 일정 모두 차질 없어야 함<br>
-      🏦 <strong>1안 (우리은행+신용대출+아버지500만):</strong> 부족 1,691만~3,365만 → <strong>2안(+IRP 해지 5,367만) 선택 시 여유 2,002만~3,676만 ✅</strong>
+      ✅ <strong>최종 확정: 우리은행+신용대출+IRP 해지</strong> — 여유 <strong>2,002만~3,676만</strong> 완전 해소
     </div>
     <!-- 잔금날 준비 체크리스트 (하나부동산 안내) -->
     <div class="stitle" style="margin-top:28px">📋 잔금날 준비 체크리스트 <span style="font-size:11px;font-weight:400;color:var(--muted)">하나부동산 안내 · 2026.09.16 (수) 오전 11시</span></div>
