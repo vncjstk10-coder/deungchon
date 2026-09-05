@@ -3591,15 +3591,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 <div id="sec-family">
 
   <!-- ① 가족 차용금 히어로 카드 -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px">
     <div class="card-orange card" style="padding:20px">
       <div class="kpi-lbl">이모님 차용금</div>
       <div class="kpi-val" style="font-size:2rem;font-variant-numeric:tabular-nums">3,000만</div>
       <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;align-items:center">
-        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">무이자</span>
-        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">8월 차용 예정</span>
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">연 3% 이자</span>
+        <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">약 7.5만/월</span>
       </div>
-      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:8px">2027 Q1 보증보험 대출로 즉시 상환 목표</div>
+      <div style="margin-top:12px;background:rgba(255,255,255,.15);border-radius:8px;padding:10px 12px;font-size:11px;line-height:2;color:rgba(255,255,255,.9)">
+        <div style="display:flex;justify-content:space-between"><span>1차 상환 1,000만</span><span style="font-weight:700">2026년 말</span></div>
+        <div style="display:flex;justify-content:space-between"><span>2차 상환 2,000만</span><span style="font-weight:700">2027년 말</span></div>
+      </div>
     </div>
     <div class="card-purple card" style="padding:20px">
       <div class="kpi-lbl">큰누나·매형 차용금</div>
@@ -3608,58 +3611,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">이자 13만/월</span>
         <span style="background:rgba(255,255,255,.22);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px">이미 차용</span>
       </div>
-      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:8px">2027년 12월 성과급 활용 상환 목표</div>
-    </div>
-  </div>
-
-  <!-- ② 월 납입 현황 (카드 리스트) -->
-  <div class="stitle" style="margin-top:4px">💸 월 납입 현황</div>
-  <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">🏠 주담대 (우리은행)</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">3억 8,500만 · 4.62% · 원금균등</div>
+      <div style="margin-top:12px;background:rgba(255,255,255,.15);border-radius:8px;padding:10px 12px;font-size:11px;line-height:2;color:rgba(255,255,255,.9)">
+        <div style="display:flex;justify-content:space-between"><span>전액 상환 목표</span><span style="font-weight:700">2027년 말</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.65);margin-top:2px">성과급 활용 상환 예정</div>
       </div>
-      <div style="font-size:17px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">255만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">💳 신용대출 (안영준)</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">9,500만 · 4.02% · 이자납입</div>
-      </div>
-      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">32만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">🏢 보증보험대출</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 4.76% · 재직 중 연장</div>
-      </div>
-      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">48만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">💳 신용대출 (황서림)</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">5,000만~6,000만 · 5.00% · 이자납입</div>
-      </div>
-      <div style="font-size:17px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">21~25만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);background:rgba(139,92,246,.04)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">👨‍👩‍👧 큰누나·매형</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">4,500만 · 약 3.5% · 이자납입</div>
-      </div>
-      <div style="font-size:17px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">13만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);background:rgba(16,185,129,.04)">
-      <div style="flex:1;min-width:0">
-        <div style="font-size:12px;font-weight:700">👩‍👧 이모님</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:1px">3,000만 · 무이자</div>
-      </div>
-      <div style="font-size:17px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">0만</div>
-    </div>
-    <div style="display:flex;align-items:center;padding:13px 16px;background:var(--lite)">
-      <div style="flex:1;font-size:13px;font-weight:800">합계 (6개 대출)</div>
-      <div style="font-size:22px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">315만<span style="font-size:12px;font-weight:600;color:var(--muted)">/월</span></div>
     </div>
   </div>
 
