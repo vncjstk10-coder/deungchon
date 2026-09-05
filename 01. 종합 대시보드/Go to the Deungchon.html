@@ -2477,10 +2477,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
     <div class="card" style="padding:14px 12px;margin-bottom:14px">
-      <!-- 범례 -->
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;font-size:11px;color:var(--muted)">
-        <span>✈ 비행</span><span>🛬 귀국</span><span>🟢 OFF</span><span>⏸ STBY</span><span>📚 훈련</span>
-      </div>
       <!-- 요일 헤더 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px;font-size:11px;font-weight:700;text-align:center;color:var(--muted)">
         <div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div style="color:#f87171">토</div><div style="color:#f87171">일</div>
@@ -2488,125 +2484,77 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
       <!-- W1: 8/31~9/6 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:800;color:var(--red)">8/31</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">✈ SIN→ICN<br><span style="color:var(--text);font-weight:700">⭐청라잔금</span></div>
+        <!-- 8/31 ★ 청라잔금 -->
+        <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:var(--card2);border:2px solid var(--red)">
+          <div style="font-size:14px;font-weight:900;color:var(--red)">8/31</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">⭐ 청라 잔금<br><span style="font-size:10px;font-weight:400;color:var(--muted)">✈ SIN→ICN</span></div>
         </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">1</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🛬 SIN→ICN<br>06:40</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">2</div>
-          <div style="font-size:11px;color:var(--green);margin-top:4px">🟢 여행 가능</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">3</div>
-          <div style="font-size:11px;color:var(--green);margin-top:4px">🟢 여행 가능</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">4</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">✈ KTI왕복<br>SU17:25</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">5</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🛬 KTI→ICN<br>06:50</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">6</div>
-          <div style="font-size:11px;color:var(--green);margin-top:4px">🟢 여행 가능</div>
-        </div>
+        <!-- 1~6 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">1</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">2</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">3</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">4</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">5</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">6</div></div>
       </div>
 
       <!-- 계양 기간 표시 -->
       <div style="padding:4px 10px;font-size:11px;font-weight:700;color:var(--green);border-left:3px solid var(--green);margin:8px 0 4px">🏠 계양구 작전역 에어비앤비 · 9/8(화) 체크인 → 9/15(화) 체크아웃</div>
       <!-- W2: 9/7~9/13 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">7</div>
-          <div style="font-size:11px;color:var(--green);margin-top:4px">🟢 여행 가능</div>
+        <!-- 7 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">7</div></div>
+        <!-- 9/8 ★ 계양 체크인 -->
+        <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:var(--card2);border:2px solid var(--green)">
+          <div style="font-size:14px;font-weight:900;color:var(--green)">8</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">▶ 계양 체크인<br><span style="font-size:10px;font-weight:400;color:var(--muted)">15:00</span></div>
         </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--green)">
-          <div style="font-size:13px;font-weight:800;color:var(--green)">8</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">▶ 체크인 15:00<br>⏸ STBY</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">9</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">📚 기종전문</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">10</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">📚 기종전문</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">11</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">📚 정기안전</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">12</div>
-          <div style="font-size:11px;color:var(--green);margin-top:4px">🟢 OFF</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">13</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">✈ ICN→CRK<br>SU20:10</div>
-        </div>
+        <!-- 9~13 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">9</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">10</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">11</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">12</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">13</div></div>
       </div>
 
       <!-- 동백 기간 표시 -->
       <div style="padding:4px 10px;font-size:11px;font-weight:700;color:var(--orange);border-left:3px solid var(--orange);margin:8px 0 4px">🏠 동백 백현마을동일하이빌 · 9/15(화) 입실 → 9/24(목) 퇴실 → 등촌 입주!</div>
       <!-- W3: 9/14~9/20 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">14</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🛬 CRK→ICN<br>07:05</div>
+        <!-- 14 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">14</div></div>
+        <!-- 9/15 ★ 동백 입실 -->
+        <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:var(--card2);border:2px solid var(--orange)">
+          <div style="font-size:14px;font-weight:900;color:var(--orange)">15</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:6px;line-height:1.6">◀ 계양 체크아웃<br>▶ 동백 입실</div>
         </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">15</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">◀ 계양 체크아웃<br>✈ SU05:40<br>▶ 동백 입실</div>
+        <!-- 9/16 ★★ 등촌 잔금 (가장 중요) -->
+        <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:rgba(239,68,68,.06);border:2px solid var(--red)">
+          <div style="font-size:15px;font-weight:900;color:var(--red)">16</div>
+          <div style="font-size:12px;font-weight:800;color:var(--red);margin-top:6px;line-height:1.6">🔑 등촌 잔금!<br><span style="font-size:10px;font-weight:400;color:var(--muted)">🛬 SGN→ICN</span></div>
         </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:2px solid var(--red)">
-          <div style="font-size:13px;font-weight:800;color:var(--red)">16</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🛬 SGN→ICN<br><span style="color:var(--red);font-weight:700">🔑 등촌잔금!</span></div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">17</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🟢 OFF<br>🎨 인테리어</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">18</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">⏸ STBY</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">19</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">🌿 연차</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700;color:#f87171">20</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">⏸ STBY</div>
-        </div>
+        <!-- 17~20 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">17</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">18</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">19</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">20</div></div>
       </div>
 
       <!-- W4: 9/21~9/27 -->
       <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px">
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">21</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">✈ ICN→JFK<br>SU19:15</div>
+        <!-- 21~23 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">21</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">22</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.25;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">23</div></div>
+        <!-- 9/24 ★★ 등촌 입주 -->
+        <div style="border-radius:8px;padding:10px 8px;min-height:90px;background:rgba(16,185,129,.06);border:2px solid var(--green)">
+          <div style="font-size:15px;font-weight:900;color:var(--green)">24</div>
+          <div style="font-size:12px;font-weight:800;color:var(--green);margin-top:6px;line-height:1.6">🏠 등촌 입주!<br><span style="font-size:10px;font-weight:400;color:var(--muted)">🛬 16:30 귀국</span></div>
         </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">22</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">🌍 JFK 체류</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:1px solid var(--border)">
-          <div style="font-size:13px;font-weight:700">23</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">✈ JFK→ICN<br>11:45</div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;background:var(--card2);border:2px solid var(--green)">
-          <div style="font-size:13px;font-weight:800;color:var(--green)">24</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5">🛬 16:30 귀국<br><span style="color:var(--green);font-weight:700">🏠 등촌 입주!</span></div>
-        </div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:13px;color:var(--muted)">25</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:13px;color:#f87171">26</div></div>
-        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:13px;color:#f87171">27</div></div>
+        <!-- 25~27 흐리게 -->
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:var(--muted)">25</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">26</div></div>
+        <div style="border-radius:8px;padding:8px 7px;min-height:90px;opacity:.2;border:1px solid var(--border)"><div style="font-size:12px;color:#f87171">27</div></div>
       </div>
     </div>
     <div class="ibox y" style="font-size:13px;line-height:2">
