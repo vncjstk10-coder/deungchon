@@ -3797,6 +3797,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button id="lb-btn-janggeum" class="person-btn active" onclick="switchLoanBalance('janggeum')">잔금</button>
       <button id="lb-btn-janggeum-all" class="person-btn" onclick="switchLoanBalance('janggeum-all')">잔금(부대비용 포함)</button>
       <button id="lb-btn-after" class="person-btn" onclick="switchLoanBalance('after')">잔금 이후</button>
+      <button id="lb-btn-equity" class="person-btn" onclick="switchLoanBalance('equity')">💰 자기자본</button>
     </div>
   </div>
 
@@ -4795,6 +4796,130 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
   </div><!-- /sec-lb-after -->
+
+  <!-- ── 자기자본 섹션 ── -->
+  <div id="sec-lb-equity" style="display:none">
+
+    <!-- 핵심 KPI 3개 -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">
+      <div class="card" style="padding:18px 16px;border-top:3px solid var(--text);text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:8px">🏠 총 취득 비용</div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:4px">집값 + 취득세 + 부대비용</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--text);line-height:1.1">11억<br>4,300만</div>
+      </div>
+      <div class="card" style="padding:18px 16px;border-top:3px solid var(--red);text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:8px">🏦 총 대출</div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:4px">은행 6.55억 + 가족 0.75억</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--red);line-height:1.1">7억<br>2,500만</div>
+      </div>
+      <div class="card" style="padding:18px 16px;border-top:3px solid var(--green);text-align:center">
+        <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:8px">💰 내 돈 (자기자본)</div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:4px">총비용 − 총대출</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--green);line-height:1.1">4억<br>1,800만</div>
+      </div>
+    </div>
+
+    <!-- 레버리지 바 -->
+    <div class="card" style="padding:14px 18px;margin-bottom:18px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span style="font-size:11px;font-weight:700;color:var(--red)">대출 63.4%</span>
+        <span style="font-size:11px;font-weight:700;color:var(--green)">자기자본 36.6%</span>
+      </div>
+      <div style="height:12px;border-radius:99px;overflow:hidden;background:var(--border)">
+        <div style="height:100%;width:63.4%;background:linear-gradient(90deg,var(--red),#f87171);border-radius:99px"></div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">LTV 기준이 아닌 총 취득비용 대비 자기자본 비율</div>
+    </div>
+
+    <!-- 상세 내역 2열 -->
+    <div class="g2" style="margin-bottom:18px">
+
+      <!-- 총 비용 breakdown -->
+      <div class="card" style="padding:14px 16px">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px">🏠 총 취득 비용 상세</div>
+        <div class="fund-row"><div class="fund-label">등촌 매수가</div><div style="flex:1"></div><div style="font-weight:800">10억 9,000만</div></div>
+        <div class="fund-row"><div class="fund-label">취득세 + 지방교육세</div><div style="flex:1"></div><div style="font-weight:700;color:var(--red)">3,597만</div></div>
+        <div class="fund-row"><div class="fund-label">중개수수료 (등촌)</div><div style="flex:1"></div><div style="font-weight:700">600만</div></div>
+        <div class="fund-row"><div class="fund-label">이사비</div><div style="flex:1"></div><div style="font-weight:700">300만</div></div>
+        <div class="fund-row"><div class="fund-label">인테리어 (확정)</div><div style="flex:1"></div><div style="font-weight:700">753만</div></div>
+        <div class="fund-row" style="border-bottom:none"><div class="fund-label">에어컨 해체·설치</div><div style="flex:1"></div><div style="font-weight:700">50만</div></div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:11px;color:var(--muted)">합계</span>
+          <span style="font-size:15px;font-weight:900;color:var(--text)">11억 4,300만</span>
+        </div>
+      </div>
+
+      <!-- 자기자본 원천 breakdown -->
+      <div class="card" style="padding:14px 16px">
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px">💰 자기자본 원천</div>
+        <div class="fund-row">
+          <div class="fund-label">청라 집 처분 순수령</div>
+          <div style="flex:1"></div>
+          <div>
+            <div style="font-weight:800;color:var(--green)">2억 4,337만</div>
+            <div style="font-size:10px;color:var(--muted)">보금자리론 상환·중개비 차감 후</div>
+          </div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">IRP·퇴직연금 해지 세후</div>
+          <div style="flex:1"></div>
+          <div>
+            <div style="font-weight:800;color:var(--purple)">5,495만</div>
+            <div style="font-size:10px;color:var(--muted)">안영준 4,981 + 황서림 1,600 × 83.5%</div>
+          </div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">황서림 현금 (주식 매도)</div>
+          <div style="flex:1"></div>
+          <div style="font-weight:800">2,800만</div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">안영준 현금</div>
+          <div style="flex:1"></div>
+          <div style="font-weight:800">290만</div>
+        </div>
+        <div class="fund-row" style="border-bottom:none">
+          <div class="fund-label">취득세·부대비용 자부담</div>
+          <div style="flex:1"></div>
+          <div>
+            <div style="font-weight:800">8,878만</div>
+            <div style="font-size:10px;color:var(--muted)">취득세 카드 + 중개·이사·인테리어</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:11px;color:var(--muted)">합계</span>
+          <span style="font-size:15px;font-weight:900;color:var(--green)">4억 1,800만</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 총 대출 breakdown -->
+    <div class="card" style="padding:14px 18px">
+      <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:10px">🏦 총 대출 상세 (7억 2,500만)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px">은행 대출</div>
+          <div class="fund-row" style="font-size:11px"><div class="fund-label">주담대 (우리은행)</div><div style="flex:1"></div><div style="font-weight:700;color:var(--orange)">3억 8,500만</div></div>
+          <div class="fund-row" style="font-size:11px"><div class="fund-label">신용대출 (안영준)</div><div style="flex:1"></div><div style="font-weight:700">9,500만</div></div>
+          <div class="fund-row" style="font-size:11px"><div class="fund-label">보증보험 (안영준)</div><div style="flex:1"></div><div style="font-weight:700">1억 2,000만</div></div>
+          <div class="fund-row" style="font-size:11px;border-bottom:none"><div class="fund-label">신용대출 (황서림)</div><div style="flex:1"></div><div style="font-weight:700">5,000만</div></div>
+          <div style="margin-top:8px;font-size:11px;font-weight:700;color:var(--red);text-align:right;padding-right:4px">소계 6억 5,000만</div>
+        </div>
+        <div style="border-left:1px solid var(--border);padding-left:16px">
+          <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px">가족 차용</div>
+          <div class="fund-row" style="font-size:11px"><div class="fund-label">이모님 차용</div><div style="flex:1"></div><div style="font-weight:700">3,000만</div></div>
+          <div class="fund-row" style="font-size:11px;border-bottom:none"><div class="fund-label">큰누나 차용</div><div style="flex:1"></div><div style="font-weight:700">4,500만</div></div>
+          <div style="margin-top:8px;font-size:11px;font-weight:700;color:var(--green);text-align:right;padding-right:4px">소계 7,500만</div>
+          <div style="margin-top:24px;padding-top:12px;border-top:1px solid var(--border)">
+            <div style="font-size:10px;color:var(--muted)">2027년 말 가족 상환 후</div>
+            <div style="font-size:13px;font-weight:800;color:var(--text)">은행 대출만 남음</div>
+            <div style="font-size:15px;font-weight:900;color:var(--red)">6억 5,000만</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sec-lb-equity -->
 
 </div>
 </div>
@@ -7040,10 +7165,12 @@ function switchLoanBalance(tab){
   document.getElementById('sec-lb-janggeum').style.display = tab==='janggeum'?'':'none';
   document.getElementById('sec-lb-janggeum-all').style.display = tab==='janggeum-all'?'':'none';
   document.getElementById('sec-lb-after').style.display = tab==='after'?'':'none';
+  document.getElementById('sec-lb-equity').style.display = tab==='equity'?'':'none';
   document.getElementById('lb-btn-jungdo').classList.toggle('active',tab==='jungdo');
   document.getElementById('lb-btn-janggeum').classList.toggle('active',tab==='janggeum');
   document.getElementById('lb-btn-janggeum-all').classList.toggle('active',tab==='janggeum-all');
   document.getElementById('lb-btn-after').classList.toggle('active',tab==='after');
+  document.getElementById('lb-btn-equity').classList.toggle('active',tab==='equity');
 }
 function switchPostCost(name){
   var tabs=['all','notax','tax','fee','moving','notary'];
