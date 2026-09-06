@@ -6680,37 +6680,209 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <!-- ══ 이주비대출 ══ -->
   <div id="sec-rm-loan" style="display:none">
 
-    <div class="ibox p" style="margin-bottom:16px;font-size:13px;line-height:1.8">
-      💡 <strong>이주비 대출이란?</strong> 리모델링·재건축 이주 기간 동안 임시 거주 비용을 위해 조합이 금융사와 협약해 조합원에게 제공하는 저금리 대출입니다.
+    <!-- 목표 히어로 -->
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px;border:2px solid var(--purple)">
+      <div style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(139,92,246,.04));padding:18px 22px">
+        <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:1px;margin-bottom:6px">🎯 이주비 대출 목표 시나리오</div>
+        <div style="display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:2.6rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;line-height:1">6억</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">마곡 더샵 감정가 10~11억 × 55~60%</div>
+          </div>
+          <div style="flex:1;min-width:180px;background:rgba(139,92,246,.08);border-radius:10px;padding:10px 14px;font-size:11.5px;line-height:1.9">
+            <div>✅ 주담대 전액 상환 (착공 시점)</div>
+            <div>✅ 계약금 5,000만 납부</div>
+            <div>✅ 누나·매형 차용금 정리</div>
+            <div>✅ 잔여액 → 임시 거주지 보증금</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- 예상 한도 -->
-    <div class="stitle">📋 예상 대출 조건</div>
-    <div class="card" style="margin-bottom:16px">
-      <div class="ln-info-row"><div class="ln-info-nm">대출 기준</div><div class="ln-info-vl">기존 아파트 감정가의 40~70%</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">마곡 더샵 감정가</div><div class="ln-info-vl" style="font-weight:800;color:var(--purple)">10억~11억 추정</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">예상 이주비 한도</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">4억~7억 수준</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">금리 수준</div><div class="ln-info-vl">CD금리 연동 · 3~5% 예상</div></div>
-      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">이자 발생</div><div class="ln-info-vl" style="color:var(--red);font-weight:700">이주 시작~입주 시까지 별도 부담</div></div>
+    <!-- ① 주담대 상환 시점 잔액 계산 -->
+    <div class="stitle">📐 착공 시점 주담대 잔액 계산</div>
+    <div class="ibox p" style="margin-bottom:12px;font-size:12.5px;line-height:1.85">
+      💡 <strong>원금균등 방식</strong>이라 매월 일정 원금이 줄어들어요.<br>
+      월 원금 상환액 = 3억 8,500만 ÷ 360개월 = <strong>약 107만원/월</strong>
+    </div>
+    <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden">
+      <div style="padding:14px 18px;background:var(--card2);border-bottom:1px solid var(--border)">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:2px">실행일: 2026년 9월 16일 · 원금: 3억 8,500만</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr)">
+        <div style="padding:16px;border-right:1px solid var(--border);text-align:center">
+          <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px">2027년 6월 이주<br>(9개월 후)</div>
+          <div style="font-size:11px;color:var(--green);margin-bottom:4px">−963만 상환</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">3억 7,537만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px">이른 이주 시나리오</div>
+        </div>
+        <div style="padding:16px;border-right:1px solid var(--border);text-align:center;background:rgba(139,92,246,.04)">
+          <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:6px">2027년 8월 이주<br>(11개월 후) — 기준</div>
+          <div style="font-size:11px;color:var(--green);margin-bottom:4px">−1,177만 상환</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">3억 7,323만</div>
+          <div style="font-size:10px;color:var(--purple);margin-top:4px;font-weight:700">기준 시나리오</div>
+        </div>
+        <div style="padding:16px;text-align:center">
+          <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px">2027년 9월 이주<br>(12개월 후)</div>
+          <div style="font-size:11px;color:var(--green);margin-bottom:4px">−1,284만 상환</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">3억 7,216만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px">늦은 이주 시나리오</div>
+        </div>
+      </div>
+      <div style="padding:10px 18px;background:var(--g2);font-size:11.5px;color:var(--green);font-weight:700;border-top:1px solid rgba(16,185,129,.2)">
+        ✅ 주담대 상환 후 이자 부담(월 255만) 완전 소멸 → 이주 기간 현금흐름 대폭 개선
+      </div>
     </div>
 
-    <!-- 타이밍 -->
-    <div class="stitle">📅 이주비 대출 타이밍</div>
+    <!-- ② 이주비 6억 자금 배분 -->
+    <div class="stitle">💰 이주비 6억 자금 배분 계획</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+
+      <!-- 용도별 사용 -->
+      <div style="padding:16px 20px">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--text)">① 주담대 전액 상환</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">우리은행 · 착공 시점 (이주 후 즉시)</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:1.3rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">−3억 7,300만</div>
+            <div style="font-size:10px;color:var(--muted)">11개월 기준 잔액</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--text)">② 분담금 계약금</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">분담금 10% · 2027년 2~3월 현금 납부</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:1.3rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">−5,000만</div>
+            <div style="font-size:10px;color:var(--muted)">이주 전 선집행</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--text)">③ 큰누나·매형 차용금 상환</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">4,500만 · 연 3.47% 이자 부담 해소</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:1.3rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">−4,500만</div>
+            <div style="font-size:10px;color:var(--muted)">이주 시점 정리</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:2px solid var(--purple)">
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--muted)">④ 이모님 차용금 (옵션)</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">3,000만 · 2026년 말 장모님 대납 예정 — 확인 후 결정</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:1.3rem;font-weight:900;color:var(--muted);font-variant-numeric:tabular-nums">−3,000만</div>
+            <div style="font-size:10px;color:var(--orange)">장모님 대납 시 불필요</div>
+          </div>
+        </div>
+
+        <!-- 잔여 2가지 시나리오 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+          <div style="background:var(--g2);border-radius:10px;padding:13px 15px;border:1.5px solid rgba(16,185,129,.3)">
+            <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:6px">장모님 대납 O (이모님 제외)</div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px">6억 − 3.73억 − 5천 − 4,500</div>
+            <div style="font-size:1.6rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">1억 3,200만</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;margin-top:4px">→ 임시 거주지 보증금</div>
+          </div>
+          <div style="background:var(--p3);border-radius:10px;padding:13px 15px;border:1.5px solid rgba(139,92,246,.3)">
+            <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:6px">장모님 대납 X (이모님 포함)</div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px">6억 − 3.73억 − 5천 − 4,500 − 3천</div>
+            <div style="font-size:1.6rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">1억 200만</div>
+            <div style="font-size:11px;color:var(--purple);font-weight:700;margin-top:4px">→ 임시 거주지 보증금</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:10px 18px;background:rgba(139,92,246,.07);border-top:1px solid rgba(139,92,246,.15);font-size:11.5px;line-height:1.8">
+        <strong style="color:var(--purple)">결론:</strong> 6억 이주비 대출로 주담대·계약금·가족 차용금 모두 정리하고, <strong>1억~1억 3천만원</strong>이 임시 거주지 보증금으로 남음
+      </div>
+    </div>
+
+    <!-- ③ 이자 부담 분석 -->
+    <div class="stitle">📊 이주비 6억 — 월 이자 부담 분석</div>
+    <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr)">
+        <div style="padding:14px 12px;text-align:center;border-right:1px solid var(--border)">
+          <div style="font-size:9.5px;font-weight:700;color:var(--muted);margin-bottom:6px">금리 3%</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">150만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
+        </div>
+        <div style="padding:14px 12px;text-align:center;border-right:1px solid var(--border);background:rgba(16,185,129,.04)">
+          <div style="font-size:9.5px;font-weight:700;color:var(--green);margin-bottom:6px">금리 3.5% ★추정</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">175만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
+        </div>
+        <div style="padding:14px 12px;text-align:center;border-right:1px solid var(--border)">
+          <div style="font-size:9.5px;font-weight:700;color:var(--muted);margin-bottom:6px">금리 4%</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">200만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
+        </div>
+        <div style="padding:14px 12px;text-align:center">
+          <div style="font-size:9.5px;font-weight:700;color:var(--muted);margin-bottom:6px">금리 5%</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">250만</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
+        </div>
+      </div>
+      <div style="padding:12px 18px;background:var(--g2);border-top:1px solid rgba(16,185,129,.2);font-size:12px;line-height:1.8">
+        <strong style="color:var(--green)">주담대 상환 효과:</strong> 기존 주담대 월 <strong>255만</strong> 소멸 → 이주비 이자 175~200만으로 대체<br>
+        <span style="color:var(--muted)">순 절감 효과: 월 55~80만 절약 + 원금 상환 부담 사라짐</span>
+      </div>
+    </div>
+
+    <!-- ④ 임시 거주지 선택지 -->
+    <div class="stitle">🏠 임시 거주지 선택지 (1억~1억 3천 보증금 기준)</div>
+    <div class="g2" style="margin-bottom:20px">
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="padding:10px 16px;background:rgba(59,130,246,.1);border-bottom:1px solid rgba(59,130,246,.2);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;font-weight:800;color:#3b82f6">🏢 반전세 (서울/경기)</span>
+          <span style="font-size:10px;padding:2px 8px;background:rgba(59,130,246,.15);border-radius:99px;color:#3b82f6;font-weight:700">보증금 절약</span>
+        </div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">보증금</div><div class="ln-info-vl" style="font-weight:800">5,000만~1억</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">월세</div><div class="ln-info-vl">50~100만/월</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">장점</div><div class="ln-info-vl" style="color:var(--green)">잔여 보증금 여유 / 서울 접근성</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">단점</div><div class="ln-info-vl" style="color:var(--red)">월세 추가 부담 / 2.5~3년 지속</div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="padding:10px 16px;background:rgba(16,185,129,.1);border-bottom:1px solid rgba(16,185,129,.2);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;font-weight:800;color:var(--green)">🏡 용인 동백 전세</span>
+          <span style="font-size:10px;padding:2px 8px;background:rgba(16,185,129,.2);border-radius:99px;color:var(--green);font-weight:700">월 부담 없음</span>
+        </div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">전세 보증금</div><div class="ln-info-vl" style="font-weight:800;color:var(--green)">1억~1억 5천 수준</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">월세</div><div class="ln-info-vl" style="color:var(--green);font-weight:700">없음 (전세)</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">장점</div><div class="ln-info-vl" style="color:var(--green)">월 추가 지출 無 / 이주비 한도 내 충분</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">단점</div><div class="ln-info-vl" style="color:var(--muted)">서울 출퇴근 거리 / 아이 학군 변경</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ 이주비 대출 조건 / 타이밍 -->
+    <div class="stitle">📅 이주비 대출 일정 & 조건</div>
     <div class="card" style="margin-bottom:16px">
+      <div class="ln-info-row"><div class="ln-info-nm">대출 기준</div><div class="ln-info-vl">마곡 더샵 감정가의 40~70% · 시세 10~11억 기준</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">목표 한도</div><div class="ln-info-vl" style="font-weight:900;color:var(--purple)">6억 (약 55~60% LTV)</div></div>
       <div class="ln-info-row"><div class="ln-info-nm">금융사 협약</div><div class="ln-info-vl">2027년 1~2월 (확정총회 후)</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">개별 신청</div><div class="ln-info-vl">이주 공고 후 개별 접수</div></div>
-      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">상환 시기</div><div class="ln-info-vl">준공 후 입주 시점 (2030~2031년)</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">개별 실행</div><div class="ln-info-vl">이주 공고 후 조합원 개별 신청</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">상환 시기</div><div class="ln-info-vl">2030~2031년 준공 후 입주 잔금 시</div></div>
+      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">현재 상태</div><div class="ln-info-vl" style="color:var(--orange);font-weight:700">확정총회(2026년 말) 이후 조건 확정 예정</div></div>
     </div>
 
-    <div class="ibox y" style="margin-bottom:16px">
-      <div style="font-size:12px;font-weight:800;margin-bottom:6px">⚠️ 주의사항</div>
-      이주비 대출은 <strong>기존 등촌 주담대와 별개</strong>로 취급 · 한도 충돌 여부는 금융사 협약 후 확인<br>
-      <span style="font-size:11.5px;color:var(--muted)">등촌 부영 입주 후 1년~1년 3개월 내 기존 대출 이자 납입 계획과 병행하여 자금 계획 수립 필요</span>
-    </div>
-
-    <div style="background:var(--card2);border-radius:10px;padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.8">
-      📌 <strong style="color:var(--text)">확정 전 메모</strong><br>
-      이주비 대출 조건 · 금융사 · 한도는 <strong>2026년 말 확정총회 이후</strong> 업데이트 예정입니다.
+    <div class="ibox y" style="margin-bottom:0">
+      <div style="font-size:12px;font-weight:800;margin-bottom:6px">📌 결론 요약</div>
+      이주비 6억으로 <strong>주담대 전액 상환 → 계약금 납부 → 가족 차용금 정리</strong> 후<br>
+      잔여 <strong>1억~1억 3천만원</strong>으로 용인 동백 전세 or 반전세 보증금 충당 가능<br>
+      <span style="font-size:11.5px;color:var(--muted)">이주비 이자(월 175~200만)는 기존 주담대 255만보다 낮아 현금흐름 오히려 개선됨</span>
     </div>
 
   </div><!-- /sec-rm-loan -->
