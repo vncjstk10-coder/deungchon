@@ -2869,8 +2869,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0">
       <button id="loan-btn-timeline" class="person-btn" onclick="switchPerson('timeline')">🏦 대출 전체</button>
-      <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">원리금</button>
-      <button id="loan-btn-family" class="person-btn active" onclick="switchPerson('family')">👨‍👩‍👧 가족 대출</button>
+      <button id="loan-btn-combined" class="person-btn active" onclick="switchPerson('combined')">원리금</button>
+      <button id="loan-btn-family" class="person-btn" onclick="switchPerson('family')">👨‍👩‍👧 가족 대출</button>
       <button id="loan-btn-cashflow" class="person-btn" onclick="switchPerson('cashflow')">💰 월별 현금흐름</button>
     </div>
   </div>
@@ -3397,7 +3397,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
   <!-- ── 합산 섹션 ── -->
-  <div id="sec-combined" style="display:none">
+  <div id="sec-combined">
 
     <!-- 히어로: 월 납입 총액 -->
     <div class="card card-red" style="padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
@@ -3532,7 +3532,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   </div>
 
-<div id="sec-family">
+<div id="sec-family" style="display:none">
 
   <!-- ① 가족 차용금 히어로 카드 -->
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px">
