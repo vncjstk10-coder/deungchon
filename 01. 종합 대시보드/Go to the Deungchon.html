@@ -2878,6 +2878,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button id="loan-btn-combined" class="person-btn" onclick="switchPerson('combined')">합산</button>
       <button id="loan-btn-consultant" class="person-btn" style="display:none" onclick="switchPerson('consultant')">📋 상담사</button>
       <button id="loan-btn-family" class="person-btn active" onclick="switchPerson('family')">👨‍👩‍👧 가족 대출</button>
+      <button id="loan-btn-cashflow" class="person-btn" onclick="switchPerson('cashflow')">💰 월별 현금흐름</button>
     </div>
   </div>
 
@@ -3629,6 +3630,103 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   </div>
 
 </div><!-- /sec-family -->
+
+<!-- ── 월별 현금흐름 섹션 ── -->
+<div id="sec-cashflow" style="display:none">
+
+  <!-- 비용 구조 카드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+    <div class="card" style="padding:14px 16px">
+      <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:8px">💳 월 대출 원리금</div>
+      <div style="font-size:11px;line-height:2.1;color:var(--text)">
+        등촌 주담대 <span style="float:right;font-weight:700">~255만</span><br>
+        우리신용대출 <span style="float:right;font-weight:700">32만</span><br>
+        회사보증보험 <span style="float:right;font-weight:700">48만</span><br>
+        큰누나 차용 <span style="float:right;font-weight:700">13만</span><br>
+        황서림 신용 <span style="float:right;font-weight:700">21~25만</span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:10px;color:var(--muted)">합계</span>
+        <span style="font-size:16px;font-weight:900;color:var(--red)">373만</span>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">※ 2028.01부터 360만 (큰누나 상환 완료)</div>
+    </div>
+    <div class="card" style="padding:14px 16px">
+      <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:8px">🏠 월 생활 고정비</div>
+      <div style="font-size:11px;line-height:2.1;color:var(--text)">
+        생활비 <span style="float:right;font-weight:700">100만</span><br>
+        용돈 (30×2) <span style="float:right;font-weight:700">60만</span><br>
+        관리비 <span style="float:right;font-weight:700">28만</span><br>
+        계모임 <span style="float:right;font-weight:700">24만</span><br>
+        통신비 <span style="float:right;font-weight:700">13만</span><br>
+        교통비 <span style="float:right;font-weight:700">13만</span><br>
+        보험 <span style="float:right;font-weight:700">12만</span><br>
+        청약 <span style="float:right;font-weight:700">5만</span>
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:10px;color:var(--muted)">합계</span>
+        <span style="font-size:16px;font-weight:900;color:var(--orange)">255만</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 시나리오 요약 카드 3개 -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+    <div class="card" style="padding:14px;border-top:3px solid var(--green);text-align:center">
+      <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:6px">A. 맞벌이</div>
+      <div style="font-size:10px;color:var(--muted)">수입 1,000만</div>
+      <div style="font-size:10px;color:var(--muted)">지출 628만</div>
+      <div style="font-size:22px;font-weight:900;color:var(--green);margin-top:6px">+372만</div>
+      <div style="font-size:10px;color:var(--muted)">월 잉여</div>
+    </div>
+    <div class="card" style="padding:14px;border-top:3px solid var(--red);text-align:center">
+      <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:6px">B. 무급 육아휴직</div>
+      <div style="font-size:10px;color:var(--muted)">수입 600만</div>
+      <div style="font-size:10px;color:var(--muted)">지출 628만</div>
+      <div style="font-size:22px;font-weight:900;color:var(--red);margin-top:6px">-28만</div>
+      <div style="font-size:10px;color:var(--muted)">월 적자</div>
+    </div>
+    <div class="card" style="padding:14px;border-top:3px solid var(--purple);text-align:center">
+      <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:6px">C. 아이+맞벌이</div>
+      <div style="font-size:10px;color:var(--muted)">수입 1,000만</div>
+      <div style="font-size:10px;color:var(--muted)">지출 678만 (+육아50)</div>
+      <div style="font-size:22px;font-weight:900;color:var(--purple);margin-top:6px">+322만</div>
+      <div style="font-size:10px;color:var(--muted)">월 잉여</div>
+    </div>
+  </div>
+
+  <!-- 시나리오 탭 -->
+  <div style="display:flex;gap:6px;margin-bottom:12px">
+    <button id="cf-btn-a" class="person-btn active" onclick="switchCashflow('a')">A. 맞벌이</button>
+    <button id="cf-btn-b" class="person-btn" onclick="switchCashflow('b')">B. 무급 육아휴직</button>
+    <button id="cf-btn-c" class="person-btn" onclick="switchCashflow('c')">C. 아이+맞벌이</button>
+  </div>
+
+  <!-- 월별 테이블 -->
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="background:var(--card2)">
+          <th style="padding:8px 10px;text-align:left;font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap">월</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted)">안영준</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted)">황서림</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted)">합계수입</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--red)">원리금</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--orange)">생활고정</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted)">월 잉여</th>
+          <th style="padding:8px 10px;text-align:right;font-size:11px;font-weight:700;color:var(--muted)">누적</th>
+          <th style="padding:8px 10px;text-align:left;font-size:11px;font-weight:700;color:var(--muted)">비고</th>
+        </tr>
+      </thead>
+      <tbody id="cf-tbody"></tbody>
+    </table>
+  </div>
+  <div style="font-size:10px;color:var(--muted);margin-top:10px;line-height:1.8">
+    ※ 누적은 26년 10월 기준 0에서 시작 · 27년 12월 성과급 3,052만 포함 · 가족차용 6,500만 상환 반영<br>
+    ※ 생활비·용돈은 최소 기준 · 실제 카드 지출 미포함
+  </div>
+
+</div><!-- /sec-cashflow -->
 
 <div id="sec-consultant" style="display:none">
 
@@ -6883,14 +6981,63 @@ document.getElementById('sec-combined').style.display = name==='combined'?'':'no
 document.getElementById('sec-consultant').style.display = name==='consultant'?'':'none';
 document.getElementById('sec-timeline').style.display = name==='timeline'?'':'none';
 document.getElementById('sec-family').style.display = name==='family'?'':'none';
-document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline'||name==='family')?'none':'';
+document.getElementById('sec-cashflow').style.display = name==='cashflow'?'':'none';
+document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline'||name==='family'||name==='cashflow')?'none':'';
 document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
 document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
 document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
 document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
 document.getElementById('loan-btn-timeline').classList.toggle('active',name==='timeline');
 document.getElementById('loan-btn-family').classList.toggle('active',name==='family');
+document.getElementById('loan-btn-cashflow').classList.toggle('active',name==='cashflow');
 }
+function switchCashflow(s){
+  ['a','b','c'].forEach(function(x){
+    document.getElementById('cf-btn-'+x).classList.toggle('active',x===s);
+  });
+  renderCashflowTable(s);
+}
+function renderCashflowTable(s){
+  var data=[
+    {lb:'26.10',note:'🏠 이사 입주!',nc:'var(--green)'},
+    {lb:'26.11'},
+    {lb:'26.12',note:'이모님 1,000만 장모님 대납',nc:'var(--purple)'},
+    {lb:'27.01'},{lb:'27.02'},{lb:'27.03'},{lb:'27.04'},{lb:'27.05'},
+    {lb:'27.06'},{lb:'27.07'},{lb:'27.08'},{lb:'27.09'},{lb:'27.10'},{lb:'27.11'},
+    {lb:'27.12',bonus:3052,repay:6500,note:'성과급+가족차용 6,500만 상환',nc:'var(--red)'},
+    {lb:'28.01',note:'큰누나 상환 완료',nc:'var(--green)'},
+    {lb:'28.02'},
+    {lb:'28.03'}
+  ];
+  var ahn=600,hwang=s==='b'?0:400,baby=s==='c'?50:0;
+  var lf=255,cum=0,rows='';
+  data.forEach(function(m){
+    var prin=m.lb.substring(0,2)==='28'?360:373;
+    var exp=prin+lf+baby,inc=ahn+hwang,sur=inc-exp;
+    cum+=sur;
+    if(m.bonus)cum+=m.bonus;
+    if(m.repay)cum-=m.repay;
+    var sc=sur>=0?'var(--green)':'var(--red)';
+    var cc=cum>=0?'var(--text)':'var(--red)';
+    var bg=m.bonus||m.repay?'background:var(--card2)':'';
+    rows+='<tr style="border-bottom:1px solid var(--border);'+bg+'">';
+    rows+='<td style="padding:6px 10px;font-weight:700;white-space:nowrap;font-size:11px">'+m.lb+'</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px">'+ahn+'만</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px;color:'+(hwang===0?'var(--muted)':'inherit')+'">'+hwang+'만</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px;font-weight:700">'+inc+'만</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px;color:var(--red)">'+prin+'만</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px;color:var(--orange)">'+(lf+baby)+'만</td>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px;font-weight:700;color:'+sc+'">'+(sur>=0?'+':'')+sur+'만</td>';
+    var cc2='<div style="font-weight:700;font-variant-numeric:tabular-nums;color:'+cc+'">'+cum+'만</div>';
+    if(m.bonus)cc2+='<div style="font-size:10px;color:var(--purple)">+성과급 '+m.bonus+'만</div>';
+    if(m.repay)cc2+='<div style="font-size:10px;color:var(--red)">-상환 '+m.repay+'만</div>';
+    rows+='<td style="padding:6px 10px;text-align:right;font-size:11px">'+cc2+'</td>';
+    rows+='<td style="padding:6px 10px;font-size:10px;color:'+(m.nc||'var(--muted)')+'">'+( m.note||'')+'</td>';
+    rows+='</tr>';
+  });
+  document.getElementById('cf-tbody').innerHTML=rows;
+}
+renderCashflowTable('a');
 function switchFundPlan(p){
   ['1','2'].forEach(n=>{
     document.getElementById('fund-plan-'+n).style.display = p===n?'':'none';
