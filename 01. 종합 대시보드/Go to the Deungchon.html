@@ -3453,17 +3453,17 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <!-- ── 합산 섹션 ── -->
   <div id="sec-combined" style="display:none">
 
-    <!-- 상단 KPI -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px">
-      <div class="card" style="padding:18px;text-align:center;border:2px solid var(--red)">
-        <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:6px">총 대출 잔액</div>
-        <div style="font-size:1.8rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">약 7.3억</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 6.55억 + 가족 0.75억</div>
+    <!-- 히어로: 월 납입 총액 -->
+    <div class="card card-red" style="padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.6px;margin-bottom:8px">매달 갚는 돈 총합 · 6건</div>
+        <div style="font-size:3.2rem;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:10px">은행 356~360만 + 가족 20.5만 · /월</div>
       </div>
-      <div class="card" style="padding:18px;text-align:center;border:2px solid var(--orange)">
-        <div style="font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:6px">월 원리금 합계</div>
-        <div style="font-size:1.8rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 356만 + 가족 21만</div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.4px;margin-bottom:6px">총 대출 잔액</div>
+        <div style="font-size:1.8rem;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1">약 7.3억</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:6px">은행 6.55억 + 가족 0.75억</div>
       </div>
     </div>
 
@@ -3527,19 +3527,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- 최종 합계 배너 -->
-    <div style="background:rgba(239,68,68,.06);border:2px solid var(--red);border-radius:12px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px">총 6건 합계</div>
-        <div style="font-size:13px;font-weight:800;color:var(--text)">은행 6.55억 + 가족 7,500만</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:3px">= 총 7억 3,000만 수준</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">월 원리금 총액</div>
-        <div style="font-size:2rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
-      </div>
-    </div>
 
   </div>
 
