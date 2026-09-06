@@ -7015,13 +7015,14 @@ document.getElementById('sec-timeline').style.display = name==='timeline'?'':'no
 document.getElementById('sec-family').style.display = name==='family'?'':'none';
 document.getElementById('sec-cashflow').style.display = name==='cashflow'?'':'none';
 document.getElementById('sec-common-header').style.display = (name==='consultant'||name==='timeline'||name==='family'||name==='cashflow')?'none':'';
-document.getElementById('loan-btn-hwang').classList.toggle('active',name==='hwang');
-document.getElementById('loan-btn-ahn').classList.toggle('active',name==='ahn');
-document.getElementById('loan-btn-combined').classList.toggle('active',name==='combined');
-document.getElementById('loan-btn-consultant').classList.toggle('active',name==='consultant');
-document.getElementById('loan-btn-timeline').classList.toggle('active',name==='timeline');
-document.getElementById('loan-btn-family').classList.toggle('active',name==='family');
-document.getElementById('loan-btn-cashflow').classList.toggle('active',name==='cashflow');
+var _lb;
+(_lb=document.getElementById('loan-btn-hwang'))&&_lb.classList.toggle('active',name==='hwang');
+(_lb=document.getElementById('loan-btn-ahn'))&&_lb.classList.toggle('active',name==='ahn');
+(_lb=document.getElementById('loan-btn-combined'))&&_lb.classList.toggle('active',name==='combined');
+(_lb=document.getElementById('loan-btn-consultant'))&&_lb.classList.toggle('active',name==='consultant');
+(_lb=document.getElementById('loan-btn-timeline'))&&_lb.classList.toggle('active',name==='timeline');
+(_lb=document.getElementById('loan-btn-family'))&&_lb.classList.toggle('active',name==='family');
+(_lb=document.getElementById('loan-btn-cashflow'))&&_lb.classList.toggle('active',name==='cashflow');
 }
 function switchCashflow(s){
   ['a','b','c'].forEach(function(x){
