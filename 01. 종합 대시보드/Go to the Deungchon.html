@@ -3400,16 +3400,19 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div id="sec-combined">
 
     <!-- 히어로: 월 납입 총액 -->
-    <div class="card card-red" style="padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div class="card" style="padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-left:4px solid var(--red)">
       <div>
-        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.6px;margin-bottom:8px">매달 갚는 돈 총합 · 6건</div>
-        <div style="font-size:3.2rem;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:10px">은행 356~360만 + 가족 20.5만 · /월</div>
+        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 6건</div>
+        <div style="display:flex;align-items:baseline;gap:6px">
+          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
+          <div style="font-size:12px;color:var(--muted)">/월</div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 356~360만 + 가족 20.5만</div>
       </div>
       <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.4px;margin-bottom:6px">총 대출 잔액</div>
-        <div style="font-size:1.8rem;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1">약 7.3억</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:6px">은행 6.55억 + 가족 0.75억</div>
+        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">약 7.3억</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">은행 6.55억 + 가족 0.75억</div>
       </div>
     </div>
 
