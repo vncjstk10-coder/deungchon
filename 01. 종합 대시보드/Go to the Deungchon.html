@@ -1451,6 +1451,34 @@ th{font-size:11.5px}
   /* 체크리스트 */
   .cl-label,.chk-label{color:rgba(255,255,255,.78)!important}
 }
+
+/* ── 저축계획 탭 모바일 최적화 ── */
+@media(max-width:768px){
+  /* 수입/지출 2열 → 1열 */
+  #sec-rm-savings>[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important
+  }
+  /* 전제조건 2x2 그리드 → 1열 */
+  #sec-rm-savings .card>[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important
+  }
+  /* 누적 시뮬레이션 4열 → 가로 스크롤 */
+  #sec-rm-savings .card>[style*="grid-template-columns:auto 1fr 1fr 1fr"]{
+    min-width:420px
+  }
+  #sec-rm-savings .card{overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  /* 월 저축 결과 카드 flex → 세로 스택 */
+  #sec-rm-savings .card[style*="display:flex"]{
+    flex-direction:column!important;align-items:flex-start!important
+  }
+  /* rm 탭 버튼바 줄바꿈 허용 */
+  #panel-remodel .ph>div:last-child{
+    flex-wrap:wrap!important;gap:4px!important;width:100%
+  }
+  #panel-remodel .ph .person-btn{
+    font-size:12px!important;padding:0 10px!important;min-width:auto!important
+  }
+}
 </style>
 </head>
 <body>
