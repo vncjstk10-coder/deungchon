@@ -1479,6 +1479,69 @@ th{font-size:11.5px}
     font-size:12px!important;padding:0 10px!important;min-width:auto!important
   }
 }
+
+/* ════ 디자인 개선 ════ */
+
+/* 1. 페이지 타이틀 — 더 크고 밀도 있게 */
+.ph h1{font-size:24px!important;letter-spacing:-0.028em;text-wrap:balance}
+
+/* 2. 사이드바 — 전체 너비 fill 대신 좌측 3px 액센트 바 */
+.sb-tab{position:relative;overflow:hidden}
+.sb-tab.active{background:rgba(123,110,246,0.13)!important}
+.sb-tab.active::before{
+  content:'';position:absolute;left:0;top:18%;height:64%;
+  width:3px;background:linear-gradient(180deg,#A78BFA 0%,#7B6EF6 100%);
+  border-radius:0 3px 3px 0
+}
+.sb-subtab{position:relative;overflow:hidden}
+.sb-subtab.active{background:rgba(123,110,246,0.14)!important;color:#bfbbff!important}
+.sb-subtab.active::before{
+  content:'';position:absolute;left:0;top:22%;height:56%;
+  width:2px;background:#7B6EF6;border-radius:0 2px 2px 0
+}
+
+/* 3. 카드 — 상단 내부 하이라이트로 "들린" 입체감 */
+.card:not(.card-purple):not(.card-orange):not(.card-red):not(.card-green){
+  box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,0.88)
+}
+
+/* 4. KPI 바 카드 — 상단 보더 액센트 */
+.kpi-bar-card{
+  border:1px solid var(--border);
+  border-top:2px solid rgba(123,110,246,0.22)!important
+}
+
+/* 5. 테이블 헤더 — 더 뚜렷한 배경 */
+th{background:rgba(123,110,246,0.055)!important;font-size:10.5px;letter-spacing:.07em}
+
+/* 6. 정보박스 — 좌측 보더 두꺼워지고 배경 더 선명 */
+.ibox.p{border-left-width:4px!important}
+.ibox.o{border-left-width:4px!important}
+.ibox.g{border-left-width:4px!important}
+.ibox.r{border-left-width:4px!important}
+.ibox.y{border-left-width:4px!important}
+
+/* 7. person-btn active — 미세 글로우 */
+.person-btn.active{box-shadow:0 2px 14px rgba(123,110,246,0.32)}
+
+/* 8. 섹션 타이틀 — 더 강한 계층 */
+.stitle{font-size:13.5px!important;font-weight:900!important;letter-spacing:-0.01em;color:#2D2A5E!important}
+.stitle .cnt{background:rgba(123,110,246,0.12)!important;font-size:10.5px}
+
+/* 9. 칩 — 미세 그림자 */
+.chip{box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+
+/* 10. 배경 — 조금 더 짙은 라벤더 */
+body{background:linear-gradient(145deg,#E4E8FF 0%,#EDF0FA 40%,#EFE9FF 100%)!important;background-attachment:fixed!important}
+
+/* 11. 진행 바 — 부드러운 마감 */
+.pbar.pu{background:linear-gradient(90deg,#7B6EF6,#A78BFA)!important}
+.pbar.gr{background:linear-gradient(90deg,#10B981,#34D399)!important}
+.pbar.or{background:linear-gradient(90deg,#F97316,#FDBA74)!important}
+.pbar.re{background:linear-gradient(90deg,#EF4444,#FCA5A5)!important}
+
+/* 12. 타임라인 active 노드 글로우 강화 */
+.tl-step.active .tl-node{box-shadow:0 0 0 6px rgba(249,115,22,0.16),0 4px 16px rgba(249,115,22,0.28)!important}
 </style>
 </head>
 <body>
