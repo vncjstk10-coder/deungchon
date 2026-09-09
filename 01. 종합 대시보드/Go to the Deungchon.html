@@ -1623,6 +1623,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button class="sb-subtab" onclick="go('loan-balance',this)"><span class="sb-icon" style="font-size:13px">💸</span><span class="sb-label">중도금 / 잔금</span></button>
       <button class="sb-subtab" onclick="go('interior',this)"><span class="sb-icon" style="font-size:13px">🎨</span><span class="sb-label">인테리어</span></button>
       <button class="sb-subtab" onclick="go('post-cost',this)"><span class="sb-icon" style="font-size:13px">💳</span><span class="sb-label">잔금 후 비용</span></button>
+      <button class="sb-subtab" onclick="go('todo',this)"><span class="sb-icon" style="font-size:13px">✅</span><span class="sb-label">To-do</span></button>
     </div>
     <!-- 마곡 더샵 그룹 -->
     <button class="sb-group-hdr open" id="grp-magok-hdr" onclick="toggleGroup('magok')">
@@ -1634,10 +1635,6 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('overview')"><span class="sb-icon" style="font-size:13px">💰</span><span class="sb-label">분담금</span></button>
       <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('savings')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">저축계획</span></button>
       <button class="sb-subtab" onclick="go('magok-temp',this)"><span class="sb-icon" style="font-size:13px">🛏️</span><span class="sb-label">임시 거주지</span></button>
-    </div>
-    <!-- To-do -->
-    <div style="margin-top:8px;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px">
-      <button class="sb-tab" onclick="go('todo',this)"><span class="sb-icon">✅</span><span class="sb-label">To-do</span></button>
     </div>
   </nav>
   <div class="sb-bottom">
