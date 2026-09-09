@@ -5343,10 +5343,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
             <div style="text-align:center;font-size:13px;font-weight:800;color:var(--orange);min-width:52px">+9만</div>
             <div style="text-align:center;font-size:13px;font-weight:800;color:var(--orange);min-width:52px">+9만</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr auto auto;gap:0;align-items:center;padding:11px 14px;border-bottom:1px solid var(--border)">
-            <div style="font-size:12.5px">일자 대리석 선반 추가</div>
-            <div style="text-align:center;font-size:13px;font-weight:800;color:var(--orange);min-width:52px">+9만</div>
-            <div style="text-align:center;font-size:13px;font-weight:800;color:var(--orange);min-width:52px">+9만</div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:0;align-items:center;padding:11px 14px;border-bottom:1px solid var(--border);opacity:0.45">
+            <div style="font-size:12.5px;text-decoration:line-through;color:var(--muted)">일자 대리석 선반 추가<div style="font-size:10px;font-weight:700;color:var(--red);text-decoration:none">❌ 미선택 — 부엌 타일로 대체</div></div>
+            <div style="text-align:center;font-size:13px;font-weight:800;color:var(--muted);min-width:52px;text-decoration:line-through">+9만</div>
+            <div style="text-align:center;font-size:13px;font-weight:800;color:var(--muted);min-width:52px;text-decoration:line-through">+9만</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr auto auto;gap:0;align-items:center;padding:11px 14px;border-bottom:1px solid var(--border)">
             <div style="font-size:12.5px">투피스 치마형 변기 변경<div style="font-size:10px;color:var(--muted)">옆면이 막혀 보이는 스타일</div></div>
@@ -5365,9 +5365,15 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           </div>
         </div>
         <div style="padding:10px 16px;background:var(--bg);border-top:2px solid var(--border);display:flex;justify-content:space-between;align-items:center">
-          <div style="font-size:12px;color:var(--muted)">옵션 소계 (거실 +28만 / 안방 +30만)</div>
-          <div style="font-size:14px;font-weight:900;color:var(--orange)">총 +58만</div>
+          <div style="font-size:12px;color:var(--muted)">옵션 소계 (거실 +19만 / 안방 +21만) · 선반 제외</div>
+          <div style="font-size:14px;font-weight:900;color:var(--orange)">총 +40만</div>
         </div>
+      </div>
+
+      <!-- 부엌 타일 -->
+      <div class="ibox o" style="margin-bottom:12px;font-size:12.5px;line-height:1.85">
+        🍳 <strong>부엌 타일</strong> — 일자 대리석 선반 대신 추가 예정<br>
+        <span style="color:var(--muted)">견적 미확정 · 두담 현장 시공 시 추가 요청 또는 별도 업체 확인 필요</span>
       </div>
 
       <!-- 기본 포함 사양 -->
@@ -8141,6 +8147,29 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="flex-shrink:0;text-align:right">
             <div style="font-size:10px;color:var(--muted);margin-bottom:3px">총액</div>
             <div style="font-size:13px;font-weight:900;color:var(--red)">3,597만</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 인테리어 -->
+    <div class="stitle">🍳 인테리어 — 확인 필요</div>
+    <div class="card" style="margin-bottom:20px;padding:0!important;overflow:hidden">
+      <div style="padding:16px 20px">
+        <div style="display:flex;align-items:flex-start;gap:14px">
+          <input type="checkbox" id="todo-kitchen-tile" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--green);cursor:pointer">
+          <div style="flex:1">
+            <label for="todo-kitchen-tile" style="cursor:pointer">
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px">부엌 타일 견적 확인</div>
+              <div style="font-size:12px;color:var(--t2);line-height:1.75">
+                화장실 일자 대리석 선반(+18만) 대신 부엌 타일로 대체 결정<br>
+                <span style="color:var(--muted)">두담에 부엌 타일 추가 시공 가능 여부 문의 · 별도 업체 필요 시 견적 확인</span>
+              </div>
+            </label>
+          </div>
+          <div style="flex-shrink:0;text-align:right">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:3px">가격</div>
+            <div style="font-size:13px;font-weight:900;color:var(--orange)">미정</div>
           </div>
         </div>
       </div>
