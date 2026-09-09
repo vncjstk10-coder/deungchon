@@ -2805,12 +2805,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   <!-- ── 취득세 ── -->
   <div class="stitle">🧾 취득세 — 카드 별도 납부</div>
-  <div style="border-radius:14px;border:2px solid var(--red);background:rgba(239,68,68,.07);padding:18px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+  <div style="border-radius:14px;border:2px solid var(--red);background:rgba(239,68,68,.07);padding:18px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
     <div>
       <div style="font-size:13px;font-weight:800;color:var(--red);margin-bottom:6px">취득세 + 지방교육세</div>
       <div style="font-size:11px;color:var(--muted);line-height:1.9">
         10.9억 × 3.3% · 1주택자 기준 · 농특세 면제<br>
-        납부기한: 잔금일(9/16)로부터 60일 이내<br>
+        납부기한: 잔금일(9/16) + 60일 → <strong style="color:var(--text)">2026-11-16(일)</strong><br>
         <strong style="color:var(--red)">카드 납부 예정 — 위 현금 흐름과 분리</strong>
       </div>
     </div>
@@ -2818,6 +2818,22 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="font-size:10px;color:var(--muted)">총액</div>
       <div style="font-size:2rem;font-weight:900;color:var(--red)">3,597만</div>
       <div style="font-size:12px;font-weight:700;color:var(--orange)">6개월 할부 시 월 약 600만</div>
+    </div>
+  </div>
+  <!-- KB국민카드 무이자 안내 -->
+  <div style="border-radius:12px;border:1.5px solid #C8A84B;background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));padding:14px 16px;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:14px">💳</span>
+      <span style="font-size:13px;font-weight:800;color:#8B6914">KB국민카드 — 취득세 무이자 6개월 이벤트</span>
+      <span style="font-size:10px;font-weight:700;color:#8B6914;background:rgba(200,168,75,0.18);padding:2px 8px;border-radius:99px">9월 한정</span>
+    </div>
+    <div style="font-size:12px;color:var(--t2);line-height:1.8">
+      ✅ 대상: KB국민 신용카드 <strong>첫 발급</strong> · 해지 후 1년 이상 경과 · 최근 7개월 이내 이용 내역 없음<br>
+      ✅ 혜택: 취득세 <strong>무이자 6개월</strong> (카드 발급 후 3개월간 적용)<br>
+      📞 대상 여부 확인: <strong>1588-1688</strong> (KB국민카드 고객센터 · 웰컴쿠폰 확인 가능)
+    </div>
+    <div style="margin-top:10px;padding:9px 12px;background:rgba(200,168,75,0.12);border-radius:8px;font-size:12px;color:#6B5200;font-weight:700">
+      ⚡ 결론: 9/16 잔금 후 카드 발급 → 11/16 전 3,597만 무이자 납부 → 월 약 600만 × 6개월
     </div>
   </div>
 
@@ -5770,7 +5786,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="kpi-bar-card" style="border-top:3px solid var(--purple);background:linear-gradient(160deg,#fff 50%,rgba(123,110,246,0.07) 100%)">
           <div class="lbl" style="color:var(--purple);font-weight:700">💳 카드 납부 (취득세)</div>
           <div class="num pu">3,597만</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">잔금일로부터 60일 이내</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">납부기한 <strong>2026-11-16</strong></div>
         </div>
         <div class="kpi-bar-card" style="border-top:3px solid var(--orange);background:linear-gradient(160deg,#fff 50%,rgba(249,115,22,0.07) 100%)">
           <div class="lbl" style="color:var(--orange);font-weight:700">💰 현금 지출 합계</div>
@@ -5866,7 +5882,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="flex:1"></div>
         <div style="font-size:1.2rem;font-weight:900;color:var(--purple)">3,597만원</div>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-top:8px">* 납부기한: 잔금일(9/16)로부터 60일 이내 · 법무사 대행 가능</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:8px">* 납부기한: 잔금일(9/16)로부터 60일 이내 → <strong style="color:var(--text)">2026-11-16(일)</strong> · 위택스 확인완료</div>
     </div>
 
     <div class="stitle">💳 납부 계획</div>
@@ -5895,25 +5911,37 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
 
-      <!-- 나머지 -->
-      <div style="background:var(--o2);border-radius:12px;padding:14px 16px;margin-bottom:14px">
-        <div style="font-size:11px;font-weight:800;color:var(--orange);margin-bottom:10px">📌 잔여분 — 별도 납부</div>
+      <!-- 나머지 — KB국민카드 무이자 6개월 -->
+      <div style="border-radius:12px;border:1.5px solid #C8A84B;background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));padding:14px 16px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
+          <span style="font-size:11px;font-weight:800;color:#8B6914">💳 잔여분 — KB국민카드 무이자 6개월</span>
+          <span style="font-size:9.5px;font-weight:700;background:rgba(200,168,75,0.2);color:#8B6914;padding:1px 7px;border-radius:99px">9월 이벤트</span>
+        </div>
         <div class="fund-row" style="padding:0;border:none;margin-bottom:6px">
           <div style="font-size:12px;color:var(--t2)">잔여 금액</div>
           <div style="flex:1"></div>
           <div style="font-size:1.15rem;font-weight:900;color:var(--orange)">2,407만원</div>
         </div>
-        <div class="fund-row" style="padding:0;border:none">
+        <div class="fund-row" style="padding:0;border:none;margin-bottom:6px">
           <div style="font-size:12px;color:var(--t2)">납부 방법</div>
           <div style="flex:1"></div>
-          <div style="font-size:12px;font-weight:700;color:var(--t2)">추가 확인 예정</div>
+          <div style="font-size:12px;font-weight:800;color:#8B6914">KB국민카드 무이자 6개월</div>
+        </div>
+        <div class="fund-row" style="padding:0;border:none;margin-bottom:8px">
+          <div style="font-size:12px;color:var(--t2)">월 납부액</div>
+          <div style="flex:1"></div>
+          <div style="font-size:1.1rem;font-weight:900;color:#8B6914">약 401만원 × 6개월</div>
+        </div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.75;background:rgba(200,168,75,0.1);border-radius:8px;padding:9px 11px">
+          ✅ 대상: 첫 발급 또는 해지 후 1년 이상 · 최근 7개월 이용 내역 없음<br>
+          📞 대상 여부: <strong>1588-1688</strong> (KB국민카드 고객센터)
         </div>
       </div>
 
       <div class="fund-row">
         <div class="fund-label">납부 기한</div>
         <div style="flex:1"></div>
-        <div style="font-size:12px;font-weight:700">잔금일 9/16 → 60일 이내 · 최대 11월 15일</div>
+        <div style="font-size:12px;font-weight:700">잔금일 9/16 + 60일 → <span style="color:var(--text);font-weight:900">2026-11-16(일)</span></div>
       </div>
       <div class="fund-row">
         <div class="fund-label">납부 채널</div>
