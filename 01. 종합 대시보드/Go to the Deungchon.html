@@ -1750,11 +1750,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="kpi-lbl">🛠️ 인테리어 업체</div>
         <span class="chip g">3곳 확정</span>
       </div>
-      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">753만원</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/17~23 · 이사 9/24</div>
+      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">788만원</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/17~9/21 · 이사 9/24</div>
       <div class="ibox g" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🖼️ <strong>장판의 신</strong> 도배 125 + 장판 75 = 200만</div>
       <div class="ibox p" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🧹 <strong>청소대학</strong> 입주청소 37만 (아정당 소개)</div>
-      <div class="ibox g" style="padding:8px 12px;font-size:12px">🚿 <strong>두담</strong> 화장실 공사 확정 ✅ 516만</div>
+      <div class="ibox g" style="padding:8px 12px;font-size:12px">🚿 <strong>두담</strong> 화장실+주방타일 확정 ✅ 551만 <span style="font-size:10px;color:var(--muted)">(부가세 별도)</span></div>
     </div>
   </div>
 
@@ -1844,8 +1844,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">8</div><div class="tl-line"></div>
-      <div class="tl-body"><div class="tl-title">🚿 화장실 공사 — 두담</div><div class="tl-desc">두담 516만 · 9/17(목)~9/21(월)</div></div>
-      <div class="tl-right"><div class="tl-amt pl">516만</div><div class="tl-date">9/17(목)~9/21(월)</div></div>
+      <div class="tl-body"><div class="tl-title">🚿 화장실+주방타일 — 두담</div><div class="tl-desc">두담 551만 (부가세별도) · 9/17(목)~9/21(월)</div></div>
+      <div class="tl-right"><div class="tl-amt pl">551만</div><div class="tl-date">9/17(목)~9/21(월)</div></div>
     </div>
     <div class="tl-item">
       <div class="tl-dot fut">9</div><div class="tl-line"></div>
@@ -2795,7 +2795,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="padding:8px 16px">
       <div class="fund-row"><div class="fund-label">🏠 등촌 중개수수료 (VAT 포함)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">9/16 당일</span><span style="font-weight:800">599.5만</span></div>
       <div class="fund-row"><div class="fund-label">🚚 이사비 (1차 8/28 · 2차 9/21~23)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">SK익스프레스 확정</span><span style="font-weight:800">300만</span></div>
-      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·장판의신·청소대학)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/23</span><span style="font-weight:800">753만+</span></div>
+      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·장판의신·청소대학)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/21</span><span style="font-weight:800">788만+</span></div>
       <div class="fund-row" style="border-bottom:none"><div class="fund-label">❄️ 에어컨 해체·설치</div><div style="flex:1"></div><span style="font-weight:800">50만</span></div>
     </div>
     <div style="padding:12px 16px;background:rgba(249,115,22,.08);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
@@ -5080,7 +5080,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
       <div>
         <h1>🎨 인테리어</h1>
-        <p>9/16 잔금 → 9/17~23 공사+청소 → 9/24 이사 입주 · 확정 비용 753만</p>
+        <p>9/16 잔금 → 9/17~9/21 공사+청소 → 9/24 이사 입주 · 확정 비용 788만</p>
       </div>
       <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
         <button id="int-btn-all" class="person-btn active" onclick="switchInterior('all')">전체</button>
@@ -5296,14 +5296,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <!-- 기본 -->
         <div class="card" style="padding:0;overflow:hidden;border-top:4px solid var(--purple)">
           <div style="padding:12px 16px;background:rgba(99,91,255,.05);border-bottom:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:2px">기본 구성</div>
-            <div style="font-size:1.5rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">516만</div>
+            <div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:2px">확정 구성 (부가세 별도)</div>
+            <div style="font-size:1.5rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">551만</div>
           </div>
           <div style="padding:12px 16px;font-size:12px;line-height:2">
             <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">거실 화장실</span><strong>320만</strong></div>
             <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px;margin-bottom:4px">파티션형 209 + 타일 6 + 방수철거 105</div>
             <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">안방 욕실</span><strong>196만</strong></div>
-            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px">기본고급형 185 + 타일 6 + 철거 5</div>
+            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px;margin-bottom:4px">기본고급형 185 + 타일 6 + 철거 5</div>
+            <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">주방타일 시공</span><strong style="color:var(--green)">25만 ✅</strong></div>
+            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px;margin-bottom:4px">두담 현장 추가 시공 확정</div>
+            <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">주방 수도내림</span><strong>10만</strong></div>
+            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px">선택 포함</div>
           </div>
           <div style="padding:8px 16px;background:rgba(99,91,255,.06);border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
             거울장·도기류·유리선반·악세사리 포함
@@ -5313,17 +5317,19 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <!-- 풀옵션 -->
         <div class="card" style="padding:0;overflow:hidden;border-top:4px solid var(--orange)">
           <div style="padding:12px 16px;background:var(--o2);border-bottom:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:2px">옵션 전체 추가 시</div>
+            <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:2px">욕실 옵션 전체 추가 시</div>
             <div style="display:flex;align-items:baseline;gap:6px">
-              <div style="font-size:1.5rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">574만</div>
-              <div style="font-size:11px;color:var(--muted)">+58만</div>
+              <div style="font-size:1.5rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">591만</div>
+              <div style="font-size:11px;color:var(--muted)">+40만</div>
             </div>
           </div>
           <div style="padding:12px 16px;font-size:12px;line-height:2">
             <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">거실 화장실</span><strong>348만</strong></div>
             <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px;margin-bottom:4px">기본 320 + 옵션 28</div>
             <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">안방 욕실</span><strong>226만</strong></div>
-            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px">기본 196 + 옵션 30</div>
+            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px;margin-bottom:4px">기본 196 + 옵션 30</div>
+            <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">주방타일+수도내림</span><strong style="color:var(--green)">35만 ✅</strong></div>
+            <div style="font-size:10px;color:var(--muted);padding-left:4px;margin-top:-6px">확정</div>
           </div>
           <div style="padding:8px 16px;background:rgba(249,115,22,.06);border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
             아래 선택 옵션 5가지 전부 포함 시
@@ -5371,9 +5377,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
 
       <!-- 부엌 타일 -->
-      <div class="ibox o" style="margin-bottom:12px;font-size:12.5px;line-height:1.85">
-        🍳 <strong>부엌 타일</strong> — 일자 대리석 선반 대신 추가 예정<br>
-        <span style="color:var(--muted)">견적 미확정 · 두담 현장 시공 시 추가 요청 또는 별도 업체 확인 필요</span>
+      <div class="ibox g" style="margin-bottom:12px;font-size:12.5px;line-height:1.85">
+        🍳 <strong>부엌 타일</strong> — <strong style="color:var(--green)">25만원 확정 ✅</strong> (두담 현장 시공)<br>
+        <span style="color:var(--muted)">주방 수도내림 10만 포함 · 일자 대리석 선반 대신 대체</span>
       </div>
 
       <!-- 기본 포함 사양 -->
@@ -7976,7 +7982,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div class="mob-menu-item" onclick="go('interior',null)">
       <div class="mob-menu-icon" style="background:rgba(236,72,153,.15)">🎨</div>
-      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/17~23 공사 · 9/24 이사 입주</div></div>
+      <div style="flex:1;min-width:0"><div class="mob-menu-title">인테리어</div><div class="mob-menu-sub">9/17~9/21 공사 · 9/24 이사 입주</div></div>
       <span class="mob-menu-arrow">›</span>
     </div>
   </div>
@@ -8157,13 +8163,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="card" style="margin-bottom:20px;padding:0!important;overflow:hidden">
       <div style="padding:16px 20px">
         <div style="display:flex;align-items:flex-start;gap:14px">
-          <input type="checkbox" id="todo-kitchen-tile" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--green);cursor:pointer">
+          <input type="checkbox" id="todo-kitchen-tile" checked style="margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--green);cursor:pointer">
           <div style="flex:1">
             <label for="todo-kitchen-tile" style="cursor:pointer">
-              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px">부엌 타일 견적 확인</div>
+              <div style="font-size:14px;font-weight:800;color:var(--green);margin-bottom:4px;text-decoration:line-through;opacity:0.7">부엌 타일 견적 확인</div>
               <div style="font-size:12px;color:var(--t2);line-height:1.75">
-                화장실 일자 대리석 선반(+18만) 대신 부엌 타일로 대체 결정<br>
-                <span style="color:var(--muted)">두담에 부엌 타일 추가 시공 가능 여부 문의 · 별도 업체 필요 시 견적 확인</span>
+                ✅ <strong style="color:var(--green)">25만원 확정</strong> — 두담 현장 시공 (주방 수도내림 10만 포함)<br>
+                <span style="color:var(--muted)">화장실 일자 대리석 선반 대신 대체 · 9/17~9/21 공사 시 동시 진행</span>
               </div>
             </label>
           </div>
