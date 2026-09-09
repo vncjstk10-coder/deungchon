@@ -1750,11 +1750,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div class="kpi-lbl">🛠️ 인테리어 업체</div>
         <span class="chip g">3곳 확정</span>
       </div>
-      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">788만원</div>
+      <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px">877만원+</div>
       <div style="font-size:12px;color:var(--muted);margin-bottom:10px">확정 계약 합계 · 공사 9/17~9/21 · 이사 9/24</div>
       <div class="ibox g" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🖼️ <strong>장판의 신</strong> 도배 125 + 장판 75 = 200만</div>
       <div class="ibox p" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🧹 <strong>청소대학</strong> 입주청소 37만 (아정당 소개)</div>
-      <div class="ibox g" style="padding:8px 12px;font-size:12px">🚿 <strong>두담</strong> 화장실+주방타일 확정 ✅ 551만 <span style="font-size:10px;color:var(--muted)">(부가세 별도)</span></div>
+      <div class="ibox g" style="padding:8px 12px;margin-bottom:6px;font-size:12px">🚿 <strong>두담</strong> 화장실+주방타일 확정 ✅ 551만 <span style="font-size:10px;color:var(--muted)">(부가세 별도)</span></div>
+      <div class="ibox r" style="padding:8px 12px;font-size:12px">🎞️ <strong>루미필름</strong> 필름시공 확정 ✅ 89만 <span style="font-size:10px;color:var(--muted)">(싱크대·몰딩·걸레받이)</span></div>
     </div>
   </div>
 
@@ -2795,7 +2796,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div style="padding:8px 16px">
       <div class="fund-row"><div class="fund-label">🏠 등촌 중개수수료 (VAT 포함)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--orange);font-weight:700;margin-right:8px">9/16 당일</span><span style="font-weight:800">599.5만</span></div>
       <div class="fund-row"><div class="fund-label">🚚 이사비 (1차 8/28 · 2차 9/21~23)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">SK익스프레스 확정</span><span style="font-weight:800">300만</span></div>
-      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·장판의신·청소대학)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/21</span><span style="font-weight:800">788만+</span></div>
+      <div class="fund-row"><div class="fund-label">🎨 인테리어 (두담·루미필름·장판의신·청소대학)</div><div style="flex:1"></div><span style="font-size:11px;color:var(--green);font-weight:700;margin-right:8px">9/17~9/21</span><span style="font-weight:800">877만+</span></div>
       <div class="fund-row" style="border-bottom:none"><div class="fund-label">❄️ 에어컨 해체·설치</div><div style="flex:1"></div><span style="font-weight:800">50만</span></div>
     </div>
     <div style="padding:12px 16px;background:rgba(249,115,22,.08);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
@@ -5080,7 +5081,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
       <div>
         <h1>🎨 인테리어</h1>
-        <p>9/16 잔금 → 9/17~9/21 공사+청소 → 9/24 이사 입주 · 확정 비용 788만</p>
+        <p>9/16 잔금 → 9/17~9/21 공사+청소 → 9/24 이사 입주 · 확정 비용 877만+</p>
       </div>
       <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
         <button id="int-btn-all" class="person-btn active" onclick="switchInterior('all')">전체</button>
@@ -5088,21 +5089,27 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <button id="int-btn-bath" class="person-btn" onclick="switchInterior('bath')">🚿 화장실</button>
         <button id="int-btn-curtain" class="person-btn" onclick="switchInterior('curtain')">🪟 커텐</button>
         <button id="int-btn-appliance" class="person-btn" onclick="switchInterior('appliance')">📺 가전/인터넷</button>
+        <button id="int-btn-film" class="person-btn" onclick="switchInterior('film')">🎞️ 필름시공</button>
       </div>
     </div>
 
     <div id="sec-int-all">
 
-    <div class="kpi-bar" style="margin-bottom:20px">
+    <div class="kpi-bar" style="margin-bottom:20px;grid-template-columns:repeat(4,1fr)!important">
       <div class="kpi-bar-card" style="border-top:3px solid var(--green)">
-        <div class="lbl">🚿 두담 화장실</div>
-        <div class="num gr">516만</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:3px">거실+안방 · 9/17~9/21 ✅</div>
+        <div class="lbl">🚿 두담</div>
+        <div class="num gr">551만</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:3px">화장실+주방타일 · 9/17~9/21 ✅</div>
       </div>
       <div class="kpi-bar-card" style="border-top:3px solid var(--purple)">
         <div class="lbl">🖼️ 장판의 신</div>
         <div class="num pu">200만</div>
         <div style="font-size:10px;color:var(--muted);margin-top:3px">도배125+장판75 · 9/22~23 ✅</div>
+      </div>
+      <div class="kpi-bar-card" style="border-top:3px solid var(--red)">
+        <div class="lbl">🎞️ 루미필름</div>
+        <div class="num" style="color:var(--red)">89만</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:3px">싱크대·몰딩·걸레받이 · 9/21 ✅</div>
       </div>
       <div class="kpi-bar-card" style="border-top:3px solid var(--orange)">
         <div class="lbl">🧹 청소대학</div>
@@ -5130,10 +5137,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">견적 완료</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:10px 12px;font-weight:700">🚿 화장실 공사</td>
-            <td style="padding:10px 12px;color:var(--t2)">거실+안방 · <strong>두담 확정</strong> · 9/17~9/21 (주말 제외 3일)</td>
-            <td style="padding:10px 12px;text-align:right;font-weight:800;color:var(--green)">516만</td>
-            <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">업체 확정 ✅</span></td>
+            <td style="padding:10px 12px;font-weight:700">🚿 화장실+주방타일</td>
+            <td style="padding:10px 12px;color:var(--t2)">거실+안방 · <strong>두담 확정</strong> · 9/17~9/21 · 주방타일+수도내림 35만 포함</td>
+            <td style="padding:10px 12px;text-align:right;font-weight:800;color:var(--green)">551만</td>
+            <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">확정 ✅</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
             <td style="padding:10px 12px;font-weight:700">🪟 베란다 페인트</td>
@@ -5142,10 +5149,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
             <td style="padding:10px 12px;text-align:center"><span style="background:var(--y2);color:var(--yellow);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">견적 필요</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:10px 12px;font-weight:700">🍳 싱크대 시트지</td>
-            <td style="padding:10px 12px;color:var(--t2)">싱크대 시트지 랩핑 (교체 아님 · 필름지만)</td>
-            <td style="padding:10px 12px;text-align:right;font-weight:700;color:var(--purple)">30~80만</td>
-            <td style="padding:10px 12px;text-align:center"><span style="background:var(--y2);color:var(--yellow);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">견적 필요</span></td>
+            <td style="padding:10px 12px;font-weight:700">🎞️ 인테리어 필름</td>
+            <td style="padding:10px 12px;color:var(--t2)"><strong>루미필름</strong> · 싱크대 상하부장 + 몰딩 + 걸레받이 · 9/21(월)</td>
+            <td style="padding:10px 12px;text-align:right;font-weight:800;color:var(--green)">89만</td>
+            <td style="padding:10px 12px;text-align:center"><span style="background:var(--g2);color:var(--green);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px">확정 ✅</span></td>
           </tr>
           <tr>
             <td style="padding:10px 12px;font-weight:700">🧹 입주 청소</td>
@@ -5156,8 +5163,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </tbody>
         <tfoot>
           <tr style="background:var(--p3)">
-            <td colspan="2" style="padding:10px 12px;font-weight:800;color:var(--purple)">합계 예상</td>
-          <td style="padding:10px 12px;text-align:right;font-weight:900;font-size:1.1rem;color:var(--purple)">697~869만원</td>
+            <td colspan="2" style="padding:10px 12px;font-weight:800;color:var(--purple)">확정 합계 <span style="font-size:11px;font-weight:600;color:var(--muted)">(베란다 페인트 별도)</span></td>
+          <td style="padding:10px 12px;text-align:right;font-weight:900;font-size:1.1rem;color:var(--purple)">877만원+</td>
             <td></td>
           </tr>
         </tfoot>
@@ -5171,7 +5178,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         ⚠️ <strong>추석 연휴 9/24~</strong> 전 입주 완료 필수 · 공사 최대 7일 · 업체 일정 사전 확약 필요
       </div>
       <div class="timeline-steps">
-        <div class="tl-step done"><div class="tl-node">✓</div><div class="tl-label">업체 확정</div><div class="tl-date">8/2</div><div class="tl-amt">두담 516만</div></div>
+        <div class="tl-step done"><div class="tl-node">✓</div><div class="tl-label">업체 확정</div><div class="tl-date">8/2</div><div class="tl-amt">두담 551만</div></div>
         <div class="tl-step upcoming"><div class="tl-node">2</div><div class="tl-label">공사 시작</div><div class="tl-date">9/17</div><div class="tl-amt">잔금 다음날</div></div>
         <div class="tl-step upcoming"><div class="tl-node">3</div><div class="tl-label">공사 완료</div><div class="tl-date">9/21</div><div class="tl-amt">5일 공사</div></div>
         <div class="tl-step upcoming"><div class="tl-node">🧹</div><div class="tl-label">청소</div><div class="tl-date">9/23</div><div class="tl-amt">오후 3~7시</div></div>
@@ -5227,7 +5234,26 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
   </div>
 
-
+  <!-- 루미필름 -->
+  <div class="card" style="border-top:4px solid var(--red);padding:16px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <div style="font-size:14px;font-weight:900;color:var(--red)">🎞️ 루미필름</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">인테리어필름 시공 · 경력 8년 · 강서구</div>
+      </div>
+      <span style="background:var(--g2);color:var(--green);font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px">확정 ✅</span>
+    </div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">플랫폼</div><div style="flex:1"></div><div>숨고 (고용 완료)</div></div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">일정</div><div style="flex:1"></div><div style="color:var(--red);font-weight:700">9/21(월) — 화장실 공사 마지막 날</div></div>
+    <div class="fund-row" style="font-size:12px"><div class="fund-label">시공 범위</div><div style="flex:1"></div><div style="font-size:11px;text-align:right">싱크대 상하부장 + 몰딩 + 걸레받이</div></div>
+    <div style="margin-top:6px;padding:6px 8px;background:rgba(239,68,68,0.07);border-radius:6px;font-size:10px;color:var(--orange)">
+      ⚠️ 문짝·문틀 추가 시 별도 견적 필요 (굴곡·계단 있어 금액 추가 발생)
+    </div>
+    <div style="margin-top:8px;padding:10px;background:rgba(239,68,68,0.07);border-radius:8px;text-align:center">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:2px">싱크대·몰딩·걸레받이 기준</div>
+      <div style="font-size:1.5rem;font-weight:900;color:var(--red)">89만원</div>
+    </div>
+  </div>
 
   </div>
     </div><!-- /sec-int-all -->
@@ -5610,6 +5636,52 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         · <strong>9/25(금)</strong> → 설치 마무리 안 된 항목 처리
       </div>
     </div><!-- /sec-int-appliance -->
+
+    <!-- ── 필름시공 탭 ── -->
+    <div id="sec-int-film" style="display:none;padding:0 24px">
+      <div class="stitle">🎞️ 인테리어 필름 시공 — 루미필름</div>
+
+      <!-- 업체 정보 -->
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border:2px solid var(--red)">
+        <div style="background:rgba(239,68,68,0.07);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:var(--red);letter-spacing:.6px;margin-bottom:4px">🎞️ 필름시공 업체 확정</div>
+            <div style="font-size:1.4rem;font-weight:900;color:var(--text)">루미필름</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">경력 8년 · 서울 강서구 · 숨고 고용</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:2px">시공 일정</div>
+            <div style="font-size:1.1rem;font-weight:900;color:var(--red)">9/21(월)</div>
+            <div style="font-size:10px;color:var(--muted)">두담 화장실 공사 마지막 날</div>
+          </div>
+        </div>
+        <div style="padding:12px 18px;font-size:12px;color:var(--t2);line-height:1.8;border-top:1px solid rgba(239,68,68,.15)">
+          📍 <strong>공사 현장:</strong> 강서구 등촌동 등촌부영아파트 106동 1001호
+        </div>
+      </div>
+
+      <!-- 견적 내역 -->
+      <div class="stitle" style="font-size:14px;margin-bottom:10px">💰 확정 견적</div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border-top:4px solid var(--red)">
+        <div style="padding:14px 16px;background:rgba(239,68,68,0.06);border-bottom:1px solid var(--border)">
+          <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:2px">확정 금액 (숨고 견적)</div>
+          <div style="font-size:1.8rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">89만원</div>
+        </div>
+        <div style="padding:12px 16px;font-size:12px;line-height:2.1">
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">싱크대 상·하부장 필름</span><strong>포함</strong></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">몰딩 필름</span><strong>포함</strong></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">걸레받이 필름</span><strong>포함</strong></div>
+        </div>
+        <div style="padding:10px 16px;background:rgba(249,115,22,0.07);border-top:1px solid var(--border);font-size:11px;color:var(--orange)">
+          ⚠️ 문짝·문틀 추가 시 별도 견적 — 굴곡·계단 구조로 금액 상당 추가 예상
+        </div>
+      </div>
+
+      <!-- 시공 범위 안내 -->
+      <div class="ibox p" style="font-size:12.5px;line-height:1.85">
+        💡 <strong>필름 시공이란?</strong> 기존 가구·마감재를 뜯지 않고 위에 고급 시트지(필름)를 붙여 새 것처럼 만드는 작업. 교체 대비 비용 ↓, 공사 기간 ↓, 오래된 싱크대를 원하는 색상으로 변경 가능.
+      </div>
+    </div><!-- /sec-int-film -->
 
   </div>
 </div><!-- /panel-interior -->
@@ -8526,7 +8598,7 @@ function switchRemodel(name){
   });
 }
 function switchInterior(name){
-  var tabs=['all','floor','bath','curtain','appliance'];
+  var tabs=['all','floor','bath','curtain','appliance','film'];
   tabs.forEach(function(t){
     var el=document.getElementById('sec-int-'+t);
     if(el) el.style.display=t===name?'':'none';
