@@ -7425,9 +7425,55 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <div class="ibox r" style="margin-bottom:8px;font-size:12px;line-height:1.85">
+    <div class="ibox r" style="margin-bottom:16px;font-size:12px;line-height:1.85">
       <strong>⚠️ 결론:</strong> 월 저축 흐름만 보면 빠듯해서 불안한 게 맞아요. 하지만 <strong>전세 보증금 회수 + LTV 대환</strong> 이 두 가지가 성립하면 숫자는 맞아떨어집니다.<br>
       지금 할 수 있는 가장 중요한 행동은 <strong style="color:var(--red)">조합에 LTV 대환 협약 여부를 직접 확인하는 것</strong>이에요.
+    </div>
+
+    <!-- 15억 초과 대출 규제 리스크 -->
+    <div class="stitle">🏦 15억 초과 주택 대출 규제 리스크</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:8px;border:1.5px solid var(--red)">
+
+      <!-- 현행 원칙 -->
+      <div style="padding:12px 16px;background:var(--r2);border-bottom:1px solid rgba(239,68,68,.15)">
+        <div style="font-size:10px;font-weight:700;color:var(--red);letter-spacing:.5px;margin-bottom:4px">현행 원칙 (2019.12.16 대책)</div>
+        <div style="font-size:13px;font-weight:800;color:var(--text)">투기과열지구 시가 15억 초과 → 주담대 LTV <span style="color:var(--red)">0%</span> (주담대 금지)</div>
+      </div>
+
+      <!-- 2분할: 투기과열지구 vs 일반 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)">
+        <div style="padding:12px 14px;border-right:1px solid var(--border)">
+          <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:6px">😱 최악 — 투기과열지구 재지정 시</div>
+          <div style="font-size:11.5px;line-height:1.85;color:var(--t2)">
+            <div>• 주담대 자체 <strong>불가</strong></div>
+            <div>• LTV 대환 협약도 <strong>무력화</strong></div>
+            <div>• 시나리오 A 전면 붕괴</div>
+            <div style="margin-top:6px;font-size:11px;font-weight:800;color:var(--red)">현금 6억 2,875만 필요</div>
+          </div>
+        </div>
+        <div style="padding:12px 14px">
+          <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:6px">✅ 양호 — 일반 지역 유지 시</div>
+          <div style="font-size:11.5px;line-height:1.85;color:var(--t2)">
+            <div>• LTV 50~70% 적용</div>
+            <div>• 시세 20억 × LTV 50% = <strong>10억</strong></div>
+            <div>• 필요액 9억 커버 <strong>가능</strong></div>
+            <div style="margin-top:6px;font-size:11px;font-weight:800;color:var(--green)">시나리오 A 성립 ✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 핵심 변수 -->
+      <div style="padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div style="font-size:11.5px;color:var(--t2);line-height:1.7">
+          <strong>핵심 변수:</strong> 2030년 입주 시점 강서구(마곡) 투기과열지구 여부<br>
+          <span style="font-size:10.5px;color:var(--muted)">강서구는 2022~23년 해제 → 재지정 가능성 모니터링 필요</span>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:9px;font-weight:700;color:var(--orange);margin-bottom:2px">마곡 더샵 완공 후 예상 시세</div>
+          <div style="font-size:1.2rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">20억+</div>
+          <div style="font-size:9px;color:var(--muted)">15억 초과 확실</div>
+        </div>
+      </div>
     </div>
 
   </div><!-- /sec-rm-savings -->
