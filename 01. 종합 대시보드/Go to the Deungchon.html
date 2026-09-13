@@ -4099,6 +4099,23 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
+    <!-- 맨 위 핵심 요약 -->
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border:2px solid var(--purple)">
+      <div style="padding:14px 20px;background:linear-gradient(135deg,rgba(123,110,246,.12),rgba(123,110,246,.02))">
+        <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:.5px;margin-bottom:8px">💰 현재 총 보유(9/13) + 주담대 합산</div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--text)">
+          <span>337,101,875원</span><span style="color:var(--muted);font-weight:600">(현재 보유)</span>
+          <span style="color:var(--purple)">+</span>
+          <span>385,000,000원</span><span style="color:var(--muted);font-weight:600">(주담대)</span>
+          <span style="color:var(--purple)">=</span>
+        </div>
+        <div style="font-size:1.7rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;margin-top:4px">722,101,875원 <span style="font-size:13px;color:var(--muted);font-weight:600">(약 7억 2,210만)</span></div>
+      </div>
+      <div style="padding:10px 20px;background:rgba(245,158,11,.08);border-top:1px solid var(--border);font-size:11.5px;color:#92400e;line-height:1.7">
+        ⚠️ 위 금액엔 <strong>이사비 350만(별도 보관, 미사용)</strong>이 포함돼 있어요. 잔금에 실제 투입 가능한 금액은 아래 <strong>718,601,875원</strong>이 기준입니다.
+      </div>
+    </div>
+
     <!-- 납부 완료 현황 + 잔금 포커스 -->
     <div class="ibox g" style="margin-bottom:16px;font-size:13px;line-height:1.6">
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
@@ -4110,6 +4127,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
     <!-- 실시간 자금 진행 현황 -->
     <div class="stitle">📱 실시간 자금 진행 현황 (9/13 계좌 기준)</div>
+    <div class="ibox o" style="margin-bottom:12px;font-size:12.5px;line-height:1.8">
+      🔄 <strong>변경된 계획:</strong> 황서림 IRP 해지는 <strong>보류</strong>합니다. 대신 <strong>취득세 계좌 자금을 먼저 잔금에 투입</strong>하고, IRP는 추후 해지해서 <strong>케이뱅크 플러스박스에 별도 저축</strong>할 예정 — 잔금 조달 계산에서 완전히 제외됩니다.
+    </div>
     <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border:2px solid var(--purple)">
       <div style="padding:12px 18px;background:rgba(123,110,246,.08);border-bottom:1px solid var(--border)">
         <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:.5px;margin-bottom:4px">현재 보유 계좌 (뱅킹앱 확인 9/13)</div>
@@ -4117,14 +4137,26 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div style="padding:12px 18px">
         <div class="fund-row" style="font-size:12.5px"><div class="fund-label">🏠 청라매도액</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">244,065,977원</div></div>
-        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--muted)">🧾 취득세 (별도 적립)</div><div style="flex:1"></div><div style="color:var(--muted);font-variant-numeric:tabular-nums">17,535,898원</div></div>
-        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--muted)">📦 이사비 (별도 적립)</div><div style="flex:1"></div><div style="color:var(--muted);font-variant-numeric:tabular-nums">3,500,000원</div></div>
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--green)">🧾 취득세 <span style="font-size:10px;font-weight:700">→ 잔금에 먼저 투입</span></div><div style="flex:1"></div><div style="font-weight:700;color:var(--green);font-variant-numeric:tabular-nums">17,535,898원</div></div>
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--muted)">📦 이사비 (별도 보관, 미사용)</div><div style="flex:1"></div><div style="color:var(--muted);font-variant-numeric:tabular-nums">3,500,000원</div></div>
         <div class="fund-row" style="font-size:12.5px"><div class="fund-label">👩‍👧 이모님 차용</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">30,000,000원</div></div>
         <div class="fund-row" style="font-size:12.5px;border-bottom:none"><div class="fund-label">💼 IRP해지(영준)</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">42,000,000원</div></div>
       </div>
       <div style="padding:10px 18px;background:var(--p3);display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:12px;font-weight:800;color:var(--purple)">잔금 조달용 순가용액 (취득세·이사비 제외)</span>
-        <span style="font-size:1.15rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">316,065,977원</span>
+        <span style="font-size:12px;font-weight:800;color:var(--purple)">잔금 조달용 순가용액 (이사비만 제외)</span>
+        <span style="font-size:1.15rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">333,601,875원</span>
+      </div>
+    </div>
+
+    <!-- 오늘 기준: 현재 + 주담대만 -->
+    <div class="card" style="padding:14px 18px;margin-bottom:16px;border-left:5px solid var(--orange);background:var(--o2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--orange)">오늘 기준 (주식매도·신용대출 전, 주담대만 입금 가정)</div>
+        <div style="font-size:1.35rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">718,601,875원 <span style="font-size:12px;color:var(--muted);font-weight:600">(약 7억 1,860만)</span></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:10px;color:var(--muted)">목표 7억 8,000만 대비 부족액</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">−6,140만</div>
       </div>
     </div>
 
@@ -4136,10 +4168,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;font-weight:700;color:var(--muted);line-height:1.4">현재<br>9/13</div>
         <div>
           <div style="font-size:12.5px;font-weight:700">잔금 조달용 순가용액</div>
-          <div style="font-size:10px;color:var(--muted)">청라매도+이모님차용+영준IRP</div>
+          <div style="font-size:10px;color:var(--muted)">청라매도+취득세+이모님차용+영준IRP</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">3억 1,607만</div>
+          <div style="font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">3억 3,360만</div>
         </div>
       </div>
 
@@ -4151,19 +4183,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:800;color:var(--green)">+2,800만</div>
-          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">3억 4,407만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">3억 6,160만</div>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;background:rgba(16,185,129,.04)">
-        <div style="font-size:10px;font-weight:700;color:var(--green);line-height:1.4">9/14</div>
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;opacity:0.5">
+        <div style="font-size:10px;font-weight:700;color:var(--muted);line-height:1.4">보류</div>
         <div>
-          <div style="font-size:12.5px;font-weight:700">+ 황서림 IRP 해지</div>
-          <div style="font-size:10px;color:var(--muted)">세전 1,600만 × 83.5% = 세후</div>
+          <div style="font-size:12.5px;font-weight:700;text-decoration:line-through">황서림 IRP 해지</div>
+          <div style="font-size:10px;color:var(--muted)">→ 케이뱅크 플러스박스 별도 저축 예정 · 잔금 계산 제외</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:11px;font-weight:800;color:var(--green)">+1,336만</div>
-          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">3억 5,743만</div>
+          <div style="font-size:11px;font-weight:800;color:var(--muted)">제외</div>
         </div>
       </div>
 
@@ -4175,7 +4206,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:800;color:var(--orange)">+5,000만</div>
-          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">4억 743만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">4억 1,160만</div>
         </div>
       </div>
 
@@ -4187,23 +4218,24 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:800;color:var(--purple)">+3억 8,500만</div>
-          <div style="font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">7억 9,243만</div>
+          <div style="font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">7억 9,660만</div>
         </div>
       </div>
     </div>
 
     <div class="card" style="padding:14px 18px;margin-bottom:8px;border-left:5px solid var(--green);background:var(--g2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--green)">최종 조달 vs 목표 7억 8,000만</div>
-        <div style="font-size:1.4rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">7억 9,243만</div>
+        <div style="font-size:11px;font-weight:700;color:var(--green)">최종 조달 vs 목표 7억 8,000만 (IRP 보류 상태)</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">7억 9,660만</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:10px;color:var(--muted)">여유 금액</div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+1,243만</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+1,660만</div>
       </div>
     </div>
     <div class="ibox y" style="margin-bottom:16px;font-size:12px;line-height:1.8">
-      ⚠️ <strong>변동 가능 항목:</strong> 서림 주식 매도액(2,800만)은 9/14 매도 시점 시가에 따라 달라질 수 있고, 신용대출도 은행 심사 결과에 따라 5,000만보다 적을 수 있어요. 실제 매도·대출 확정 금액이 나오면 이 표를 업데이트해주세요.
+      ✅ <strong>IRP를 아예 보류해도</strong> 주식매도+신용대출로 목표 7억 8,000만을 채우고 <strong>1,660만 여유</strong>가 남아요.<br>
+      ⚠️ 다만 서림 주식 매도액(2,800만)과 신용대출(5,000만)은 실제 매도가·심사 결과에 따라 달라질 수 있어요 — 확정되면 알려주시면 다시 반영하겠습니다.
     </div>
 
     <!-- 자금 조달 분석 -->
