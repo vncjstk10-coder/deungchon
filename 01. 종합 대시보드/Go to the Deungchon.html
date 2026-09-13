@@ -4108,6 +4108,104 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       → 이제 남은 건 <strong style="color:var(--red)">9/16 잔금 7억 8,000만</strong>을 어떻게 마련하느냐입니다.
     </div>
 
+    <!-- 실시간 자금 진행 현황 -->
+    <div class="stitle">📱 실시간 자금 진행 현황 (9/13 계좌 기준)</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border:2px solid var(--purple)">
+      <div style="padding:12px 18px;background:rgba(123,110,246,.08);border-bottom:1px solid var(--border)">
+        <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:.5px;margin-bottom:4px">현재 보유 계좌 (뱅킹앱 확인 9/13)</div>
+        <div style="font-size:1.5rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">337,101,875원 <span style="font-size:13px;color:var(--muted);font-weight:600">(약 3억 3,710만)</span></div>
+      </div>
+      <div style="padding:12px 18px">
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label">🏠 청라매도액</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">244,065,977원</div></div>
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--muted)">🧾 취득세 (별도 적립)</div><div style="flex:1"></div><div style="color:var(--muted);font-variant-numeric:tabular-nums">17,535,898원</div></div>
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label" style="color:var(--muted)">📦 이사비 (별도 적립)</div><div style="flex:1"></div><div style="color:var(--muted);font-variant-numeric:tabular-nums">3,500,000원</div></div>
+        <div class="fund-row" style="font-size:12.5px"><div class="fund-label">👩‍👧 이모님 차용</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">30,000,000원</div></div>
+        <div class="fund-row" style="font-size:12.5px;border-bottom:none"><div class="fund-label">💼 IRP해지(영준)</div><div style="flex:1"></div><div style="font-weight:700;font-variant-numeric:tabular-nums">42,000,000원</div></div>
+      </div>
+      <div style="padding:10px 18px;background:var(--p3);display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;font-weight:800;color:var(--purple)">잔금 조달용 순가용액 (취득세·이사비 제외)</span>
+        <span style="font-size:1.15rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">316,065,977원</span>
+      </div>
+    </div>
+
+    <!-- 단계별 진행 -->
+    <div class="stitle">📈 단계별 자금 진행 (9/14~9/16)</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px">
+
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center">
+        <div style="font-size:10px;font-weight:700;color:var(--muted);line-height:1.4">현재<br>9/13</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700">잔금 조달용 순가용액</div>
+          <div style="font-size:10px;color:var(--muted)">청라매도+이모님차용+영준IRP</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">3억 1,607만</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;background:rgba(16,185,129,.04)">
+        <div style="font-size:10px;font-weight:700;color:var(--green);line-height:1.4">9/14</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700">+ 서림 주식 매도</div>
+          <div style="font-size:10px;color:var(--muted)">주식투자계좌 현재평가 기준 (원금 3,600만 / 평가손 −800만)</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:800;color:var(--green)">+2,800만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">3억 4,407만</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;background:rgba(16,185,129,.04)">
+        <div style="font-size:10px;font-weight:700;color:var(--green);line-height:1.4">9/14</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700">+ 황서림 IRP 해지</div>
+          <div style="font-size:10px;color:var(--muted)">세전 1,600만 × 83.5% = 세후</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:800;color:var(--green)">+1,336만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">3억 5,743만</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;background:rgba(245,158,11,.06)">
+        <div style="font-size:10px;font-weight:700;color:var(--orange);line-height:1.4">9/16<br>아침</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700">+ 황서림 신용대출 신청</div>
+          <div style="font-size:10px;color:var(--muted)">목표 5,000만 · 주담대 실행 전 오전 신청</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:800;color:var(--orange)">+5,000만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">4억 743만</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;align-items:center;background:rgba(123,110,246,.07)">
+        <div style="font-size:10px;font-weight:700;color:var(--purple);line-height:1.4">9/16</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:800">+ 주담대 실행 ✅ 확정</div>
+          <div style="font-size:10px;color:var(--muted)">우리은행 3억 8,500만 · 안영준 단독</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:800;color:var(--purple)">+3억 8,500만</div>
+          <div style="font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">7억 9,243만</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px 18px;margin-bottom:8px;border-left:5px solid var(--green);background:var(--g2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--green)">최종 조달 vs 목표 7억 8,000만</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">7억 9,243만</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:10px;color:var(--muted)">여유 금액</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+1,243만</div>
+      </div>
+    </div>
+    <div class="ibox y" style="margin-bottom:16px;font-size:12px;line-height:1.8">
+      ⚠️ <strong>변동 가능 항목:</strong> 서림 주식 매도액(2,800만)은 9/14 매도 시점 시가에 따라 달라질 수 있고, 신용대출도 은행 심사 결과에 따라 5,000만보다 적을 수 있어요. 실제 매도·대출 확정 금액이 나오면 이 표를 업데이트해주세요.
+    </div>
+
     <!-- 자금 조달 분석 -->
     <div class="stitle">💰 돈을 어디서 마련할까?</div>
     <div class="card" style="margin-bottom:16px">
