@@ -4127,9 +4127,9 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
 
     <!-- 실시간 자금 진행 현황 -->
-    <div class="stitle">📱 실시간 자금 진행 현황 (9/13 계좌 기준)</div>
-    <div class="ibox o" style="margin-bottom:12px;font-size:12.5px;line-height:1.8">
-      🔄 <strong>변경된 계획:</strong> 황서림 IRP 해지는 <strong>보류</strong>합니다. 대신 <strong>취득세 계좌 자금을 먼저 잔금에 투입</strong>하고, IRP는 추후 해지해서 <strong>케이뱅크 플러스박스에 별도 저축</strong>할 예정 — 잔금 조달 계산에서 완전히 제외됩니다.
+    <div class="stitle">📱 최종 자금 조달 결과 ✅ 완료</div>
+    <div class="ibox g" style="margin-bottom:12px;font-size:12.5px;line-height:1.8">
+      🎉 <strong>최종 확정:</strong> 황서림 신용대출이 목표(5,000만)보다 많은 <strong>6,500만</strong>으로 승인되면서, 애초 계획했던 <strong>황서림 IRP 해지는 최종적으로 하지 않기로 결정</strong>했습니다. 신용대출만으로 잔금이 충분히 충당됐어요.
     </div>
     <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;border:2px solid var(--purple)">
       <div style="padding:12px 18px;background:rgba(123,110,246,.08);border-bottom:1px solid var(--border)">
@@ -4189,10 +4189,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
 
       <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;opacity:0.5">
-        <div style="font-size:10px;font-weight:700;color:var(--muted);line-height:1.4">보류</div>
+        <div style="font-size:10px;font-weight:700;color:var(--muted);line-height:1.4">미해지</div>
         <div>
           <div style="font-size:12.5px;font-weight:700;text-decoration:line-through">황서림 IRP 해지</div>
-          <div style="font-size:10px;color:var(--muted)">→ 케이뱅크 플러스박스 별도 저축 예정 · 잔금 계산 제외</div>
+          <div style="font-size:10px;color:var(--muted)">✅ 최종 확정: 신용대출로 충분해서 해지 안 함 · 그대로 유지</div>
         </div>
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:800;color:var(--muted)">제외</div>
@@ -4202,12 +4202,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div style="display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;background:rgba(245,158,11,.06)">
         <div style="font-size:10px;font-weight:700;color:var(--orange);line-height:1.4">9/16<br>아침</div>
         <div>
-          <div style="font-size:12.5px;font-weight:700">+ 황서림 신용대출 신청</div>
-          <div style="font-size:10px;color:var(--muted)">목표 5,000만 · 주담대 실행 전 오전 신청</div>
+          <div style="font-size:12.5px;font-weight:700">+ 황서림 신용대출 ✅ 확정</div>
+          <div style="font-size:10px;color:var(--muted)">목표 5,000만 → 실제 6,500만 승인</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:11px;font-weight:800;color:var(--orange)">+5,000만</div>
-          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">4억 1,160만</div>
+          <div style="font-size:11px;font-weight:800;color:var(--orange)">+6,500만</div>
+          <div style="font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums">4억 2,660만</div>
         </div>
       </div>
 
@@ -4219,24 +4219,23 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:800;color:var(--purple)">+3억 8,500만</div>
-          <div style="font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">7억 9,660만</div>
+          <div style="font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">8억 1,160만</div>
         </div>
       </div>
     </div>
 
     <div class="card" style="padding:14px 18px;margin-bottom:8px;border-left:5px solid var(--green);background:var(--g2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--green)">최종 조달 vs 목표 7억 8,000만 (IRP 보류 상태)</div>
-        <div style="font-size:1.4rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">7억 9,660만</div>
+        <div style="font-size:11px;font-weight:700;color:var(--green)">최종 조달 vs 목표 7억 8,000만 (✅ 완료 · IRP 미해지)</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">8억 1,160만</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:10px;color:var(--muted)">여유 금액</div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+1,660만</div>
+        <div style="font-size:1.3rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+3,160만</div>
       </div>
     </div>
-    <div class="ibox y" style="margin-bottom:16px;font-size:12px;line-height:1.8">
-      ✅ <strong>IRP를 아예 보류해도</strong> 주식매도+신용대출로 목표 7억 8,000만을 채우고 <strong>1,660만 여유</strong>가 남아요.<br>
-      ⚠️ 다만 서림 주식 매도액(2,800만)과 신용대출(5,000만)은 실제 매도가·심사 결과에 따라 달라질 수 있어요 — 확정되면 알려주시면 다시 반영하겠습니다.
+    <div class="ibox g" style="margin-bottom:16px;font-size:12px;line-height:1.8">
+      🎉 <strong>등촌 부영 잔금 완료!</strong> 신용대출이 계획보다 1,500만 더 나온 덕분에 <strong>황서림 IRP는 해지하지 않고 그대로 유지</strong>했어요. 최종 여유 <strong>3,160만</strong>으로 마무리됐습니다.
     </div>
 
     <!-- 자금 조달 분석 -->
