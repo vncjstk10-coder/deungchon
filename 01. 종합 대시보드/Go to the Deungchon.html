@@ -1709,6 +1709,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </button>
     <div class="sb-subgroup open" id="grp-magok">
       <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('overview')"><span class="sb-icon" style="font-size:13px">💰</span><span class="sb-label">분담금</span></button>
+      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('loan')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">대출 현황</span></button>
       <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('savings')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">저축계획</span></button>
       <button class="sb-subtab" onclick="go('magok-temp',this)"><span class="sb-icon" style="font-size:13px">🛏️</span><span class="sb-label">임시 거주지</span></button>
     </div>
@@ -7645,6 +7646,41 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="ibox o" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">
       💡 <strong>이주비 대출 조건:</strong> 이주비 대출을 받으려면 <strong>기존 주담대를 먼저 상환</strong>해야 해요. <strong style="color:var(--red)">다주택자이거나 기존 대출을 상환하지 못하면 금리가 더 비싸져요.</strong><br>
       <span style="color:var(--muted)">현재 기준 참고금리 <strong style="color:var(--orange)">3.7%</strong> — 정확한 금리는 실제 이주 시점(2027년 1~2월 금융사 협약 시)에 확정됩니다.</span>
+    </div>
+
+    <!-- 원리금 요약 히어로 (등촌 대출현황과 동일 포맷) -->
+    <div class="stitle">💳 원리금 — 얼마나 갚을까?</div>
+    <div class="card" style="padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-left:4px solid var(--purple)">
+      <div>
+        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 (이주비 대출 이자만) · 1건</div>
+        <div style="display:flex;align-items:baseline;gap:6px">
+          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 185만</div>
+          <div style="font-size:12px;color:var(--muted)">/월</div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px">참고금리 3.7% 기준 · 원금은 입주 시 일시 상환</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">이주비 대출 원금</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">6억</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">실행 예정 2027년 1~2월</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+      <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:12px;font-weight:700">🏗️ 이주비 대출 (조합 협약 금융사)</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:1px">6억 · 참고금리 3.7% · 이자만 납입, 원금은 입주 시 일시상환</div>
+        </div>
+        <div style="font-size:16px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">185만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
+        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">이주 기간 월 이자 합계</div>
+        <div style="font-size:18px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">185만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
+      </div>
+      <div style="padding:10px 16px;background:rgba(139,92,246,.05);font-size:11px;color:var(--muted);line-height:1.7">
+        ⚠️ 다주택자이거나 기존 주담대를 상환하지 못하면 금리가 3.7%보다 높아질 수 있어요 · 등촌 주담대(4.62%)는 착공 시점 이 대출로 전액 상환돼 사라져요
+      </div>
     </div>
 
     <!-- 목표 히어로 -->
