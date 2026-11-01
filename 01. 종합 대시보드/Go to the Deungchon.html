@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -1708,9 +1708,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <span class="sb-chevron">›</span>
     </button>
     <div class="sb-subgroup open" id="grp-magok">
-      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('overview')"><span class="sb-icon" style="font-size:13px">💰</span><span class="sb-label">분담금</span></button>
-      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('loan')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">대출 현황</span></button>
-      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('savings')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">저축계획</span></button>
+      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('cost')"><span class="sb-icon" style="font-size:13px">💰</span><span class="sb-label">분담금</span></button>
+      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('loan')"><span class="sb-icon" style="font-size:13px">🏗️</span><span class="sb-label">이주비</span></button>
+      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('loanstatus')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">대출 현황</span></button>
+      <button class="sb-subtab" onclick="go('remodel',this);switchRemodel('savings')"><span class="sb-icon" style="font-size:13px">🏦</span><span class="sb-label">저축 계획</span></button>
       <button class="sb-subtab" onclick="go('magok-temp',this)"><span class="sb-icon" style="font-size:13px">🛏️</span><span class="sb-label">임시 거주지</span></button>
     </div>
   </nav>
@@ -6653,17 +6654,16 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <p>등촌 부영 아파트 · 포스코 ENC · 712→818세대 · 강서구 최초 리모델링</p>
     </div>
     <div style="display:flex;gap:6px;margin-top:4px;flex-shrink:0;flex-wrap:wrap">
-      <button id="rm-btn-overview" class="person-btn active" onclick="switchRemodel('overview')">종합현황</button>
-      <button id="rm-btn-cost" class="person-btn" onclick="switchRemodel('cost')">분담금(예상)</button>
-      <button id="rm-btn-loan" class="person-btn" onclick="switchRemodel('loan')">이주비대출</button>
-      <button id="rm-btn-jungdo" class="person-btn" onclick="switchRemodel('jungdo')">중도금</button>
-      <button id="rm-btn-final" class="person-btn" onclick="switchRemodel('final')">입주(잔금)</button>
-      <button id="rm-btn-savings" class="person-btn" onclick="switchRemodel('savings')">💰 저축계획</button>
+      <button id="rm-btn-cost" class="person-btn active" onclick="switchRemodel('cost')">분담금</button>
+      <button id="rm-btn-loan" class="person-btn" onclick="switchRemodel('loan')">이주비</button>
+      <button id="rm-btn-loanstatus" class="person-btn" onclick="switchRemodel('loanstatus')">대출 현황</button>
+      <button id="rm-btn-savings" class="person-btn" onclick="switchRemodel('savings')">저축 계획</button>
+      <button class="person-btn" onclick="go('magok-temp',null)">임시 거주지</button>
     </div>
   </div>
 
-  <!-- ══ 종합현황 ══ -->
-  <div id="sec-rm-overview" style="padding-top:32px">
+  <!-- ══ 분담금(예상) ══ -->
+  <div id="sec-rm-cost" style="padding-top:32px">
 
   <!-- ① 한 줄 요약 히어로 -->
   <div class="card-green card" style="padding:20px 22px;margin-bottom:20px">
@@ -6815,7 +6815,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap">
           <div>
             <div style="font-size:13.5px;font-weight:800;color:var(--text);margin-bottom:3px">금융사 선정 · 이주비 대출 협약</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.65">이주비 대출 금융사 확정 · 조합원 개별 대출 한도 안내 · <strong style="color:var(--orange)">현재 기준 참고금리 3.7%</strong> (다주택자·기존 주담대 미상환 시 금리 상승 · 정확한 금리는 실행 시점에 확정)</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.65">이주비 대출 금융사 확정 · 조합원 개별 대출 한도 안내 · <strong style="color:var(--orange)">조합 적용금리 4.3%</strong> (다주택자·기존 주담대 미상환 시 금리 상승 · 상한 CD/COFIX+5%p)</div>
           </div>
           <span style="font-size:11px;font-weight:600;color:var(--muted);flex-shrink:0;white-space:nowrap">2027년 1~2월</span>
         </div>
@@ -7012,10 +7012,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
   </div>
 
-  </div><!-- /sec-rm-overview -->
-
-  <!-- ══ 분담금(예상) ══ -->
-  <div id="sec-rm-cost" style="display:none;padding-top:32px">
+  <!-- ── 분담금 상세 ── -->
 
     <!-- ① 분담금이 뭐야? -->
     <div class="ibox p" style="margin-bottom:12px;font-size:13px;line-height:1.9">
@@ -7163,37 +7160,12 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- ⑤ 이사 기간엔 어디서 살아? -->
-    <div class="stitle">🏠 이사 나간 약 2.5년, 어디서 살아요?</div>
-    <div class="g2" style="margin-bottom:20px">
-      <div class="card" style="padding:0;overflow:hidden">
-        <div style="padding:12px 16px;background:rgba(59,130,246,.08);border-bottom:1px solid rgba(59,130,246,.15)">
-          <div style="font-size:11.5px;font-weight:800;color:#3b82f6">🏢 반전세 (서울/경기)</div>
-        </div>
-        <div style="padding:14px 16px;font-size:12.5px;line-height:1.85">
-          <div>보증금 <strong>5천~1억</strong> + 월세 50~80만</div>
-          <div style="color:var(--green)">✓ 보증금이 적어 여유 자금 확보</div>
-          <div style="color:var(--muted)">✗ 매달 월세 추가 지출</div>
-        </div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden;border:1.5px solid var(--green)">
-        <div style="padding:12px 16px;background:var(--g2);border-bottom:1px solid rgba(16,185,129,.2)">
-          <div style="font-size:11.5px;font-weight:800;color:var(--green)">🏡 용인 동백 전세 (추천)</div>
-        </div>
-        <div style="padding:14px 16px;font-size:12.5px;line-height:1.85">
-          <div>전세 보증금 <strong>1억~1억 5천</strong></div>
-          <div style="color:var(--green)">✓ 월 추가 지출 없음</div>
-          <div style="color:var(--muted)">✗ 출퇴근 거리 증가</div>
-        </div>
-      </div>
-    </div>
-
     <div class="ibox r">
       <div style="font-size:12px;font-weight:800;margin-bottom:6px">📌 지금 생각해야 할 것들</div>
       <div style="font-size:12.5px;line-height:1.9">
         이주비 대출 <strong>약 4억 4,344만</strong>(종전자산 40%, 기존 추정 6억에서 하향 조정) → 기존 주담대 상환 → 보증금 마련 → 임시 거주지 확정<br>
-        <strong style="color:var(--red)">⚠️ 이주비 대출만으로는 주담대 상환+계약금+가족 차용금 정리에 약 1,857만 부족 — 이주비대출 탭에서 상세 확인</strong><br>
-        아이 학군 · 짐 보관 · 이사 타이밍 · 2027년 상반기 구체화 예정
+        <strong style="color:var(--red)">⚠️ 이주비 대출만으로는 주담대 상환+계약금+가족 차용금 정리에 약 1,857만 부족 — 이주비 탭에서 상세 확인</strong><br>
+        아이 학군 · 짐 보관 · 이사 타이밍은 임시 거주지 탭 참고 · 2027년 상반기 구체화 예정
       </div>
     </div>
 
@@ -7217,6 +7189,83 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </tbody>
       </table>
       <div style="padding:10px 18px;background:var(--bg);font-size:11px;color:var(--muted)">권리가액 11억 8,365만(1,183,652,220원)은 모든 타입 공통 · 101형이 평수가 가장 커서 분담금도 가장 높음</div>
+    </div>
+
+    <!-- ── 중도금 상세 ── -->
+    <!-- 이자 후납 핵심 배너 -->
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px;border:2px solid var(--orange)">
+      <div style="background:linear-gradient(135deg,rgba(249,115,22,.14),rgba(249,115,22,.03));padding:18px 22px">
+        <div style="font-size:10px;font-weight:700;color:var(--orange);letter-spacing:1px;margin-bottom:6px">💰 중도금 (101형 분담금의 60%)</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:2.4rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1">2억 6,271만</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">101형 분담금 4억 3,785만 기준 · 제49차 대의원회 확정</div>
+          </div>
+          <div style="flex:1;min-width:200px;background:rgba(249,115,22,.08);border-radius:10px;padding:10px 14px;font-size:12px;line-height:1.85">
+            <div>✅ 이자 <strong>후납</strong> — 공사 기간 중 이자 납부 없음</div>
+            <div>✅ 입주 잔금 시점에 원금 + 누적 이자 일시 정산</div>
+            <div style="color:var(--muted)">이주비 대출과 별개인 <strong>중도금 대출</strong>(한도: 분담금의 70%) 이용</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 최종 납부 이자 계산 -->
+    <div class="stitle">📊 입주 시 후납 이자 총액 계산 (공식 예산안 기준)</div>
+    <div class="ibox p" style="margin-bottom:12px;font-size:12px;line-height:1.8">
+      중도금 대출 2억 6,271만 × 금리 4.5% × 2년 = <strong>입주 시 한꺼번에 납부할 이자</strong><br>
+      <span style="color:var(--muted)">조합 사업비 예산안의 "분담금60%×4.5%×2년" 공식을 101형에 그대로 적용 · 금리 상한은 CD/COFIX+5%p</span>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+      <!-- 헤더 -->
+      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);background:var(--bg);border-bottom:1px solid var(--border)">
+        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted)">대출 기간</div>
+        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center;border-left:1px solid var(--border)">금리 4.0%</div>
+        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--orange);text-align:center;border-left:1px solid var(--border)">금리 4.5% ★공식</div>
+        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center;border-left:1px solid var(--border)">금리 5.0%(상한)</div>
+      </div>
+      <!-- 1.5년 -->
+      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);border-bottom:1px solid var(--border)">
+        <div style="padding:12px 14px;font-size:12px;font-weight:700">1.5년</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">1,700만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">1,913만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,126만</div>
+      </div>
+      <!-- 2년 (공식 가정, 강조) -->
+      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);border-bottom:1px solid var(--border);background:rgba(249,115,22,.04)">
+        <div style="padding:12px 14px;font-size:12px;font-weight:800;color:var(--orange)">2년 ★ 공식 가정</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,267만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.15rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">2,364만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,834만</div>
+      </div>
+      <!-- 2.5년 -->
+      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
+        <div style="padding:12px 14px;font-size:12px;font-weight:700">2.5년</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,834만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">3,188만</div>
+        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">3,543만</div>
+      </div>
+      <div style="padding:10px 16px;background:var(--g2);border-top:1px solid rgba(16,185,129,.2);font-size:11.5px;color:var(--green);font-weight:700">
+        ✅ 공사 중 이자 납부 없음 → 이주 기간 월 현금흐름에 중도금 이자 부담 제로
+      </div>
+    </div>
+
+    <!-- 납부 일정 -->
+    <div class="stitle">📅 중도금 납부 일정 (원금)</div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="ln-info-row"><div class="ln-info-nm">납부 방식</div><div class="ln-info-vl">2~4회 분할 납부 (조합 공지 기준)</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">1차</div><div class="ln-info-vl">이주 시작 후 (2027년 4~5월)</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">2~3차</div><div class="ln-info-vl">착공 후 공정 기준 (2027~2028년)</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">이자 후납</div><div class="ln-info-vl" style="color:var(--orange);font-weight:700">입주 잔금 시점에 원금+누적이자 일괄 정산</div></div>
+      <div class="ln-info-row"><div class="ln-info-nm">대출 한도</div><div class="ln-info-vl">분담금의 70%(3억 649만)까지 — 중도금 전액(60%) 대출 커버 가능</div></div>
+      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">자금 조달</div><div class="ln-info-vl"><strong>이주비 대출과 별개인 중도금 대출</strong> (별도 현금 불필요)</div></div>
+    </div>
+
+    <div class="ibox y" style="margin-bottom:0">
+      <div style="font-size:12px;font-weight:800;margin-bottom:6px">📌 최종 정산 시 예상 납부액 (101형)</div>
+      중도금 원금 2억 6,271만 + 후납 이자 약 <strong>2,364만</strong> (2년·4.5% 공식 기준)<br>
+      = 입주 잔금 시점 총 <strong>약 2억 8,635만원</strong> 일시 정산<br>
+      <span style="font-size:11.5px;color:var(--muted)">※ 이주비 대출(4억 4,344만)과는 별개의 중도금 대출로 처리됨 · 제49차 대의원회(2026.10.15) 자료 기준</span>
     </div>
 
   </div><!-- /sec-rm-cost -->
@@ -7686,27 +7735,25 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <span style="color:var(--muted)">금리: 기준금리(CD 또는 COFIX) + 가산금리 5%p 이내 · 조합 예산안 적용금리 <strong style="color:var(--orange)">4.3%</strong> · 이주비 대출을 받으려면 기존 주담대를 먼저 상환해야 하며, 다주택자이거나 미상환 시 금리가 더 올라갈 수 있음</span>
     </div>
 
-    <!-- 원리금 요약 히어로 (등촌 대출현황과 동일 포맷) -->
+    <!-- 원리금 요약 히어로 -->
     <div class="stitle">💳 원리금 — 얼마나 갚을까?</div>
     <div class="card" style="padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-left:4px solid var(--purple)">
       <div>
-        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 3건</div>
+        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 (이주비 대출 이자만) · 1건</div>
         <div style="display:flex;align-items:baseline;gap:6px">
-          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 180만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 159만</div>
           <div style="font-size:12px;color:var(--muted)">/월</div>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 159만 + 가족 20.5만 · 원금은 입주 시 일시 상환</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px">조합 적용금리 4.3% 기준 · 원금은 입주 시 일시 상환</div>
       </div>
       <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
-        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">약 5억 1,844만</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:4px">은행 4억 4,344만 + 가족 7,500만</div>
+        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">이주비 대출 원금</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">4억 4,344만</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">종전자산가액 11억 860만(1,108,600,000원) × 40%</div>
       </div>
     </div>
 
-    <!-- 은행 대출 -->
-    <div class="stitle">🏦 은행 대출 (1건)</div>
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
       <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
         <div style="flex:1;min-width:0">
           <div style="font-size:12px;font-weight:700">🏗️ 이주비 대출 (조합 협약 금융사)</div>
@@ -7715,37 +7762,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:16px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">159만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
       <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
-        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">은행 소계</div>
+        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">이주 기간 월 이자 합계</div>
         <div style="font-size:18px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">159만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
       <div style="padding:10px 16px;background:rgba(139,92,246,.05);font-size:11px;color:var(--muted);line-height:1.7">
-        ⚠️ 다주택자이거나 기존 주담대를 상환하지 못하면 금리가 4.3%보다 높아질 수 있어요(상한 CD/COFIX+5%p) · 등촌 주담대(4.62%)는 착공 시점 이 대출로 전액 상환돼 사라져요
-      </div>
-    </div>
-
-    <!-- 가족 대출 -->
-    <div class="stitle">👨‍👩‍👧 가족 대출 (2건)</div>
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
-      <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-        <div style="flex:1;min-width:0">
-          <div style="font-size:12px;font-weight:700">👩 큰누나·매형 차용</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:1px">4,500만 · 연 3.47% · 이주비 대출로 상환 예정</div>
-        </div>
-        <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">13만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
-      </div>
-      <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-        <div style="flex:1;min-width:0">
-          <div style="font-size:12px;font-weight:700">👩 이모님 차용 (옵션)</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:1px">3,000만 · 연 3% · 자체 상환 안 될 경우 이주비로 정리 시도</div>
-        </div>
-        <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">7.5만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
-      </div>
-      <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
-        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">가족 소계</div>
-        <div style="font-size:18px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">20.5만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
-      </div>
-      <div style="padding:10px 16px;background:rgba(16,185,129,.06);font-size:11px;color:var(--muted);line-height:1.7">
-        💡 가족 대출 2건(7,500만)은 이주비 대출 한도 내에서 정리 시도하지만, 한도 부족 시 1,857만~4,857만 추가 현금이 필요해요 (아래 자금 배분 계획 참고)
+        ⚠️ 다주택자이거나 기존 주담대를 상환하지 못하면 금리가 4.3%보다 높아질 수 있어요(상한 CD/COFIX+5%p) · 등촌 주담대(4.62%)는 착공 시점 이 대출로 전액 상환돼 사라져요 — 등촌 구매 대출 상세는 <strong>대출 현황 탭</strong> 참고
       </div>
     </div>
 
@@ -7918,36 +7939,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
     </div>
 
-    <!-- ④ 임시 거주지 선택지 -->
-    <div class="stitle">🏠 임시 거주지 선택지 (이주비 부족분 1,857만~4,857만 추가 조달 필요)</div>
-    <div class="g2" style="margin-bottom:20px">
-      <div class="card" style="padding:0;overflow:hidden">
-        <div style="padding:10px 16px;background:rgba(59,130,246,.1);border-bottom:1px solid rgba(59,130,246,.2);display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:12px;font-weight:800;color:#3b82f6">🏢 반전세 (서울/경기)</span>
-          <span style="font-size:10px;padding:2px 8px;background:rgba(59,130,246,.15);border-radius:99px;color:#3b82f6;font-weight:700">보증금 절약</span>
-        </div>
-        <div style="padding:14px 16px">
-          <div class="ln-info-row"><div class="ln-info-nm">보증금</div><div class="ln-info-vl" style="font-weight:800">5,000만~1억</div></div>
-          <div class="ln-info-row"><div class="ln-info-nm">월세</div><div class="ln-info-vl">50~100만/월</div></div>
-          <div class="ln-info-row"><div class="ln-info-nm">장점</div><div class="ln-info-vl" style="color:var(--green)">초기 필요 현금 적음 / 서울 접근성</div></div>
-          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">단점</div><div class="ln-info-vl" style="color:var(--red)">월세 추가 부담 / 2.5~3년 지속</div></div>
-        </div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden">
-        <div style="padding:10px 16px;background:rgba(16,185,129,.1);border-bottom:1px solid rgba(16,185,129,.2);display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:12px;font-weight:800;color:var(--green)">🏡 용인 동백 전세</span>
-          <span style="font-size:10px;padding:2px 8px;background:rgba(16,185,129,.2);border-radius:99px;color:var(--green);font-weight:700">월 부담 없음</span>
-        </div>
-        <div style="padding:14px 16px">
-          <div class="ln-info-row"><div class="ln-info-nm">전세 보증금</div><div class="ln-info-vl" style="font-weight:800;color:var(--green)">1억~1억 5천 수준</div></div>
-          <div class="ln-info-row"><div class="ln-info-nm">월세</div><div class="ln-info-vl" style="color:var(--green);font-weight:700">없음 (전세)</div></div>
-          <div class="ln-info-row"><div class="ln-info-nm">장점</div><div class="ln-info-vl" style="color:var(--green)">월 추가 지출 無</div></div>
-          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">단점</div><div class="ln-info-vl" style="color:var(--red)">보증금 전액을 이주비 부족분 해소 후 별도 저축으로 마련해야 함</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ⑤ 이주비 대출 조건 / 타이밍 -->
+    <!-- ④ 이주비 대출 조건 / 타이밍 -->
     <div class="stitle">📅 이주비 대출 일정 & 조건</div>
     <div class="card" style="margin-bottom:16px">
       <div class="ln-info-row"><div class="ln-info-nm">대출 기준</div><div class="ln-info-vl">종전자산가액(현재 자산가)의 약 40% · 정부 대출규제·HUG 보증기준·금융기관 심사기준에 따라 변경 가능</div></div>
@@ -7967,282 +7959,141 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
 
   </div><!-- /sec-rm-loan -->
 
-  <!-- ══ 중도금 ══ -->
-  <div id="sec-rm-jungdo" style="display:none;padding-top:32px">
+  <!-- ══ 대출 현황 (등촌 부영 구매 시 활용한 대출) ══ -->
+  <div id="sec-rm-loanstatus" style="display:none;padding-top:32px">
 
-    <!-- 이자 후납 핵심 배너 -->
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px;border:2px solid var(--orange)">
-      <div style="background:linear-gradient(135deg,rgba(249,115,22,.14),rgba(249,115,22,.03));padding:18px 22px">
-        <div style="font-size:10px;font-weight:700;color:var(--orange);letter-spacing:1px;margin-bottom:6px">💰 중도금 (101형 분담금의 60%)</div>
-        <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
-          <div>
-            <div style="font-size:2.4rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1">2억 6,271만</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:4px">101형 분담금 4억 3,785만 기준 · 제49차 대의원회 확정</div>
+    <div class="ibox p" style="margin-bottom:16px;font-size:12.5px;line-height:1.9">
+      💡 <strong>등촌 부영을 살 때 실제로 활용한 대출</strong>이에요. 이 대출들은 마곡 착공 시점에 <strong>이주비 대출로 전액 상환</strong>될 예정입니다.
+    </div>
+
+    <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
+      <button id="ls-btn-combined" class="person-btn active" onclick="switchLoanStatus('combined')">종합</button>
+      <button id="ls-btn-bank" class="person-btn" onclick="switchLoanStatus('bank')">🏦 은행 대출</button>
+      <button id="ls-btn-family" class="person-btn" onclick="switchLoanStatus('family')">👨‍👩‍👧 가족 대출</button>
+    </div>
+
+    <!-- ── 종합 ── -->
+    <div id="sec-ls-combined">
+      <div class="card" style="padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-left:4px solid var(--red)">
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 6건</div>
+          <div style="display:flex;align-items:baseline;gap:6px">
+            <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 382.5만</div>
+            <div style="font-size:12px;color:var(--muted)">/월</div>
           </div>
-          <div style="flex:1;min-width:200px;background:rgba(249,115,22,.08);border-radius:10px;padding:10px 14px;font-size:12px;line-height:1.85">
-            <div>✅ 이자 <strong>후납</strong> — 공사 기간 중 이자 납부 없음</div>
-            <div>✅ 입주 잔금 시점에 원금 + 누적 이자 일시 정산</div>
-            <div style="color:var(--muted)">이주비 대출과 별개인 <strong>중도금 대출</strong>(한도: 분담금의 70%) 이용</div>
-          </div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 362만 + 가족 20.5만</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
+          <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">약 7.4억</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px">은행 6.65억 + 가족 7,500만</div>
         </div>
       </div>
-    </div>
 
-    <!-- 최종 납부 이자 계산 -->
-    <div class="stitle">📊 입주 시 후납 이자 총액 계산 (공식 예산안 기준)</div>
-    <div class="ibox p" style="margin-bottom:12px;font-size:12px;line-height:1.8">
-      중도금 대출 2억 6,271만 × 금리 4.5% × 2년 = <strong>입주 시 한꺼번에 납부할 이자</strong><br>
-      <span style="color:var(--muted)">조합 사업비 예산안의 "분담금60%×4.5%×2년" 공식을 101형에 그대로 적용 · 금리 상한은 CD/COFIX+5%p</span>
-    </div>
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
-      <!-- 헤더 -->
-      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);background:var(--bg);border-bottom:1px solid var(--border)">
-        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted)">대출 기간</div>
-        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center;border-left:1px solid var(--border)">금리 4.0%</div>
-        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--orange);text-align:center;border-left:1px solid var(--border)">금리 4.5% ★공식</div>
-        <div style="padding:10px 14px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center;border-left:1px solid var(--border)">금리 5.0%(상한)</div>
-      </div>
-      <!-- 1.5년 -->
-      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);border-bottom:1px solid var(--border)">
-        <div style="padding:12px 14px;font-size:12px;font-weight:700">1.5년</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">1,700만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">1,913만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,126만</div>
-      </div>
-      <!-- 2년 (공식 가정, 강조) -->
-      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);border-bottom:1px solid var(--border);background:rgba(249,115,22,.04)">
-        <div style="padding:12px 14px;font-size:12px;font-weight:800;color:var(--orange)">2년 ★ 공식 가정</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,267만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.15rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">2,364만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,834만</div>
-      </div>
-      <!-- 2.5년 -->
-      <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
-        <div style="padding:12px 14px;font-size:12px;font-weight:700">2.5년</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">2,834만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums">3,188만</div>
-        <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">3,543만</div>
-      </div>
-      <div style="padding:10px 16px;background:var(--g2);border-top:1px solid rgba(16,185,129,.2);font-size:11.5px;color:var(--green);font-weight:700">
-        ✅ 공사 중 이자 납부 없음 → 이주 기간 월 현금흐름에 중도금 이자 부담 제로
-      </div>
-    </div>
-
-    <!-- 납부 일정 -->
-    <div class="stitle">📅 중도금 납부 일정 (원금)</div>
-    <div class="card" style="margin-bottom:16px">
-      <div class="ln-info-row"><div class="ln-info-nm">납부 방식</div><div class="ln-info-vl">2~4회 분할 납부 (조합 공지 기준)</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">1차</div><div class="ln-info-vl">이주 시작 후 (2027년 4~5월)</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">2~3차</div><div class="ln-info-vl">착공 후 공정 기준 (2027~2028년)</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">이자 후납</div><div class="ln-info-vl" style="color:var(--orange);font-weight:700">입주 잔금 시점에 원금+누적이자 일괄 정산</div></div>
-      <div class="ln-info-row"><div class="ln-info-nm">대출 한도</div><div class="ln-info-vl">분담금의 70%(3억 649만)까지 — 중도금 전액(60%) 대출 커버 가능</div></div>
-      <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">자금 조달</div><div class="ln-info-vl"><strong>이주비 대출과 별개인 중도금 대출</strong> (별도 현금 불필요)</div></div>
-    </div>
-
-    <div class="ibox y" style="margin-bottom:0">
-      <div style="font-size:12px;font-weight:800;margin-bottom:6px">📌 최종 정산 시 예상 납부액 (101형)</div>
-      중도금 원금 2억 6,271만 + 후납 이자 약 <strong>2,364만</strong> (2년·4.5% 공식 기준)<br>
-      = 입주 잔금 시점 총 <strong>약 3억 893만원</strong> 일시 정산<br>
-      <span style="font-size:11.5px;color:var(--muted)">※ 이주비 대출(4억 4,344만)과는 별개의 중도금 대출로 처리됨 · 제49차 대의원회(2026.10.15) 자료 기준</span>
-    </div>
-
-  </div><!-- /sec-rm-jungdo -->
-
-  <!-- ══ 입주(잔금) ══ -->
-  <div id="sec-rm-final" style="display:none;padding-top:32px">
-
-    <!-- 입주 시 정산 총액 히어로 -->
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px;border:2px solid var(--green)">
-      <div style="background:linear-gradient(135deg,rgba(16,185,129,.13),rgba(16,185,129,.03));padding:18px 22px">
-        <div style="font-size:10px;font-weight:700;color:var(--green);letter-spacing:1px;margin-bottom:6px">🏠 입주(잔금) 최종 정산</div>
-        <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
-          <div>
-            <div style="font-size:11px;color:var(--muted);margin-bottom:4px">입주 시 정산 총액 (101형 · 공식 자료 기준)</div>
-            <div style="font-size:2.4rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">8억 6,115만</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:4px">2030~2031년 준공 후</div>
-          </div>
-          <div style="flex:1;min-width:180px;background:rgba(16,185,129,.08);border-radius:10px;padding:10px 14px;font-size:12px;line-height:1.85">
-            <div>이주비 대출 <span style="font-variant-numeric:tabular-nums;font-weight:800;float:right">4억 4,344만</span></div>
-            <div>중도금 대출 원금 <span style="font-variant-numeric:tabular-nums;font-weight:800;float:right">2억 6,271만</span></div>
-            <div>중도금 이자 후납 <span style="font-variant-numeric:tabular-nums;font-weight:800;float:right">2,364만</span></div>
-            <div>분담금 잔금 (30%) <span style="font-variant-numeric:tabular-nums;font-weight:800;float:right">1억 3,135만</span></div>
-          </div>
+      <div class="stitle">🏦 은행 대출 (4건)</div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">🏠 주담대 (우리은행 · 안영준)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">3억 8,500만 · 4.62% · 원금균등</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">255만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+        </div>
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">💳 신용대출 (안영준)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">9,500만 · 4.02% · 이자납입</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">32만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+        </div>
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">🏢 보증보험대출 (안영준)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 4.76% · 2028.06 만기</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">48만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+        </div>
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">💳 신용대출 (황서림)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">6,500만 · 이자납입 · ✅ 확정</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">27만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+        </div>
+        <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
+          <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">은행 소계</div>
+          <div style="font-size:18px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">362만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
       </div>
-    </div>
 
-    <!-- 잔금 대출 한도 계산 -->
-    <div class="stitle">🏦 현재 제도 기준 잔금 대출 한도 계산</div>
-    <div class="ibox p" style="margin-bottom:12px;font-size:12px;line-height:1.85">
-      <strong>LTV vs DSR 두 가지 기준 중 낮은 쪽이 실제 한도</strong> — 현재는 DSR이 더 강한 제약<br>
-      <span style="color:var(--muted)">기준: 강서구 비규제 지역 · 은행권 DSR 40% · 30년 원금균등 · 금리 4%</span>
-    </div>
-
-    <!-- LTV 계산 -->
-    <div style="margin-bottom:16px">
-      <div style="font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:8px;padding:0 2px">① LTV 한도 (담보인정비율)</div>
+      <div class="stitle">👨‍👩‍👧 가족 차용금 (2건)</div>
       <div class="card" style="padding:0;overflow:hidden">
-        <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--muted)">완공 시세</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--muted);text-align:center">15억 (보수)</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--purple);text-align:center">18억 ★기준</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--muted);text-align:center">20억 (낙관)</div>
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">👩 이모님</div><div style="font-size:10px;color:var(--muted);margin-top:1px">3,000만 · 연 3%</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">7.5만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
-          <div style="padding:12px 14px;font-size:12px;font-weight:700">LTV 한도<br><span style="font-size:10px;color:var(--muted);font-weight:500">9억↓70%+초과60%</span></div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">9억 9천</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">11억 7천</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">12억 9천</div>
+        <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">👩 큰누나·매형</div><div style="font-size:10px;color:var(--muted);margin-top:1px">4,500만 · 연 3.47%</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">13만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
-        <div style="padding:10px 16px;background:var(--g2);border-top:1px solid rgba(16,185,129,.2);font-size:11.5px;color:var(--green);font-weight:700">
-          ✅ LTV 기준으로는 이주비(4억 4,344만)+중도금(2억 6,271만) 7억 615만 전액 대환 충분히 가능
+        <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
+          <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">가족 소계</div>
+          <div style="font-size:18px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">20.5만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
       </div>
-    </div>
+    </div><!-- /sec-ls-combined -->
 
-    <!-- DSR 계산 -->
-    <div style="margin-bottom:20px">
-      <div style="font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:8px;padding:0 2px">② DSR 한도 (총부채원리금상환비율 40%)</div>
-      <div class="card" style="padding:0;overflow:hidden">
-        <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--muted)">합산 연소득</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--muted);text-align:center">6,000만 (현재)</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--purple);text-align:center">7,200만 ★현재</div>
-          <div style="padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--border);border-left:1px solid var(--border);font-size:10.5px;font-weight:700;color:var(--green);text-align:center">8,400만 (2030예상)</div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr repeat(3,1fr)">
-          <div style="padding:12px 14px;font-size:12px;font-weight:700">월 허용 원리금<br><span style="font-size:10px;color:var(--muted);font-weight:500">연소득 × 40% ÷ 12</span></div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums">200만</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">240만</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.1rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">280만</div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr repeat(3,1fr);border-top:1px solid var(--border)">
-          <div style="padding:12px 14px;font-size:12px;font-weight:700">대출 가능액<br><span style="font-size:10px;color:var(--muted);font-weight:500">30년·4% 원금균등</span></div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums">3억 2,700만</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">3억 9,300만</div>
-          <div style="padding:12px 14px;text-align:center;border-left:1px solid var(--border);font-size:1.2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">4억 5,800만</div>
-        </div>
-        <div style="padding:10px 16px;background:var(--r2);border-top:1px solid rgba(239,68,68,.15);font-size:11.5px;color:var(--red);font-weight:700">
-          ⚠️ DSR이 LTV보다 강한 제약 → 실제 잔금 대출 한도는 <strong>약 3억 9천~4억 6천만</strong>
-        </div>
-      </div>
-    </div>
-
-    <!-- 두 가지 시나리오 -->
-    <div class="stitle">💡 시나리오별 현금 필요액</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
-
-      <!-- 시나리오 A -->
-      <div class="card" style="padding:0;overflow:hidden;border:2px solid var(--green)">
-        <div style="padding:12px 16px;background:var(--g2);border-bottom:1px solid rgba(16,185,129,.2)">
-          <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:2px">시나리오 A — 현실적 (권장)</div>
-          <div style="font-size:12px;font-weight:800;color:var(--text)">조합 협약 LTV 대환 성공 시</div>
-        </div>
+    <!-- ── 은행 대출 ── -->
+    <div id="sec-ls-bank" style="display:none">
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;border-top:4px solid var(--red)">
+        <div style="padding:10px 16px;background:rgba(239,68,68,.08);border-bottom:1px solid rgba(239,68,68,.15)"><span style="font-size:12px;font-weight:800;color:var(--red)">🏠 주담대 (우리은행 · 안영준)</span></div>
         <div style="padding:14px 16px">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.7">
-            이주비(4억 4,344만)+중도금(2억 6,271만) 7억 615만을 새 주택 담보로 LTV 기준 대환<br>→ 대환 전환 DSR 예외 또는 조합 협약 특수 처리
-          </div>
-          <div style="margin-bottom:6px">
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--border)">
-              <span>이주비+중도금 대환</span><span style="font-weight:800">7억 615만 (LTV)</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--border)">
-              <span>중도금 이자 후납</span><span style="font-weight:800;color:var(--red)">−2,364만</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0">
-              <span>분담금 잔금 (101형)</span><span style="font-weight:800;color:var(--red)">−1억 3,135만</span>
-            </div>
-          </div>
-          <div style="background:var(--g2);border-radius:8px;padding:10px 12px;text-align:center;margin-top:8px">
-            <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:4px">현금 필요액</div>
-            <div style="font-size:1.8rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">1억 5,500만</div>
-          </div>
-        </div>
-        <div style="padding:8px 14px;background:var(--g2);border-top:1px solid rgba(16,185,129,.15);font-size:11px;color:var(--green)">
-          ✅ 임시 거주지 보증금 회수(1억 3천) + 저축으로 충당 가능
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">3억 8,500만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리 / 방식</div><div class="ln-info-vl">4.62% 1년변동 / 원금균등 30년</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--red)">약 255만</div></div>
         </div>
       </div>
-
-      <!-- 시나리오 B -->
-      <div class="card" style="padding:0;overflow:hidden;border:2px solid var(--red)">
-        <div style="padding:12px 16px;background:var(--r2);border-bottom:1px solid rgba(239,68,68,.15)">
-          <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:2px">시나리오 B — 최악 (DSR 엄격)</div>
-          <div style="font-size:12px;font-weight:800;color:var(--text)">순수 DSR 40% 적용 시</div>
-        </div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;border-top:4px solid var(--orange)">
+        <div style="padding:10px 16px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.15)"><span style="font-size:12px;font-weight:800;color:var(--orange)">💳 신용대출 (안영준)</span></div>
         <div style="padding:14px 16px">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.7">
-            새 주담대 DSR만 적용, 이주비+중도금 대환 한도 제한<br>→ 소득 8,400만/년, 30년 4% 기준
-          </div>
-          <div style="margin-bottom:6px">
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--border)">
-              <span>DSR 한도 대출</span><span style="font-weight:800">4억 5,800만</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--border)">
-              <span>나머지 현금 상환</span><span style="font-weight:800;color:var(--red)">4억 315만</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0">
-              <span style="color:var(--muted)">총 정산액</span><span style="font-weight:800;color:var(--muted)">8억 6,115만</span>
-            </div>
-          </div>
-          <div style="background:var(--r2);border-radius:8px;padding:10px 12px;text-align:center;margin-top:8px">
-            <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:4px">현금 필요액</div>
-            <div style="font-size:1.8rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">4억 315만</div>
-          </div>
-        </div>
-        <div style="padding:8px 14px;background:var(--r2);border-top:1px solid rgba(239,68,68,.1);font-size:11px;color:var(--red)">
-          ⚠️ 현실적으로 불가능 — 소득 대폭 증가 or 제도 변경 필요
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">9,500만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리 / 방식</div><div class="ln-info-vl">4.02% / 이자납입 5년</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">약 32만</div></div>
         </div>
       </div>
-    </div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;border-top:4px solid var(--orange)">
+        <div style="padding:10px 16px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.15)"><span style="font-size:12px;font-weight:800;color:var(--orange)">🏢 보증보험대출 (안영준)</span></div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">1억 2,000만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리 / 만기</div><div class="ln-info-vl">4.76% / 2028.06</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">약 48만</div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:8px;border-top:4px solid var(--orange)">
+        <div style="padding:10px 16px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.15)"><span style="font-size:12px;font-weight:800;color:var(--orange)">💳 신용대출 (황서림) ✅ 확정</span></div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">6,500만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">방식</div><div class="ln-info-vl">이자납입 · 목표(5,000만)보다 1,500만 더 승인</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">약 27만</div></div>
+        </div>
+      </div>
+      <div class="ibox p" style="margin-bottom:0;font-size:12px;line-height:1.8">
+        은행 대출 합계: 원금 <strong>6억 6,500만</strong> · 월 납입 <strong>362만</strong>
+      </div>
+    </div><!-- /sec-ls-bank -->
 
-    <!-- 현금 확보 계획 -->
-    <div class="stitle">💰 현금 확보 계획 (시나리오 A 기준)</div>
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
-      <div style="padding:14px 18px">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
-          <div><div style="font-size:13px;font-weight:700">임시 거주지 보증금 회수</div><div style="font-size:11px;color:var(--muted)">이주 시 맡긴 전·반전세 보증금 반환</div></div>
-          <div style="font-size:1.2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+1억 3천만</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
-          <div><div style="font-size:13px;font-weight:700">이주 기간 저축 (3.5년)</div><div style="font-size:11px;color:var(--muted)">주담대 없는 기간 월 100만 저축 × 42개월</div></div>
-          <div style="font-size:1.2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">+4,200만</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:2px solid var(--purple)">
-          <div><div style="font-size:13px;font-weight:700">현재 기보유 현금성 자산</div><div style="font-size:11px;color:var(--muted)">청라 매각 순수익 잔액 등</div></div>
-          <div style="font-size:1.2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">별도 확인</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
-          <div style="font-size:14px;font-weight:800">예상 확보 가능 현금 (최소)</div>
-          <div style="font-size:1.3rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">1억 7,200만~</div>
+    <!-- ── 가족 대출 ── -->
+    <div id="sec-ls-family" style="display:none">
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;border-top:4px solid var(--green)">
+        <div style="padding:10px 16px;background:rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.15)"><span style="font-size:12px;font-weight:800;color:var(--green)">👩 이모님 차용</span></div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">3,000만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리</div><div class="ln-info-vl">연 3%</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입 (이자)</div><div class="ln-info-vl" style="font-weight:900;color:var(--green)">7.5만</div></div>
         </div>
       </div>
-      <div style="padding:12px 18px;background:rgba(139,92,246,.07);border-top:1px solid rgba(139,92,246,.15);font-size:12px;line-height:1.8">
-        <strong style="color:var(--purple)">결론:</strong> 보증금 회수 + 저축만으로 현금 1억 5,500만을 충당 가능 (예상 확보액 1억 7,200만 이상)<br>
-        <span style="color:var(--muted)">핵심은 이주비+중도금 7억 615만을 LTV 기준 대환 처리 성공 여부 — 입주 6개월 전 조합에 확인 필수</span>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:8px;border-top:4px solid var(--green)">
+        <div style="padding:10px 16px;background:rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.15)"><span style="font-size:12px;font-weight:800;color:var(--green)">👩 큰누나·매형 차용</span></div>
+        <div style="padding:14px 16px">
+          <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">4,500만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리</div><div class="ln-info-vl">연 3.47%</div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입 (이자)</div><div class="ln-info-vl" style="font-weight:900;color:var(--green)">13만</div></div>
+        </div>
       </div>
-    </div>
+      <div class="ibox g" style="margin-bottom:0;font-size:12px;line-height:1.8">
+        가족 대출 합계: 원금 <strong>7,500만</strong> · 월 납입 <strong>20.5만</strong> · 마곡 이주비 대출로 상환 예정(일부 부족분 발생 가능 — 이주비 탭 참고)
+      </div>
+    </div><!-- /sec-ls-family -->
 
-    <!-- 핵심 리스크 & 2030년 자산 -->
-    <div class="g2">
-      <div class="ibox r" style="margin-bottom:0">
-        <div style="font-size:12px;font-weight:800;margin-bottom:8px">⚠️ 핵심 리스크</div>
-        <div style="font-size:12px;line-height:1.85">
-          <div>① 대환 DSR 예외 여부 → 조합 협약 은행 확인 필수</div>
-          <div>② 완공 후 시세가 14억 미만 → LTV 부족 발생 가능</div>
-          <div>③ 2030년 규제 강화 시 LTV 축소 가능</div>
-        </div>
-      </div>
-      <div class="ibox p" style="margin-bottom:0">
-        <div style="font-size:12px;font-weight:800;margin-bottom:8px">📌 2030년 자산 전망</div>
-        <div style="font-size:12px;line-height:1.85">
-          완공 후 42평 예상 시세 <strong>15억~20억+</strong><br>
-          레미안 엘라비네 84㎡ 19억대 (2026년 기준)<br>
-          마곡 더그리드 + 스타필드 호재 반영 전
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /sec-rm-final -->
+  </div><!-- /sec-rm-loanstatus -->
 
 </div>
 </div>
@@ -9195,11 +9046,20 @@ function switchPostCost(name){
   });
 }
 function switchRemodel(name){
-  var tabs=['overview','cost','loan','jungdo','final','savings'];
+  var tabs=['cost','loan','loanstatus','savings'];
   tabs.forEach(function(t){
     var el=document.getElementById('sec-rm-'+t);
     if(el) el.style.display=t===name?'':'none';
     var btn=document.getElementById('rm-btn-'+t);
+    if(btn) btn.classList.toggle('active',t===name);
+  });
+}
+function switchLoanStatus(name){
+  var tabs=['combined','bank','family'];
+  tabs.forEach(function(t){
+    var el=document.getElementById('sec-ls-'+t);
+    if(el) el.style.display=t===name?'':'none';
+    var btn=document.getElementById('ls-btn-'+t);
     if(btn) btn.classList.toggle('active',t===name);
   });
 }
