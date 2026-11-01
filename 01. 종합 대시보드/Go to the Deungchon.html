@@ -7690,21 +7690,23 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="stitle">💳 원리금 — 얼마나 갚을까?</div>
     <div class="card" style="padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-left:4px solid var(--purple)">
       <div>
-        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 (이주비 대출 이자만) · 1건</div>
+        <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 3건</div>
         <div style="display:flex;align-items:baseline;gap:6px">
-          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 159만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 180만</div>
           <div style="font-size:12px;color:var(--muted)">/월</div>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-top:6px">조합 적용금리 4.3% 기준 · 원금은 입주 시 일시 상환</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 159만 + 가족 20.5만 · 원금은 입주 시 일시 상환</div>
       </div>
       <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">이주비 대출 원금</div>
-        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">4억 4,344만</div>
-        <div style="font-size:10px;color:var(--muted);margin-top:4px">종전자산가액 11억 860만(1,108,600,000원) × 40%</div>
+        <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
+        <div style="font-size:1.4rem;font-weight:900;color:var(--t2);font-variant-numeric:tabular-nums;line-height:1">약 5억 1,844만</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">은행 4억 4,344만 + 가족 7,500만</div>
       </div>
     </div>
 
-    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+    <!-- 은행 대출 -->
+    <div class="stitle">🏦 은행 대출 (1건)</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
       <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
         <div style="flex:1;min-width:0">
           <div style="font-size:12px;font-weight:700">🏗️ 이주비 대출 (조합 협약 금융사)</div>
@@ -7713,11 +7715,37 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:16px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">159만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
       <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
-        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">이주 기간 월 이자 합계</div>
+        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">은행 소계</div>
         <div style="font-size:18px;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums">159만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
       <div style="padding:10px 16px;background:rgba(139,92,246,.05);font-size:11px;color:var(--muted);line-height:1.7">
         ⚠️ 다주택자이거나 기존 주담대를 상환하지 못하면 금리가 4.3%보다 높아질 수 있어요(상한 CD/COFIX+5%p) · 등촌 주담대(4.62%)는 착공 시점 이 대출로 전액 상환돼 사라져요
+      </div>
+    </div>
+
+    <!-- 가족 대출 -->
+    <div class="stitle">👨‍👩‍👧 가족 대출 (2건)</div>
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:20px">
+      <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:12px;font-weight:700">👩 큰누나·매형 차용</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:1px">4,500만 · 연 3.47% · 이주비 대출로 상환 예정</div>
+        </div>
+        <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">13만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:12px;font-weight:700">👩 이모님 차용 (옵션)</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:1px">3,000만 · 연 3% · 자체 상환 안 될 경우 이주비로 정리 시도</div>
+        </div>
+        <div style="font-size:16px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">7.5만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
+        <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">가족 소계</div>
+        <div style="font-size:18px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums">20.5만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
+      </div>
+      <div style="padding:10px 16px;background:rgba(16,185,129,.06);font-size:11px;color:var(--muted);line-height:1.7">
+        💡 가족 대출 2건(7,500만)은 이주비 대출 한도 내에서 정리 시도하지만, 한도 부족 시 1,857만~4,857만 추가 현금이 필요해요 (아래 자금 배분 계획 참고)
       </div>
     </div>
 
