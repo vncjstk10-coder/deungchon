@@ -3073,7 +3073,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
       <div style="padding:10px 18px;background:var(--r2);display:flex;justify-content:space-between;align-items:center">
         <span style="font-size:11px;font-weight:700;color:var(--red)">전체 대출 월 납입 합계</span>
-        <span style="font-size:1.3rem;font-weight:900;color:var(--red)">약 380.5만원/월</span>
+        <span style="font-size:1.3rem;font-weight:900;color:var(--red)">약 385.5만원/월</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(6,1fr);padding:10px 18px;gap:0">
         <div style="text-align:center;padding:4px 8px;border-right:1px solid var(--border)">
@@ -3086,7 +3086,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="text-align:center;padding:4px 8px;border-right:1px solid var(--border)">
           <div style="font-size:10px;color:var(--muted)">보증보험</div>
-          <div style="font-size:13px;font-weight:800;color:var(--purple)">48만</div>
+          <div style="font-size:13px;font-weight:800;color:var(--purple)">53만</div>
         </div>
         <div style="text-align:center;padding:4px 8px;border-right:1px solid var(--border)">
           <div style="font-size:10px;color:var(--muted)">신용(황)</div>
@@ -3139,15 +3139,15 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <!-- 보증보험대출 -->
       <div class="card" style="padding:0;overflow:hidden">
         <div style="padding:10px 16px;background:rgba(123,110,246,.1);border-bottom:1px solid rgba(123,110,246,.2);display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:11px;font-weight:800;color:var(--purple)">🏢 보증보험대출 (안영준)</span>
+          <span style="font-size:11px;font-weight:800;color:var(--purple)">🏢 보증보험대출 (새마을금고·안영준)</span>
           <span style="font-size:10px;padding:2px 8px;background:rgba(123,110,246,.15);border-radius:99px;color:var(--purple);font-weight:700">만기일시</span>
         </div>
         <div style="padding:14px 16px">
           <div class="fund-row" style="font-size:11px"><div class="fund-label">잔 액</div><div style="flex:1"></div><div style="font-weight:800">1억 2,000만</div></div>
-          <div class="fund-row" style="font-size:11px;border-bottom:none"><div class="fund-label">금리 / 만기</div><div style="flex:1"></div><div style="font-weight:700">4.76% / 2028.06</div></div>
+          <div class="fund-row" style="font-size:11px;border-bottom:none"><div class="fund-label">금리 / 만기</div><div style="flex:1"></div><div style="font-weight:700">5.25% / 2028.06 <span style="font-size:10px;color:var(--red)">(9/30 인상)</span></div></div>
           <div style="margin-top:12px;padding:10px;background:rgba(123,110,246,.08);border-radius:10px;text-align:center">
             <div style="font-size:10px;color:var(--purple);font-weight:700;margin-bottom:2px">월 납입</div>
-            <div style="font-size:1.6rem;font-weight:900;color:var(--purple)">~48만</div>
+            <div style="font-size:1.6rem;font-weight:900;color:var(--purple)">~53만</div>
           </div>
         </div>
       </div>
@@ -3280,7 +3280,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
           * 안영준 보금자리론 2.47억 → 8/31 상환 완료 기준 (제외) · 차주: 안영준 / 소득합산: 황서림<br>
-          * 신용대출: 실납 32만 → DSR 5년 산정 175만 / 보증보험: 실납 48만 → DSR 10년 산정 126만
+          * 신용대출: 실납 32만 → DSR 5년 산정 175만 / 보증보험: 실납 53만(9/30 5.25%로 인상) → DSR 10년 산정 139만
         </div>
       </div>
 
@@ -3381,7 +3381,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
           * 안영준 보금자리론 2.47억 → 8/31 상환 완료 기준 (제외) · 26년 소득 은행 인정 시<br>
-          * 신용대출: 실납 32만 → DSR 5년 산정 175만 / 보증보험: 실납 48만 → DSR 10년 산정 126만
+          * 신용대출: 실납 32만 → DSR 5년 산정 175만 / 보증보험: 실납 53만(9/30 5.25%로 인상) → DSR 10년 산정 139만
         </div>
       </div>
 
@@ -3539,15 +3539,15 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           </tr>
           <tr><td>우리은행 신용대출</td><td style="font-weight:700">9,500만</td><td>4.02% / 5년</td><td style="font-size:12px;color:var(--muted)">이자납입</td><td style="font-weight:700;color:var(--orange)">약 32만</td><td><span class="chip g">실행중</span></td></tr>
           <tr>
-            <td>회사 보증보험대출</td>
+            <td>회사 보증보험대출 (새마을금고)</td>
             <td style="font-weight:700">1억 2,000만</td>
-            <td>4.76% / ~2028.06.30</td>
+            <td>5.25% / ~2028.06.30 <span style="font-size:10px;color:var(--red)">(9/30 인상)</span></td>
             <td style="font-size:12px;color:var(--muted)">만기일시상환</td>
-            <td style="font-weight:700;color:var(--orange)">약 48만</td>
+            <td style="font-weight:700;color:var(--orange)">약 53만</td>
             <td><span class="chip y">실행중</span></td>
           </tr>
           <tr style="background:rgba(239,68,68,0.04)"><td>보금자리론 (청라 담보)</td><td style="font-weight:700">2억 4,772만</td><td>3.78% 고정 / 잔여 313개월</td><td style="font-size:12px;color:var(--muted)">원리금체증식</td><td style="font-weight:700;color:var(--red)">약 125만 <span style="font-size:10px">(DSR환산)</span></td><td><span class="chip r">8/31 상환</span></td></tr>
-          <tr style="background:var(--lite)"><td colspan="4" style="font-weight:700;text-align:right;color:var(--t2)">DSR 산입 월 합계</td><td style="font-weight:900;color:var(--orange);font-size:1rem">205만원</td><td></td></tr>
+          <tr style="background:var(--lite)"><td colspan="4" style="font-weight:700;text-align:right;color:var(--t2)">DSR 산입 월 합계</td><td style="font-weight:900;color:var(--orange);font-size:1rem">210만원</td><td></td></tr>
         </tbody>
       </table>
     </div>
@@ -3592,10 +3592,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       <div>
         <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 6건</div>
         <div style="display:flex;align-items:baseline;gap:6px">
-          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 377만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 382만</div>
           <div style="font-size:12px;color:var(--muted)">/월</div>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 356~360만 + 가족 20.5만</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 361~365만 + 가족 20.5만</div>
       </div>
       <div style="text-align:right;flex-shrink:0">
         <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
@@ -3623,10 +3623,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
         <div style="flex:1;min-width:0">
-          <div style="font-size:12px;font-weight:700">🏢 보증보험대출 (안영준)</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 4.76% · 재직 중 연장</div>
+          <div style="font-size:12px;font-weight:700">🏢 보증보험대출 (새마을금고·안영준)</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 5.25%(9/30 인상) · 재직 중 연장</div>
         </div>
-        <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">48만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+        <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">53만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
       <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
         <div style="flex:1;min-width:0">
@@ -3637,7 +3637,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
       </div>
       <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
         <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">은행 소계</div>
-        <div style="font-size:18px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">356~360만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
+        <div style="font-size:18px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">361~365만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
       </div>
     </div>
 
@@ -3676,11 +3676,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="display:flex;justify-content:space-between"><span>안영준 세후</span><span style="font-weight:700;color:var(--text)">600만</span></div>
           <div style="display:flex;justify-content:space-between"><span>황서림 세후</span><span style="font-weight:700;color:var(--text)">400만</span></div>
           <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:4px"><span>합계 수입</span><span style="font-weight:800;color:var(--text)">1,000만</span></div>
-          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−377만</span></div>
+          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−382만</span></div>
         </div>
         <div style="background:var(--g2);border-radius:10px;padding:12px;text-align:center">
           <div style="font-size:10px;color:var(--muted);margin-bottom:3px">남는 돈 (생활비+저축)</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;line-height:1">623만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums;line-height:1">618만</div>
           <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
         </div>
       </div>
@@ -3692,11 +3692,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="display:flex;justify-content:space-between"><span>안영준 세후</span><span style="font-weight:700;color:var(--text)">600만</span></div>
           <div style="display:flex;justify-content:space-between"><span>황서림 수입</span><span style="font-weight:700;color:var(--red)">0만 (무급)</span></div>
           <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:4px"><span>합계 수입</span><span style="font-weight:800;color:var(--text)">600만</span></div>
-          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−377만</span></div>
+          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−382만</span></div>
         </div>
         <div style="background:var(--r2);border-radius:10px;padding:12px;text-align:center">
           <div style="font-size:10px;color:var(--muted);margin-bottom:3px">남는 돈 (생활비+저축)</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">223만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums;line-height:1">218만</div>
           <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
         </div>
         <div style="font-size:10px;color:var(--muted);margin-top:8px;line-height:1.6">※ 승무원 특성상 임신 즉시 비행 업무 중단 → 1년 무급 휴직</div>
@@ -3707,13 +3707,13 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:.5px;margin-bottom:6px">C. 아이 1명 · 맞벌이 복직 후</div>
         <div style="font-size:11px;color:var(--muted);line-height:2;margin-bottom:12px">
           <div style="display:flex;justify-content:space-between"><span>합계 수입</span><span style="font-weight:700;color:var(--text)">1,000만</span></div>
-          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−377만</span></div>
+          <div style="display:flex;justify-content:space-between"><span>원리금 납부</span><span style="font-weight:700;color:var(--red)">−382만</span></div>
           <div style="display:flex;justify-content:space-between"><span>육아비 (어린이집·분유 등)</span><span style="font-weight:700;color:var(--purple)">−130만</span></div>
-          <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:4px"><span>실질 여유</span><span style="font-weight:800;color:var(--text)">493만</span></div>
+          <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:4px"><span>실질 여유</span><span style="font-weight:800;color:var(--text)">488만</span></div>
         </div>
         <div style="background:var(--p3);border-radius:10px;padding:12px;text-align:center">
           <div style="font-size:10px;color:var(--muted);margin-bottom:3px">남는 돈 (생활비+저축)</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;line-height:1">493만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--purple);font-variant-numeric:tabular-nums;line-height:1">488만</div>
           <div style="font-size:10px;color:var(--muted);margin-top:3px">/월</div>
         </div>
         <div style="font-size:10px;color:var(--muted);margin-top:8px;line-height:1.6">※ 육아비 추정치 (어린이집 약 50만 + 소모품·의류 등 80만)</div>
@@ -3825,7 +3825,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
     </div>
     <div style="padding:10px 14px;background:var(--p3);border-radius:8px;font-size:11px;line-height:1.8;color:var(--text)">
       <strong>저축 시나리오</strong><br>
-      <span style="color:var(--muted)">성과급 3,052만 + 저축 3,448만 = 6,500만 목표.<br>맞벌이 기준 월 여유 623만 중 생활비 제외 저축분을 모아가며 조절.<br>육아휴직·아이 양육비 발생 시 상환 시점 조정 필요.</span>
+      <span style="color:var(--muted)">성과급 3,052만 + 저축 3,448만 = 6,500만 목표.<br>맞벌이 기준 월 여유 618만 중 생활비 제외 저축분을 모아가며 조절.<br>육아휴직·아이 양육비 발생 시 상환 시점 조정 필요.</span>
     </div>
   </div>
 
@@ -3838,18 +3838,18 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
   <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
     <div style="padding:12px 18px;background:var(--r2);display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:11px;font-weight:700;color:var(--red)">월 고정 총지출 (맞벌이 기준)</span>
-      <span style="font-size:1.3rem;font-weight:900;color:var(--red)">628만원</span>
+      <span style="font-size:1.3rem;font-weight:900;color:var(--red)">633만원</span>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;padding:14px 18px;gap:0">
       <div style="padding-right:18px;border-right:1px solid var(--border)">
         <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:8px;letter-spacing:.3px">대출 원리금</div>
         <div class="fund-row" style="font-size:11px"><div class="fund-label">등촌 주담대</div><div style="flex:1"></div><div style="font-weight:700">~255만</div></div>
         <div class="fund-row" style="font-size:11px"><div class="fund-label">우리신용대출</div><div style="flex:1"></div><div style="font-weight:700">32만</div></div>
-        <div class="fund-row" style="font-size:11px"><div class="fund-label">회사보증보험</div><div style="flex:1"></div><div style="font-weight:700">48만</div></div>
+        <div class="fund-row" style="font-size:11px"><div class="fund-label">회사보증보험</div><div style="flex:1"></div><div style="font-weight:700">53만</div></div>
         <div class="fund-row" style="font-size:11px"><div class="fund-label">황서림 신용</div><div style="flex:1"></div><div style="font-weight:700">21~25만</div></div>
         <div class="fund-row" style="font-size:11px;border-bottom:none"><div class="fund-label">큰누나 차용</div><div style="flex:1"></div><div style="font-weight:700">13만</div></div>
-        <div style="margin-top:8px;text-align:right;font-size:12px;font-weight:800;color:var(--red)">= 373만</div>
-        <div style="font-size:10px;color:var(--muted);text-align:right;margin-top:2px">※ 2028.01부터 360만</div>
+        <div style="margin-top:8px;text-align:right;font-size:12px;font-weight:800;color:var(--red)">= 378만</div>
+        <div style="font-size:10px;color:var(--muted);text-align:right;margin-top:2px">※ 2028.01부터 365만</div>
       </div>
       <div style="padding-left:18px">
         <div style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:8px;letter-spacing:.3px">생활 고정비</div>
@@ -3876,10 +3876,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px"><span>안영준</span><span style="font-weight:700;color:var(--text)">600만</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:8px"><span>황서림</span><span style="font-weight:700;color:var(--text)">400만</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);margin-bottom:4px"><span>합산수입</span><span style="font-weight:700">1,000만</span></div>
-        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">628만</span></div>
+        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">633만</span></div>
         <div style="background:rgba(16,185,129,.12);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:10px;color:var(--green);font-weight:700;margin-bottom:2px">월 잉여</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--green)">+372만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--green)">+367만</div>
         </div>
       </div>
     </div>
@@ -3891,10 +3891,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px"><span>안영준</span><span style="font-weight:700;color:var(--text)">600만</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:8px"><span>황서림</span><span style="font-weight:700;color:var(--muted)">0만 (무급)</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);margin-bottom:4px"><span>합산수입</span><span style="font-weight:700">600만</span></div>
-        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">628만</span></div>
+        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">633만</span></div>
         <div style="background:rgba(239,68,68,.12);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:10px;color:var(--red);font-weight:700;margin-bottom:2px">월 적자</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--red)">-28만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--red)">-33만</div>
         </div>
       </div>
     </div>
@@ -3906,10 +3906,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px"><span>안영준</span><span style="font-weight:700;color:var(--text)">600만</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:8px"><span>황서림</span><span style="font-weight:700;color:var(--text)">400만</span></div>
         <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border);margin-bottom:4px"><span>합산수입</span><span style="font-weight:700">1,000만</span></div>
-        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">678만 <span style="font-weight:400;font-size:9px">(+육아50)</span></span></div>
+        <div style="font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px"><span>총지출</span><span style="font-weight:700;color:var(--red)">683만 <span style="font-weight:400;font-size:9px">(+육아50)</span></span></div>
         <div style="background:rgba(123,110,246,.12);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:10px;color:var(--purple);font-weight:700;margin-bottom:2px">월 잉여</div>
-          <div style="font-size:2rem;font-weight:900;color:var(--purple)">+322만</div>
+          <div style="font-size:2rem;font-weight:900;color:var(--purple)">+317만</div>
         </div>
       </div>
     </div>
@@ -4722,7 +4722,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
             <span style="color:var(--t2)">③ 안영준 신용대출 이자 (9,500만 · 4.02%)</span><span style="font-weight:700;color:var(--red)">32만</span>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px">
-            <span style="color:var(--t2)">④ 보증보험 이자 (1.2억 · 4.76%)</span><span style="font-weight:700;color:var(--red)">48만</span>
+            <span style="color:var(--t2)">④ 보증보험 이자 (1.2억 · 5.25%, 9/30 인상)</span><span style="font-weight:700;color:var(--red)">53만</span>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px">
             <span style="color:var(--t2)">⑤ 큰누나 차용금</span><span style="font-weight:700;color:var(--red)">13만</span>
@@ -4730,7 +4730,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--border)">
           <span style="font-size:12px;font-weight:700;color:var(--text)">월 총 상환</span>
-          <span style="font-size:1.2rem;font-weight:900;color:var(--orange)">366만원</span>
+          <span style="font-size:1.2rem;font-weight:900;color:var(--orange)">371만원</span>
         </div>
         <div style="font-size:10.5px;color:var(--muted);margin-top:4px">※ 주담대 이자 1년 변동 — 금리 재산정 시 ①번 변동 · 신용대출 이자 확정 후 재계산 필요</div>
       </div>
@@ -7978,10 +7978,10 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         <div>
           <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.6px;margin-bottom:6px">매달 갚는 돈 총합 · 8건</div>
           <div style="display:flex;align-items:baseline;gap:6px">
-            <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 382.5만</div>
+            <div style="font-size:2rem;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;line-height:1">약 387.5만</div>
             <div style="font-size:12px;color:var(--muted)">/월</div>
           </div>
-          <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 362만 + 가족 20.5만</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">은행 367만 + 가족 20.5만</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-size:10px;color:var(--muted);letter-spacing:.4px;margin-bottom:4px">총 대출 잔액</div>
@@ -8001,8 +8001,8 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
           <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">32만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
         <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
-          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">🏢 보증보험대출 (안영준)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 4.76% · 2028.06 만기</div></div>
-          <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">48만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
+          <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">🏢 보증보험대출 (새마을금고·안영준)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">1억 2,000만 · 5.25%(9/30 인상) · 2028.06 만기</div></div>
+          <div style="font-size:16px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums;flex-shrink:0;margin-left:12px">53만<span style="font-size:10px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
         <div style="display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border)">
           <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">💳 신용대출 (황서림)</div><div style="font-size:10px;color:var(--muted);margin-top:1px">6,500만 · 이자납입 · ✅ 확정</div></div>
@@ -8010,7 +8010,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
         <div style="display:flex;align-items:center;padding:11px 16px;background:var(--lite)">
           <div style="flex:1;font-size:12px;font-weight:800;color:var(--muted)">은행 소계</div>
-          <div style="font-size:18px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">362만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
+          <div style="font-size:18px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums">367만<span style="font-size:11px;font-weight:400;color:var(--muted)">/월</span></div>
         </div>
       </div>
 
@@ -8058,11 +8058,11 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;border-top:4px solid var(--orange)">
-        <div style="padding:10px 16px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.15)"><span style="font-size:12px;font-weight:800;color:var(--orange)">🏢 보증보험대출 (안영준)</span></div>
+        <div style="padding:10px 16px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.15)"><span style="font-size:12px;font-weight:800;color:var(--orange)">🏢 보증보험대출 (새마을금고·안영준)</span></div>
         <div style="padding:14px 16px">
           <div class="ln-info-row"><div class="ln-info-nm">잔액</div><div class="ln-info-vl" style="font-weight:800">1억 2,000만</div></div>
-          <div class="ln-info-row"><div class="ln-info-nm">금리 / 만기</div><div class="ln-info-vl">4.76% / 2028.06</div></div>
-          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">약 48만</div></div>
+          <div class="ln-info-row"><div class="ln-info-nm">금리 / 만기</div><div class="ln-info-vl">5.25% / 2028.06 <span style="font-size:10px;color:var(--red)">(9/30 인상)</span></div></div>
+          <div class="ln-info-row" style="border-bottom:none"><div class="ln-info-nm">월 납입</div><div class="ln-info-vl" style="font-weight:900;color:var(--orange)">약 53만</div></div>
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;margin-bottom:8px;border-top:4px solid var(--orange)">
@@ -8074,7 +8074,7 @@ if(sessionStorage.getItem("pg")==="1")document.getElementById("pin-gate").style.
         </div>
       </div>
       <div class="ibox p" style="margin-bottom:0;font-size:12px;line-height:1.8">
-        은행 대출 합계: 원금 <strong>6억 6,500만</strong> · 월 납입 <strong>362만</strong>
+        은행 대출 합계: 원금 <strong>6억 6,500만</strong> · 월 납입 <strong>367만</strong>
       </div>
     </div><!-- /sec-ls-bank -->
 
